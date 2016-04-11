@@ -38,6 +38,12 @@ void Engine::save(){
 //********************************* PRIMARY CYCLES *********************************
 void Engine::update(){		
 	//input.pollKeyEvents();
+
+
+
+
+
+
 	//input.checkToggles();	
 	//input.actionInput();
 	//menu.update();
@@ -51,6 +57,22 @@ void Engine::update(){
 	//input.clearKeys();	
 }
 
+void Engine::pollKeyEvents(){
+	SDL_Keycode key;
+	SDL_Event ev;
+	while(SDL_PollEvent(&ev))
+	{	key = ev.key.keysym.sym;
+		switch (ev.type)
+		{	case SDL_QUIT: 
+			G->gameActive = false; break;
+			case SDL_KEYDOWN: 	break;     
+			case SDL_KEYUP: //keyUp(key); 				
+				if (key == SDLK_ESCAPE)  
+					G->gameActive = false; 				
+				break;
+		}	
+	}	
+}
 
 void Engine::clockCycle(){
 	G->trackAVG(); G->trackFPS();	

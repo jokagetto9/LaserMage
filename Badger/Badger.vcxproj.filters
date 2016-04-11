@@ -10,25 +10,28 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\System\Engine.cpp">
-      <Filter>System</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\System\Main.cpp">
-      <Filter>System</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\System\GameState.cpp">
-      <Filter>System</Filter>
-    </ClCompile>
+    <ClInclude Include="..\System\h.h">
+      <Filter>+Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\System\lib.h">
+      <Filter>+Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\System\Engine.h">
+      <Filter>+Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\System\GameState.h">
+      <Filter>+Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\System\Engine.h">
-      <Filter>+Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\System\lib.h">
-      <Filter>+Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\System\GameState.h">
-      <Filter>+Header Files</Filter>
-    </ClInclude>
+    <ClCompile Include="..\System\GameState.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\System\Main.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\System\Engine.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

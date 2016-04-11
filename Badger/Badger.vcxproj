@@ -10,6 +10,17 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\System\Engine.h" />
+    <ClInclude Include="..\System\GameState.h" />
+    <ClInclude Include="..\System\h.h" />
+    <ClInclude Include="..\System\lib.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\System\Engine.cpp" />
+    <ClCompile Include="..\System\GameState.cpp" />
+    <ClCompile Include="..\System\Main.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{CE139FEA-E349-4E5E-B1D1-BAB7DF69BF24}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -76,16 +87,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\System\Engine.cpp" />
-    <ClCompile Include="..\..\System\GameState.cpp" />
-    <ClCompile Include="..\..\System\Main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\System\Engine.h" />
-    <ClInclude Include="..\..\System\GameState.h" />
-    <ClInclude Include="..\..\System\lib.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

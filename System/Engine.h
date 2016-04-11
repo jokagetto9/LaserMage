@@ -13,7 +13,6 @@ public:
 
 	Engine::	Engine();
 /*/ Purpose: default constructor /*/
-
 	void Engine::		init(); 
 /*/ Purpose: initialize members 
 Triggers: menu.init(), env.init(), spawner.loadDebugBiomes();	
@@ -48,7 +47,8 @@ Side Effects: G->getCurrentTime()
 Triggers: input.update(menu), save, 
 	G->trackFPS(), G->trackAVG(), clockCycle()
 /*/
-
+	
+	void Engine::pollKeyEvents();
 	void Engine::		clockCycle();
 /*/ Purpose: ensure phys and ai cycle run at expected cps
 Side Effects: G->incLag(), G->prevTime = G->curTime;
