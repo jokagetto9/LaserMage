@@ -197,13 +197,11 @@ void close(){
 
 
 //********************************* OTHER *********************************
-//**CONFLICT**
 void displayVersion(){
 	if (_DEBUG){
 		cout << glGetString(GL_VERSION) << endl;
 		cout <<  glGetString(GL_RENDERER) << "  " << glGetString(GL_VENDOR ) << endl << endl;
-	} else { 
-		logfile << glGetString(GL_VERSION) << endl;
-		logfile <<  glGetString(GL_RENDERER) << "  " << glGetString(GL_VENDOR ) << endl << endl;
 	}
+	logfile << glGetString(GL_VERSION) << endl;
+	logfile <<  glGetString(GL_RENDERER) << "  " << glGetString(GL_VENDOR ) << endl << endl;
 }
