@@ -55,7 +55,6 @@ void displayVersion(); /*/
 Side Effects: display opengl and graphics card versions  
 /*/
 
-void loadingMenu();
 
 //********************************* MAIN *********************************
 int main(int argc, char* args[]){
@@ -79,14 +78,6 @@ int main(int argc, char* args[]){
 	close(); return 0; //Free resources and close SDL	
 }//*/
 
-void loadingMenu(){
-		glClearColor(1, 1, 1, 1);	
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		glMatrixMode(GL_MODELVIEW);	
-		glLoadIdentity();	// initialize the selected matrix
-		//C->update(H->pos());
-	glFlush(); SDL_GL_SwapWindow(gWindow);		
-}
 //********************************* INIT *********************************
 bool initGLAttrib(){
 	//framebuffer
@@ -121,8 +112,7 @@ bool initSDL(){
 	initGLAttrib(); // init attributes
 
 	//init window
-	////**CONFLICT** hardcoded the values
-	gWindow = SDL_CreateWindow( "Stay out of the Forest", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, RES.x, RES.z, SDL_WINDOW_SHOWN|SDL_WINDOW_OPENGL );
+	gWindow = SDL_CreateWindow( "Test Window", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, RES.x, RES.z, SDL_WINDOW_SHOWN|SDL_WINDOW_OPENGL );
 	if( gWindow == NULL ) {	printf( "Window could not be created! SDL Error: %s\n", SDL_GetError() ); 	return false;	}
 	initW = true;
 
@@ -148,8 +138,6 @@ bool initSDL(){
 }
 
 void initGlobals(){
-	
-	//**CONFLICT** create global logfile
 	logfile = ofstream("log.txt");	//init logfile
 	
 	//displayVersion();
@@ -158,7 +146,6 @@ void initGlobals(){
 	//if(_DEBUG) cout << "Loading Shaders" << endl;
 	M = ModelManager::I();
 	//engine stack loading screen
-	loadingMenu();
 
 	//init camera
 	//if(_DEBUG) cout << "Matrixes..." ;
@@ -181,7 +168,9 @@ void initGlobals(){
 //********************************* CLOSE *********************************
 
 void closeGlobals(){	
-	//H->quit(); C->quit(); G->quit(); M->quit(); Q->quit();
+	//H->quit(); C->quit(); 
+	G->quit(); M->quit(); 
+	//Q->quit();
 	logfile.close();
 }
 
