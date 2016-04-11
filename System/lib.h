@@ -30,9 +30,6 @@ using namespace std;
 struct XZI {int x, z;};
 
 extern ofstream logfile;
-//**TEMP**
-
-extern bool gameActive;
 
 extern XZI RES;
 

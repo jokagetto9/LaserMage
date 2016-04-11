@@ -48,6 +48,5 @@ Temporary Items
 ipch/
 Debug/
 Badger/Debug/
-Badger.sdf
+*.sdf
 *.suo
-Badger.suo

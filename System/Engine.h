@@ -1,9 +1,8 @@
 #ifndef ENGINE_H
 #define ENGINE_H
 
-#include "../Display/ModelManager.h"
 //#include "StackManager.h"
-//#include "ControllerInput.h"
+#include "ControllerInput.h"
 
 
 //********************************* INITIALIZATION *********************************
@@ -48,7 +47,6 @@ Triggers: input.update(menu), save,
 	G->trackFPS(), G->trackAVG(), clockCycle()
 /*/
 	
-	void Engine::pollKeyEvents();
 	void Engine::		clockCycle();
 /*/ Purpose: ensure phys and ai cycle run at expected cps
 Side Effects: G->incLag(), G->prevTime = G->curTime;
@@ -91,7 +89,7 @@ void Engine :: disable2DView ();
 //************************************************** MEMBERS ***************************************************
 	
 		//StackManager stack;		// root class to the menu system
-		//ControllerInput input;			// handle for managing input						// root class managing world objects
+		ControllerInput input;			// handle for managing input						// root class managing world objects
 		//Spawner spawner;
 		//World world;
 		bool menuView;

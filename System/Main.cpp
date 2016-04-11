@@ -64,10 +64,10 @@ int main(int argc, char* args[]){
 		initGlobals();
 		eng.init();		
 		initE = true;
-	} else { gameActive = false; }
+	} else { G->gameActive = false; }
 	displayVersion();
 	//game loop
-	while( gameActive ){	
+	while( G->gameActive ){	
 		eng.update();	
 		eng.display();
 		glFlush(); SDL_GL_SwapWindow(gWindow); 
@@ -168,7 +168,7 @@ void initGlobals(){
 
 	//init game state
 	//if(_DEBUG) cout << "Game State" << endl;
-	//G = GameState::I();		G->init();
+	G = GameState::I();		G->init();
 
 
 	//init quest markers

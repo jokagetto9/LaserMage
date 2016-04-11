@@ -1,9 +1,6 @@
 //********************************* INITIALIZATION *********************************
 #include "Engine.h"
 
-//**TEMP**
-bool gameActive;
-
 Engine::	Engine(){
 	
 		menuView = false;
@@ -12,12 +9,11 @@ Engine::	Engine(){
 void Engine::init(){
 
 	//stack.init();
-	//input.init();	
+	input.init();	
 	//world.init();
 	//onspawner.setWorld(&world);
 	//DBT = DebugTool::I(); 
 	//DBT->init(&world);
-	gameActive = true;
 }
 
 void Engine::		loadingMenu(){
@@ -32,8 +28,8 @@ void Engine::quit(){
 
 //********************************* PRIMARY CYCLES *********************************
 void Engine::update(){		
-	pollKeyEvents(); //input.pollKeyEvents();
-	//input.checkToggles();	
+	input.pollKeyEvents();
+	input.checkToggles();	
 	//input.actionInput();
 	//menu.update();
 	//DBT->update();
@@ -45,24 +41,6 @@ void Engine::update(){
 	//stack.update(input);
 	//input.clearKeys();	
 }
-
-void Engine::pollKeyEvents(){
-	SDL_Keycode key;
-	SDL_Event ev;
-	while(SDL_PollEvent(&ev))
-	{	key = ev.key.keysym.sym;
-		switch (ev.type)
-		{	case SDL_QUIT: 
-			gameActive = false; break;
-			case SDL_KEYDOWN: 	break;     
-			case SDL_KEYUP: //keyUp(key); 				
-				if (key == SDLK_ESCAPE)  
-					gameActive = false; 				
-				break;
-		}	
-	}	
-}
-
 
 //*/
 //********************************* DRAW *********************************
