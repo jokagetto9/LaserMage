@@ -1,7 +1,7 @@
 #ifndef ENGINE_H
 #define ENGINE_H
 
-#include "GameState.h"
+#include "lib.h"
 //#include "StackManager.h"
 //#include "ControllerInput.h"
 

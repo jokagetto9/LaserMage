@@ -10,23 +10,14 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\System\h.h">
+    <ClInclude Include="..\System\Engine.h">
       <Filter>+Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\System\lib.h">
       <Filter>+Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\System\Engine.h">
-      <Filter>+Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\System\GameState.h">
-      <Filter>+Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\System\GameState.cpp">
-      <Filter>System</Filter>
-    </ClCompile>
     <ClCompile Include="..\System\Main.cpp">
       <Filter>System</Filter>
     </ClCompile>

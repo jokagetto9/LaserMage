@@ -1,17 +1,23 @@
 //********************************* INITIALIZATION *********************************
 #include "Engine.h"
 
+//**TEMP**
+ofstream logfile;
+bool gameActive;
+
 Engine::	Engine(){
 
 }
 
 void Engine::init(){
+
 	//stack.init();
 	//input.init();	
 	//world.init();
 	//onspawner.setWorld(&world);
 	//DBT = DebugTool::I(); 
 	//DBT->init(&world);
+	gameActive = true;
 }
 
 void Engine::		loadingMenu(){
@@ -37,21 +43,15 @@ void Engine::save(){
 
 //********************************* PRIMARY CYCLES *********************************
 void Engine::update(){		
-	//input.pollKeyEvents();
-
-
-
-
-
-
+	pollKeyEvents(); //input.pollKeyEvents();
 	//input.checkToggles();	
 	//input.actionInput();
 	//menu.update();
 	//DBT->update();
-	if (G->save) save();
-	if (G->skip == 0){ 
-		clockCycle();
-	} else skipTime();
+	//if (G->save) save();
+	//if (G->skip == 0){ 
+	//	clockCycle();
+	//} else skipTime();
 	
 	//stack.update(input);
 	//input.clearKeys();	
@@ -64,16 +64,16 @@ void Engine::pollKeyEvents(){
 	{	key = ev.key.keysym.sym;
 		switch (ev.type)
 		{	case SDL_QUIT: 
-			G->gameActive = false; break;
+			gameActive = false; break;
 			case SDL_KEYDOWN: 	break;     
 			case SDL_KEYUP: //keyUp(key); 				
 				if (key == SDLK_ESCAPE)  
-					G->gameActive = false; 				
+					gameActive = false; 				
 				break;
 		}	
 	}	
 }
-
+/*/
 void Engine::clockCycle(){
 	G->trackAVG(); G->trackFPS();	
 	if (!G->paused){
@@ -88,7 +88,6 @@ void Engine::clockCycle(){
 	G->prevTime = G->curTime;	// reset cycle
 	 //else G->action = false;
 }
-
 
 
 void Engine::		physicsUpdate(){
@@ -128,6 +127,7 @@ void Engine::	skipTime(){
 }
 
 
+//*/
 //********************************* DRAW *********************************
 
 void Engine::display(){	

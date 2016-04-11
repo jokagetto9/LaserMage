@@ -65,10 +65,10 @@ int main(int argc, char* args[]){
 		eng.init();		
 		//eng.loadingMenu();
 		initE = true;
-	} else { GameState::I()->gameActive = false; }
-
+	} else { gameActive = false; }
+	displayVersion();
 	//game loop
-	while( false ) {//GameState::I()->gameActive ){	
+	while( gameActive ){	
 		eng.update();	
 		eng.display();
 		glFlush(); SDL_GL_SwapWindow(gWindow); 

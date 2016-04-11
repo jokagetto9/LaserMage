@@ -12,13 +12,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\System\Engine.h" />
-    <ClInclude Include="..\System\GameState.h" />
-    <ClInclude Include="..\System\h.h" />
     <ClInclude Include="..\System\lib.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\System\Engine.cpp" />
-    <ClCompile Include="..\System\GameState.cpp" />
     <ClCompile Include="..\System\Main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

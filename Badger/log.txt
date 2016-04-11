@@ -1,0 +1,3 @@
+3.3.13431 Compatibility Profile Context 16.150.2211.0
+AMD Radeon (TM) R9 380 Series  ATI Technologies Inc.
+

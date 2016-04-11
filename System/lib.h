@@ -29,6 +29,8 @@ using namespace std;
 
 
 extern ofstream logfile;
+//**TEMP**
+extern bool gameActive;
 //********************************* DIMENSIONS AND DIRECTIONS *********************************
 
 struct XZI {int x, z;};
