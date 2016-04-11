@@ -155,6 +155,7 @@ void initGlobals(){
 	//if(_DEBUG) cout << "Loading Shaders" << endl;
 	M = ModelManager::I();
 	//engine stack loading screen
+	loadingMenu();
 
 	//init camera
 	//if(_DEBUG) cout << "Matrixes..." ;
