@@ -2,6 +2,7 @@
 #include "GameState.h"
 GameState* GameState::instance = 0;
 GameState* G;
+ofstream logfile;
 
 void GameState::init(){
 	prevTime = glutGet(GLUT_ELAPSED_TIME);	// init start time
