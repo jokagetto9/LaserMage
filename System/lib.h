@@ -32,7 +32,13 @@ struct XZI {int x, z;};
 extern ofstream logfile;
 
 extern XZI RES;
-
+//menu indices
+enum DF_RootMenuType {PLAY, EXIT, TITLE, MAIN, SYS, STORE, DLG, DBG };
+enum DF_SubMenuType {QUIT, STAT, EQP, INV, SKLS, JRNL, OPTN, CNFM, NUMSLCT, PASS};
+//from other games
+//enum LaserMenuCommand {EXIT, TITLE, OPTN, STGSLCT, STGINFO, STGCOMP, UPGRADE, PLAY};
+//enum PrimeMenuCommand {PLAY, EXIT, TITLE, MAIN, SYS, STORE, DLG, DBG }; //when not exit
+//enum MenuType {QUIT, STAT, EQP, INV, LOOT, RELIC, SKLS, JRNL, ACTIVEEQP, ACTIVEITM, USE, SHOPEQP, SHOPLOOT, CNFM, NUMSLCT, PASS};
 //********************************* DIMENSIONS AND DIRECTIONS *********************************
 
 
