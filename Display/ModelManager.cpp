@@ -12,6 +12,12 @@ void ModelManager::		quit(){
 
 //********************************* EXTERNAL *********************************	
 
+void billboard(){
+	float modelview[16];
+	glGetFloatv(GL_MODELVIEW_MATRIX , modelview);
+	glLoadMatrixf(modelview);	//*/
+}
+
 string getZeros(int q, int d){
 	stringstream ss("");
 	if (q < 10000	&& d >= 4) ss << 0; 
@@ -74,9 +80,4 @@ GLuint loadTexture(char *fname, bool rep){
 	return 0;//storing ID information
 }
 
-void billboard(){
-	float modelview[16];
-	glGetFloatv(GL_MODELVIEW_MATRIX , modelview);
-	glLoadMatrixf(modelview);	//*/
-}
 
