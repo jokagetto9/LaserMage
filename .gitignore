@@ -45,8 +45,7 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
-Badger/Badger/Debug/
-Badger/ipch/
+ipch/
+Debug/
 Badger/Debug/
-Badger/Badger.sdf
-Badger/Badger.sdf
+Badger.sdf
