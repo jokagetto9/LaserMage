@@ -77,6 +77,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\System\Engine.cpp" />
+    <ClCompile Include="..\..\System\GameState.cpp" />
+    <ClCompile Include="..\..\System\Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\System\Engine.h" />
+    <ClInclude Include="..\..\System\GameState.h" />
+    <ClInclude Include="..\..\System\lib.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

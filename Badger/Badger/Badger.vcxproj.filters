@@ -5,5 +5,30 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
+    <Filter Include="System">
+      <UniqueIdentifier>{f70c877b-86d3-44e4-9184-13a38bfdbe55}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\System\Engine.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\System\Main.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\System\GameState.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\System\Engine.h">
+      <Filter>+Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\System\lib.h">
+      <Filter>+Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\System\GameState.h">
+      <Filter>+Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
