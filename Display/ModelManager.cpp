@@ -8,7 +8,7 @@ ofstream logfile;
 XZI RES = {800, 600};
 
 void ModelManager::		quit(){
-	//menuBO.quit();			//if(_DEBUG) cout << "Quit: Menu Shader" << endl;
+	menuBO.quit();			//if(_DEBUG) cout << "Quit: Menu Shader" << endl;
 	delete instance; instance = NULL;
 }
 

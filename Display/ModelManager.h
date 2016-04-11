@@ -1,8 +1,7 @@
 #ifndef MODELMANAGER_H
 #define MODELMANAGER_H
 
-#include "ModelData.h"
-//#include "MenuShader.h"
+#include "./Shaders/MenuShader.h"
 //********************************* CONSTANTS *********************************
 //********************************* EXTERNAL *********************************
 //********************************* INITIALIZATION *********************************
@@ -18,7 +17,7 @@ public:
 
 //************************************************** MEMBERS ***************************************************
 		
-	//MenuShader menuShader;
+	MenuShader menuBO;
 
 private:
 	ModelManager::ModelManager(){}

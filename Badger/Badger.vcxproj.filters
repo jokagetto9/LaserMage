@@ -28,11 +28,11 @@
     <ClInclude Include="..\Display\ModelData.h">
       <Filter>+Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Display\Shaders\Shader.h">
-      <Filter>+Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\Display\Shaders\MenuShader.h">
-      <Filter>+Header Files</Filter>
+      <Filter>Display\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Display\Shaders\Shader.h">
+      <Filter>Display\Shaders</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -63,7 +63,6 @@ int main(int argc, char* args[]){
 	if (initSDL()){
 		initGlobals();
 		eng.init();		
-		//eng.loadingMenu();
 		initE = true;
 	} else { gameActive = false; }
 	displayVersion();
@@ -85,7 +84,6 @@ void loadingMenu(){
 		//C->update(H->pos());
 	glFlush(); SDL_GL_SwapWindow(gWindow);		
 }
-
 //********************************* INIT *********************************
 bool initGLAttrib(){
 	//framebuffer
@@ -155,9 +153,8 @@ void initGlobals(){
 
 	//init model manager
 	//if(_DEBUG) cout << "Loading Shaders" << endl;
-	//M = ModelManager::I();
+	M = ModelManager::I();
 	//engine stack loading screen
-	//loadingMenu();
 
 	//init camera
 	//if(_DEBUG) cout << "Matrixes..." ;

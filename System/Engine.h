@@ -84,13 +84,17 @@ Triggers: env.update, env.refreshView(b), C->update(H->pos),
 	
 void Engine::clearDisplay();
 
+
+void Engine :: setUp2DView (int width, int height);
+
+void Engine :: disable2DView ();
 //************************************************** MEMBERS ***************************************************
 	
 		//StackManager stack;		// root class to the menu system
 		//ControllerInput input;			// handle for managing input						// root class managing world objects
 		//Spawner spawner;
 		//World world;
-
+		bool menuView;
 
 };
 #endif
