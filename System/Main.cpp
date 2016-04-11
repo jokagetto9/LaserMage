@@ -62,12 +62,15 @@ int main(int argc, char* args[]){
 	//init
 	if (initSDL()){
 		initGlobals();
-		eng.init();		
+		eng.init();	
+		displayVersion(); 
 		initE = true;
-	} else { G->gameActive = false; }
-	displayVersion();
+	} else { 
+		GameState::I()->gameActive = false; 
+		//***display failure message
+	}
 	//game loop
-	while( G->gameActive ){	
+	while( GameState::I()->gameActive ){	
 		eng.update();	
 		eng.display();
 		glFlush(); SDL_GL_SwapWindow(gWindow); 
