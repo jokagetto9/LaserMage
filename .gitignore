@@ -49,3 +49,4 @@ ipch/
 Debug/
 Badger/Debug/
 Badger.sdf
+*.suo

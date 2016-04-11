@@ -11,12 +11,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Display\ModelData.h" />
     <ClInclude Include="..\Display\ModelManager.h" />
+    <ClInclude Include="..\Display\Shaders\Shader.h" />
     <ClInclude Include="..\System\Engine.h" />
     <ClInclude Include="..\System\lib.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Display\ModelManager.cpp" />
+    <ClCompile Include="..\Display\Shaders\Shader.cpp" />
     <ClCompile Include="..\System\Engine.cpp" />
     <ClCompile Include="..\System\Main.cpp" />
   </ItemGroup>

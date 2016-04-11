@@ -11,6 +11,9 @@
     <Filter Include="Display">
       <UniqueIdentifier>{509a63fd-9e48-4866-b50e-ae3bbfd5a836}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Display\Shaders">
+      <UniqueIdentifier>{ae4c83b2-b949-489b-a1ca-84d2255db942}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\System\Engine.h">
@@ -20,6 +23,12 @@
       <Filter>+Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\Display\ModelManager.h">
+      <Filter>+Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Display\ModelData.h">
+      <Filter>+Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Display\Shaders\Shader.h">
       <Filter>+Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -32,6 +41,9 @@
     </ClCompile>
     <ClCompile Include="..\Display\ModelManager.cpp">
       <Filter>Display</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Display\Shaders\Shader.cpp">
+      <Filter>Display\Shaders</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

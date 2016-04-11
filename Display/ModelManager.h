@@ -1,7 +1,7 @@
 #ifndef MODELMANAGER_H
 #define MODELMANAGER_H
 
-#include "../System/lib.h"
+#include "ModelData.h"
 //#include "MenuShader.h"
 //********************************* CONSTANTS *********************************
 //********************************* EXTERNAL *********************************
