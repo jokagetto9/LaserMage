@@ -2,7 +2,6 @@
 #include "Engine.h"
 
 //**TEMP**
-ofstream logfile;
 bool gameActive;
 
 Engine::	Engine(){

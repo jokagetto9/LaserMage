@@ -1,7 +1,7 @@
 #ifndef ENGINE_H
 #define ENGINE_H
 
-#include "lib.h"
+#include "../Display/ModelManager.h"
 //#include "StackManager.h"
 //#include "ControllerInput.h"
 
