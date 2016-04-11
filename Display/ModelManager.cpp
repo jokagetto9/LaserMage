@@ -12,6 +12,16 @@ void ModelManager::		quit(){
 
 //********************************* EXTERNAL *********************************	
 
+string getZeros(int q, int d){
+	stringstream ss("");
+	if (q < 10000	&& d >= 4) ss << 0; 
+	if (q < 1000	&& d >= 3) ss << 0;		
+	if (q < 100		&& d >= 2) ss << 0;	
+	if (q < 10		&& d >= 1) ss << 0;
+	ss << q;
+	return ss.str();
+}
+
 //********************************* LOAD PNG *********************************
 GLuint loadTexture(char *fname, bool rep){
 	//free();	//Get rid of preexisting texture
