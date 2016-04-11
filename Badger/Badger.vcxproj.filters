@@ -31,6 +31,9 @@
     <ClInclude Include="..\Display\Shaders\Shader.h">
       <Filter>+Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\Display\Shaders\MenuShader.h">
+      <Filter>+Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\System\Main.cpp">
@@ -43,6 +46,9 @@
       <Filter>Display</Filter>
     </ClCompile>
     <ClCompile Include="..\Display\Shaders\Shader.cpp">
+      <Filter>Display\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Display\Shaders\MenuShader.cpp">
       <Filter>Display\Shaders</Filter>
     </ClCompile>
   </ItemGroup>

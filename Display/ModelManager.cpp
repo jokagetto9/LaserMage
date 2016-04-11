@@ -1,9 +1,11 @@
 //********************************* INITIALIZATION *********************************
 #include "ModelManager.h"
 
+//**EXTERNAL**
 ModelManager* ModelManager::instance = 0;
 ModelManager* M;
 ofstream logfile;
+XZI RES = {800, 600};
 
 void ModelManager::		quit(){
 	//menuBO.quit();			//if(_DEBUG) cout << "Quit: Menu Shader" << endl;

@@ -27,13 +27,16 @@
 
 using namespace std;
 
+struct XZI {int x, z;};
 
 extern ofstream logfile;
 //**TEMP**
-extern bool gameActive;
-//********************************* DIMENSIONS AND DIRECTIONS *********************************
 
-struct XZI {int x, z;};
+extern bool gameActive;
+
+extern XZI RES;
+
+//********************************* DIMENSIONS AND DIRECTIONS *********************************
 
 
 enum Drctn {WEST, EAST, NORTH, SOUTH, NW, NE, SW, SE, DUNNO};

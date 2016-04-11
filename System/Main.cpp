@@ -121,7 +121,7 @@ bool initSDL(){
 
 	//init window
 	////**CONFLICT** hardcoded the values
-	gWindow = SDL_CreateWindow( "Stay out of the Forest", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 600, SDL_WINDOW_SHOWN|SDL_WINDOW_OPENGL );
+	gWindow = SDL_CreateWindow( "Stay out of the Forest", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, RES.x, RES.z, SDL_WINDOW_SHOWN|SDL_WINDOW_OPENGL );
 	if( gWindow == NULL ) {	printf( "Window could not be created! SDL Error: %s\n", SDL_GetError() ); 	return false;	}
 	initW = true;
 
