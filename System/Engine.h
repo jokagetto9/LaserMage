@@ -1,7 +1,7 @@
 #ifndef ENGINE_H
 #define ENGINE_H
 
-//#include "StackManager.h"
+#include "StackManager.h"
 #include "ControllerInput.h"
 
 
@@ -16,11 +16,6 @@ public:
 /*/ Purpose: initialize members 
 Triggers: menu.init(), env.init(), spawner.loadDebugBiomes();	
 /*/
-	void Engine::		loadingMenu();
-/*/ Purpose: choose seed and save file 
-Triggers:::
-/*/
-
 
 	void Engine::	quit(); 
 /*/ Purpose: close engine 
@@ -80,15 +75,10 @@ Triggers: env.update, env.refreshView(b), C->update(H->pos),
 	//void Engine::reshape(int w, int h);
 	
 	
-void Engine::clearDisplay();
-
-
-void Engine :: setUp2DView (int width, int height);
-
-void Engine :: disable2DView ();
+	void Engine::	clearDisplay();
 //************************************************** MEMBERS ***************************************************
 	
-		//StackManager stack;		// root class to the menu system
+		StackManager stack;		// root class to the menu system
 		ControllerInput input;			// handle for managing input						// root class managing world objects
 		//Spawner spawner;
 		//World world;
