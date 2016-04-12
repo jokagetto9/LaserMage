@@ -1,7 +1,7 @@
 #ifndef StackManager_H
 #define StackManager_H
 
-#include "../System/ControllerInput.h"
+#include "ControllerInput.h"
 
 
 //********************************* CONSTANTS *********************************
@@ -75,7 +75,7 @@ Triggers:
 
 		int physSkip;
 		// class controlling environment specific effects (lighting, fog, plant growth)
-	
+		Menu loadingScreen;
 
 		int menuIndex;
 

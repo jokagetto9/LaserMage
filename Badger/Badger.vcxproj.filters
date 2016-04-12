@@ -14,6 +14,9 @@
     <Filter Include="Display\Shaders">
       <UniqueIdentifier>{ae4c83b2-b949-489b-a1ca-84d2255db942}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Display\Menus">
+      <UniqueIdentifier>{2d5266fb-b8ef-448d-862f-2790c30fbdec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\System\Engine.h">
@@ -43,6 +46,9 @@
     <ClInclude Include="..\System\StackManager.h">
       <Filter>+Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\Display\Menus\Menu.h">
+      <Filter>+Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\System\Main.cpp">
@@ -68,6 +74,9 @@
     </ClCompile>
     <ClCompile Include="..\System\StackManager.cpp">
       <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Display\Menus\Menu.cpp">
+      <Filter>Display\Menus</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

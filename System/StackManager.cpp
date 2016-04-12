@@ -14,7 +14,7 @@ StackManager::StackManager(){
 void StackManager::	initMenus(){
 
 //	previewMenu = NULL;
-	//owlMenu.setBackground(EXIT);
+	loadingScreen.setBackground(EXIT);
 }
 
 
@@ -58,7 +58,7 @@ void StackManager::	draw(){
 	if (G->paused){
 		//M->fontBO.use();	hudMenu.drawText();
 		//M->cursorBO.use();	hudMenu.drawCursor();
-		M->menuBO.use();	M->menuBO.draw(0); //hudMenu.drawIcons();
+		M->menuBO.use();	loadingScreen.drawBackground(); //hudMenu.drawIcons();
 	} else {//if (!stack.empty()){ 
 		//drawText();
 		//drawCursor();
@@ -67,6 +67,7 @@ void StackManager::	draw(){
 	
 	disable2DView();
 }
+
 
 //*********************************
 

@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Display\Menus\Menu.h" />
     <ClInclude Include="..\Display\ModelData.h" />
     <ClInclude Include="..\Display\ModelManager.h" />
     <ClInclude Include="..\Display\Shaders\MenuShader.h" />
@@ -22,6 +23,7 @@
     <ClInclude Include="..\System\StackManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Display\Menus\Menu.cpp" />
     <ClCompile Include="..\Display\ModelManager.cpp" />
     <ClCompile Include="..\Display\Shaders\MenuShader.cpp" />
     <ClCompile Include="..\Display\Shaders\Shader.cpp" />
