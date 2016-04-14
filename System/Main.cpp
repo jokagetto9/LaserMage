@@ -1,8 +1,9 @@
 #include "Engine.h"
 
 //********************************* MODULES *********************************
-Engine eng;
 
+	Engine eng;						// handle for managing the passage of time
+	ControllerInput input;			// handle for managing input
 
 //********************************* DECLARATIONS *********************************
  
@@ -28,22 +29,50 @@ Side Effects:  closes engine and deletes SDL_Window, SDL_GL Context
 Triggers: eng.quit()
 /*/
 
+//********************************* MAIN *********************************
+
+void update(){
+	input.pollKeyEvents();
+	input.checkToggles();	
+	//input.actionInput();
+	//menu.update();
+	//DBT->update();
+	//if (G->save) save();
+	//if (G->skip == 0){ 
+		eng.clockCycle();
+	//} else skipTime();
+	
+	//stack.update(input);
+	//input.clearKeys();	
+}
+
+void display(){
+	glClearColor(1, 1, 1, 1);	
+	eng.clearDisplay();
+	//stack.draw();
+} 
+
 
 
 //********************************* MAIN *********************************
 int main(int argc, char* args[]){
-	//init
+	//eng.init();	  	//init
 	if (eng.initSDL()){
+		eng.displayVersion();
 		initGlobals();
-		eng.init();	
+		input.init();
+		//world.init();
+		//onspawner.setWorld(&world);
+		//DBT = DebugTool::I(); 
+		//DBT->init(&world);
 	} else { 
 		GameState::I()->gameActive = false; 
 		//***display failure message
 	}
 	//game loop
 	while( GameState::I()->gameActive ){	
-		eng.update();	
-		eng.display();
+		update();	
+		display();
 		eng.flush();
 	}
 	//game close
@@ -57,7 +86,7 @@ void initGlobals(){
 
 	//init model manager
 	//if(_DEBUG) cout << "Loading Shaders" << endl;
-	M = ModelManager::I();
+	//M = ModelManager::I();
 	//engine stack loading screen
 
 	//init camera
@@ -78,25 +107,11 @@ void initGlobals(){
 	//Q = Question::I();	Q->init();
 }
 
-//********************************* MAIN *********************************
-
-void update(){
-
-
-
-}
-
-void display(){
-	glClearColor(1, 1, 1, 1);	
-	clearDisplay();
-	//stack.draw();
-} 
-
 //********************************* CLOSE *********************************
 
 void closeGlobals(){	
 	//H->quit(); C->quit(); 
-	G->quit(); M->quit(); 
+	G->quit(); //M->quit(); 
 	//Q->quit();
 	logfile.close();
 }

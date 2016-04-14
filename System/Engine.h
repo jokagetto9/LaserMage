@@ -103,7 +103,7 @@ Triggers: env.update, env.refreshView(b), C->update(H->pos),
 	
 
 	void Engine::	clearDisplay();
-	void Engine ::flush(){glFlush(); SDL_GL_SwapWindow(sdlWindow); }
+	void Engine ::flush(){ glFlush(); SDL_GL_SwapWindow(sdlWindow); }
 
 //************************************************** MEMBERS ***************************************************
 
@@ -113,8 +113,7 @@ Triggers: env.update, env.refreshView(b), C->update(H->pos),
 	SDL_GLContext sdlContext;		//OpenGL context
 
 	bool initW, initC;
-
-	ControllerInput input;			// handle for managing input						// root class managing world objects
+						// root class managing world objects
 		//Spawner spawner;
 		//World world;
 		bool menuView;

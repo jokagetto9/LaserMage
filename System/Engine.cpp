@@ -68,12 +68,7 @@ bool Engine::initSDL(){
 
 
 void Engine::init(){
-	displayVersion(); 
-	input.init();	
-	//world.init();
-	//onspawner.setWorld(&world);
-	//DBT = DebugTool::I(); 
-	//DBT->init(&world);	
+	
 }
 
 void Engine::quit(){
@@ -82,18 +77,7 @@ void Engine::quit(){
 }
 //********************************* PRIMARY CYCLES *********************************
 void Engine::update(){		
-	input.pollKeyEvents();
-	input.checkToggles();	
-	//input.actionInput();
-	//menu.update();
-	//DBT->update();
-	//if (G->save) save();
-	//if (G->skip == 0){ 
-		clockCycle();
-	//} else skipTime();
-	
-	//stack.update(input);
-	//input.clearKeys();	
+
 }
 
 void Engine::clockCycle(){
