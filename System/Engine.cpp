@@ -68,11 +68,12 @@ bool Engine::initSDL(){
 
 
 void Engine::init(){
+	displayVersion(); 
 	input.init();	
 	//world.init();
 	//onspawner.setWorld(&world);
 	//DBT = DebugTool::I(); 
-	//DBT->init(&world);
+	//DBT->init(&world);	
 }
 
 void Engine::quit(){
@@ -138,6 +139,15 @@ void Engine::display(){
 		glClearColor(1, 1, 1, 1);	
 		clearDisplay();
 		//stack.draw();
+}
+
+void Engine::displayVersion(){
+	if (_DEBUG){
+		cout << glGetString(GL_VERSION) << endl;
+		cout <<  glGetString(GL_RENDERER) << "  " << glGetString(GL_VENDOR ) << endl << endl;
+	}
+	logfile << glGetString(GL_VERSION) << endl;
+	logfile <<  glGetString(GL_RENDERER) << "  " << glGetString(GL_VENDOR ) << endl << endl;
 }
 
  void Engine::clearDisplay(){

@@ -97,7 +97,11 @@ Triggers: env.update, env.refreshView(b), C->update(H->pos),
 
 	//void Engine::reshape(int w, int h);
 	
+	void Engine::displayVersion(); /*/
+	Side Effects: display opengl and graphics card versions  
+	/*/
 	
+
 	void Engine::	clearDisplay();
 	void Engine ::flush(){glFlush(); SDL_GL_SwapWindow(sdlWindow); }
 

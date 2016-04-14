@@ -24,9 +24,6 @@ Side Effects:  closes engine and deletes SDL_Window, SDL_GL Context
 Triggers: eng.quit()
 /*/
 
-void displayVersion(); /*/
-Side Effects: display opengl and graphics card versions  
-/*/
 
 
 //********************************* MAIN *********************************
@@ -35,7 +32,6 @@ int main(int argc, char* args[]){
 	if (eng.initSDL()){
 		initGlobals();
 		eng.init();	
-		displayVersion(); 
 	} else { 
 		GameState::I()->gameActive = false; 
 		//***display failure message
@@ -97,11 +93,3 @@ void close(){
 
 
 //********************************* OTHER *********************************
-void displayVersion(){
-	if (_DEBUG){
-		cout << glGetString(GL_VERSION) << endl;
-		cout <<  glGetString(GL_RENDERER) << "  " << glGetString(GL_VENDOR ) << endl << endl;
-	}
-	logfile << glGetString(GL_VERSION) << endl;
-	logfile <<  glGetString(GL_RENDERER) << "  " << glGetString(GL_VENDOR ) << endl << endl;
-}
