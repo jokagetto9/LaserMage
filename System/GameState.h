@@ -1,8 +1,7 @@
 #ifndef GAMESTATE_H
 #define GAMESTATE_H
 
-#include "../Display/ModelManager.h"
-#include "GameState.h"
+#include "lib.h"
 //********************************* CONSTANTS *********************************
 
 
