@@ -135,11 +135,6 @@ void Engine::		rapidUpdate(){
 }
 //********************************* DRAW *********************************
 
-void Engine::display(){	
-		glClearColor(1, 1, 1, 1);	
-		clearDisplay();
-		//stack.draw();
-}
 
 void Engine::displayVersion(){
 	if (_DEBUG){

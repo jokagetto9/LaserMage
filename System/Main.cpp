@@ -12,6 +12,10 @@ Precondition(s): initSDL
 Side Effects:  Initializes Hero, Camera, ModelManager, GameState, Question
 /*/
 
+void update(); 
+void display(); 
+
+
 void deleteGlobals(); /*/
 Purpose: delete global aliases
 Precondition(s): initE
@@ -46,7 +50,6 @@ int main(int argc, char* args[]){
 	close(); return 0; //Free resources and close SDL	
 }//*/
 
-
 void initGlobals(){
 	logfile = ofstream("log.txt");	//init logfile
 	
@@ -75,6 +78,20 @@ void initGlobals(){
 	//Q = Question::I();	Q->init();
 }
 
+//********************************* MAIN *********************************
+
+void update(){
+
+
+
+}
+
+void display(){
+	glClearColor(1, 1, 1, 1);	
+	clearDisplay();
+	//stack.draw();
+} 
+
 //********************************* CLOSE *********************************
 
 void closeGlobals(){	
@@ -93,3 +110,4 @@ void close(){
 
 
 //********************************* OTHER *********************************
+
