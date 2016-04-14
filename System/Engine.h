@@ -11,6 +11,29 @@ public:
 
 	Engine::	Engine();
 /*/ Purpose: default constructor /*/
+
+	bool initGLAttrib(); /*/
+	Purpose: Load SDL_GL attributes 
+	Returns: true if nothing fails
+	Side Effects:  Initializes framebuffer, enables, depthbuffer, version, linear filtering 
+	/*/
+ 
+	bool initGLEW(); /*/
+	Purpose: init GLEW  
+	Returns: true if nothing fails
+	Side Effects:  Initializes GL extensions
+	/*/
+
+	bool initSDL(); /*/
+	Purpose: Load SDL window using OpenGL 
+	Parameter(s): N/A
+	Precondition(s): N/A
+	Returns: true if nothing fails
+	Side Effects:  Initializes SDL_Window, SDL_GL Context, SDL_image
+	Triggers: initGLAttrib, initGLEW, displayVersion
+	/*/
+
+
 	void Engine::		init(); 
 /*/ Purpose: initialize members 
 Triggers: menu.init(), env.init(), spawner.loadDebugBiomes();	
@@ -20,6 +43,7 @@ Triggers: menu.init(), env.init(), spawner.loadDebugBiomes();
 /*/ Purpose: close engine 
 Triggers: spawner.quit()
 /*/
+
 
 //********************************* LOADING *********************************
 
@@ -75,7 +99,16 @@ Triggers: env.update, env.refreshView(b), C->update(H->pos),
 	
 	
 	void Engine::	clearDisplay();
+	void Engine ::flush(){glFlush(); SDL_GL_SwapWindow(sdlWindow); }
+
 //************************************************** MEMBERS ***************************************************
+
+
+	SDL_Window* sdlWindow;			//The window we'll be rendering to
+	SDL_Renderer* sdlRenderer;		//The window renderer
+	SDL_GLContext sdlContext;		//OpenGL context
+
+	bool initW, initC;
 
 	ControllerInput input;			// handle for managing input						// root class managing world objects
 		//Spawner spawner;
