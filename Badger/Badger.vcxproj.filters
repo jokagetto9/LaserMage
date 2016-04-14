@@ -43,9 +43,6 @@
     <ClInclude Include="..\System\GameState.h">
       <Filter>+Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\System\StackManager.h">
-      <Filter>+Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\Display\Menus\Menu.h">
       <Filter>+Header Files</Filter>
     </ClInclude>
@@ -70,9 +67,6 @@
       <Filter>System</Filter>
     </ClCompile>
     <ClCompile Include="..\System\GameState.cpp">
-      <Filter>System</Filter>
-    </ClCompile>
-    <ClCompile Include="..\System\StackManager.cpp">
       <Filter>System</Filter>
     </ClCompile>
     <ClCompile Include="..\Display\Menus\Menu.cpp">

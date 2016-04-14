@@ -1,7 +1,6 @@
 #ifndef ENGINE_H
 #define ENGINE_H
 
-#include "StackManager.h"
 #include "ControllerInput.h"
 
 
@@ -77,9 +76,8 @@ Triggers: env.update, env.refreshView(b), C->update(H->pos),
 	
 	void Engine::	clearDisplay();
 //************************************************** MEMBERS ***************************************************
-	
-		StackManager stack;		// root class to the menu system
-		ControllerInput input;			// handle for managing input						// root class managing world objects
+
+	ControllerInput input;			// handle for managing input						// root class managing world objects
 		//Spawner spawner;
 		//World world;
 		bool menuView;

@@ -20,7 +20,6 @@
     <ClInclude Include="..\System\Engine.h" />
     <ClInclude Include="..\System\GameState.h" />
     <ClInclude Include="..\System\lib.h" />
-    <ClInclude Include="..\System\StackManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Display\Menus\Menu.cpp" />
@@ -31,7 +30,6 @@
     <ClCompile Include="..\System\Engine.cpp" />
     <ClCompile Include="..\System\GameState.cpp" />
     <ClCompile Include="..\System\Main.cpp" />
-    <ClCompile Include="..\System\StackManager.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{CE139FEA-E349-4E5E-B1D1-BAB7DF69BF24}</ProjectGuid>

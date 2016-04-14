@@ -28,7 +28,7 @@ void Engine::update(){
 		clockCycle();
 	//} else skipTime();
 	
-	stack.update(input);
+	//stack.update(input);
 	//input.clearKeys();	
 }
 
@@ -74,7 +74,7 @@ void Engine::		rapidUpdate(){
 void Engine::display(){	
 		glClearColor(1, 1, 1, 1);	
 		clearDisplay();
-		stack.draw();
+		//stack.draw();
 }
 
  void Engine::clearDisplay(){
