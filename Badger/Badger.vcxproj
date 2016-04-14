@@ -11,21 +11,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Display\Menus\Menu.h" />
-    <ClInclude Include="..\Display\ModelData.h" />
-    <ClInclude Include="..\Display\ModelManager.h" />
-    <ClInclude Include="..\Display\Shaders\MenuShader.h" />
-    <ClInclude Include="..\Display\Shaders\Shader.h" />
     <ClInclude Include="..\System\ControllerInput.h" />
     <ClInclude Include="..\System\Engine.h" />
     <ClInclude Include="..\System\GameState.h" />
     <ClInclude Include="..\System\lib.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Display\Menus\Menu.cpp" />
-    <ClCompile Include="..\Display\ModelManager.cpp" />
-    <ClCompile Include="..\Display\Shaders\MenuShader.cpp" />
-    <ClCompile Include="..\Display\Shaders\Shader.cpp" />
     <ClCompile Include="..\System\ControllerInput.cpp" />
     <ClCompile Include="..\System\Engine.cpp" />
     <ClCompile Include="..\System\GameState.cpp" />

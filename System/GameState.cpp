@@ -3,6 +3,10 @@
 GameState* GameState::instance = 0;
 GameState* G;
 
+ofstream logfile;
+XZI RES = {800, 600};
+
+
 void GameState::init(){
 	prevTime = glutGet(GLUT_ELAPSED_TIME);	// init start time
 	startTime = prevTime;

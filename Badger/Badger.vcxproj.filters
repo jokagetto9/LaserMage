@@ -8,15 +8,6 @@
     <Filter Include="System">
       <UniqueIdentifier>{f70c877b-86d3-44e4-9184-13a38bfdbe55}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Display">
-      <UniqueIdentifier>{509a63fd-9e48-4866-b50e-ae3bbfd5a836}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Display\Shaders">
-      <UniqueIdentifier>{ae4c83b2-b949-489b-a1ca-84d2255db942}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Display\Menus">
-      <UniqueIdentifier>{2d5266fb-b8ef-448d-862f-2790c30fbdec}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\System\Engine.h">
@@ -25,25 +16,10 @@
     <ClInclude Include="..\System\lib.h">
       <Filter>+Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Display\ModelManager.h">
-      <Filter>+Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Display\ModelData.h">
-      <Filter>+Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Display\Shaders\MenuShader.h">
-      <Filter>Display\Shaders</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Display\Shaders\Shader.h">
-      <Filter>Display\Shaders</Filter>
-    </ClInclude>
     <ClInclude Include="..\System\ControllerInput.h">
       <Filter>+Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\System\GameState.h">
-      <Filter>+Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Display\Menus\Menu.h">
       <Filter>+Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -54,23 +30,11 @@
     <ClCompile Include="..\System\Engine.cpp">
       <Filter>System</Filter>
     </ClCompile>
-    <ClCompile Include="..\Display\ModelManager.cpp">
-      <Filter>Display</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Display\Shaders\Shader.cpp">
-      <Filter>Display\Shaders</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Display\Shaders\MenuShader.cpp">
-      <Filter>Display\Shaders</Filter>
-    </ClCompile>
     <ClCompile Include="..\System\ControllerInput.cpp">
       <Filter>System</Filter>
     </ClCompile>
     <ClCompile Include="..\System\GameState.cpp">
       <Filter>System</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Display\Menus\Menu.cpp">
-      <Filter>Display\Menus</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
