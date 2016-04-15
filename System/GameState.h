@@ -1,7 +1,7 @@
 #ifndef GAMESTATE_H
 #define GAMESTATE_H
 
-#include "lib.h"
+#include "../lib.h"
 //********************************* CONSTANTS *********************************
 
 

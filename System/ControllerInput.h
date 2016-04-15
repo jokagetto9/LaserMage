@@ -2,6 +2,7 @@
 #define CONTROLLERINPUT_H
 
 #include "GameState.h"
+#include "../Display/Menus/Menu.h"
 
 //********************************* CONSTANTS *********************************
 
