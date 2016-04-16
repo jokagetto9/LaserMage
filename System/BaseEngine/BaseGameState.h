@@ -130,5 +130,5 @@ Side Effects:  cons -> false, !cons -> true
 
 };
 
-//extern BaseGameState* G;
+extern BaseGameState* G0;
 #endif

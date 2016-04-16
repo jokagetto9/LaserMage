@@ -34,25 +34,28 @@
     <ClInclude Include="..\System\GameState.h">
       <Filter>+Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Display\StackManager.h">
-      <Filter>Display</Filter>
+    <ClInclude Include="..\System\BaseEngine\BaseGameState.h">
+      <Filter>+Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\Display\Menus\Menu.h">
-      <Filter>Display\Menus</Filter>
+      <Filter>+Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Display\Shaders\ModelData.h">
-      <Filter>Display</Filter>
+    <ClInclude Include="..\Display\StackManager.h">
+      <Filter>+Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\Display\Shaders\ModelManager.h">
-      <Filter>Display</Filter>
+      <Filter>+Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Display\Shaders\ModelData.h">
+      <Filter>+Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\Display\Shaders\Shaders\MenuShader.h">
-      <Filter>Display\Shaders</Filter>
+      <Filter>+Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\Display\Shaders\Shaders\Shader.h">
-      <Filter>Display\Shaders</Filter>
+      <Filter>+Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\System\BaseEngine\BaseGameState.h">
+    <ClInclude Include="..\System\BaseEngine\BaseEngine.h">
       <Filter>+Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -85,6 +88,9 @@
       <Filter>Display\Shaders</Filter>
     </ClCompile>
     <ClCompile Include="..\System\BaseEngine\BaseGameState.cpp">
+      <Filter>System\BaseEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\System\BaseEngine\BaseEngine.cpp">
       <Filter>System\BaseEngine</Filter>
     </ClCompile>
   </ItemGroup>

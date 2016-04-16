@@ -1,7 +1,7 @@
 //********************************* INITIALIZATION *********************************
 #include "BaseGameState.h"
 //BaseGameState* BaseGameState::instance = 0;
-//BaseGameState* G;
+BaseGameState* G0;
 
 ofstream logfile;
 XZI RES = {800, 600};

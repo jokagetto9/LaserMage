@@ -103,6 +103,7 @@ void initGlobals(){
 	//init game state
 	//if(_DEBUG) cout << "Game State" << endl;
 	G = GameState::I();		G->init();
+	G0 = G;	
 
 
 	//init quest markers
