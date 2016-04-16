@@ -95,12 +95,10 @@ void BaseEngine::clockCycle(){
 }
 
 void BaseEngine::		physicsUpdate(){
-	if (!G0->paused){	
-		//input.cameraInput();
-		//world.physUpdate();
-		//world.interactions();
-		//DBT->physUpdate(); //?
-	}	
+	//input.cameraInput();
+	//world.physUpdate();
+	//world.interactions();
+	//DBT->physUpdate(); //?
 }
 
 void BaseEngine::		rapidUpdate(){

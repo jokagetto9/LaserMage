@@ -28,9 +28,6 @@
     <ClInclude Include="..\System\lib.h">
       <Filter>+Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\System\ControllerInput.h">
-      <Filter>+Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\System\GameState.h">
       <Filter>+Header Files</Filter>
     </ClInclude>
@@ -58,15 +55,18 @@
     <ClInclude Include="..\System\BaseEngine\BaseEngine.h">
       <Filter>+Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\System\InputManager.h">
+      <Filter>+Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\System\BaseEngine\BaseInputManager.h">
+      <Filter>+Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\System\Main.cpp">
       <Filter>System</Filter>
     </ClCompile>
     <ClCompile Include="..\System\Engine.cpp">
-      <Filter>System</Filter>
-    </ClCompile>
-    <ClCompile Include="..\System\ControllerInput.cpp">
       <Filter>System</Filter>
     </ClCompile>
     <ClCompile Include="..\System\GameState.cpp">
@@ -91,6 +91,12 @@
       <Filter>System\BaseEngine</Filter>
     </ClCompile>
     <ClCompile Include="..\System\BaseEngine\BaseEngine.cpp">
+      <Filter>System\BaseEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\System\InputManager.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\System\BaseEngine\BaseInputManager.cpp">
       <Filter>System\BaseEngine</Filter>
     </ClCompile>
   </ItemGroup>

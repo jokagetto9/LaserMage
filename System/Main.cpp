@@ -1,10 +1,10 @@
 #include "Engine.h"
-#include "ControllerInput.h"
+#include "InputManager.h"
 #include "../Display/StackManager.h"
 //********************************* MODULES *********************************
 
 	Engine eng;						// handle for managing the passage of time
-	ControllerInput input;			// handle for managing input
+	InputManager input;			// handle for managing input
 	StackManager stack;
 
 //********************************* DECLARATIONS *********************************

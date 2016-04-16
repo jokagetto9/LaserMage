@@ -1,16 +1,10 @@
 //********************************* INITIALIZATION *********************************
-#include "ControllerInput.h"
-
-void ControllerInput::init(){
-	for (int i = 0; i < 256; i++) keyPressed[i] = false;		
-	for (int i = 0; i < 20; i++) specialKeyPressed[i] = false;
-}
-
+#include "InputManager.h"
 
 //********************************* KEY CYCLE *********************************
 
 
-void ControllerInput::pollKeyEvents(){
+void InputManager::pollKeyEvents(){
 	SDL_Keycode key;
 	while(SDL_PollEvent(&ev)){
 		key = ev.key.keysym.sym;
@@ -22,7 +16,7 @@ void ControllerInput::pollKeyEvents(){
 
 
 // Cycle through key presses and set the key event to true
-void ControllerInput::keyDown(SDL_Keycode key){
+void InputManager::keyDown(SDL_Keycode key){
 	//quick actions 
 	if (key == SDLK_w || key == SDLK_s || key == SDLK_a || key == SDLK_d) on(key);
 	else switch (key){		
@@ -39,7 +33,7 @@ void ControllerInput::keyDown(SDL_Keycode key){
 }
 
 // Cycle through key releases and set the key event to false
-void ControllerInput::keyUp(SDL_Keycode key){
+void InputManager::keyUp(SDL_Keycode key){
 	// disable directions on lift
 	bool halt = true;
 	if (key == SDLK_w || key == SDLK_s || key == SDLK_a || key == SDLK_d) {
@@ -59,19 +53,9 @@ void ControllerInput::keyUp(SDL_Keycode key){
 	//if (halt) H->halt();
 }
 
-void ControllerInput::		clearKeys(){
-	for (int key = 0; key < 256; key++){
-		if (key == SDLK_w || key == SDLK_s || key == SDLK_a || key == SDLK_d || key == SDLK_e) {
-			//off(key); //stop = false;
-		}else if (key < 256 && key >= 0) off(key);
-	}
-}
-
-
-
 //********************************* INPUT RESPONSES *********************************
 
-void ControllerInput::		checkToggles(){
+void InputManager::		checkToggles(){
 	//toggles
 	if (keyPressed[SDLK_ESCAPE])			G->gameActive = false; 
 	//tab key
@@ -95,7 +79,7 @@ void ControllerInput::		checkToggles(){
 }
 
 
-void ControllerInput::		actionInput(){
+void InputManager::		actionInput(){
 	if (!G->paused){
 		//movement WSAD - > direction keys 
 		if (keyPressed[SDLK_w])					;//H->walk(UP);				
@@ -114,7 +98,7 @@ void ControllerInput::		actionInput(){
 	}
 }
 /*/
-void ControllerInput::		cameraInput(){
+void InputManager::		cameraInput(){
 	if (!G->paused){
 		//UDLR - > camera pan keys
 		if (C->mode == 0){
@@ -129,7 +113,7 @@ void ControllerInput::		cameraInput(){
 //*/
 //********************************* MENU *********************************
 /*/
-void ControllerInput::		menuInput(Menu *screen){
+void InputManager::		menuInput(Menu *screen){
 	if (G->paused) {
 		// add 1-5, R, T, F, C, V, ESC
 		if (keyPressed[SDLK_w] || specialKeyPressed[UP]){ 
@@ -155,8 +139,3 @@ void ControllerInput::		menuInput(Menu *screen){
 		}
 	}
 } //*/
-//********************************* MEMBER FUNCTIONS *********************************
-
-
-void ControllerInput::		on(SDL_Keycode key){ keyPressed[key] = true ; }
-void ControllerInput::		off(SDL_Keycode key){ keyPressed[key] = false; }
