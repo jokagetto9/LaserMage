@@ -1,7 +1,8 @@
 #ifndef ENGINE_H
 #define ENGINE_H
 
-#include "ControllerInput.h"
+
+#include "GameState.h"
 
 
 //********************************* INITIALIZATION *********************************
@@ -58,12 +59,6 @@ Triggers: H->saveHero(), G->saveState(), spawner.save();
 
 //********************************* UPDATES *********************************
 
-	void Engine::update();
-/*/ Purpose: update game data at 30 times per second
-Side Effects: G->getCurrentTime()
-Triggers: input.update(menu), save, 
-	G->trackFPS(), G->trackAVG(), clockCycle()
-/*/
 	
 	void Engine::		clockCycle();
 /*/ Purpose: ensure phys and ai cycle run at expected cps

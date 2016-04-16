@@ -76,9 +76,6 @@ void Engine::quit(){
 	if (initW) SDL_DestroyWindow( sdlWindow );		sdlWindow = NULL;	
 }
 //********************************* PRIMARY CYCLES *********************************
-void Engine::update(){		
-
-}
 
 void Engine::clockCycle(){
 	G->trackAVG(); G->trackFPS();	
