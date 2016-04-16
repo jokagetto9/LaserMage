@@ -1,9 +1,11 @@
 #include "Engine.h"
-
+#include "ControllerInput.h"
+#include "../Display/StackManager.h"
 //********************************* MODULES *********************************
 
 	Engine eng;						// handle for managing the passage of time
 	ControllerInput input;			// handle for managing input
+	StackManager stack;
 
 //********************************* DECLARATIONS *********************************
  
@@ -49,7 +51,7 @@ void update(){
 void display(){
 	glClearColor(1, 1, 1, 1);	
 	eng.clearDisplay();
-	//stack.draw();
+	stack.draw();
 } 
 
 
@@ -86,7 +88,7 @@ void initGlobals(){
 
 	//init model manager
 	//if(_DEBUG) cout << "Loading Shaders" << endl;
-	//M = ModelManager::I();
+	M = ModelManager::I();
 	//engine stack loading screen
 
 	//init camera
