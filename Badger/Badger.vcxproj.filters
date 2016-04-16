@@ -17,6 +17,9 @@
     <Filter Include="Display\Menus">
       <UniqueIdentifier>{0b22595b-180d-4aaf-b17c-8679a86707cc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="System\BaseEngine">
+      <UniqueIdentifier>{1fb3dff5-5503-43cc-9e5c-7cd4003b8a08}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\System\Engine.h">
@@ -49,6 +52,9 @@
     <ClInclude Include="..\Display\Shaders\Shaders\Shader.h">
       <Filter>Display\Shaders</Filter>
     </ClInclude>
+    <ClInclude Include="..\System\BaseEngine\BaseGameState.h">
+      <Filter>+Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\System\Main.cpp">
@@ -77,6 +83,9 @@
     </ClCompile>
     <ClCompile Include="..\Display\Shaders\Shaders\Shader.cpp">
       <Filter>Display\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\System\BaseEngine\BaseGameState.cpp">
+      <Filter>System\BaseEngine</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

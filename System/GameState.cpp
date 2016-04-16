@@ -3,8 +3,6 @@
 GameState* GameState::instance = 0;
 GameState* G;
 
-ofstream logfile;
-XZI RES = {800, 600};
 
 
 void GameState::init(){
@@ -91,36 +89,6 @@ void GameState::	saveState(){
 
 //********************************* UPDATES *********************************
 
-void GameState::	trackAVG(){
-	float a = frameDelta;
-	
-		getCurrentTime();
-		getFrameDelta(); 
-		/*/
-		if (frameDelta < 16){
-			SDL_Delay(16-frameDelta);	
-			getCurrentTime();	
-			getFrameDelta(); 
-		}//*/
-
-	if (avgFrameDelta != 0){
-		avgFrameDelta = (avgFrameDelta + a )/2;  
-		//avgFrameDelta = (avgFrameDelta + a + frameDelta)/3;  
-		avgFrameDelta += frameDelta/2;
-	}
-	else avgFrameDelta = frameDelta; 
-}
-
-void GameState::	trackFPS(){
-	if (frameCount >= 1000){
-		frameCount = 0;
-		startTime = curTime;
-	}else {
-		frameCount++;
-		avgFPS = frameCount / ( (curTime-startTime)  / 1000.f );
-	}
-}
-
 
 void GameState::	trackTime(){
 	if (milli >= 250 )	{
@@ -182,12 +150,6 @@ void GameState::enterMenu(MenuCommand mt){
 		paused = true;	
 }//*/
 
-void GameState::togglePause(){
-	if (paused) {
-		paused = false; initMenu = false;
-	} else
-		paused = true;	
-}
 /*/
 void GameState::		togglePrograms(int i){
 	if (i > 0){
@@ -199,11 +161,11 @@ void GameState::		togglePrograms(int i){
 
 //********************************* DEBUG *********************************
 
-void GameState::toggleConsole(){
-	if (cons) cons = false; 
-	else cons = true;
-}
 void GameState::toggleFog(){
 	if (fog) fog = false;
 	else fog = true;	
+}
+void GameState::toggleConsole(){
+	if (cons) cons = false; 
+	else cons = true;
 }
