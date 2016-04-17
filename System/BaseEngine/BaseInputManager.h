@@ -2,6 +2,7 @@
 #define BASEINPUTMANAGER_H
 
 #include "BaseGameState.h"
+#include "../../Display/Menus/Menu.h"
 
 //********************************* CONSTANTS *********************************
 
@@ -29,6 +30,7 @@ Triggers: spriteInit, loadHero
 //********************************* INPUT RESPONSES *********************************
 	
 	virtual void BaseInputManager::		checkToggles();
+	void BaseInputManager::		menuInput(Menu *screen);
 
 //************************************************** MEMBERS ***************************************************
 	

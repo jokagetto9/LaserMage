@@ -111,31 +111,3 @@ void InputManager::		cameraInput(){
 	}
 }
 //*/
-//********************************* MENU *********************************
-/*/
-void InputManager::		menuInput(Menu *screen){
-	if (G->paused) {
-		// add 1-5, R, T, F, C, V, ESC
-		if (keyPressed[SDLK_w] || specialKeyPressed[UP]){ 
-			keyPressed[SDLK_w] = false; specialKeyPressed[UP] = false;
-			screen->cursorUD(-1);
-		}else if (keyPressed[SDLK_s] || specialKeyPressed[DOWN]){ 
-			keyPressed[SDLK_s] = false; specialKeyPressed[DOWN] = false;
-			screen->cursorUD(1);
-		}else if (keyPressed[SDLK_a] || specialKeyPressed[LEFT]){ 
-			keyPressed[SDLK_a] = false; specialKeyPressed[LEFT] = false;
-			screen->cursorLR(-1);
-		}else if (keyPressed[SDLK_d] || specialKeyPressed[RIGHT]){ 
-			keyPressed[SDLK_d] = false; specialKeyPressed[RIGHT] = false;
-			screen->cursorLR(1);
-		}
-		if (G->action){//(keyPressed[SDLK_e]) {
-			screen->enter();	
-			G->action = false;
-			//off(SDLK_e);
-		} else if (keyPressed[SDLK_q]) {
-			screen->quit();	
-			off(SDLK_q);
-		}
-	}
-} //*/

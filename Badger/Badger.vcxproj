@@ -16,6 +16,7 @@
     <ClInclude Include="..\Display\Shaders\ModelManager.h" />
     <ClInclude Include="..\Display\Shaders\Shaders\MenuShader.h" />
     <ClInclude Include="..\Display\Shaders\Shaders\Shader.h" />
+    <ClInclude Include="..\lib.h" />
     <ClInclude Include="..\System\BaseEngine\BaseEngine.h" />
     <ClInclude Include="..\System\BaseEngine\BaseGameState.h" />
     <ClInclude Include="..\System\BaseEngine\BaseInputManager.h" />
@@ -23,7 +24,6 @@
     <ClInclude Include="..\System\Engine.h" />
     <ClInclude Include="..\System\GameState.h" />
     <ClInclude Include="..\System\InputManager.h" />
-    <ClInclude Include="..\System\lib.h" />
     <ClInclude Include="..\System\StackManager.h" />
   </ItemGroup>
   <ItemGroup>

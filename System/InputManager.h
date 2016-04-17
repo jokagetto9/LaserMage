@@ -3,7 +3,6 @@
 
 #include "GameState.h"
 #include "BaseEngine/BaseInputManager.h"
-#include "../Display/Menus/Menu.h"
 
 //********************************* CONSTANTS *********************************
 //********************************* INITIALIZATION *********************************
@@ -25,7 +24,6 @@ public:
 	void InputManager::		checkProgram();
 	void InputManager::		actionInput();
 	void InputManager::		cameraInput();
-	//void InputManager::		menuInput(Menu *screen);
 
 //************************************************** MEMBERS ***************************************************
 	

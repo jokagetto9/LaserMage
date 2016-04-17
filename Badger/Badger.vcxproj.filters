@@ -25,9 +25,6 @@
     <ClInclude Include="..\System\Engine.h">
       <Filter>+Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\System\lib.h">
-      <Filter>+Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\System\GameState.h">
       <Filter>+Header Files</Filter>
     </ClInclude>
@@ -62,6 +59,9 @@
       <Filter>+Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\System\BaseEngine\BaseStackManager.h">
+      <Filter>+Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib.h">
       <Filter>+Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,7 +1,7 @@
-#ifndef BaseBaseStackManager_H
-#define BaseBaseStackManager_H
+#ifndef BASESTACKMANAGER_H
+#define BASESTACKMANAGER_H
 
-#include "../../Display/Menus/Menu.h"
+#include "BaseInputManager.h"
 
 
 //********************************* CONSTANTS *********************************
@@ -20,7 +20,10 @@ public:
 	
 	void BaseStackManager::setRootMenu();
 	void BaseStackManager::	updateMenu();
-	
+	void BaseStackManager::	update(BaseInputManager &input);
+
+
+	void BaseStackManager::	pushMenu(Menu * s);
 	void BaseStackManager::	popMenu();
 
 
@@ -48,13 +51,16 @@ Triggers:
 //************************************************** MEMBERS ***************************************************
 		bool menuView;
 		Menu loadingScreen;
-
+		Menu * previewMenu; 
 		vector <Menu *> stack;
 		
 //********************************* MEMBER FUNCTIONS *********************************
-		
-		bool BaseStackManager:: empty();
-		bool BaseStackManager:: aborting();
+	
+	Menu* BaseStackManager::getNextMenu();
+	bool BaseStackManager::isOverlay();
+	bool BaseStackManager::hasPreview();	
+	bool BaseStackManager:: empty();
+	bool BaseStackManager:: aborting();
 
 };
 #endif

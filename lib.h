@@ -34,7 +34,7 @@ extern ofstream logfile;
 extern XZI RES;
 //menu indices
 enum DF_RootMenuType {PLAY, EXIT, TITLE, MAIN, SYS, STORE, DLG, DBG };
-enum DF_SubMenuType {QUIT, STAT, EQP, INV, SKLS, JRNL, OPTN, CNFM, NUMSLCT, PASS};
+enum DF_SubMenuType {QUIT, STAT, EQP, INV, SKLS, JRNL, OPTN, NUMSLCT, CNFM, PASS};
 //from other games
 //enum LaserMenuCommand {EXIT, TITLE, OPTN, STGSLCT, STGINFO, STGCOMP, UPGRADE, PLAY};
 //enum PrimeMenuCommand {PLAY, EXIT, TITLE, MAIN, SYS, STORE, DLG, DBG }; //when not exit

@@ -72,6 +72,37 @@ void BaseInputManager::		checkToggles(){
 	if (keyPressed[SDLK_ESCAPE])			G0->gameActive = false; 
 }
 
+
+
+//********************************* MENU *********************************
+
+
+void BaseInputManager::		menuInput(Menu *screen){
+	if (G0->paused) {
+		// add 1-5, R, T, F, C, V, ESC
+		if (keyPressed[SDLK_w] || specialKeyPressed[UP]){ 
+			keyPressed[SDLK_w] = false; specialKeyPressed[UP] = false;
+			screen->cursorUD(-1);
+		}else if (keyPressed[SDLK_s] || specialKeyPressed[DOWN]){ 
+			keyPressed[SDLK_s] = false; specialKeyPressed[DOWN] = false;
+			screen->cursorUD(1);
+		}else if (keyPressed[SDLK_a] || specialKeyPressed[LEFT]){ 
+			keyPressed[SDLK_a] = false; specialKeyPressed[LEFT] = false;
+			screen->cursorLR(-1);
+		}else if (keyPressed[SDLK_d] || specialKeyPressed[RIGHT]){ 
+			keyPressed[SDLK_d] = false; specialKeyPressed[RIGHT] = false;
+			screen->cursorLR(1);
+		}
+		if (G0->action){//(keyPressed[SDLK_e]) {
+			screen->enter();	
+			G0->action = false;
+			//off(SDLK_e);
+		} else if (keyPressed[SDLK_q]) {
+			screen->quit();	
+			off(SDLK_q);
+		}
+	}
+} //*/
 //********************************* MEMBER FUNCTIONS *********************************
 
 

@@ -40,29 +40,12 @@ void update(){
 	//input.actionInput();
 	//DBT->update();
 	//if (G->save) save();
-	//if (G->skip == 0){ 
 		eng.clockCycle();
-	//} else skipTime();
 	
-	//stack.update(input);
-	//input.clearKeys();	
+	stack.update(input);
+	input.clearKeys();	
 }
 
-
-
-void menuUpdate(){
-
-	if (G->initMenu);// stack.setRootMenu();
-	if (G->paused){
-		if (stack.empty())	
-			stack.loadDefaults();			//pop production bumpers!
-		else {
-		//	input.menuInput(currentMenu());
-			if (stack.aborting()) stack.popMenu();
-			else stack.updateMenu();
-		}
-	}
-}
 
 void display(){
 	glClearColor(1, 1, 1, 1);	
