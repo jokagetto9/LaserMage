@@ -37,9 +37,6 @@
     <ClInclude Include="..\Display\Menus\Menu.h">
       <Filter>+Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Display\StackManager.h">
-      <Filter>+Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\Display\Shaders\ModelManager.h">
       <Filter>+Header Files</Filter>
     </ClInclude>
@@ -61,6 +58,12 @@
     <ClInclude Include="..\System\BaseEngine\BaseInputManager.h">
       <Filter>+Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\System\StackManager.h">
+      <Filter>+Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\System\BaseEngine\BaseStackManager.h">
+      <Filter>+Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\System\Main.cpp">
@@ -71,9 +74,6 @@
     </ClCompile>
     <ClCompile Include="..\System\GameState.cpp">
       <Filter>System</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Display\StackManager.cpp">
-      <Filter>Display</Filter>
     </ClCompile>
     <ClCompile Include="..\Display\Menus\Menu.cpp">
       <Filter>Display\Menus</Filter>
@@ -97,6 +97,12 @@
       <Filter>System</Filter>
     </ClCompile>
     <ClCompile Include="..\System\BaseEngine\BaseInputManager.cpp">
+      <Filter>System\BaseEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\System\StackManager.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\System\BaseEngine\BaseStackManager.cpp">
       <Filter>System\BaseEngine</Filter>
     </ClCompile>
   </ItemGroup>

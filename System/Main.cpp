@@ -1,6 +1,6 @@
 #include "Engine.h"
 #include "InputManager.h"
-#include "../Display/StackManager.h"
+#include "StackManager.h"
 //********************************* MODULES *********************************
 
 	Engine eng;						// handle for managing the passage of time
@@ -16,6 +16,7 @@ Side Effects:  Initializes Hero, Camera, ModelManager, GameState, Question
 /*/
 
 void update(); 
+void menuUpdate();
 void display(); 
 
 
@@ -37,7 +38,6 @@ void update(){
 	input.pollKeyEvents();
 	input.checkToggles();	
 	//input.actionInput();
-	//menu.update();
 	//DBT->update();
 	//if (G->save) save();
 	//if (G->skip == 0){ 
@@ -48,10 +48,31 @@ void update(){
 	//input.clearKeys();	
 }
 
+
+
+void menuUpdate(){
+
+	if (G->initMenu);// stack.setRootMenu();
+	if (G->paused){
+		if (stack.empty())	
+			stack.loadDefaults();			//pop production bumpers!
+		else {
+		//	input.menuInput(currentMenu());
+			if (stack.aborting()) stack.popMenu();
+			else stack.updateMenu();
+		}
+	}
+}
+
 void display(){
 	glClearColor(1, 1, 1, 1);	
 	eng.clearDisplay();
-	stack.draw();
+	stack.setUp2DView(RES.x, RES.z);
+	if(G->paused) 
+		stack.draw();
+	else
+		stack.drawHUD();
+	stack.disable2DView();
 } 
 
 
