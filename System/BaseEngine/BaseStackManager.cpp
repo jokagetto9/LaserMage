@@ -8,15 +8,19 @@ BaseStackManager::BaseStackManager(){
 }
 
 void BaseStackManager::	initMenus(){
-	loadingScreen.setBackground(1);
+	loadingScreen.setBackground(LOAD);
+	loadingScreen.setTimeOut(10);
+	titleScreen.setBackground(TITLE);
+	titleScreen.setTimeOut(240);
+
 }
 
 
 //********************************* LOADING *********************************
 
 void BaseStackManager::	loadDefaults(){	
+	stack.push_back(&titleScreen);
 	stack.push_back(&loadingScreen);
-	//stack.push_back(&crabScreen);
 	//G->enterMenu(PLAY); //jump start
 	//setRootMenu();
 }
@@ -37,7 +41,6 @@ void BaseStackManager::setRootMenu(){
 }
 
 void BaseStackManager::update(BaseInputManager &input){
-
 	if (G0->initMenu){
 		setRootMenu();		
 		G0->initMenu = false;

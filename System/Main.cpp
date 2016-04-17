@@ -62,7 +62,7 @@ void display(){
 
 //********************************* MAIN *********************************
 int main(int argc, char* args[]){
-	//eng.init();	  	//init
+	eng.BaseEngine::init(&input, &stack);	  	//init
 	if (eng.initSDL()){
 		eng.displayVersion();
 		initGlobals();

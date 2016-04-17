@@ -2,7 +2,8 @@
 #define BASEENGINE_H
 
 
-#include "BaseGameState.h"
+#include "BaseInputManager.h" 
+#include "BaseStackManager.h"
 
 
 //********************************* INITIALIZATION *********************************
@@ -12,6 +13,7 @@ public:
 
 	BaseEngine::	BaseEngine();
 /*/ Purpose: default constructor /*/
+	void BaseEngine::init(BaseInputManager * bInput, BaseStackManager * bStack);
 
 	bool initGLAttrib(); /*/
 	Purpose: Load SDL_GL attributes 
@@ -102,6 +104,10 @@ Triggers: env.update, env.refreshView(b), C->update(H->pos),
 	SDL_Window* sdlWindow;			//The window we'll be rendering to
 	SDL_Renderer* sdlRenderer;		//The window renderer
 	SDL_GLContext sdlContext;		//OpenGL context
+
+
+	BaseInputManager * input;
+	BaseStackManager * stack;
 
 	bool initW, initC;
 

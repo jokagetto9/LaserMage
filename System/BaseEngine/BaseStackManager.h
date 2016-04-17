@@ -50,9 +50,10 @@ Triggers:
 	/*/
 //************************************************** MEMBERS ***************************************************
 		bool menuView;
-		Menu loadingScreen;
-		Menu * previewMenu; 
 		vector <Menu *> stack;
+		Menu * previewMenu; 
+		Menu loadingScreen;
+		Menu titleScreen;
 		
 //********************************* MEMBER FUNCTIONS *********************************
 	
