@@ -1,3 +1,6 @@
 [submodule "Display"]
 	path = Display
 	url = https://github.com/jokagetto9/DisplayModule.git
+[submodule "System/BaseEngine"]
+	path = System/BaseEngine
+	url = https://github.com/jokagetto9/BaseEngine.git
