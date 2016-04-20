@@ -17,9 +17,6 @@
     <Filter Include="Display\Menus">
       <UniqueIdentifier>{0b22595b-180d-4aaf-b17c-8679a86707cc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="System\BaseEngine">
-      <UniqueIdentifier>{1fb3dff5-5503-43cc-9e5c-7cd4003b8a08}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\System\Engine.h">
@@ -87,23 +84,11 @@
     <ClCompile Include="..\Display\Shaders\Shaders\Shader.cpp">
       <Filter>Display\Shaders</Filter>
     </ClCompile>
-    <ClCompile Include="..\System\BaseEngine\BaseGameState.cpp">
-      <Filter>System\BaseEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="..\System\BaseEngine\BaseEngine.cpp">
-      <Filter>System\BaseEngine</Filter>
-    </ClCompile>
     <ClCompile Include="..\System\InputManager.cpp">
       <Filter>System</Filter>
     </ClCompile>
-    <ClCompile Include="..\System\BaseEngine\BaseInputManager.cpp">
-      <Filter>System\BaseEngine</Filter>
-    </ClCompile>
     <ClCompile Include="..\System\StackManager.cpp">
       <Filter>System</Filter>
-    </ClCompile>
-    <ClCompile Include="..\System\BaseEngine\BaseStackManager.cpp">
-      <Filter>System\BaseEngine</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
