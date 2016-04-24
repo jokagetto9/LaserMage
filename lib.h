@@ -32,6 +32,21 @@ struct XZI {int x, z;};
 extern ofstream logfile;
 
 extern XZI RES;
+
+const int pi = glm::pi<int>();
+
+
+	const int PIXELSCALE = 4;			// 14x10	// 16x12
+	const int dfWIDTH = 256*PIXELSCALE;	// 224;		// 256;		
+	const int dfHEIGHT = 192*PIXELSCALE;	// 160;		// 192;
+	const float ASPECTR = (float)dfWIDTH / (float)dfHEIGHT; // pov ratio
+
+	const float PERSPECTIVE = 60.0f;	
+
+	//camera turn per frame
+	const float TURN_RATE = 0.15f; //pan rate
+	const float ZOOM_RATE = 0.00025f; //zoom rate
+
 //menu indices
 enum RootMenuType {PLAY, LOAD, TITLE, MAIN, SYS, STORE, DLG, WRKSTN, DBG };
 enum SubMenuType {QUIT, STAT, EQP, INV, SKLS, JRNL, OPTN, NUMSLCT, CNFM, PASS};

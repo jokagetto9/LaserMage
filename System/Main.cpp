@@ -1,6 +1,7 @@
 #include "Engine.h"
 #include "InputManager.h"
 #include "StackManager.h"
+#include "../Display/Camera.h"
 //********************************* MODULES *********************************
 
 	Engine eng;						// handle for managing the passage of time
@@ -62,6 +63,7 @@ void display(){
 
 //********************************* MAIN *********************************
 int main(int argc, char* args[]){
+	RES.x = dfWIDTH; RES.z = dfHEIGHT; 
 	eng.BaseEngine::init(&input, &stack);	  	//init
 	if (eng.initSDL()){
 		eng.displayVersion();

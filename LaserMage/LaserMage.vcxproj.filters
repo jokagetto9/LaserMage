@@ -64,6 +64,9 @@
     <ClInclude Include="..\lib.h">
       <Filter>+Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\Display\Camera.h">
+      <Filter>+Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\System\Main.cpp">
@@ -104,6 +107,9 @@
     </ClCompile>
     <ClCompile Include="..\System\BaseEngine\BaseGameState.cpp">
       <Filter>System\BaseEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Display\Camera.cpp">
+      <Filter>Display</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
