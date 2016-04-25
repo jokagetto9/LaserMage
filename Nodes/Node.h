@@ -3,8 +3,7 @@
 
 
 #include "../Display/Camera.h"
-#include "../Items/ItemConstants.h"
-#include "../Stages/BiomeConstants.h"
+#include "../lib.h"
 
 //********************************* CONSTANTS *********************************
 
@@ -15,16 +14,6 @@ const int rotDirIndex[4][4] = {
 	{3, 2, 1, 0}
 };
 
-struct BoundingBox {
-	float x1, x2;
-	float z1, z2;
-	int id;
-	union {
-		BUILDINGS btype;
-		NOBS	ntype;
-	};	
-	NodeType type;
-};
 
 struct BoundingRad {
 	glm::vec3 pos;
@@ -42,7 +31,6 @@ int getCorner(XZI plot);
 class Node {
 	public: 
 	Node::			Node();
-	Node::			Node(NodeType _n);
 	
 
 //************************************************** MEMBERS ***************************************************
@@ -53,7 +41,6 @@ class Node {
 	float scale, theta;
 	Drctn dir;	
 	XZI plot;
-	NodeType type;
 
 
 //********************************* MEMBER FUNCTIONS *********************************

@@ -37,6 +37,10 @@ extern XZI RES;
 
 const int pi = glm::pi<int>();
 
+const int ZONE = 500;
+const int PLOT = 50;
+
+
 
 	const int PIXELSCALE = 4;			// 14x10	// 16x12
 	const int dfWIDTH = 256*PIXELSCALE;	// 224;		// 256;		

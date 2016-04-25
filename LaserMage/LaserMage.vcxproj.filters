@@ -66,6 +66,9 @@
     <ClInclude Include="..\Display\Shaders\ModelManager.h">
       <Filter>Display</Filter>
     </ClInclude>
+    <ClInclude Include="..\Display\Environment.h">
+      <Filter>Display</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\System\Main.cpp">
@@ -112,6 +115,9 @@
     </ClCompile>
     <ClCompile Include="..\Display\Shaders\Shaders\TileShader.cpp">
       <Filter>Display\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Display\Environment.cpp">
+      <Filter>Display</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

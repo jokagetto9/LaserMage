@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Display\Camera.h" />
+    <ClInclude Include="..\Display\Environment.h" />
     <ClInclude Include="..\Display\Menus\Menu.h" />
     <ClInclude Include="..\Display\Shaders\ModelData.h" />
     <ClInclude Include="..\Display\Shaders\ModelManager.h" />
@@ -30,6 +31,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Display\Camera.cpp" />
+    <ClCompile Include="..\Display\Environment.cpp" />
     <ClCompile Include="..\Display\Menus\Menu.cpp" />
     <ClCompile Include="..\Display\Shaders\ModelManager.cpp" />
     <ClCompile Include="..\Display\Shaders\Shaders\MenuShader.cpp" />
