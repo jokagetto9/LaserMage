@@ -8,7 +8,6 @@ Hero* H;
 // move player into middle of zone x, z 
 void Hero::init(){
 
-	type = _sprite;
 	speed = glm::vec3(0.0); prevPos = glm::vec3(0.0);	
 	maxS = RUN_MAX_SPEED;
 	
@@ -58,63 +57,8 @@ void Hero::	loadHero(){
 		saveFile.close();
 	}
 
-	loadInv();
+	//loadInv();
 
-}
-void Hero::	loadInv(){	
-	ifstream saveFile ("inv.txt");
-	if (saveFile.is_open())  {
-		string inputLine; 	
-		int inputValue; int cntr = 0;	int cntr2 = 0;	
-		int vv[3];
-		//colours
-		getline (saveFile, inputLine); stringstream ss(inputLine);
-		while (cntr < 8 && ss >> inputValue) {
-			col[cntr] = inputValue;
-			cntr++;
-		} 
-
-		//seeds
-		getline (saveFile, inputLine); ss = stringstream(inputLine);
-		while (cntr < 10 && ss >> inputValue) {
-			if (cntr2 == 0){
-				vv[0] = inputValue;
-				cntr2++;
-			}else {				
-				//inv.addSeed((CropType)vv[0], inputValue);				
-				cntr++; cntr2=0;
-			} 
-		}
-		//food
-		getline (saveFile, inputLine);  ss = stringstream(inputLine);
-		loadInv(FOOD_id, ss);
-
-		saveFile.close();
-	
-	}else{
-		cout << "Failed to load inventory." << endl;
-		for (int i = 0; i < 8; i++) col[i] = 0;
-	}
-}
-
-void Hero::	loadInv(ITEMID id, stringstream &ss){
-	int inputValue;
-	int cntr = 0;	int cntr2 = 0;	int att = 1;
-	if (id == FOOD_id) att = 2;
-	else if (id == SEED_id) att = 1;
-	
-	vector <int> ivv;
-	while (cntr < 10 && ss >> inputValue) {
-		if (cntr2 < att){
-			ivv.push_back(inputValue);
-			cntr2++;
-		} else{		
-			ivv.push_back(inputValue);
-			//inv.bag[id]->load(ivv);				
-			cntr++; cntr2=0;
-			ivv.clear();
-		}
-	}
 }
 //********************************* SAVING *********************************
 
@@ -161,7 +105,7 @@ void Hero::	saveInv(){
 //********************************* DRAW *********************************
 
 void Hero::drawHero(){
-	M->gridBO.prepHero();
+	//M->gridBO.prepHero();
 	float camTheta;
 	camTheta =  C->getCameraTheta(pos(), false);	
 	camTheta -= theta;
@@ -234,7 +178,7 @@ void Hero::walk(Oriet o){
 	targetV = calcThetaV(tempTheta);
 }
 
-
+/*/
 void Hero:: collision(BoundingBox &b){
 	glm::vec3 v = H->pos(); glm::vec3 pv = H->prevPos;
 	if(v.x > b.x1 && v.x < b.x2 && v.z > b.z1 && v.z < b.z2) {
@@ -249,7 +193,7 @@ void Hero:: collision(BoundingBox &b){
 			H->previous();
 	}
 }
-
+//*/
 
 
 //********************************* MEMBER FUNCTIONS *********************************

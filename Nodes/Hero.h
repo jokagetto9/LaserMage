@@ -1,7 +1,8 @@
 #ifndef HERO_H
 #define HERO_H
 
-#include "../Nodes/Laser.h"
+#include "Mob.h"
+#include "Laser.h"
 
 
 
@@ -35,7 +36,7 @@ Side Effects: loads pos, col[8]
 Triggers: loadInv
 /*/
 	void Hero::	loadInv();
-	void Hero::	loadInv(ITEMID id, stringstream &ss);
+//	void Hero::	loadInv(ITEMID id, stringstream &ss);
 /*/ Purpose: load hero inventory data from hero.txt
 Parameter(s): saveFile - hero.txt input stream
 Precondition(s): hero.txt is open
@@ -112,7 +113,7 @@ Parameter(s): o - direction relative to camera -> UPLR diagonals
 Side Effects:  targetV is updated
 Triggers: calcThetaV
 /*/
-	void Hero:: collision(BoundingBox &b);
+//	void Hero:: collision(BoundingBox &b);
 	
 
 //************************************************** MEMBERS ***************************************************

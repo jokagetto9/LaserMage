@@ -16,6 +16,9 @@
     <Filter Include="System\BaseEngine">
       <UniqueIdentifier>{d0163b9d-191a-4a12-9aaa-27d3c846301e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Nodes">
+      <UniqueIdentifier>{6567f7bf-9582-45ae-9fd4-69f43b2ba312}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\System\BaseEngine\BaseStackManager.h">
@@ -69,6 +72,24 @@
     <ClInclude Include="..\Display\Environment.h">
       <Filter>Display</Filter>
     </ClInclude>
+    <ClInclude Include="..\Nodes\Node.h">
+      <Filter>Nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nodes\Hero.h">
+      <Filter>Nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nodes\Mob.h">
+      <Filter>Nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nodes\Health.h">
+      <Filter>Nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Display\Animation.h">
+      <Filter>Display</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nodes\Laser.h">
+      <Filter>Nodes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\System\Main.cpp">
@@ -118,6 +139,24 @@
     </ClCompile>
     <ClCompile Include="..\Display\Environment.cpp">
       <Filter>Display</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Nodes\Node.cpp">
+      <Filter>Nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Nodes\Hero.cpp">
+      <Filter>Nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Nodes\Mob.cpp">
+      <Filter>Nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Nodes\Health.cpp">
+      <Filter>Nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Display\Animation.cpp">
+      <Filter>Display</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Nodes\Laser.cpp">
+      <Filter>Nodes</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

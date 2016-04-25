@@ -2,8 +2,8 @@
 #define MOB_H
 
 #include "Node.h"
-#include "../Traits/Health.h"
-#include "../Traits/Animation.h"
+#include "Health.h"
+#include "../Display/Animation.h"
 //********************************* CONSTANTS *********************************
 
 const float TURBO_SPEED = 0.2f;  // m/ms

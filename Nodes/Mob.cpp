@@ -2,7 +2,6 @@
 #include "Mob.h"
 
 void Mob::init(){
-	type = _sprite;
 	speed = glm::vec3(0.0); prevPos = glm::vec3(0.0);	
 	maxS = RUN_MAX_SPEED;
 	targetV = randomDirection(RUN_MAX_ACCEL);
