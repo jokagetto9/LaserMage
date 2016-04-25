@@ -27,6 +27,8 @@
 
 using namespace std;
 
+typedef GLuint ID;
+
 struct XZI {int x, z;};
 
 extern ofstream logfile;
@@ -49,7 +51,7 @@ const int pi = glm::pi<int>();
 
 //menu indices
 enum RootMenuType {PLAY, LOAD, TITLE, MAIN, SYS, STORE, DLG, WRKSTN, DBG };
-enum SubMenuType {QUIT, STAT, EQP, INV, SKLS, JRNL, OPTN, NUMSLCT, CNFM, PASS};
+enum SubMenuType {QUIT, STAT, EQP, INV, SKLS, JRNL, OPTN, NUMSLCT, USE, CNFM, PASS};
 //from other games
 //enum LaserMenuCommand {EXIT, TITLE, OPTN, STGSLCT, STGINFO, STGCOMP, UPGRADE, PLAY};
 //enum PrimeMenuCommand {PLAY, EXIT, TITLE, MAIN, SYS, STORE, DLG, DBG }; //when not exit

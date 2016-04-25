@@ -139,16 +139,6 @@ stringstream GameState::printClock(){
 	return ss;
 }
 
-/*/
-void GameState::enterMenu(MenuCommand mt){
-	menuCommand = mt; 
-	initMenu = true;
-	updateMenu = true;
-	if (mt == PLAY) {
-		paused = false; 
-	} else	
-		paused = true;	
-}//*/
 
 /*/
 void GameState::		togglePrograms(int i){

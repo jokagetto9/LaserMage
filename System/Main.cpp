@@ -5,7 +5,7 @@
 //********************************* MODULES *********************************
 
 	Engine eng;						// handle for managing the passage of time
-	InputManager input;			// handle for managing input
+	InputManager input ;			// handle for managing input
 	StackManager stack;
 
 //********************************* DECLARATIONS *********************************
@@ -51,6 +51,21 @@ void update(){
 void display(){
 	glClearColor(1, 1, 1, 1);	
 	eng.clearDisplay();
+	glm::vec3 v = glm::vec3(0.0);
+	//C->update(v);
+	/*/
+	if(!G->paused){
+		glDisable(GL_DEPTH_TEST);
+		M->tileBO.use();	
+		//getHeroStage()->drawTerrain();	// current zone
+		glBindTexture(GL_TEXTURE_2D, M->tileBO.terrainT1[0]);
+		M->tileBO.draw(16, 36, 64, 144);
+		//M->terrainBO.draw(5, 5, 25, 25);
+
+		//drawgardens
+		glEnable(GL_DEPTH_TEST);
+	}//*/
+
 	stack.setUp2DView(RES.x, RES.z);
 	if(G->paused) 
 		stack.draw();
