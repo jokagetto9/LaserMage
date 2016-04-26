@@ -4,8 +4,8 @@ Population ::		Population (){}
 
 
 void Population ::		init (){
-	EnemyWave wave(MIMIC);
-	float d = 60;
+	EnemyWave wave(CHUCKY);
+	float d = 40;
 	wave.init(1, d);	loadWave(&wave); d+=7.5;
 	wave.init(5, d);	loadWave(&wave); d+=7.5;
 	wave.init(9, d);	loadWave(&wave); d+=7.5;
@@ -58,7 +58,7 @@ void Population::		physUpdate(){
 	int s = enemies.size();
 	for (int i = 0; i < s; i++){
 		if(!enemies[i].dead)
-			enemies[i].physUpdate(10000, G->physDelta);
+			enemies[i].physUpdate(500, G->physDelta);
 	}
 }
 void Population::		aiUpdate(){

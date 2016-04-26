@@ -35,7 +35,7 @@ extern ofstream logfile;
 
 extern XZI RES;
 
-const int pi = glm::pi<int>();
+const float pi = glm::pi<float>();
 
 const int ZONE = 500;
 const int PLOT = 50;

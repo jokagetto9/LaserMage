@@ -91,10 +91,10 @@ void InputManager::		actionInput(){
 
 	}
 }
-/*/
+//
 void InputManager::		cameraInput(){
+	/*/UDLR - > camera pan keys
 	if (!G->paused){
-		//UDLR - > camera pan keys
 		if (C->mode == 0){
 			float f = G->physDelta;
 			if (specialKeyPressed[UP])		C->zoom(-f);
@@ -103,5 +103,5 @@ void InputManager::		cameraInput(){
 			if (specialKeyPressed[RIGHT])	C->pan(-f);		
 		}
 	}
-}
 //*/
+}

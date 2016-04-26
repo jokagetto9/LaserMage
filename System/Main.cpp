@@ -14,7 +14,7 @@
 	Population pop;
 
 //********************************* DECLARATIONS *********************************
- 
+void init();
 void initGlobals(); /*/
 Purpose: init global aliases
 Precondition(s): initSDL
@@ -22,23 +22,17 @@ Side Effects:  Initializes Hero, Camera, ModelManager, GameState, Question
 /*/
 
 void update(); 
-void menuUpdate();
+void clockCycle();
+void physicsUpdate();
+void rapidUpdate();
+
 void display(); 
 
 
-void deleteGlobals(); /*/
-Purpose: delete global aliases
-Precondition(s): initE
-Side Effects:  closes and deletes Hero, Camera, ModelManager, GameState, Question
-/*/
+void deleteGlobals(); 
+void close();	
 
-void close();	 /*/
-Purpose: close entire project 
-Side Effects:  closes engine and deletes SDL_Window, SDL_GL Context
-Triggers: eng.quit()
-/*/
-
-//********************************* MAIN *********************************
+//********************************* UPDATES *********************************
 
 void update(){
 	input.pollKeyEvents();
@@ -46,15 +40,47 @@ void update(){
 	input.actionInput();
 	//DBT->update();
 	//if (G->save) save();
-	eng.clockCycle();
+	clockCycle();
 	
 	stack.update(input);
 	input.clearKeys();	
 }
 
+void clockCycle(){
+	G->trackAVG(); G->trackFPS();	
+	G->incLag();
+	while (G->testLag()){	// while phys delta has time lag
+		if(G->lagVSlag())	{		// phys has more lag	
+			if (!G->paused) physicsUpdate();
+			G->action = false;
+			G->decPhysLag();	
+		} else {			// if ai has equal or more lag	
+			rapidUpdate();	
+			G->decAILag();
+		}
+	}		
+	G->prevTime = G->curTime;	// reset cycle
+	 //else G->action = false;
+}
 
+void physicsUpdate(){
+	input.cameraInput();
+	pop.physUpdate();
+	H->physUpdate(144, G->physDelta);
+	//world.interactions();
+	//DBT->physUpdate(); //?
+}
+
+void rapidUpdate(){
+	if (!G->paused){	
+		pop.aiUpdate();
+	}
+	stack.rapidUpdate();
+}
+
+//********************************* DRAW *********************************
 void display(){
-	float c = 255/255;
+	float c = 0/255;
 	glClearColor(c, c, c, 1);	
 	eng.clearDisplay();
 	C->update(H->pos());
@@ -68,7 +94,7 @@ void display(){
 
 		H->drawHero();
 		M->gridBO.prepNPC();
-		//pop.draw(); 
+		pop.draw(); 
 
 	}//*/
 
@@ -79,34 +105,16 @@ void display(){
 		stack.drawHUD();
 	stack.disable2DView();
 } 
-
-
-
-//********************************* MAIN *********************************
-int main(int argc, char* args[]){
-	
+//********************************* INIT *********************************
+void init(){	
 	RES.x = dfWIDTH; RES.z = dfHEIGHT; 
-	eng.BaseEngine::init(&input, &stack);	  	//init
 	if (eng.initSDL()){
 		eng.displayVersion();
 		initGlobals();
-		//world.init();
-		//onspawner.setWorld(&world);
-		//DBT = DebugTool::I(); 
-		//DBT->init(&world);
-	} else { 
-		GameState::I()->gameActive = false; 
-		//***display failure message
-	}
-	//game loop
-	while( GameState::I()->gameActive ){	
-		update();	
-		display();
-		eng.flush();
-	}
-	//game close
-	close(); return 0; //Free resources and close SDL	
-}//*/
+		pop.init();
+
+	} else GameState::I()->gameActive = false; 
+}
 
 void initGlobals(){
 	logfile = ofstream("log.txt");	//init logfile
@@ -139,6 +147,19 @@ void initGlobals(){
 	//init quest markers
 	//Q = Question::I();	Q->init();
 }
+
+//********************************* MAIN *********************************
+int main(int argc, char* args[]){
+	init();
+	//game loop
+	while( GameState::I()->gameActive ){	
+		update();	
+		display();
+		eng.flush();
+	}
+	//game close
+	close(); return 0; //Free resources and close SDL	
+}//*/
 
 //********************************* CLOSE *********************************
 

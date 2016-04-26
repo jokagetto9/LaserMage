@@ -22,6 +22,9 @@
     <Filter Include="Stages">
       <UniqueIdentifier>{e2cb5ad9-f23b-494f-a85a-ff78a5da3737}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{859a2bf4-f1e7-4855-b10d-2d915210af42}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\System\BaseEngine\BaseStackManager.h">

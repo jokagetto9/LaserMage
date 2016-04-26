@@ -11,7 +11,7 @@ void Enemy::init(EnemyType t){
 	
 	prevTheta = 0;
 	
-	targetV = H->pos();
+	targetV = glm::vec3(0);
 	updateSpeedMode(0);
 	if (t == MIMIC)
 		walkAnim.init(CYCLIC);
@@ -21,8 +21,7 @@ void Enemy::init(EnemyType t){
 }
 
 void Enemy::init(float theta, float dist){
-	init(MIMIC);
-
+	init(CHUCKY);
 	glm::vec3 v = calcThetaV(theta);
 	v *= dist; v += H->pos();
 	place(v.x, v.z);
