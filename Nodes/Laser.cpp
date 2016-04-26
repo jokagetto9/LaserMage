@@ -18,6 +18,7 @@ void Laser::	loadLaser(){
 //********************************* DRAW *********************************
 
 void Laser::draw(){
+	/*/
 	glDisable(GL_TEXTURE_2D); glUseProgram(NULL);
 	float tX; float tY;
 	//tX = (G->mX+1)*0.3125-40;
@@ -34,11 +35,12 @@ void Laser::draw(){
 		glBegin(GL_LINES);
 			glVertex3f(xo, 3, yo);
 			glVertex3f(tX*10, 0, tY*10);
-		glEnd();//*/
+		glEnd();
 		glEnable(GL_TEXTURE_2D);
 	}
 
 	drawCursor(tX, tY);
+	//*/
 
 }
 

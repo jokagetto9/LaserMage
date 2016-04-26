@@ -105,7 +105,7 @@ void Hero::	saveInv(){
 //********************************* DRAW *********************************
 
 void Hero::drawHero(){
-	//M->gridBO.prepHero();
+	M->gridBO.prepHero();
 	float camTheta;
 	camTheta =  C->getCameraTheta(pos(), false);	
 	camTheta -= theta;
@@ -116,7 +116,7 @@ void Hero::drawHero(){
 		else {
 
 			laserAnim.draw(G->avgFrameDelta);
-			//M->gridBO.drawx16(11);
+			M->gridBO.drawx16(11);
 		}
 		laser.draw();
 

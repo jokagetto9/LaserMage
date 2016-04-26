@@ -3,6 +3,7 @@
 #include "StackManager.h"
 #include "../Display/Camera.h"
 #include "../Display/Environment.h"
+#include "../Nodes/Hero.h"
 //********************************* MODULES *********************************
 
 	Engine eng;						// handle for managing the passage of time
@@ -55,8 +56,7 @@ void display(){
 	float c = 255/255;
 	glClearColor(c, c, c, 1);	
 	eng.clearDisplay();
-	glm::vec3 v = glm::vec3(0.0);
-	C->update(v);
+	C->update(H->pos());
 	//
 	if(!G->paused){
 		glDisable(GL_DEPTH_TEST);
@@ -68,6 +68,8 @@ void display(){
 
 		//drawgardens
 		glEnable(GL_DEPTH_TEST);
+		H->drawHero();
+
 	}//*/
 
 	stack.setUp2DView(RES.x, RES.z);
@@ -124,8 +126,8 @@ void initGlobals(){
 
 	//init hero
 	//if(_DEBUG) cout << "Hero..." ;
-	//H = Hero::I();	
-	//H->init();	
+	H = Hero::I();	
+	H->init();	
 
 	//init game state
 	//if(_DEBUG) cout << "Game State" << endl;

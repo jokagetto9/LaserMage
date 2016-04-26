@@ -90,6 +90,9 @@
     <ClInclude Include="..\Nodes\Laser.h">
       <Filter>Nodes</Filter>
     </ClInclude>
+    <ClInclude Include="..\Display\Shaders\Shaders\GridShader.h">
+      <Filter>Display\Shaders</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\System\Main.cpp">
@@ -157,6 +160,9 @@
     </ClCompile>
     <ClCompile Include="..\Nodes\Laser.cpp">
       <Filter>Nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Display\Shaders\Shaders\GridShader.cpp">
+      <Filter>Display\Shaders</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
