@@ -3,7 +3,7 @@
 #include "StackManager.h"
 #include "../Display/Camera.h"
 #include "../Display/Environment.h"
-#include "../Nodes/Hero.h"
+#include "../Nodes/Population.h"
 //********************************* MODULES *********************************
 
 	Engine eng;						// handle for managing the passage of time
@@ -11,6 +11,7 @@
 	InputManager input ;			// handle for managing input
 	StackManager stack;
 	Environment env;
+	Population pop;
 
 //********************************* DECLARATIONS *********************************
  
@@ -42,10 +43,10 @@ Triggers: eng.quit()
 void update(){
 	input.pollKeyEvents();
 	input.checkToggles();	
-	//input.actionInput();
+	input.actionInput();
 	//DBT->update();
 	//if (G->save) save();
-		eng.clockCycle();
+	eng.clockCycle();
 	
 	stack.update(input);
 	input.clearKeys();	
@@ -61,14 +62,13 @@ void display(){
 	if(!G->paused){
 		glDisable(GL_DEPTH_TEST);
 		M->tileBO.use();	
-		//getHeroStage()->drawTerrain();	// current zone
 		glBindTexture(GL_TEXTURE_2D, M->tileBO.terrainT1[0]);
 		M->tileBO.draw(16, 36, 64, 144);
-		//M->terrainBO.draw(5, 5, 25, 25);
-
-		//drawgardens
 		glEnable(GL_DEPTH_TEST);
+
 		H->drawHero();
+		M->gridBO.prepNPC();
+		//pop.draw(); 
 
 	}//*/
 

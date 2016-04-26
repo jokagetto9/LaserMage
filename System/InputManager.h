@@ -15,7 +15,7 @@ public:
 //********************************* KEY CYCLE *********************************
 
 	void InputManager::		pollKeyEvents();
-	void InputManager::		keyDown(SDL_Keycode key);
+	//void InputManager::		keyDown(SDL_Keycode key);
 	void InputManager::		keyUp(SDL_Keycode key);
 
 //********************************* INPUT RESPONSES *********************************

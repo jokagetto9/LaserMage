@@ -19,6 +19,9 @@
     <Filter Include="Nodes">
       <UniqueIdentifier>{6567f7bf-9582-45ae-9fd4-69f43b2ba312}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Stages">
+      <UniqueIdentifier>{e2cb5ad9-f23b-494f-a85a-ff78a5da3737}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\System\BaseEngine\BaseStackManager.h">
@@ -93,6 +96,18 @@
     <ClInclude Include="..\Display\Shaders\Shaders\GridShader.h">
       <Filter>Display\Shaders</Filter>
     </ClInclude>
+    <ClInclude Include="..\Nodes\Population.h">
+      <Filter>Nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nodes\Enemy.h">
+      <Filter>Nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Stages\EnemyWave.h">
+      <Filter>Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Stages\SpawnPoint.h">
+      <Filter>Stages</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\System\Main.cpp">
@@ -163,6 +178,18 @@
     </ClCompile>
     <ClCompile Include="..\Display\Shaders\Shaders\GridShader.cpp">
       <Filter>Display\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Nodes\Population.cpp">
+      <Filter>Nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Nodes\Enemy.cpp">
+      <Filter>Nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Stages\SpawnPoint.cpp">
+      <Filter>Stages</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Stages\EnemyWave.cpp">
+      <Filter>Stages</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

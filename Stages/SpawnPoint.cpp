@@ -10,7 +10,6 @@ SpawnPoint::SpawnPoint(){
 	yPos = 0;
 	scale = 1; theta = 0;
 	dir = DUNNO;
-	type = _n;
 }
 
 

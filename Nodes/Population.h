@@ -1,0 +1,48 @@
+#ifndef POPULATION_H
+#define POPULATION_H
+
+#include "../lib.h"
+#include "../Stages/SpawnPoint.h"
+//********************************* CONSTANTS *********************************
+
+
+//********************************* INITIALIZATION *********************************
+
+class Population {
+	public: 
+	Population::		Population();
+	void Population ::		init ();	
+	void Population ::		genInteractions();	
+	void Population ::		trackInteractions();
+	
+	void Population ::		loadWave(EnemyWave * w);	
+
+	
+	vector <Enemy*> * Population::		getRegion(int i);
+	
+	void Population::		physUpdate();
+	void Population::		aiUpdate();
+	void Population::		slowaiUpdate();
+	void Population ::		interact (int pid);
+
+
+	void Population ::		draw ();
+/*/ Purpose: 
+Side Effects:  
+Triggers: 
+/*/
+	
+	void Population::		purge();
+//************************************************** MEMBERS ***************************************************
+	
+	//vector<NPC> npc;
+	vector<Enemy> enemies;
+	vector <Enemy*> regL1;
+	vector <Enemy*> regL2;
+	vector <Enemy*> regL3;
+	vector <Enemy*> regR1;
+	vector <Enemy*> regR2;
+	vector <Enemy*> regR3;
+
+};
+#endif
