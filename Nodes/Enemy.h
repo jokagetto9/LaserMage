@@ -13,11 +13,15 @@ class Enemy : public Mob {
 	public: 
 	Enemy::			Enemy();
 	void Enemy::	init(EnemyType t);
-	void Enemy::	init(float theta, float dist);
+	void Enemy::	radialOffset(float theta, float dist, glm::vec3 p);
+	void Enemy::	setTarget(const glm::vec3 pos);
 	void Enemy::aiUpdate(float aiDelta);
 
 	void Enemy:: crash ();
+
+private:
 	EnemyType eType;
+	glm::vec3 targetP;
 
 };
 #endif

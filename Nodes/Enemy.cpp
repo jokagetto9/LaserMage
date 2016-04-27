@@ -20,19 +20,23 @@ void Enemy::init(EnemyType t){
 
 }
 
-void Enemy::init(float theta, float dist){
-	init(CHUCKY);
+void Enemy::radialOffset(float theta, float dist, glm::vec3 p){
+	setTarget(p);
 	glm::vec3 v = calcThetaV(theta);
-	v *= dist; v += H->pos();
+	v *= dist; v += p;
 	place(v.x, v.z);
 }
 
 
 
+void Enemy::	setTarget(const glm::vec3 pos){
+	targetP = pos;
+}
+
 
 void Enemy::aiUpdate(float aiDelta){
 	health.update()	;
-	targetV = H->pos() - pos();	
+	targetV = targetP - pos();	
 	float maxChange = RUN_MAX_ACCEL * aiDelta;
 	truncate (targetV, maxChange);
 	crash();
@@ -40,7 +44,7 @@ void Enemy::aiUpdate(float aiDelta){
 
 
 void Enemy:: crash (){
-	float d = getDistSQ(H->pos());
+	float d = getDistSQ(targetP);
 	if (d < 3*3){
 		dead = true;
 	}

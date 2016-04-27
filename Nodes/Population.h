@@ -11,11 +11,10 @@
 class Population {
 	public: 
 	Population::		Population();
-	void Population ::		init ();	
+	void Population ::		init (Hero& h);
 	void Population ::		genInteractions();	
 	void Population ::		trackInteractions();
-	
-	void Population ::		loadWave(EnemyWave * w);	
+		
 
 	
 	vector <Enemy*> * Population::		getRegion(int i);

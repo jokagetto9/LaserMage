@@ -1,6 +1,7 @@
 //********************************* INITIALIZATION *********************************
 #include "EnemyWave.h"
-EnemyWave::EnemyWave(EnemyType et){	
+EnemyWave::EnemyWave(EnemyType et, glm::vec3 p){
+	origin = p;
 	enemy = et;
 	mirrored = false;
 	quantity = 1;
@@ -36,3 +37,16 @@ void EnemyWave::	initRegion(bool left, int reg){
 	if (!left) centerTheta *= -1;
 }
 
+void EnemyWave ::		generate(vector<Enemy>& enemies){
+	Enemy e;
+	float theta = centerTheta;
+	float tempTheta = tempTheta = theta + (quantity-1)* clustering/2;   
+	for (int i = 0; i < quantity; i++){
+		if (mirrored && theta >= 0){
+			e.radialOffset(tempTheta-i*clustering, dist, origin); 	enemies.push_back(e);
+			e.radialOffset(-tempTheta-i*clustering, dist, origin); 	enemies.push_back(e);
+		} else {
+			e.radialOffset(tempTheta-i*clustering, dist, origin); 	enemies.push_back(e);
+		}
+	}
+}

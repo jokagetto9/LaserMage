@@ -3,41 +3,28 @@
 Population ::		Population (){}
 
 
-void Population ::		init (){
-	EnemyWave wave(CHUCKY);
+void Population ::		init (Hero& h){
+	EnemyWave wave(CHUCKY, h.pos());
 	float d = 40;
-	wave.init(1, d);	loadWave(&wave); d+=7.5;
-	wave.init(5, d);	loadWave(&wave); d+=7.5;
-	wave.init(9, d);	loadWave(&wave); d+=7.5;
+	wave.init(1, d);	wave.generate(enemies); d+=7.5;
+	wave.init(5, d);	wave.generate(enemies); d+=7.5;
+	wave.init(9, d);	wave.generate(enemies); d+=7.5;
 	/*/
-	wave.init(35, d);	loadWave(&wave); d+=7.5;
-	wave.init(36, d);	loadWave(&wave); d+=7.5;
-	wave.init(35, d);	loadWave(&wave); d+=7.5;
-	wave.init(36, d);	loadWave(&wave); d+=7.5;
-	wave.init(35, d);	loadWave(&wave); d+=7.5;
-	wave.init(36, d);	loadWave(&wave); d+=7.5;
-	wave.init(35, d);	loadWave(&wave); d+=7.5;
-	wave.init(36, d);	loadWave(&wave); d+=7.5;
-	wave.init(35, d);	loadWave(&wave); d+=7.5;
-	wave.init(36, d);	loadWave(&wave); d+=7.5;
-	wave.init(35, d);	loadWave(&wave); d+=7.5;
+	wave.init(35, d);	wave.generate(enemies); d+=7.5;
+	wave.init(36, d);	wave.generate(enemies); d+=7.5;
+	wave.init(35, d);	wave.generate(enemies); d+=7.5;
+	wave.init(36, d);	wave.generate(enemies); d+=7.5;
+	wave.init(35, d);	wave.generate(enemies); d+=7.5;
+	wave.init(36, d);	wave.generate(enemies); d+=7.5;
+	wave.init(35, d);	wave.generate(enemies); d+=7.5;
+	wave.init(36, d);	wave.generate(enemies); d+=7.5;
+	wave.init(35, d);	wave.generate(enemies); d+=7.5;
+	wave.init(36, d);	wave.generate(enemies); d+=7.5;
+	wave.init(35, d);	wave.generate(enemies); d+=7.5;
 	//*/
 }
 
 
-void Population ::	loadWave(EnemyWave * w){
-	Enemy e;
-	float theta = w->centerTheta;
-	float tempTheta = tempTheta = theta + (w->quantity-1)* w->clustering/2;   
-	for (int i = 0; i < w->quantity; i++){
-		if (w->mirrored && theta >= 0){
-			e.init(tempTheta-i*w->clustering, w->dist); 	enemies.push_back(e);
-			e.init(-tempTheta-i*w->clustering, w->dist); 	enemies.push_back(e);
-		} else {
-			e.init(tempTheta-i*w->clustering, w->dist); 	enemies.push_back(e);
-		}
-	}
-}
 
 
 vector <Enemy*> * Population::		getRegion(int i){
