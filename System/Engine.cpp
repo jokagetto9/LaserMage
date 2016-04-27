@@ -25,10 +25,6 @@ void Engine::		physicsUpdate(){
 void Engine::		rapidUpdate(){
 	if (!G->paused){	
 		//world.rapidUpdate();
-		if (G->frequently) {
-			//world.freqUpdate();
-			G->frequently = false;
-		}
 	}
 	//stack.rapidUpdate();
 }

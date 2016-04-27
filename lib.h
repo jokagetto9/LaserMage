@@ -64,7 +64,7 @@ enum SubMenuType {QUIT, STAT, EQP, INV, SKLS, JRNL, OPTN, NUMSLCT, USE, CNFM, PA
 
 
 enum Drctn {WEST, EAST, NORTH, SOUTH, NW, NE, SW, SE, DUNNO};
-enum Oriet {LEFT, RIGHT, UP, DOWN,  UL, UR, DL, DR}; 
+enum Oriet {LEFT, RIGHT, UP, DOWN,  UL, UR, DL, DR, STOP}; 
 
 const XZI ADJ_ [] = {
 	{-1, 0}, {1, 0}, {0, -1}, {0, 1},		{-1, -1}, {1, -1}, {-1, 1}, {1, 1}, 	{-2, 0}, {2, 0}, {0, -2}, {0, 2},		

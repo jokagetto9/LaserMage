@@ -111,6 +111,9 @@
     <ClInclude Include="..\Stages\SpawnPoint.h">
       <Filter>Stages</Filter>
     </ClInclude>
+    <ClInclude Include="..\Utlity\HeroCommand.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\System\Main.cpp">

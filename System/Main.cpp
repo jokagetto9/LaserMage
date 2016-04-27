@@ -12,6 +12,7 @@
 	StackManager stack;
 	Environment env;
 	Population pop;
+	Hero H;
 
 //********************************* DECLARATIONS *********************************
 void init();
@@ -35,15 +36,20 @@ void close();
 //********************************* UPDATES *********************************
 
 void update(){
+	MoveCommand mcmd;
+
 	input.pollKeyEvents();
-	input.checkToggles();	
-	input.actionInput();
+	input.checkToggles();
+	if (!G0->paused) {	
+		mcmd = input.directionInput();
+		mcmd.exec(H);
+	}
 	//DBT->update();
 	//if (G->save) save();
 	clockCycle();
 	
 	stack.update(input);
-	input.clearKeys();	
+	//input.clearKeys();	
 }
 
 void clockCycle(){
@@ -65,8 +71,8 @@ void clockCycle(){
 
 void physicsUpdate(){
 	input.cameraInput();
-	pop.physUpdate();
-	H->physUpdate(144, G->physDelta);
+	//pop.physUpdate();
+	H.physUpdate(144, G->physDelta);
 	//world.interactions();
 	//DBT->physUpdate(); //?
 }
@@ -83,7 +89,7 @@ void display(){
 	float c = 0/255;
 	glClearColor(c, c, c, 1);	
 	eng.clearDisplay();
-	C->update(H->pos());
+	C->update(H.pos());
 	//
 	if(!G->paused){
 		glDisable(GL_DEPTH_TEST);
@@ -92,7 +98,7 @@ void display(){
 		M->tileBO.draw(16, 36, 64, 144);
 		glEnable(GL_DEPTH_TEST);
 
-		H->drawHero();
+		H.drawHero();
 		M->gridBO.prepNPC();
 		pop.draw(); 
 
@@ -111,7 +117,7 @@ void init(){
 	if (eng.initSDL()){
 		eng.displayVersion();
 		initGlobals();
-		pop.init();
+		pop.init(H);
 
 	} else GameState::I()->gameActive = false; 
 }
@@ -121,25 +127,13 @@ void initGlobals(){
 	
 	//displayVersion();
 
-	//init model manager
-	//if(_DEBUG) cout << "Loading Shaders" << endl;
 	M = ModelManager::I();
-	//engine stack loading screen
-	
+	C = Camera::I(); 
+	C->init();		
+	H.init();	
 
-	//init camera
-	//if(_DEBUG) cout << "Matrixes..." ;
-	C = Camera::I(); C->init();	
-	
-
-	//init hero
-	//if(_DEBUG) cout << "Hero..." ;
-	H = Hero::I();	
-	H->init();	
-
-	//init game state
-	//if(_DEBUG) cout << "Game State" << endl;
-	G = GameState::I();		G->init();
+	G = GameState::I();		
+	G->init();
 	G0 = G;	
 	
 	input.init();

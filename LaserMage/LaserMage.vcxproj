@@ -39,6 +39,7 @@
     <ClInclude Include="..\System\GameState.h" />
     <ClInclude Include="..\System\InputManager.h" />
     <ClInclude Include="..\System\StackManager.h" />
+    <ClInclude Include="..\Utlity\HeroCommand.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Display\Animation.cpp" />

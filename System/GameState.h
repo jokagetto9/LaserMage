@@ -1,7 +1,7 @@
 #ifndef GAMESTATE_H
 #define GAMESTATE_H
 
-#include "./BaseEngine/BaseGameState.h"
+#include "BaseEngine/BaseGameState.h"
 //********************************* CONSTANTS *********************************
 
 
@@ -65,34 +65,6 @@ Side Effects:	milli += frameDelta (loop 250)
 	void GameState::		skipTime(int min);
 
 //************************************************** MEMBERS ***************************************************
-
-	
-		int slowTick, slowCount;	//counts to determine timing
-
-		int	milli, minutes, hours;
-		int days, months;	
-
-		bool hourly, daily, frequently;
-		
-		bool saveMap, saveFeature;
-		bool inside;	
-	
-		bool cons;	
-		//int program; 
-		int skip;
-		//MapFeature feat;
-
-		//ACTIONTYPE actionType;
-		//int menuIndex;
-		//MenuCommand menuCommand;
-
-	//	int menuLevel;
-		//NPC * activeNPC;
-
-
-
-		//Nub * activeNub;
-		//Nub * activeNob;
 
 
 //********************************* MEMBER FUNCTIONS *********************************
