@@ -15,13 +15,14 @@
 
 class Hero : public Mob {
 public:
+
+	Hero::Hero(){}
 	void Hero::	init();	
 /*/ Purpose: init inherited members  
 Parameter(s): x, z - default zone, theta - facing direction -> 0 = SOUTH
 Side Effects:  init tpf, default pos
 /*/
 	
-	void Hero::	quit(){delete instance; instance = NULL;}
 /*/ Purpose: close hero 
 Side Effects:  deletes instance
 /*/
@@ -107,7 +108,7 @@ Triggers: updateSpeedMode
 	
 	void Hero::		rest(); 
 
-	void Hero::		walk(Oriet o); 
+	void Hero::		move(Oriet o); 
 /*/ Purpose: move based on cam theta and key direction
 Parameter(s): o - direction relative to camera -> UPLR diagonals
 Side Effects:  targetV is updated
@@ -163,19 +164,8 @@ Side Effects:  enter building, camera shifts, boundary boxes shift
 	void Hero::toggleDebug();	
 
 
-//********************************* SINGLETON *********************************
 
-	static Hero* Hero::I(){
-		if(instance == 0){
-			instance = new Hero();
-			return instance;
-		}return instance;	
-	}
 
-private:
-	Hero::Hero(){}
-	static Hero* instance ;
 };
-extern Hero* H;
 
 #endif

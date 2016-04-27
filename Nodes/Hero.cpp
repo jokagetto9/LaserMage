@@ -2,8 +2,6 @@
 
 #include "Hero.h"
 
-Hero* Hero::instance = 0;
-Hero* H;
 
 // move player into middle of zone x, z 
 void Hero::init(){
@@ -39,8 +37,8 @@ void Hero::	loadHero(){
 
 		getline (saveFile, inputLine); stringstream ss(inputLine);
 		while (cntr < 2 && ss >> inputValue) {
-			if (cntr == 0) H->xPos = inputValue;
-			else if (cntr == 1) H->zPos = inputValue;
+			if (cntr == 0) xPos = inputValue;
+			else if (cntr == 1) zPos = inputValue;
 			cntr++;
 		}
 		cntr = 0;
@@ -132,7 +130,7 @@ void Hero::physUpdate(int WM, float physDelta){
 	worldWrap(WM); 
 	findPlotStage();	
 	findSpeedTheta();
-	updateStatus(); 
+	updateStatus();
 }
 
 
@@ -168,11 +166,11 @@ void Hero::		rest(){
 
 
 // move hero according to the camera theta
-void Hero::walk(Oriet o){
+void Hero::move(Oriet o){
 	float tempTheta; glm::vec3 camV;
 	if (C->mode == 0) tempTheta = C->theta + D_ROTATE[o];	
 	if (C->mode == 1) {	
-		camV =  H->pos() - C->lockPos;
+		camV =  pos() - C->lockPos;
 		tempTheta = findTheta(camV) + D_ROTATE[o];
 	}
 	targetV = calcThetaV(tempTheta);
@@ -180,17 +178,17 @@ void Hero::walk(Oriet o){
 
 /*/
 void Hero:: collision(BoundingBox &b){
-	glm::vec3 v = H->pos(); glm::vec3 pv = H->prevPos;
+	glm::vec3 v = pos(); glm::vec3 pv = prevPos;
 	if(v.x > b.x1 && v.x < b.x2 && v.z > b.z1 && v.z < b.z2) {
 		//test prev position
 		if (pv.x > b.x1 && pv.x < b.x2)	{	
-			if			(pv.z <= b.z1)		H->zPos = b.z1;
-			else if		(pv.z >= b.z2)		H->zPos = b.z2;
+			if			(pv.z <= b.z1)		zPos = b.z1;
+			else if		(pv.z >= b.z2)		zPos = b.z2;
 		}else if (pv.z > b.z1 && pv.z < b.z2){
-			if			(pv.x <= b.x1)		H->xPos = b.x1;
-			else if		(pv.x >= b.x2)		H->xPos = b.x2;
+			if			(pv.x <= b.x1)		xPos = b.x1;
+			else if		(pv.x >= b.x2)		xPos = b.x2;
 		} else				
-			H->previous();
+			previous();
 	}
 }
 //*/
