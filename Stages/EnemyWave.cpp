@@ -38,7 +38,7 @@ void EnemyWave::	initRegion(bool left, int reg){
 }
 
 void EnemyWave ::		generate(vector<Enemy>& enemies){
-	Enemy e;
+	Enemy e; e.init(enemy);
 	float theta = centerTheta;
 	float tempTheta = tempTheta = theta + (quantity-1)* clustering/2;   
 	for (int i = 0; i < quantity; i++){

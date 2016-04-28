@@ -71,7 +71,7 @@ void clockCycle(){
 
 void physicsUpdate(){
 	input.cameraInput();
-	//pop.physUpdate();
+	pop.physUpdate();
 	H.physUpdate(144, G->physDelta);
 	//world.interactions();
 	//DBT->physUpdate(); //?
