@@ -18,7 +18,10 @@ void InputManager::		checkToggles(){
 	}	
 }
 
-
+Command * InputManager::		mouseInput(){
+	lasercmd.set(mouseL);
+	return &lasercmd;
+}
 //
 void InputManager::		cameraInput(){
 	/*/UDLR - > camera pan keys

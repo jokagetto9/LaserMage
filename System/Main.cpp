@@ -36,13 +36,12 @@ void close();
 //********************************* UPDATES *********************************
 
 void update(){
-	MoveCommand mcmd;
 
 	input.pollKeyEvents();
 	input.checkToggles();
 	if (!G0->paused) {	
-		mcmd = input.directionInput();
-		mcmd.exec(H);
+		input.directionInput()->exec(H);
+		input.mouseInput()->exec(H);
 	}
 	//DBT->update();
 	//if (G->save) save();

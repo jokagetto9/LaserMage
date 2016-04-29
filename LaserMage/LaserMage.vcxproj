@@ -40,6 +40,7 @@
     <ClInclude Include="..\System\InputManager.h" />
     <ClInclude Include="..\System\StackManager.h" />
     <ClInclude Include="..\Utlity\HeroCommand.h" />
+    <ClInclude Include="..\Utlity\LaserCommand.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Display\Animation.cpp" />

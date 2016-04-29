@@ -4,7 +4,7 @@
 #include "GameState.h"
 
 #include "BaseEngine/BaseInputManager.h"
-
+#include "../Utlity/LaserCommand.h"
 //********************************* CONSTANTS *********************************
 //********************************* INITIALIZATION *********************************
 
@@ -18,12 +18,14 @@ public:
 //********************************* INPUT RESPONSES *********************************
 	
 	void InputManager::		checkToggles();
+	Command * InputManager::		mouseInput();
 	void InputManager::		cameraInput();
 
 //************************************************** MEMBERS ***************************************************
 	
 //********************************* MEMBER FUNCTIONS *********************************
-
+private:
+	LaserCommand lasercmd;
 
 };
 

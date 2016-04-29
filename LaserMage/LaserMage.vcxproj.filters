@@ -114,6 +114,9 @@
     <ClInclude Include="..\Utlity\HeroCommand.h">
       <Filter>Utility</Filter>
     </ClInclude>
+    <ClInclude Include="..\Utlity\LaserCommand.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\System\Main.cpp">
