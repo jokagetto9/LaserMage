@@ -28,13 +28,13 @@ class Stage {
 //************************************************** DRAW ***************************************************
 		
 	void Stage::update();
-virtual void Stage::		physUpdate();
-virtual void Stage::		rapidUpdate();
+virtual void Stage::		physUpdate(float delta);
+virtual void Stage::		rapidUpdate(float delta);
 
 
 //************************************************** DRAW ***************************************************
-		void Stage::		draw();
-
+		void Stage::		draw(float delta);
+		void Stage::		drawTerrain();
 		
 //************************************************** MEMBERS ***************************************************
 	

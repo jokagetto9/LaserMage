@@ -34,16 +34,23 @@ void Stage::update(){
 }
 
 
-void Stage::		physUpdate(){
-	pop.physUpdate();
+void Stage::		physUpdate(float delta){
+	pop.physUpdate(delta);
 
 }
-void Stage::		rapidUpdate(){
-	pop.aiUpdate();
+void Stage::		rapidUpdate(float delta){
+	pop.aiUpdate(delta);
 }
 
-void Stage::		draw(){	
+void Stage::		draw(float delta){	
 	//terr.draw();	
-	pop.draw(); 
+	pop.draw(delta); 
 
+}
+void Stage::		drawTerrain(){	
+	glDisable(GL_DEPTH_TEST);
+	M->tileBO.use();	
+	glBindTexture(GL_TEXTURE_2D, M->tileBO.terrainT1[0]);
+	M->tileBO.draw(16, 36, 64, 144);
+	glEnable(GL_DEPTH_TEST);
 }

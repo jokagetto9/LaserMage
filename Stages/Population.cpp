@@ -43,19 +43,19 @@ void Population ::		genInteractions(){
 }
 
 
-void Population::		physUpdate(){
+void Population::		physUpdate(float delta){
 	int s = enemies.size();
 	for (int i = 0; i < s; i++){
 		if(!enemies[i].dead)
-			enemies[i].physUpdate(500, G->physDelta);
+			enemies[i].physUpdate(500, delta);
 	}
 }
-void Population::		aiUpdate(){
+void Population::		aiUpdate(float delta){
 
 	int s = enemies.size();
 	for (int i = 0; i < s; i++){
 		if(!enemies[i].dead)
-			enemies[i].aiUpdate(G->aiDelta);
+			enemies[i].aiUpdate(delta);
 	}
 }
 void Population::		slowaiUpdate(){
@@ -84,11 +84,11 @@ void Population::		purge(){
 //********************************* DRAW *********************************
 
 
-void Population ::		draw (){
+void Population ::		draw (float delta){
 	int s = enemies.size();
 	for (int i = 0; i < s; i++){
 		if(!enemies[i].dead)
-			enemies[i].draw(G->avgFrameDelta);
+			enemies[i].draw(delta);
 	}
 
 }

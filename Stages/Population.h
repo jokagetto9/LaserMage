@@ -19,13 +19,13 @@ class Population {
 	
 	vector <Enemy*> * Population::		getRegion(int i);
 	
-	void Population::		physUpdate();
-	void Population::		aiUpdate();
+	void Population::		physUpdate(float delta);
+	void Population::		aiUpdate(float delta);
 	void Population::		slowaiUpdate();
 	void Population ::		interact (int pid);
 
 
-	void Population ::		draw ();
+	void Population ::		draw (float delta);
 /*/ Purpose: 
 Side Effects:  
 Triggers: 

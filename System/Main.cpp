@@ -61,34 +61,34 @@ void update(){
 }
 
 void clockCycle(){
-	G->trackAVG(); G->trackFPS();	
-	G->incLag();
-	while (G->testLag()){	// while phys delta has time lag
-		if(G->lagVSlag())	{		// phys has more lag	
+	eng.trackAVG(); eng.trackFPS();	
+	eng.incLag();
+	while (eng.testLag()){	// while phys delta has time lag
+		if(eng.lagVSlag())	{		// phys has more lag	
 			if (!G->paused) physicsUpdate();
 			G->action = false;
-			G->decPhysLag();	
+			eng.decPhysLag();	
 		} else {			// if ai has equal or more lag	
 			rapidUpdate();	
-			G->decAILag();
+			eng.decAILag();
 		}
 	}		
-	G->prevTime = G->curTime;	// reset cycle
+	eng.prevTime = eng.curTime;	// reset cycle
 	 //else G->action = false;
 }
 
 void physicsUpdate(){	
 	input.cameraInput();
 	testStage.init(H);
-	testStage.physUpdate();
-	H.physUpdate(144, G->physDelta);
+	testStage.physUpdate(eng.physDelta);
+	H.physUpdate(144, eng.physDelta);
 	//world.interactions();
 	//DBT->physUpdate(); //?
 }
 
 void rapidUpdate(){
 	if (!G->paused){	
-		testStage.rapidUpdate();
+		testStage.rapidUpdate(eng.aiDelta);
 	}
 	stack.rapidUpdate();
 }
@@ -100,16 +100,12 @@ void display(){
 	eng.clearDisplay();
 	//
 	if(!G->paused || !stack.backdrop()){
-		C->update(H.pos());
-		glDisable(GL_DEPTH_TEST);
-		M->tileBO.use();	
-		glBindTexture(GL_TEXTURE_2D, M->tileBO.terrainT1[0]);
-		M->tileBO.draw(16, 36, 64, 144);
-		glEnable(GL_DEPTH_TEST);
-
-		H.drawHero();
+		
+		C->update(H.pos());		
+		testStage.drawTerrain(); 
+		H.drawHero(eng.avgFrameDelta);
 		M->gridBO.prepNPC();
-		testStage.draw(); 
+		testStage.draw(eng.avgFrameDelta); 
 
 	}//*/
 

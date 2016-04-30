@@ -57,7 +57,7 @@ Side Effects:  Saves postion, col[8], seeds, food
 
 //********************************* DRAW *********************************
 
-	void Hero::		drawHero();	
+	void Hero::		drawHero(float delta);	
 /*/ Purpose: draw hero -> sprite changes by theta and tpf
 Parameter(s): frameDelta -> frameTick adjustment
 Precondition(s): Once per frame

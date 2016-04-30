@@ -95,7 +95,7 @@ void Hero::	saveInv(){
 
 //********************************* DRAW *********************************
 
-void Hero::drawHero(){
+void Hero::drawHero(float delta){
 	M->gridBO.prepHero();
 	float camTheta;
 	camTheta =  C->getCameraTheta(pos(), false);	
@@ -103,10 +103,10 @@ void Hero::drawHero(){
 	
 	translate();	
 		if (!laser.active) 
-			walkAnim.draw(speed, camTheta, G->avgFrameDelta);
+			walkAnim.draw(speed, camTheta, delta);
 		else {
 
-			laserAnim.draw(G->avgFrameDelta);
+			laserAnim.draw(delta);
 			M->gridBO.drawx16(11);
 		}
 		laser.draw();
