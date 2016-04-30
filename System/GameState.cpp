@@ -15,11 +15,10 @@ void GameState::init(){
 		
 	physLag = 0;		physDelta = 1000/PHYSICS_PERSEC;	// ms per update
 	aiLag = 0;			aiDelta = 1000/AI_PERSEC;			// ms per update
-
+	
+	state = TITLE;
 	gameActive = true;  action = false;
-	paused = true;	initMenu = false; updateMenu = false;
-	blackDrop = true;
+	paused = true;	
 
-	fog = true; 
 	actionString = "";
 }

@@ -1,0 +1,5 @@
+  <garbage>
+    mainMenu.maxIndex = 5;
+    mainMenu.addCursor(2, 262, 290);
+    mainMenu.lineW = 80;
+  </garbage>

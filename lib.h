@@ -55,8 +55,8 @@ const int PLOT = 50;
 	const float ZOOM_RATE = 0.00025f; //zoom rate
 
 //menu indices
-enum RootMenuType {PLAY, LOAD, TITLE, MAIN, SYS, STORE, DLG, WRKSTN, DBG };
-enum SubMenuType {QUIT, STAT, EQP, INV, SKLS, JRNL, OPTN, NUMSLCT, USE, CNFM, PASS};
+enum GameStateCode {PAUSE, TITLE, PLAY, DBG };
+enum GameFunctionCode {QUIT, SAVE, LOAD, OPTN, USE, CNFM, PASS};
 //from other games
 //enum LaserMenuCommand {EXIT, TITLE, OPTN, STGSLCT, STGINFO, STGCOMP, UPGRADE, PLAY};
 //enum PrimeMenuCommand {PLAY, EXIT, TITLE, MAIN, SYS, STORE, DLG, DBG }; //when not exit

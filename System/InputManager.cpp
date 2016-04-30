@@ -10,7 +10,7 @@ void InputManager::		checkToggles(){
 	if (keyPressed[SDLK_ESCAPE])
 		G->gameActive = false; 
 	if (keyPressed[SDLK_TAB]) 	{
-		if (G->screen != PLAY) 
+		if (G->state != PLAY) 
 			G->enterMenu(PLAY);
 		else
 			G->enterMenu(TITLE);

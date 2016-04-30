@@ -1,0 +1,9 @@
+<MenuRoot>
+  <Menu name="Pause" >
+    <Background filename="MENU/pause.png" backdrop="0"></Background>    
+  </Menu>
+</MenuRoot>
+
+
+
+

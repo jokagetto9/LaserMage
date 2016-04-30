@@ -41,7 +41,10 @@ void close();
 void update(){
 
 	input.pollKeyEvents();
-	input.checkToggles();
+	StackCommand * cmd = input.checkPause();
+	if (cmd) cmd->enter(stack.stack);
+
+	//input.checkToggles();
 	if (!G0->paused) {	
 		input.directionInput()->exec(H);
 		input.mouseInput()->exec(H);
@@ -95,9 +98,9 @@ void display(){
 	float c = 0/255;
 	glClearColor(c, c, c, 1);	
 	eng.clearDisplay();
-	C->update(H.pos());
 	//
-	if(!G->paused){
+	if(!G->paused || !stack.backdrop()){
+		C->update(H.pos());
 		glDisable(GL_DEPTH_TEST);
 		M->tileBO.use();	
 		glBindTexture(GL_TEXTURE_2D, M->tileBO.terrainT1[0]);
@@ -117,6 +120,8 @@ void display(){
 		stack.drawHUD();
 	stack.disable2DView();
 } 
+
+
 //********************************* INIT *********************************
 void init(){	
 	RES.x = dfWIDTH; RES.z = dfHEIGHT; 
@@ -124,9 +129,10 @@ void init(){
 		GameState::I()->gameActive = false; 
 	else {
 		eng.displayVersion();
-		stack.init(menuLoader);
-
 		initGlobals();
+		//menus
+		stack.init(menuLoader);	
+		input.init(menuLoader);
 		menuLoader.loadList();
 
 
@@ -147,7 +153,6 @@ void initGlobals(){
 	G->init();
 	G0 = G;	
 	
-	input.init();
 	env.init();
 	//init quest markers
 	//Q = Question::I();	Q->init();

@@ -129,6 +129,9 @@
     <ClInclude Include="..\Stages\Population.h">
       <Filter>Stages</Filter>
     </ClInclude>
+    <ClInclude Include="..\Display\Shaders\Shaders\CursorShader.h">
+      <Filter>Display\Shaders</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\System\Main.cpp">
@@ -218,12 +221,21 @@
     <ClCompile Include="..\Stages\Population.cpp">
       <Filter>Stages</Filter>
     </ClCompile>
+    <ClCompile Include="..\Display\Shaders\Shaders\CursorShader.cpp">
+      <Filter>Display\Shaders</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="menulist.xml">
       <Filter>Resources</Filter>
     </None>
     <None Include="intro.xml">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="pause.xml">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="misc.txt">
       <Filter>Resources</Filter>
     </None>
   </ItemGroup>

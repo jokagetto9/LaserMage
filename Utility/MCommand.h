@@ -31,8 +31,6 @@ protected:
   vector<Menu> menus;  
 };
 
-
-
 class TrickStack : public StackCommand{
 public:
   virtual void enter(vector <Menu *>& stack){
@@ -43,6 +41,14 @@ public:
   }
 };
 
+
+class StackQuit  : public StackCommand{
+public:
+  void enter(vector <Menu *>& stack){
+	  stack.clear();
+	  G0->gameActive = false;
+  }
+};
 
 
 

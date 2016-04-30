@@ -18,6 +18,7 @@
     <ClInclude Include="..\Display\Menus\Menu.h" />
     <ClInclude Include="..\Display\Shaders\ModelData.h" />
     <ClInclude Include="..\Display\Shaders\ModelManager.h" />
+    <ClInclude Include="..\Display\Shaders\Shaders\CursorShader.h" />
     <ClInclude Include="..\Display\Shaders\Shaders\GridShader.h" />
     <ClInclude Include="..\Display\Shaders\Shaders\MenuShader.h" />
     <ClInclude Include="..\Display\Shaders\Shaders\Shader.h" />
@@ -52,6 +53,7 @@
     <ClCompile Include="..\Display\MenuLoader.cpp" />
     <ClCompile Include="..\Display\Menus\Menu.cpp" />
     <ClCompile Include="..\Display\Shaders\ModelManager.cpp" />
+    <ClCompile Include="..\Display\Shaders\Shaders\CursorShader.cpp" />
     <ClCompile Include="..\Display\Shaders\Shaders\GridShader.cpp" />
     <ClCompile Include="..\Display\Shaders\Shaders\MenuShader.cpp" />
     <ClCompile Include="..\Display\Shaders\Shaders\Shader.cpp" />
@@ -79,6 +81,10 @@
   <ItemGroup>
     <None Include="intro.xml" />
     <None Include="menulist.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="misc.txt" />
+    <None Include="pause.xml">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
