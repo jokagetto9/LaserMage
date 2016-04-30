@@ -18,30 +18,39 @@ public:
 
 class StackCommand : public PlayCommand{
 public:
-StackCommand::StackCommand(){ current = -1;}
   virtual void enter(vector <Menu *>& stack){
-	  if (!menus.empty()){
+	  if (!menus.empty())
 		stack.push_back(&menus[0]);
-		current = 0;
-	  }
-  }
-
-  int getFlow(){
-	  if (!menus.empty() && current >= 0){
-		  return menus[current].getFlow();
-	  }
   }
 
   void addMenu(Menu& menu){
 	  menus.push_back(menu);
   }
 
-
-private:
-	int current;
-  vector<Menu> menus;
-  
+protected:
+  vector<Menu> menus;  
 };
+
+
+
+class TrickStack : public StackCommand{
+public:
+  virtual void enter(vector <Menu *>& stack){
+	if (menus.size() >= 2) {
+		stack.push_back(&menus[1]);
+		stack.push_back(&menus[0]);
+	 } 
+  }
+};
+
+
+
+
+
+
+
+
+
 
 
 class MenuCommand  {

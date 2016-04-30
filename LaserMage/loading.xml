@@ -1,3 +1,8 @@
-<Menu name="CrabLord" timeout="10" >
-  <Background filename="MENU/crablord.png"></Background>
-</Menu>
+<MenuRoot>
+  <Menu name="CrabLord" timeout="10" >
+    <Background filename="MENU/crablord.png"></Background>
+  </Menu>
+  <Menu name="Title" timeout="240" >
+    <Background filename="MENU/title.png"></Background>
+  </Menu>
+</MenuRoot>
