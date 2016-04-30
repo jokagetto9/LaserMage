@@ -102,9 +102,6 @@
     <ClInclude Include="..\Display\Shaders\Shaders\GridShader.h">
       <Filter>Display\Shaders</Filter>
     </ClInclude>
-    <ClInclude Include="..\Nodes\Population.h">
-      <Filter>Nodes</Filter>
-    </ClInclude>
     <ClInclude Include="..\Nodes\Enemy.h">
       <Filter>Nodes</Filter>
     </ClInclude>
@@ -125,6 +122,12 @@
     </ClInclude>
     <ClInclude Include="..\Utility\HeroCommand.h">
       <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Stages\Stage.h">
+      <Filter>Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Stages\Population.h">
+      <Filter>Stages</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -197,9 +200,6 @@
     <ClCompile Include="..\Display\Shaders\Shaders\GridShader.cpp">
       <Filter>Display\Shaders</Filter>
     </ClCompile>
-    <ClCompile Include="..\Nodes\Population.cpp">
-      <Filter>Nodes</Filter>
-    </ClCompile>
     <ClCompile Include="..\Nodes\Enemy.cpp">
       <Filter>Nodes</Filter>
     </ClCompile>
@@ -211,6 +211,12 @@
     </ClCompile>
     <ClCompile Include="..\Display\MenuLoader.cpp">
       <Filter>Display</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Stages\Stage.cpp">
+      <Filter>Stages</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Stages\Population.cpp">
+      <Filter>Stages</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

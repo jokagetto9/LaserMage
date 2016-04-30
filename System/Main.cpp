@@ -3,7 +3,7 @@
 #include "StackManager.h"
 #include "../Display/Camera.h"
 #include "../Display/Environment.h"
-#include "../Nodes/Population.h"
+#include "../Stages/Stage.h"
 //********************************* MODULES *********************************
 
 	Engine eng;						// handle for managing the passage of time
@@ -12,7 +12,7 @@
 	StackManager stack;
 	MenuLoader menuLoader;
 	Environment env;
-	Population pop;
+	Stage testStage;
 	Hero H;
 	
 
@@ -75,8 +75,9 @@ void clockCycle(){
 }
 
 void physicsUpdate(){
+
 	input.cameraInput();
-	pop.physUpdate();
+	testStage.physUpdate();
 	H.physUpdate(144, G->physDelta);
 	//world.interactions();
 	//DBT->physUpdate(); //?
@@ -84,7 +85,7 @@ void physicsUpdate(){
 
 void rapidUpdate(){
 	if (!G->paused){	
-		pop.aiUpdate();
+		testStage.rapidUpdate();
 	}
 	stack.rapidUpdate();
 }
@@ -105,7 +106,7 @@ void display(){
 
 		H.drawHero();
 		M->gridBO.prepNPC();
-		pop.draw(); 
+		testStage.draw(); 
 
 	}//*/
 
@@ -124,9 +125,12 @@ void init(){
 	else {
 		eng.displayVersion();
 		stack.init(menuLoader);
+
 		initGlobals();
 		menuLoader.loadList();
-		pop.init(H);
+
+
+		testStage.init(H);
 	}  
 }
 
