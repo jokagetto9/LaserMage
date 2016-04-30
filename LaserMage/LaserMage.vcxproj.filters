@@ -25,6 +25,9 @@
     <Filter Include="Utility">
       <UniqueIdentifier>{859a2bf4-f1e7-4855-b10d-2d915210af42}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{f9b9b8eb-8fde-4b0d-8c83-2250493c6ee0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\System\BaseEngine\BaseStackManager.h">
@@ -111,10 +114,16 @@
     <ClInclude Include="..\Stages\SpawnPoint.h">
       <Filter>Stages</Filter>
     </ClInclude>
-    <ClInclude Include="..\Utlity\HeroCommand.h">
+    <ClInclude Include="..\Display\MenuLoader.h">
+      <Filter>Display</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Utility\LaserCommand.h">
       <Filter>Utility</Filter>
     </ClInclude>
-    <ClInclude Include="..\Utlity\LaserCommand.h">
+    <ClInclude Include="..\Utility\MCommand.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Utility\HeroCommand.h">
       <Filter>Utility</Filter>
     </ClInclude>
   </ItemGroup>
@@ -200,5 +209,16 @@
     <ClCompile Include="..\Stages\EnemyWave.cpp">
       <Filter>Stages</Filter>
     </ClCompile>
+    <ClCompile Include="..\Display\MenuLoader.cpp">
+      <Filter>Display</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="loading.xml">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="menulist.xml">
+      <Filter>Resources</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -14,6 +14,7 @@
     <ClInclude Include="..\Display\Animation.h" />
     <ClInclude Include="..\Display\Camera.h" />
     <ClInclude Include="..\Display\Environment.h" />
+    <ClInclude Include="..\Display\MenuLoader.h" />
     <ClInclude Include="..\Display\Menus\Menu.h" />
     <ClInclude Include="..\Display\Shaders\ModelData.h" />
     <ClInclude Include="..\Display\Shaders\ModelManager.h" />
@@ -39,13 +40,15 @@
     <ClInclude Include="..\System\GameState.h" />
     <ClInclude Include="..\System\InputManager.h" />
     <ClInclude Include="..\System\StackManager.h" />
-    <ClInclude Include="..\Utlity\HeroCommand.h" />
-    <ClInclude Include="..\Utlity\LaserCommand.h" />
+    <ClInclude Include="..\Utility\HeroCommand.h" />
+    <ClInclude Include="..\Utility\LaserCommand.h" />
+    <ClInclude Include="..\Utility\MCommand.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Display\Animation.cpp" />
     <ClCompile Include="..\Display\Camera.cpp" />
     <ClCompile Include="..\Display\Environment.cpp" />
+    <ClCompile Include="..\Display\MenuLoader.cpp" />
     <ClCompile Include="..\Display\Menus\Menu.cpp" />
     <ClCompile Include="..\Display\Shaders\ModelManager.cpp" />
     <ClCompile Include="..\Display\Shaders\Shaders\GridShader.cpp" />
@@ -70,6 +73,12 @@
     <ClCompile Include="..\System\InputManager.cpp" />
     <ClCompile Include="..\System\Main.cpp" />
     <ClCompile Include="..\System\StackManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="loading.xml" />
+    <None Include="menulist.xml">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{CE139FEA-E349-4E5E-B1D1-BAB7DF69BF24}</ProjectGuid>

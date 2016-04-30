@@ -24,6 +24,7 @@
 #include <glm/gtx/norm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include "rapidxml/rapidxml_utils.hpp"
 
 using namespace std;
 

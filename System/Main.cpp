@@ -10,9 +10,12 @@
 
 	InputManager input ;			// handle for managing input
 	StackManager stack;
+	MenuLoader menuLoader;
 	Environment env;
 	Population pop;
 	Hero H;
+	
+
 
 //********************************* DECLARATIONS *********************************
 void init();
@@ -47,7 +50,10 @@ void update(){
 	//if (G->save) save();
 	clockCycle();
 	
-	stack.update(input);
+	
+	stack.menuInput(input.menuInput());
+
+	if (G0->paused) stack.update();
 	//input.clearKeys();	
 }
 
@@ -113,12 +119,15 @@ void display(){
 //********************************* INIT *********************************
 void init(){	
 	RES.x = dfWIDTH; RES.z = dfHEIGHT; 
-	if (eng.initSDL()){
+	if (!eng.initSDL()) 
+		GameState::I()->gameActive = false; 
+	else {
 		eng.displayVersion();
+		stack.init(menuLoader);
 		initGlobals();
+		menuLoader.loadList();
 		pop.init(H);
-
-	} else GameState::I()->gameActive = false; 
+	}  
 }
 
 void initGlobals(){
