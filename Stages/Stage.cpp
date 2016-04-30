@@ -51,6 +51,8 @@ void Stage::		drawTerrain(){
 	glDisable(GL_DEPTH_TEST);
 	M->tileBO.use();	
 	glBindTexture(GL_TEXTURE_2D, M->tileBO.terrainT1[0]);
-	M->tileBO.draw(16, 36, 64, 144);
+	int x = 16;
+	int z = 72;
+	M->tileBO.draw(x, z, x*4, z*4);
 	glEnable(GL_DEPTH_TEST);
 }
