@@ -4,5 +4,6 @@
   </Menu>
   <Menu name="Title" timeout="240" >
     <Background filename="MENU/title.png"></Background>
+    <Flow>888</Flow>
   </Menu>
 </MenuRoot>

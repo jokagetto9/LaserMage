@@ -1,4 +1,3 @@
 <MenuList>
-  <MenuFile filename="loading.xml" >
-  </MenuFile>
+  <MenuFile filename="intro.xml" >  </MenuFile>
 </MenuList>

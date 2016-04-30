@@ -220,10 +220,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="loading.xml">
+    <None Include="menulist.xml">
       <Filter>Resources</Filter>
     </None>
-    <None Include="menulist.xml">
+    <None Include="intro.xml">
       <Filter>Resources</Filter>
     </None>
   </ItemGroup>

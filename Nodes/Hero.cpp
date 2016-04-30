@@ -13,14 +13,7 @@ void Hero::init(){
 	unit = true;  inside = false;
 	theta = 180;
 	prevTheta = 180;
-	//status
-	//stats = BASESTATS;
-	//move = BASEMOVEMENT;
-	//weap = BASEWEAPON;
-	//craft = BASECRAFTING;
-
-	//if (G->load) 
-		loadHero();
+	place(32, 32);
 	updateSpeedMode(1);
 	walkAnim.init(WALK12);
 	laserAnim.init(CYCLIC);

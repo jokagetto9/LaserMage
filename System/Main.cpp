@@ -74,9 +74,9 @@ void clockCycle(){
 	 //else G->action = false;
 }
 
-void physicsUpdate(){
-
+void physicsUpdate(){	
 	input.cameraInput();
+	testStage.init(H);
 	testStage.physUpdate();
 	H.physUpdate(144, G->physDelta);
 	//world.interactions();
@@ -130,7 +130,6 @@ void init(){
 		menuLoader.loadList();
 
 
-		testStage.init(H);
 	}  
 }
 

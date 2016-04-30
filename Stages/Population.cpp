@@ -1,6 +1,8 @@
 #include "Population.h"
 
-Population ::		Population (){}
+Population ::		Population (){
+	enemies.reserve(30);
+}
 
 
 void Population ::		init (Hero& h){

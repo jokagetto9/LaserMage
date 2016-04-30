@@ -6,9 +6,13 @@ Stage::Stage(){
 }
 
 void Stage:: init(Hero & h){
+	if (!loaded){
+
 		//terr.init();	
 		//veg->init(); 
 		pop.init(h);
+		loaded = true;
+	}
 }
 
 
