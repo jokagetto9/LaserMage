@@ -238,5 +238,8 @@
     <None Include="misc.txt">
       <Filter>Resources</Filter>
     </None>
+    <None Include="cursors.xml">
+      <Filter>Resources</Filter>
+    </None>
   </ItemGroup>
 </Project>

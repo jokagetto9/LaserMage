@@ -11,16 +11,36 @@
 class PlayCommand  {
 public:
   virtual void enter(vector <Menu *>& stack){
-	  stack.clear();
-	  G0->paused = false;
+	stack.clear();
+	G0->paused = false;
+	G0->state = PLAY;
+  }
+
+};
+
+class QuitCommand : public PlayCommand{
+public:
+  virtual void enter(vector <Menu *>& stack){
+	G0->gameActive = false;
+  }
+};
+
+class ClearCommand : public PlayCommand{
+public:
+  virtual void enter(vector <Menu *>& stack){
+	stack.clear();
   }
 };
 
 class StackCommand : public PlayCommand{
 public:
   virtual void enter(vector <Menu *>& stack){
-	  if (!menus.empty())
-		stack.push_back(&menus[0]);
+	  if (!menus.empty()){
+		stack.push_back(&menus[0]);		
+		G0->paused = true;
+		if (G0->state == PLAY)
+			G0->state = PAUSE;
+	  }
   }
 
   void addMenu(Menu& menu){
@@ -41,14 +61,6 @@ public:
   }
 };
 
-
-class StackQuit  : public StackCommand{
-public:
-  void enter(vector <Menu *>& stack){
-	  stack.clear();
-	  G0->gameActive = false;
-  }
-};
 
 
 
@@ -73,7 +85,7 @@ public:
 		 m->cursorUD(xz.z);
 	  reset();
   }
-  void MenuDrctn::set(int x, int z){xz.x = 0; xz.z = 0;}
+  void MenuDrctn::set(int x, int z){xz.x = x; xz.z = z;}
   void MenuDrctn::reset(){xz.x = 0; xz.z = 0;}
 
 private: 

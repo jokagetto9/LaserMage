@@ -79,6 +79,9 @@
     <ClCompile Include="..\System\StackManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="cursors.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="intro.xml" />
     <None Include="menulist.xml">
       <SubType>Designer</SubType>

@@ -41,7 +41,7 @@ void close();
 void update(){
 
 	input.pollKeyEvents();
-	StackCommand * cmd = input.checkPause();
+	PlayCommand * cmd = input.checkPause();
 	if (cmd) cmd->enter(stack.stack);
 
 	//input.checkToggles();

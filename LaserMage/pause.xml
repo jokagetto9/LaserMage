@@ -1,6 +1,7 @@
 <MenuRoot>
-  <Menu name="Pause" >
-    <Background filename="MENU/pause.png" backdrop="0"></Background>    
+  <Menu name="Pause" lineh="17" maxindex="3">
+    <Background filename="MENU/pause.png" backdrop="0"></Background>
+    <Cursor id="1" x="88" y="48" ></Cursor>
   </Menu>
 </MenuRoot>
 
