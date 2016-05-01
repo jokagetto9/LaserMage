@@ -65,8 +65,10 @@ void clockCycle(){
 	eng.incLag();
 	while (eng.testLag()){	// while phys delta has time lag
 		if(eng.lagVSlag())	{		// phys has more lag	
-			if (!G->paused) physicsUpdate();
-			G->action = false;
+			if (!G->paused) { 
+				physicsUpdate();
+				//G->action = false;
+			}
 			eng.decPhysLag();	
 		} else {			// if ai has equal or more lag	
 			rapidUpdate();	
