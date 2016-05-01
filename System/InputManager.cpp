@@ -6,17 +6,7 @@
 
 //********************************* INPUT RESPONSES *********************************
 
-void InputManager::		checkToggles(){
-	if (keyPressed[SDLK_ESCAPE])
-		G->gameActive = false; 
-	if (keyPressed[SDLK_TAB]) 	{
-		if (G->state != PLAY) 
-			G->enterMenu(PLAY);
-		else
-			G->enterMenu(TITLE);
-		off(SDLK_TAB); 
-	}	
-}
+
 
 Command * InputManager::		mouseInput(){
 	lasercmd.set(mouseL);
