@@ -2,7 +2,7 @@
 #define HERO_H
 
 #include "Mob.h"
-#include "Laser.h"
+#include "Laser/Laser.h"
 
 
 

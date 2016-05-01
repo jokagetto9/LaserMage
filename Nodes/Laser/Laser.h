@@ -1,9 +1,7 @@
 #ifndef LASER_H
 #define LASER_H
 
-#include "../lib.h"
-
-#include "../System/GameState.h"
+#include "../../lib.h"
 
 
 //********************************* CONSTANTS *********************************

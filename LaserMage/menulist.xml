@@ -1,5 +1,5 @@
 <MenuList>
   <MenuFile filename="intro.xml" >  </MenuFile>
   <MenuFile filename="pause.xml" >  </MenuFile>
-  <CursorFile filename="cursors.xml" >  </MenuFile>
+  <CursorFile filename="cursors.xml" >  </CursorFile>
 </MenuList>

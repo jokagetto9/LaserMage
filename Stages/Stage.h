@@ -43,7 +43,6 @@ virtual void Stage::		rapidUpdate(float delta);
 		//Vegetation * veg;
 		//Structures * structs;
 		
-		bool loaded;
 		
 
 //********************************* MEMBER FUNCTIONS *********************************

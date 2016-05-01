@@ -5,6 +5,6 @@
   <Menu name="Title" timeout="240" >
     <Background filename="MENU/title.png"></Background>
     <Cursor id="1" x="97" y="126" ></Cursor>
-    <Flow>3</Flow>
+    <Flow func="1">4</Flow>
   </Menu>
 </MenuRoot>

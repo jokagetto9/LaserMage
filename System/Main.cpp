@@ -42,13 +42,20 @@ void update(){
 
 	input.pollKeyEvents();
 	PlayCommand * cmd = input.checkPause();
-	if (cmd) cmd->enter(stack.stack);
+	stack.loadCommand(cmd);
 
 	//input.checkToggles();
 	if (!G0->paused) {	
 		input.directionInput()->exec(H);
 		input.mouseInput()->exec(H);
 	}
+
+	if (!G->loaded){
+		//currStage->init(H);
+		testStage.init(H);
+		G->loaded = true;
+	}
+
 	//DBT->update();
 	//if (G->save) save();
 	clockCycle();
@@ -81,7 +88,6 @@ void clockCycle(){
 
 void physicsUpdate(){	
 	input.cameraInput();
-	testStage.init(H);
 	testStage.physUpdate(eng.physDelta);
 	H.physUpdate(144, eng.physDelta);
 	//world.interactions();

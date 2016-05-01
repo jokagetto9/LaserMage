@@ -22,11 +22,14 @@
     <Filter Include="Stages">
       <UniqueIdentifier>{e2cb5ad9-f23b-494f-a85a-ff78a5da3737}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Utility">
-      <UniqueIdentifier>{859a2bf4-f1e7-4855-b10d-2d915210af42}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Resources">
       <UniqueIdentifier>{f9b9b8eb-8fde-4b0d-8c83-2250493c6ee0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nodes\Laser">
+      <UniqueIdentifier>{db331c6a-70d7-4e0f-91a6-c5c484a946f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\BaseEngine\Utility">
+      <UniqueIdentifier>{859a2bf4-f1e7-4855-b10d-2d915210af42}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -84,9 +87,6 @@
     <ClInclude Include="..\Nodes\Node.h">
       <Filter>Nodes</Filter>
     </ClInclude>
-    <ClInclude Include="..\Nodes\Hero.h">
-      <Filter>Nodes</Filter>
-    </ClInclude>
     <ClInclude Include="..\Nodes\Mob.h">
       <Filter>Nodes</Filter>
     </ClInclude>
@@ -95,9 +95,6 @@
     </ClInclude>
     <ClInclude Include="..\Display\Animation.h">
       <Filter>Display</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Nodes\Laser.h">
-      <Filter>Nodes</Filter>
     </ClInclude>
     <ClInclude Include="..\Display\Shaders\Shaders\GridShader.h">
       <Filter>Display\Shaders</Filter>
@@ -114,15 +111,6 @@
     <ClInclude Include="..\Display\MenuLoader.h">
       <Filter>Display</Filter>
     </ClInclude>
-    <ClInclude Include="..\Utility\LaserCommand.h">
-      <Filter>Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Utility\MCommand.h">
-      <Filter>Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Utility\HeroCommand.h">
-      <Filter>Utility</Filter>
-    </ClInclude>
     <ClInclude Include="..\Stages\Stage.h">
       <Filter>Stages</Filter>
     </ClInclude>
@@ -131,6 +119,21 @@
     </ClInclude>
     <ClInclude Include="..\Display\Shaders\Shaders\CursorShader.h">
       <Filter>Display\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nodes\Laser\Laser.h">
+      <Filter>Nodes\Laser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nodes\Laser\LaserCommand.h">
+      <Filter>Nodes\Laser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\System\BaseEngine\Utility\Command.h">
+      <Filter>System\BaseEngine\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\System\BaseEngine\Utility\MCommand.h">
+      <Filter>System\BaseEngine\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nodes\Hero.h">
+      <Filter>Nodes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -185,9 +188,6 @@
     <ClCompile Include="..\Nodes\Node.cpp">
       <Filter>Nodes</Filter>
     </ClCompile>
-    <ClCompile Include="..\Nodes\Hero.cpp">
-      <Filter>Nodes</Filter>
-    </ClCompile>
     <ClCompile Include="..\Nodes\Mob.cpp">
       <Filter>Nodes</Filter>
     </ClCompile>
@@ -196,9 +196,6 @@
     </ClCompile>
     <ClCompile Include="..\Display\Animation.cpp">
       <Filter>Display</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Nodes\Laser.cpp">
-      <Filter>Nodes</Filter>
     </ClCompile>
     <ClCompile Include="..\Display\Shaders\Shaders\GridShader.cpp">
       <Filter>Display\Shaders</Filter>
@@ -223,6 +220,12 @@
     </ClCompile>
     <ClCompile Include="..\Display\Shaders\Shaders\CursorShader.cpp">
       <Filter>Display\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Nodes\Laser\Laser.cpp">
+      <Filter>Nodes\Laser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Nodes\Hero.cpp">
+      <Filter>Nodes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

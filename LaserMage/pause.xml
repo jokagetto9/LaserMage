@@ -2,6 +2,10 @@
   <Menu name="Pause" lineh="17" maxindex="3">
     <Background filename="MENU/pause.png" backdrop="0"></Background>
     <Cursor id="1" x="88" y="48" ></Cursor>
+    <Flow func="1">4</Flow>
+    <Flow func="1">5</Flow>
+    <Flow></Flow>
+    <Flow func="1">1</Flow>
   </Menu>
 </MenuRoot>
 

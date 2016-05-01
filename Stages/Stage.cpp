@@ -2,17 +2,14 @@
 #include "Stage.h"
 
 Stage::Stage(){
-	loaded = false;
 }
 
 void Stage:: init(Hero & h){
-	if (!loaded){
-
-		//terr.init();	
-		//veg->init(); 
-		pop.init(h);
-		loaded = true;
-	}
+	h.place(32, 32);
+	//terr.init();	
+	//veg->init();
+	pop.enemies.clear();
+	pop.init(h);
 }
 
 

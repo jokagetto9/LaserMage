@@ -27,7 +27,8 @@
     <ClInclude Include="..\Nodes\Enemy.h" />
     <ClInclude Include="..\Nodes\Health.h" />
     <ClInclude Include="..\Nodes\Hero.h" />
-    <ClInclude Include="..\Nodes\Laser.h" />
+    <ClInclude Include="..\Nodes\Laser\Laser.h" />
+    <ClInclude Include="..\Nodes\Laser\LaserCommand.h" />
     <ClInclude Include="..\Nodes\Mob.h" />
     <ClInclude Include="..\Nodes\Node.h" />
     <ClInclude Include="..\Stages\EnemyWave.h" />
@@ -38,13 +39,12 @@
     <ClInclude Include="..\System\BaseEngine\BaseGameState.h" />
     <ClInclude Include="..\System\BaseEngine\BaseInputManager.h" />
     <ClInclude Include="..\System\BaseEngine\BaseStackManager.h" />
+    <ClInclude Include="..\System\BaseEngine\Utility\Command.h" />
+    <ClInclude Include="..\System\BaseEngine\Utility\MCommand.h" />
     <ClInclude Include="..\System\Engine.h" />
     <ClInclude Include="..\System\GameState.h" />
     <ClInclude Include="..\System\InputManager.h" />
     <ClInclude Include="..\System\StackManager.h" />
-    <ClInclude Include="..\Utility\HeroCommand.h" />
-    <ClInclude Include="..\Utility\LaserCommand.h" />
-    <ClInclude Include="..\Utility\MCommand.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Display\Animation.cpp" />
@@ -61,7 +61,7 @@
     <ClCompile Include="..\Nodes\Enemy.cpp" />
     <ClCompile Include="..\Nodes\Health.cpp" />
     <ClCompile Include="..\Nodes\Hero.cpp" />
-    <ClCompile Include="..\Nodes\Laser.cpp" />
+    <ClCompile Include="..\Nodes\Laser\Laser.cpp" />
     <ClCompile Include="..\Nodes\Mob.cpp" />
     <ClCompile Include="..\Nodes\Node.cpp" />
     <ClCompile Include="..\Stages\EnemyWave.cpp" />
@@ -82,7 +82,9 @@
     <None Include="cursors.xml">
       <SubType>Designer</SubType>
     </None>
-    <None Include="intro.xml" />
+    <None Include="intro.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="menulist.xml">
       <SubType>Designer</SubType>
     </None>
