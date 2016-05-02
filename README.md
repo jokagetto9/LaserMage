@@ -1,6 +1,8 @@
 # LaserMage
 Simple game intended to test modular design.
+
 The intention is to create XML builders for in game assets such as:
+
 Stages, Menus, Textures, Animations, Quests, Skills, Perks, etc
 
 using:
@@ -13,9 +15,9 @@ The contents of DevLib repository are required to compile.
 
 Branches Closed:
 
-SystemMenu
-DismantleGameState
-TestEngine
+SystemMenu,
+DismantleGameState,
+TestEngine,
 
 
 
