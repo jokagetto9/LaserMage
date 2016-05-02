@@ -11,72 +11,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Display\Animation.h" />
-    <ClInclude Include="..\Display\Camera.h" />
-    <ClInclude Include="..\Display\Environment.h" />
-    <ClInclude Include="..\Display\MenuLoader.h" />
-    <ClInclude Include="..\Display\Menus\Menu.h" />
-    <ClInclude Include="..\Display\Shaders\ModelData.h" />
-    <ClInclude Include="..\Display\Shaders\ModelManager.h" />
-    <ClInclude Include="..\Display\Shaders\Shaders\CursorShader.h" />
-    <ClInclude Include="..\Display\Shaders\Shaders\GridShader.h" />
-    <ClInclude Include="..\Display\Shaders\Shaders\MenuShader.h" />
-    <ClInclude Include="..\Display\Shaders\Shaders\Shader.h" />
-    <ClInclude Include="..\Display\Shaders\Shaders\TileShader.h" />
-    <ClInclude Include="..\lib.h" />
-    <ClInclude Include="..\Nodes\Enemy.h" />
-    <ClInclude Include="..\Nodes\Health.h" />
-    <ClInclude Include="..\Nodes\Hero.h" />
     <ClInclude Include="..\Nodes\Laser\Laser.h" />
     <ClInclude Include="..\Nodes\Laser\LaserCommand.h" />
-    <ClInclude Include="..\Nodes\Mob.h" />
-    <ClInclude Include="..\Nodes\Node.h" />
-    <ClInclude Include="..\Stages\EnemyWave.h" />
-    <ClInclude Include="..\Stages\Population.h" />
-    <ClInclude Include="..\Stages\SpawnPoint.h" />
-    <ClInclude Include="..\Stages\Stage.h" />
-    <ClInclude Include="..\System\BaseEngine\BaseEngine.h" />
-    <ClInclude Include="..\System\BaseEngine\BaseGameState.h" />
-    <ClInclude Include="..\System\BaseEngine\BaseInputManager.h" />
-    <ClInclude Include="..\System\BaseEngine\BaseStackManager.h" />
-    <ClInclude Include="..\System\BaseEngine\Utility\Command.h" />
-    <ClInclude Include="..\System\BaseEngine\Utility\MCommand.h" />
-    <ClInclude Include="..\System\Engine.h" />
-    <ClInclude Include="..\System\GameState.h" />
-    <ClInclude Include="..\System\InputManager.h" />
-    <ClInclude Include="..\System\StackManager.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Display\Animation.cpp" />
-    <ClCompile Include="..\Display\Camera.cpp" />
-    <ClCompile Include="..\Display\Environment.cpp" />
-    <ClCompile Include="..\Display\MenuLoader.cpp" />
-    <ClCompile Include="..\Display\Menus\Menu.cpp" />
-    <ClCompile Include="..\Display\Shaders\ModelManager.cpp" />
-    <ClCompile Include="..\Display\Shaders\Shaders\CursorShader.cpp" />
-    <ClCompile Include="..\Display\Shaders\Shaders\GridShader.cpp" />
-    <ClCompile Include="..\Display\Shaders\Shaders\MenuShader.cpp" />
-    <ClCompile Include="..\Display\Shaders\Shaders\Shader.cpp" />
-    <ClCompile Include="..\Display\Shaders\Shaders\TileShader.cpp" />
-    <ClCompile Include="..\Nodes\Enemy.cpp" />
-    <ClCompile Include="..\Nodes\Health.cpp" />
-    <ClCompile Include="..\Nodes\Hero.cpp" />
     <ClCompile Include="..\Nodes\Laser\Laser.cpp" />
-    <ClCompile Include="..\Nodes\Mob.cpp" />
-    <ClCompile Include="..\Nodes\Node.cpp" />
-    <ClCompile Include="..\Stages\EnemyWave.cpp" />
-    <ClCompile Include="..\Stages\Population.cpp" />
-    <ClCompile Include="..\Stages\SpawnPoint.cpp" />
-    <ClCompile Include="..\Stages\Stage.cpp" />
-    <ClCompile Include="..\System\BaseEngine\BaseEngine.cpp" />
-    <ClCompile Include="..\System\BaseEngine\BaseGameState.cpp" />
-    <ClCompile Include="..\System\BaseEngine\BaseInputManager.cpp" />
-    <ClCompile Include="..\System\BaseEngine\BaseStackManager.cpp" />
-    <ClCompile Include="..\System\Engine.cpp" />
-    <ClCompile Include="..\System\GameState.cpp" />
-    <ClCompile Include="..\System\InputManager.cpp" />
-    <ClCompile Include="..\System\Main.cpp" />
-    <ClCompile Include="..\System\StackManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cursors.xml">
