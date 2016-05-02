@@ -1,10 +1,10 @@
 #ifndef INPUTMANAGER_H
 #define INPUTMANAGER_H
 
-#include "GameState.h"
+#include "BaseEngine/BaseGameState.h"
 
 #include "BaseEngine/BaseInputManager.h"
-#include "../Nodes/Laser/LaserCommand.h"
+#include "Nodes/Laser/LaserCommand.h"
 //********************************* CONSTANTS *********************************
 //********************************* INITIALIZATION *********************************
 

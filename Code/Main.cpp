@@ -1,15 +1,15 @@
-#include "Engine.h"
+#include "BaseEngine/BaseEngine.h"
+#include "BaseEngine/Stack/BaseStackManager.h"
+#include "BaseEngine/Stack/Camera.h"
+#include "BaseEngine/Stack/Environment.h"
 #include "InputManager.h"
-#include "StackManager.h"
-#include "../Display/Camera.h"
-#include "../Display/Environment.h"
-#include "../Stages/Stage.h"
+#include "Stages/Stage.h"
 //********************************* MODULES *********************************
 
-	Engine eng;						// handle for managing the passage of time
+	BaseEngine eng;						// handle for managing the passage of time
 
 	InputManager input ;			// handle for managing input
-	StackManager stack;
+	BaseStackManager stack;
 	MenuLoader menuLoader;
 	Environment env;
 	Stage testStage;
@@ -45,7 +45,7 @@ void update(){
 	stack.loadCommand(cmd);
 
 	//input.checkToggles();
-	if (!G0->paused) {	
+	if (!G->paused) {	
 		input.directionInput()->exec(H);
 		input.mouseInput()->exec(H);
 	}
@@ -63,7 +63,7 @@ void update(){
 	
 	stack.menuInput(input.menuInput());
 
-	if (G0->paused) stack.update();
+	if (G->paused) stack.update();
 	//input.clearKeys();	
 }
 
@@ -130,7 +130,7 @@ void display(){
 void init(){	
 	RES.x = dfWIDTH; RES.z = dfHEIGHT; 
 	if (!eng.initSDL()) 
-		GameState::I()->gameActive = false; 
+		BaseGameState::I()->gameActive = false; 
 	else {
 		eng.displayVersion();
 		initGlobals();
@@ -153,9 +153,9 @@ void initGlobals(){
 	C->init();		
 	H.init();	
 
-	G = GameState::I();		
+	G = BaseGameState::I();		
 	G->init();
-	G0 = G;	
+	G = G;	
 	
 	env.init();
 	//init quest markers
@@ -166,7 +166,7 @@ void initGlobals(){
 int main(int argc, char* args[]){
 	init();
 	//game loop
-	while( GameState::I()->gameActive ){	
+	while( BaseGameState::I()->gameActive ){	
 		update();	
 		display();
 		eng.flush();

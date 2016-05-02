@@ -1,6 +1,6 @@
 #ifndef LASERCOMMAND_H
 #define LASERCOMMAND_H
-#include "../../System/BaseEngine/Utility/Command.h"
+#include "../../BaseEngine/Utility/Command.h"
 
 //********************************* CONSTANTS *********************************
 

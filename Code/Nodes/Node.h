@@ -2,8 +2,8 @@
 #define NODE_H
 
 
-#include "../Display/Camera.h"
-#include "../lib.h"
+#include "../BaseEngine/Stack/Camera.h"
+#include "../BaseEngine/lib.h"
 
 //********************************* CONSTANTS *********************************
 

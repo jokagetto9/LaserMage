@@ -1,6 +1,6 @@
 //********************************* INITIALIZATION *********************************
 #include "InputManager.h"
-#include "../Nodes/Hero.h"
+#include "Nodes/Hero.h"
 //********************************* KEY CYCLE *********************************
 
 
