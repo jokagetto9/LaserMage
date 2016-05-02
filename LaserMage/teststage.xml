@@ -1,0 +1,25 @@
+<Stage tile="0" >
+	<Map></Map>
+  <SpawnPoint x="" y="">
+    <Wave type="CHUCKY" ></Wave>    
+  </SpawnPoint>
+  <SpawnPoint x="" y="">
+    <Wave type="CHUCKY" ></Wave>
+  </SpawnPoint> 
+  <SpawnPoint x="" y="">
+    <Wave type="CHUCKY" ></Wave>
+  </SpawnPoint>
+  <Wave type="CHUCKY" ></Wave>
+  <SpawnPoint x="" y="">
+    <Wave type="CHUCKY" ></Wave>
+  </SpawnPoint>
+  <Wave type="CHUCKY" ></Wave>
+  <SpawnPoint x="" y="">
+    <Wave type="CHUCKY" ></Wave>
+  </SpawnPoint>
+  <SpawnPoint x="" y="">
+    <Wave type="CHUCKY" ></Wave>
+  </SpawnPoint>
+</Stage>
+
+
