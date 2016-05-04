@@ -1,11 +1,12 @@
 <MenuRoot>
-  <Menu name="Pause" lineh="17" maxindex="3">
+  <Menu name="Pause" lineh="16" maxindex="4">
     <Background filename="MENU/pause.png" backdrop="0"></Background>
-    <Cursor id="1" x="88" y="48" ></Cursor>
+    <Cursor id="1" x="91" y="52" ></Cursor>
+    <Flow func="1">3</Flow>
     <Flow func="1">4</Flow>
     <Flow func="1">5</Flow>
-    <Flow></Flow>
-    <Flow func="1">1</Flow>
+    <Flow func="1">9</Flow>
+    <Flow func="1">10</Flow>
   </Menu>
 </MenuRoot>
 
