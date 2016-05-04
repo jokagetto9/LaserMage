@@ -137,7 +137,7 @@ void init(){
 		//menus
 		stack.init(menuLoader);	
 		input.init(menuLoader);
-		menuLoader.loadList();
+		menuLoader.load();
 
 
 	}  
