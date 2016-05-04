@@ -21,6 +21,7 @@
     <ClInclude Include="..\Code\BaseEngine\Stack\Menus\Menu.h" />
     <ClInclude Include="..\Code\BaseEngine\Utility\Command.h" />
     <ClInclude Include="..\Code\BaseEngine\Utility\MCommand.h" />
+    <ClInclude Include="..\Code\BaseEngine\Utility\XMLParser.h" />
     <ClInclude Include="..\Code\Display\Animation.h" />
     <ClInclude Include="..\Code\Display\ModelData.h" />
     <ClInclude Include="..\Code\Display\ModelManager.h" />
@@ -51,6 +52,7 @@
     <ClCompile Include="..\Code\BaseEngine\Stack\Environment.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Stack\MenuLoader.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Stack\Menus\Menu.cpp" />
+    <ClCompile Include="..\Code\BaseEngine\Utility\XMLParser.cpp" />
     <ClCompile Include="..\Code\Display\Animation.cpp" />
     <ClCompile Include="..\Code\Display\ModelManager.cpp" />
     <ClCompile Include="..\Code\Display\Shaders\CursorShader.cpp" />
@@ -81,8 +83,11 @@
     <None Include="menulist.xml">
       <SubType>Designer</SubType>
     </None>
-    <None Include="misc.txt" />
     <None Include="pause.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stagelist.xml" />
+    <None Include="teststage.xml">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

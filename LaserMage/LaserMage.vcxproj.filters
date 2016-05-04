@@ -126,6 +126,9 @@
     <ClInclude Include="..\Code\Display\Shaders\GridShader.h">
       <Filter>Display\Shaders</Filter>
     </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Utility\XMLParser.h">
+      <Filter>BaseEngine\Utility</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Code\InputManager.cpp">
@@ -209,6 +212,9 @@
     <ClCompile Include="..\Code\Display\Shaders\GridShader.cpp">
       <Filter>Display\Shaders</Filter>
     </ClCompile>
+    <ClCompile Include="..\Code\BaseEngine\Utility\XMLParser.cpp">
+      <Filter>BaseEngine\Utility</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="menulist.xml">
@@ -220,10 +226,13 @@
     <None Include="pause.xml">
       <Filter>Resources</Filter>
     </None>
-    <None Include="misc.txt">
+    <None Include="cursors.xml">
       <Filter>Resources</Filter>
     </None>
-    <None Include="cursors.xml">
+    <None Include="stagelist.xml">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="teststage.xml">
       <Filter>Resources</Filter>
     </None>
   </ItemGroup>
