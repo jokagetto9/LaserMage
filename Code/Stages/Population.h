@@ -20,7 +20,7 @@ class Population {
 	vector <Enemy*> * Population::		getRegion(int i);
 	
 	void Population::		physUpdate(float delta);
-	void Population::		aiUpdate(float delta);
+	void Population::		aiUpdate(float delta, glm::vec3 target);
 	void Population::		slowaiUpdate();
 	void Population ::		interact (int pid);
 

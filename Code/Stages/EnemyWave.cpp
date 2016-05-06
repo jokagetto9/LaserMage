@@ -1,13 +1,14 @@
 //********************************* INITIALIZATION *********************************
 #include "EnemyWave.h"
-EnemyWave::EnemyWave(EnemyType et, glm::vec3 p){
-	origin = p;
-	enemy = et;
+EnemyWave::			EnemyWave(){
+	glm::vec3 z(32, 0, 0);
+	origin = z;
+	enemy = CHUCKY;
 	mirrored = false;
 	quantity = 1;
 	centerTheta = 0;
 	clustering = 10;
-	dist = 60;
+	dist = 50;
 }
 
 void EnemyWave::	init(int q, float d){	

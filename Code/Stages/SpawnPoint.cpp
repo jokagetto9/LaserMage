@@ -13,6 +13,15 @@ SpawnPoint::SpawnPoint(){
 }
 
 
-void SpawnPoint::	loadWave(){
-
+void SpawnPoint::	addWave(EnemyWave & w){
+	waves.push_back(w);
 }
+
+bool SpawnPoint::	validate(){
+
+
+	return true;
+}
+
+
+

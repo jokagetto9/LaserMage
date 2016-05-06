@@ -21,7 +21,7 @@ void Enemy::init(EnemyType t){
 }
 
 void Enemy::radialOffset(float theta, float dist, glm::vec3 p){
-	setTarget(p);
+	//setTarget(p);
 	glm::vec3 v = calcThetaV(theta);
 	v *= dist; v += p;
 	place(v.x, v.z);

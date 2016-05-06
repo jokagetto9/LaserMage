@@ -1,26 +1,22 @@
-#ifndef MENULOADER_H
-#define MENULOADER_H
-#include "../BaseEngine/lib.h"
+#ifndef STAGELOADER_H
+#define STAGELOADER_H
+#include "Stage.h"
+#include "../BaseEngine/Utility/XMLParser.h"
 
 //********************************* CONSTANTS *********************************
 
 //********************************* INITIALIZATION *********************************
 
-class StageLoader  {
+class StageLoader : public XMLParser {
 public: 
-	StageLoader::StageLoader();
-
-	void StageLoader::registerRoot(StackCommand * m);
-
-
-	void StageLoader::loadList();
+	void StageLoader::load();
 	void StageLoader::loadStage(int i);
+	Stage * StageLoader::getStage(int i);
 
-	string StageLoader::getText(char * c);
-	int StageLoader::getInt(char * c);
 private:
 	vector <string> stageFiles;
-
+	vector <Stage> stages;
+	int stageCount;
 
 };
 #endif

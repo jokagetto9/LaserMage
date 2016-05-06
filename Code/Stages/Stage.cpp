@@ -2,17 +2,35 @@
 #include "Stage.h"
 
 Stage::Stage(){
+	name = "";
+	baseTile = 0;
 }
 
-void Stage:: init(Hero & h){
-	h.place(32, 32);
+void Stage:: init(Hero * h){
+	H = h;
+	h->place(32, 12);
 	//terr.init();	
-	//veg->init();
 	pop.enemies.clear();
-	pop.init(h);
+	for (int i = 0; i < spawns.size(); i++){ 
+		int waves = spawns[i].waves.size();
+		for(int j = 0; j < waves; j++){
+			spawns[i].waves[j].origin = spawns[i].pos();
+			spawns[i].waves[j].generate(pop.enemies);
+		}
+	}
+	
+	//veg->init();
 }
 
+void Stage::	addSpawnPoint(SpawnPoint & sp){
+	spawns.push_back(sp);
+}
 
+bool Stage::	validate(){
+
+	return true;
+
+}
 //********************************* UPDATES *********************************
 
 void Stage::update(){
@@ -36,7 +54,7 @@ void Stage::		physUpdate(float delta){
 
 }
 void Stage::		rapidUpdate(float delta){
-	pop.aiUpdate(delta);
+	pop.aiUpdate(delta, H->pos());
 }
 
 void Stage::		draw(float delta){	

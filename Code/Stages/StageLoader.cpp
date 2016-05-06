@@ -1,76 +1,29 @@
 //********************************* INITIALIZATION *********************************
 #include "StageLoader.h"
 
-StageLoader::StageLoader(){
-	cursorFile = "";
-	
-}
 
-void StageLoader::registerRoot(StackCommand * m){
-	if (m)
-		rMenus.push_back(m);
-}
-
-string XMLLoader::loadList(char*, listFile, char * listTag, char * fileTag, vector <string>& files){
-    rapidxml::file<> xmlFile(listFile); // Default template is char
-    rapidxml::xml_document<> doc;
-	try {
-		doc.parse<0>(xmlFile.data());
-		rapidxml::xml_node<> *list = doc.first_node();
-		rapidxml::xml_node<> *n;
-		rapidxml::xml_attribute<> *a;
-		string s = getText(list->name());
-		if (s == listTag){ 
-			for (n = list->first_node(); n; n = n->next_sibling()){
-				s = getText(n->name());		
-				a = n->first_attribute();
-				if (s == fileTag && a) 
-					s = getText(a->value());
-					files.push_back(s);
-				}
-				else 
-					loadAuxillary();
-			}
-		}
+void StageLoader::load(){
+	try {		
+		loadList("stagelist.xml", "StageList", "StageFile", stageFiles);
 	}catch(...){
-		cout << listTag << " did not load properly." << endl;
+		cout << "Stage did not load properly." << endl;
+	}
+	stageCount = stageFiles.size();
+	loadStage(0);
+	for (int i = 0; i < stageFiles.size(); i++){
+		//loadStage(i);
 	}
 }
 
-void StageLoader::loadList(){
-    rapidxml::file<> xmlFile("stagelist.xml"); // Default template is char
-    rapidxml::xml_document<> doc;
-	try {
-		doc.parse<0>(xmlFile.data());
-		rapidxml::xml_node<> *list = doc.first_node();
-		rapidxml::xml_node<> *n;
-		rapidxml::xml_attribute<> *a;
-		string s = getText(list->name());
-		if (s == "StageList"){ 
-			for (n = list->first_node(); n; n = n->next_sibling()){
-				s = getText(n->name());		
-				a = n->first_attribute();
-				if (s == "StageFile" && a) {
-					s = getText(a->name());
-					if (s == "filename"){
-						s = getText(a->value());
-						stageFiles.push_back(s);
-					}
-				}
-			}
-		}
-	}catch(...){
-		cout << "Stages did not load properly." << endl;
-	}
-}
 
-Stage & StageLoader::loadStage(int i){
+
+void StageLoader::loadStage(int i){
 	try {
 		rapidxml::file<> xmlFile(stageFiles[i].c_str()); // Default template is char
 		rapidxml::xml_document<> doc;
 		doc.parse<0>(xmlFile.data());
-		rapidxml::xml_node<> *list = doc.first_node();
-		for (list = list->first_node(); list; list = list->next_sibling()){
+		rapidxml::xml_node<> *node; 
+		for (node = doc.first_node(); node; node = node->next_sibling()){
 			rapidxml::xml_node<> *n;
 			rapidxml::xml_node<> *n2;
 			rapidxml::xml_attribute<> *a;
@@ -78,7 +31,7 @@ Stage & StageLoader::loadStage(int i){
 			Stage stage;
 			SpawnPoint spawn;
 			EnemyWave wave;
-			bool success = false;
+			bool success = true;
 			if (s == "Stage"){ 
 				for (a = node->first_attribute(); a; a = a->next_attribute()){
 					s = getText(a->name());
@@ -90,23 +43,23 @@ Stage & StageLoader::loadStage(int i){
 				for (n = node->first_node(); n; n = n->next_sibling()){
 					if (getText(n->name()) == "Map"){
 						s = getText(n->value());
-						loadMap(s, stage);
+						//loadMap(s, stage);
 					}
 					else if (getText(n->name()) == "SpawnPoint"){
-						spawn.clear();
-						wave.clear();
+						//spawn.clear();
+						//wave.clear();
 						for (a = n->first_attribute(); a; a = a->next_attribute()){
 							s = getText(a->name());
 							if (s == "x"){
-								spawn.x = getInt(a->value());
+								spawn.xPos = getInt(a->value());
 							}if (s == "y" || s == "z"){
-								spawn.z = getInt(a->value());
+								spawn.zPos = getInt(a->value());
 							}
 						}
 						for (n2 = n->first_node(); n2; n2 = n2->next_sibling()){
 							if (getText(n2->name()) == "Wave"){
-								for (a = n->first_attribute(); a; a = a->next_attribute()){
-									wave.q = getInt(n->value());
+								wave.quantity = getInt(n2->value());
+								for (a = n2->first_attribute(); a; a = a->next_attribute()){
 									s = getText(a->name());
 									if (s == "type"){
 										//wave.type == getInt(a->value());
@@ -114,20 +67,20 @@ Stage & StageLoader::loadStage(int i){
 									}else if (s == "dist"){
 										wave.dist = getInt(a->value());
 									}else if (s == "mirror"){
-										wave.mirror = getInt(a->value());
+										wave.mirrored = getInt(a->value());
 									}else if (s == "ctheta"){
 										wave.centerTheta = getInt(a->value());
 									}else if (s == "cluster"){
 										wave.clustering = getInt(a->value());
 									}
 								}
-								if (wave.validate())  spawn.addWave(spawn);
+								spawn.addWave(wave);
 							}
 						}	
-						if (spawn.validate())  stage.addSpawnPoint(spawn);
+						stage.addSpawnPoint(spawn);
 					}
 				}
-				if (success) return stage;
+				if (success) stages.push_back(stage);
 			}
 		}
 	}catch(...){
@@ -135,69 +88,14 @@ Stage & StageLoader::loadStage(int i){
 	}
 }
 
-void StageLoader::loadMenu(int i, rapidxml::xml_node<> * node){
 
-	
-}
 
-void StageLoader::loadCursors(){	
-	if (cursorFile != ""){
-		try {
-			rapidxml::file<> xmlFile(cursorFile.c_str()); // Default template is char
-			rapidxml::xml_document<> doc;	
-			rapidxml::xml_node<> *n;
-			rapidxml::xml_attribute<> *a;
-			string s;
 
-			doc.parse<0>(xmlFile.data());
-			rapidxml::xml_node<> *list = doc.first_node();
-			for (n = list->first_node(); n; n = n->next_sibling()){
-				s = getText(n->name());
-				if(s == "Cursor"){
-					int index = 0; GLuint tex = 0;
-					for (a = n->first_attribute(); a; a = a->next_attribute()){
-						s = getText(a->name());
-						if(s == "id"){
-							index = getInt(a->value());
-						}			
-						else if(s == "filename"){
-							tex = loadTexture(a->value(), false);
-							Menu::createCursor(tex, index);
-						}		
-					}
-				}
-			}
-		}catch(...){
-			cout << "Cursors did not load properly." << endl;
-		}
+Stage * StageLoader::getStage(int i){
+	if (i < stageCount){
+		return &stages[i];
 	}
-}
-
-void StageLoader::printList(){
-	for (int i = 0; i < menuFiles.size(); i++){
-		cout << menuFiles[i] << endl;
-	}
-}
-
-void StageLoader::printMenu(int i){
-	if (i < menuFiles.size()){
-
-
-	}
-}
-
-string StageLoader::getText(char * c){	
-	stringstream ss; string s;
-	ss << c;	 ss >> s;
-	return s;
+	return NULL;
 }
 
 
-int StageLoader::getInt(char * c){	
-	stringstream ss; int i;
-	ss << c;	 ss >> i;
-	if (i < -10000)
-		return 0;
-	else 
-		return i;
-}

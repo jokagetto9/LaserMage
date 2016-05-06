@@ -10,6 +10,7 @@
 //********************************* INITIALIZATION *********************************
 class EnemyWave {
 	public: 
+	EnemyWave::			EnemyWave();
 	EnemyWave::			EnemyWave(EnemyType et, glm::vec3 p);
 	void EnemyWave::	init(int q, float d);
 	void EnemyWave::	configure(float c, float t);

@@ -129,6 +129,9 @@
     <ClInclude Include="..\Code\BaseEngine\Utility\XMLParser.h">
       <Filter>BaseEngine\Utility</Filter>
     </ClInclude>
+    <ClInclude Include="..\Code\Stages\StageLoader.h">
+      <Filter>Stages</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Code\InputManager.cpp">
@@ -214,6 +217,9 @@
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Utility\XMLParser.cpp">
       <Filter>BaseEngine\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Stages\StageLoader.cpp">
+      <Filter>Stages</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

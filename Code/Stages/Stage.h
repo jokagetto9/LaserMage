@@ -17,7 +17,11 @@ class Stage {
 	// constructors
 	Stage::	Stage ();
 	
-	virtual void Stage:: init(Hero & h);
+	virtual void Stage:: init(Hero * h);
+
+	void Stage::	addSpawnPoint(SpawnPoint & sp);
+	bool Stage::	validate();
+
 
 	virtual void Stage::		save(ofstream &saveFile){	}
 	virtual void Stage::		saveMap(ofstream &saveFile){	}
@@ -37,13 +41,16 @@ virtual void Stage::		rapidUpdate(float delta);
 		void Stage::		drawTerrain();
 		
 //************************************************** MEMBERS ***************************************************
-	
+		vector<SpawnPoint> spawns;
 		//Terrain terr;
+
+
 		Population pop;
 		//Vegetation * veg;
 		//Structures * structs;
-		
-		
+		string name;
+		int baseTile;
+		Hero * H;
 
 //********************************* MEMBER FUNCTIONS *********************************
 		

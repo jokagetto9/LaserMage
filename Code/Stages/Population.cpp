@@ -6,24 +6,11 @@ Population ::		Population (){
 
 
 void Population ::		init (Hero& h){
-	EnemyWave wave(CHUCKY, h.pos());
-	float d = 40;
-	wave.init(1, d);	wave.generate(enemies); d+=7.5;
-	wave.init(5, d);	wave.generate(enemies); d+=7.5;
-	wave.init(9, d);	wave.generate(enemies); d+=7.5;
-	/*/
-	wave.init(35, d);	wave.generate(enemies); d+=7.5;
-	wave.init(36, d);	wave.generate(enemies); d+=7.5;
-	wave.init(35, d);	wave.generate(enemies); d+=7.5;
-	wave.init(36, d);	wave.generate(enemies); d+=7.5;
-	wave.init(35, d);	wave.generate(enemies); d+=7.5;
-	wave.init(36, d);	wave.generate(enemies); d+=7.5;
-	wave.init(35, d);	wave.generate(enemies); d+=7.5;
-	wave.init(36, d);	wave.generate(enemies); d+=7.5;
-	wave.init(35, d);	wave.generate(enemies); d+=7.5;
-	wave.init(36, d);	wave.generate(enemies); d+=7.5;
-	wave.init(35, d);	wave.generate(enemies); d+=7.5;
-	//*/
+	//float d = 40;
+	//wave.init(1, d);	wave.generate(enemies); d+=7.5;
+	//wave.init(5, d);	wave.generate(enemies); d+=7.5;
+	//wave.init(9, d);	wave.generate(enemies); d+=7.5;
+
 }
 
 
@@ -50,12 +37,14 @@ void Population::		physUpdate(float delta){
 			enemies[i].physUpdate(500, delta);
 	}
 }
-void Population::		aiUpdate(float delta){
+void Population::		aiUpdate(float delta, glm::vec3 target){
 
 	int s = enemies.size();
 	for (int i = 0; i < s; i++){
-		if(!enemies[i].dead)
+		if(!enemies[i].dead){
+			enemies[i].setTarget(target);
 			enemies[i].aiUpdate(delta);
+		}
 	}
 }
 void Population::		slowaiUpdate(){

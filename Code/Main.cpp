@@ -2,8 +2,8 @@
 #include "BaseEngine/Stack/BaseStackManager.h"
 #include "BaseEngine/Stack/Camera.h"
 #include "BaseEngine/Stack/Environment.h"
+#include "Stages/StageLoader.h"
 #include "InputManager.h"
-#include "Stages/Stage.h"
 //********************************* MODULES *********************************
 
 	BaseEngine eng;						// handle for managing the passage of time
@@ -12,7 +12,9 @@
 	BaseStackManager stack;
 	MenuLoader menuLoader;
 	Environment env;
+	StageLoader stageLoader;
 	Stage testStage;
+	Stage * currStage;
 	Hero H;
 	
 
@@ -52,7 +54,7 @@ void update(){
 
 	if (!G->loaded){
 		//currStage->init(H);
-		testStage.init(H);
+		currStage->init(&H);
 		G->loaded = true;
 	}
 
@@ -88,7 +90,7 @@ void clockCycle(){
 
 void physicsUpdate(){	
 	input.cameraInput();
-	testStage.physUpdate(eng.physDelta);
+	currStage->physUpdate(eng.physDelta);
 	H.physUpdate(144, eng.physDelta);
 	//world.interactions();
 	//DBT->physUpdate(); //?
@@ -96,7 +98,7 @@ void physicsUpdate(){
 
 void rapidUpdate(){
 	if (!G->paused){	
-		testStage.rapidUpdate(eng.aiDelta);
+		currStage->rapidUpdate(eng.aiDelta);
 	}
 	stack.rapidUpdate();
 }
@@ -110,10 +112,10 @@ void display(){
 	if(!G->paused || !stack.backdrop()){
 		
 		C->update(H.pos());		
-		testStage.drawTerrain(); 
+		currStage->drawTerrain(); 
 		H.drawHero(eng.avgFrameDelta);
 		M->gridBO.prepNPC();
-		testStage.draw(eng.avgFrameDelta); 
+		currStage->draw(eng.avgFrameDelta); 
 
 	}//*/
 
@@ -134,6 +136,9 @@ void init(){
 	else {
 		eng.displayVersion();
 		initGlobals();
+		stageLoader.load();
+		currStage = stageLoader.getStage(0);
+		if (currStage == NULL) currStage = &testStage;
 		//menus
 		stack.init(menuLoader);	
 		input.init(menuLoader);

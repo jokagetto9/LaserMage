@@ -11,7 +11,8 @@
 class SpawnPoint : public Node {
 	public: 
 	SpawnPoint::			SpawnPoint();
-	void SpawnPoint::		loadWave();
+	void SpawnPoint::		addWave(EnemyWave & w);
+	bool SpawnPoint::	validate();
 
 	
 //********************************* MEMBERS *********************************
