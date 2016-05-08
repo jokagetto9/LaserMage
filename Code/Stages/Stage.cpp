@@ -14,7 +14,7 @@ void Stage:: init(Hero * h){
 	for (int i = 0; i < spawns.size(); i++){ 
 		int waves = spawns[i].waves.size();
 		for(int j = 0; j < waves; j++){
-			spawns[i].waves[j].origin = spawns[i].pos();
+			spawns[i].waves[j].origin = spawns[i].pos(); //NEWBRANCH
 			spawns[i].waves[j].generate(pop.enemies);
 		}
 	}

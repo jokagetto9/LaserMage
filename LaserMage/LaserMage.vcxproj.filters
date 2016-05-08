@@ -34,6 +34,9 @@
     <Filter Include="BaseEngine\Stack\Menus">
       <UniqueIdentifier>{174760c6-f425-4faa-ab6e-f6b32726946e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="BaseEngine\Objects">
+      <UniqueIdentifier>{b0a22a3d-35a4-42b9-826b-5eb4ff8bf8be}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Code\InputManager.h">
@@ -132,6 +135,12 @@
     <ClInclude Include="..\Code\Stages\StageLoader.h">
       <Filter>Stages</Filter>
     </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Objects\Component.h">
+      <Filter>BaseEngine\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Objects\Translation.h">
+      <Filter>BaseEngine\Objects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Code\InputManager.cpp">
@@ -220,6 +229,9 @@
     </ClCompile>
     <ClCompile Include="..\Code\Stages\StageLoader.cpp">
       <Filter>Stages</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\BaseEngine\Objects\Translation.cpp">
+      <Filter>BaseEngine\Objects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

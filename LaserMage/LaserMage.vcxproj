@@ -14,6 +14,8 @@
     <ClInclude Include="..\Code\BaseEngine\BaseEngine.h" />
     <ClInclude Include="..\Code\BaseEngine\BaseGameState.h" />
     <ClInclude Include="..\Code\BaseEngine\BaseInputManager.h" />
+    <ClInclude Include="..\Code\BaseEngine\Objects\Component.h" />
+    <ClInclude Include="..\Code\BaseEngine\Objects\Translation.h" />
     <ClInclude Include="..\Code\BaseEngine\Stack\BaseStackManager.h" />
     <ClInclude Include="..\Code\BaseEngine\Stack\Camera.h" />
     <ClInclude Include="..\Code\BaseEngine\Stack\Environment.h" />
@@ -48,6 +50,7 @@
     <ClCompile Include="..\Code\BaseEngine\BaseEngine.cpp" />
     <ClCompile Include="..\Code\BaseEngine\BaseGameState.cpp" />
     <ClCompile Include="..\Code\BaseEngine\BaseInputManager.cpp" />
+    <ClCompile Include="..\Code\BaseEngine\Objects\Translation.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Stack\BaseStackManager.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Stack\Camera.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Stack\Environment.cpp" />

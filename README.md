@@ -11,10 +11,11 @@ OpenGL 3.3 and SDL2
 built in: 
 Visual C++ 2010 
 
-The contents of DevLib repository are required to compile.
+The contents of DevLib repository are required to run.
 
 Branches Closed:
 
+StageLoader,
 SystemMenu,
 DismantleGameState,
 TestEngine,
