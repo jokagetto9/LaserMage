@@ -7,9 +7,9 @@ Stage::Stage(){
 	actors.reserve(100);
 }
 
-void Stage:: init(Hero * h){
-	H = h;
-	h->place(32, 12);
+void Stage:: init(Players& P){
+	//H = h;
+	P.place(32, 12);
 	//terr.init();	
 	//pop.enemies.clear();
 	actors.clear();
@@ -61,7 +61,8 @@ void Stage::		rapidUpdate(float delta){
 
 void Stage::		draw(float delta){	
 	//terr.draw();	
-	actors.draw(delta); 
+	actors.refresh(delta); 
+	actors.draw(); 
 
 }
 void Stage::		drawTerrain(){	

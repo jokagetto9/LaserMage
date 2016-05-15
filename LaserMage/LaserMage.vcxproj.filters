@@ -22,9 +22,6 @@
     <Filter Include="LaserMage">
       <UniqueIdentifier>{f70c877b-86d3-44e4-9184-13a38bfdbe55}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Nodes">
-      <UniqueIdentifier>{6567f7bf-9582-45ae-9fd4-69f43b2ba312}</UniqueIdentifier>
-    </Filter>
     <Filter Include="LaserMage\Laser">
       <UniqueIdentifier>{db331c6a-70d7-4e0f-91a6-c5c484a946f1}</UniqueIdentifier>
     </Filter>
@@ -87,24 +84,6 @@
     <ClInclude Include="..\Code\Display\Shaders\CursorShader.h">
       <Filter>Display\Shaders</Filter>
     </ClInclude>
-    <ClInclude Include="..\Code\Nodes\Enemy.h">
-      <Filter>Nodes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\Nodes\Health.h">
-      <Filter>Nodes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\Nodes\Hero.h">
-      <Filter>Nodes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\Nodes\Mob.h">
-      <Filter>Nodes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\Nodes\Node.h">
-      <Filter>Nodes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\Stages\Population.h">
-      <Filter>Stages</Filter>
-    </ClInclude>
     <ClInclude Include="..\Code\Stages\SpawnPoint.h">
       <Filter>Stages</Filter>
     </ClInclude>
@@ -113,12 +92,6 @@
     </ClInclude>
     <ClInclude Include="..\Code\Stages\EnemyWave.h">
       <Filter>Stages</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\Nodes\Laser\Laser.h">
-      <Filter>LaserMage\Laser</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\Nodes\Laser\LaserCommand.h">
-      <Filter>LaserMage\Laser</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\Display\ModelData.h">
       <Filter>Display</Filter>
@@ -165,6 +138,15 @@
     <ClInclude Include="..\Code\BaseEngine\Entities\Components\Animation.h">
       <Filter>BaseEngine\Entities\Components</Filter>
     </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Entities\Players.h">
+      <Filter>BaseEngine\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Laser\Laser.h">
+      <Filter>LaserMage\Laser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Laser\LaserCommand.h">
+      <Filter>LaserMage\Laser</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Code\InputManager.cpp">
@@ -209,24 +191,6 @@
     <ClCompile Include="..\Code\Display\Shaders\CursorShader.cpp">
       <Filter>Display\Shaders</Filter>
     </ClCompile>
-    <ClCompile Include="..\Code\Nodes\Enemy.cpp">
-      <Filter>Nodes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\Nodes\Health.cpp">
-      <Filter>Nodes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\Nodes\Hero.cpp">
-      <Filter>Nodes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\Nodes\Mob.cpp">
-      <Filter>Nodes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\Nodes\Node.cpp">
-      <Filter>Nodes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\Stages\Population.cpp">
-      <Filter>Stages</Filter>
-    </ClCompile>
     <ClCompile Include="..\Code\Stages\SpawnPoint.cpp">
       <Filter>Stages</Filter>
     </ClCompile>
@@ -235,9 +199,6 @@
     </ClCompile>
     <ClCompile Include="..\Code\Stages\EnemyWave.cpp">
       <Filter>Stages</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\Nodes\Laser\Laser.cpp">
-      <Filter>LaserMage\Laser</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\Display\ModelManager.cpp">
       <Filter>Display</Filter>
@@ -274,6 +235,12 @@
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Entities\Components\Animation.cpp">
       <Filter>BaseEngine\Entities\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\BaseEngine\Entities\Players.cpp">
+      <Filter>BaseEngine\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Laser\Laser.cpp">
+      <Filter>LaserMage\Laser</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

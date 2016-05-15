@@ -2,10 +2,10 @@
 #define ENEMYWAVE_H
 
 
-#include "../Nodes/Enemy.h"
 #include "../BaseEngine/Entities/Actors.h"
 //********************************* CONSTANTS *********************************
 
+enum EnemyType {CHUCKY, MOSQUITO, TRUNKLING, LABOMBA, MIMIC };
 
 //********************************* INITIALIZATION *********************************
 class EnemyWave {

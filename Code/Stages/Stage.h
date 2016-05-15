@@ -2,7 +2,8 @@
 #define STAGE_H
 
 
-#include "Population.h"
+#include "../BaseEngine/Entities/Players.h"
+#include "SpawnPoint.h"
 
 
 //********************************* CONSTANTS *********************************
@@ -17,7 +18,7 @@ class Stage {
 	// constructors
 	Stage::	Stage ();
 	
-	virtual void Stage:: init(Hero * h);
+	virtual void Stage:: init(Players & P);
 
 	void Stage::	addSpawnPoint(SpawnPoint & sp);
 	bool Stage::	validate();
@@ -29,7 +30,7 @@ class Stage {
 	virtual void Stage::		loadMap(ifstream &saveFile){ }
 
 		
-//************************************************** DRAW ***************************************************
+//************************************************** UPDATE ***************************************************
 		
 	void Stage::update();
 virtual void Stage::		physUpdate(float delta);
@@ -50,7 +51,6 @@ virtual void Stage::		rapidUpdate(float delta);
 		//Structures * structs;
 		string name;
 		int baseTile;
-		Hero * H;
 
 //********************************* MEMBER FUNCTIONS *********************************
 		

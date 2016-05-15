@@ -4,12 +4,8 @@ SpawnPoint::SpawnPoint(){
 
 	currWave = 0;
 	empty = true;
-
-	id = -1;
-	xPos = 0; 	zPos = 0;
-	yPos = 0;
-	scale = 1; theta = 0;
-	dir = DUNNO;
+	
+	x_ = 0; 	z_ = 0; 	y_ = 0;	
 }
 
 
@@ -18,8 +14,6 @@ void SpawnPoint::	addWave(EnemyWave & w){
 }
 
 bool SpawnPoint::	validate(){
-
-
 	return true;
 }
 

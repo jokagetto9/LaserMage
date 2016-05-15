@@ -4,7 +4,7 @@
 #include "BaseEngine/BaseGameState.h"
 
 #include "BaseEngine/BaseInputManager.h"
-#include "Nodes/Laser/LaserCommand.h"
+#include "Laser/LaserCommand.h"
 //********************************* CONSTANTS *********************************
 //********************************* INITIALIZATION *********************************
 

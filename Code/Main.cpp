@@ -1,6 +1,5 @@
 #include "BaseEngine/BaseEngine.h"
 #include "BaseEngine/Stack/BaseStackManager.h"
-#include "BaseEngine/Stack/Camera.h"
 #include "BaseEngine/Stack/Environment.h"
 #include "Stages/StageLoader.h"
 #include "InputManager.h"
@@ -15,7 +14,7 @@
 	StageLoader stageLoader;
 	Stage testStage;
 	Stage * currStage;
-	Hero H;
+	Players P;
 	
 
 
@@ -48,13 +47,13 @@ void update(){
 
 	//input.checkToggles();
 	if (!G->paused) {	
-		input.directionInput()->exec(H);
-		input.mouseInput()->exec(H);
+		input.directionInput()->exec(P);
+		input.mouseInput()->exec(P);
 	}
 
 	if (!G->loaded){
 		//currStage->init(H);
-		currStage->init(&H);
+		currStage->init(P);
 		G->loaded = true;
 	}
 
@@ -91,9 +90,7 @@ void clockCycle(){
 void physicsUpdate(){	
 	input.cameraInput();
 	currStage->physUpdate(eng.physDelta);
-	H.physUpdate(144, eng.physDelta);
-	//world.interactions();
-	//DBT->physUpdate(); //?
+	P.P1Update(eng.physDelta);
 }
 
 void rapidUpdate(){
@@ -111,10 +108,9 @@ void display(){
 	//
 	if(!G->paused || !stack.backdrop()){
 		
-		C->update(H.pos());		
-		currStage->drawTerrain(); 
-		H.drawHero(eng.avgFrameDelta);
-		M->gridBO.prepNPC();
+		C->update(P.pos());		
+		currStage->drawTerrain();  
+		P.drawP1(eng.avgFrameDelta);
 		currStage->draw(eng.avgFrameDelta); 
 
 	}//*/
@@ -156,7 +152,7 @@ void initGlobals(){
 	M = ModelManager::I();
 	C = Camera::I(); 
 	C->init();		
-	H.init();	
+	//H.init();	
 
 	G = BaseGameState::I();		
 	G->init();

@@ -51,9 +51,9 @@ void StageLoader::loadStage(int i){
 						for (a = n->first_attribute(); a; a = a->next_attribute()){
 							s = getText(a->name());
 							if (s == "x"){
-								spawn.xPos = getInt(a->value());
+								spawn.x_ = getInt(a->value());
 							}if (s == "y" || s == "z"){
-								spawn.zPos = getInt(a->value());
+								spawn.z_ = getInt(a->value());
 							}
 						}
 						for (n2 = n->first_node(); n2; n2 = n2->next_sibling()){

@@ -1,7 +1,7 @@
 #ifndef LASER_H
 #define LASER_H
 
-#include "../../BaseEngine/lib.h"
+#include "../BaseEngine/lib.h"
 
 
 //********************************* CONSTANTS *********************************
