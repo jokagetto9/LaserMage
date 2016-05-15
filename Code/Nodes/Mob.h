@@ -3,14 +3,8 @@
 
 #include "Node.h"
 #include "Health.h"
-#include "../Display/Animation.h"
+#include "../BaseEngine/Entities/Actors.h"
 //********************************* CONSTANTS *********************************
-
-const float TURBO_SPEED = 0.2f;  // m/ms
-const float TURBO_ACCEL = 0.0005f;  // m/ms^2
-const float WALK_MAX_SPEED = 0.01f;  // m/ms
-const float RUN_MAX_SPEED = 0.0125f;//0.00625f;  // m/ms
-const float RUN_MAX_ACCEL = RUN_MAX_SPEED;//0.00625f;  // m/ms^2
 
 
 // reqxp(1) = 1;

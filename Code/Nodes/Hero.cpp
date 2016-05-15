@@ -103,7 +103,7 @@ void Hero::drawHero(float delta){
 	
 	translate();	
 		if (!laser.active) 
-			walkAnim.draw(speed, camTheta, delta);
+			walkAnim.draw(camTheta, delta);
 		else {
 
 			laserAnim.draw(delta);

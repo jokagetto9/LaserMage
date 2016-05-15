@@ -4,18 +4,20 @@
 Stage::Stage(){
 	name = "";
 	baseTile = 0;
+	actors.reserve(100);
 }
 
 void Stage:: init(Hero * h){
 	H = h;
 	h->place(32, 12);
 	//terr.init();	
-	pop.enemies.clear();
+	//pop.enemies.clear();
+	actors.clear();
 	for (int i = 0; i < spawns.size(); i++){ 
 		int waves = spawns[i].waves.size();
 		for(int j = 0; j < waves; j++){
-			spawns[i].waves[j].origin = spawns[i].pos(); //NEWBRANCH
-			spawns[i].waves[j].generate(pop.enemies);
+			spawns[i].waves[j].origin = spawns[i].pos(); //NEWBRANCH SPAWNTRIGGERS
+			spawns[i].waves[j].generate(actors);
 		}
 	}
 	
@@ -50,16 +52,16 @@ void Stage::update(){
 
 
 void Stage::		physUpdate(float delta){
-	pop.physUpdate(delta);
+	//pop.physUpdate(delta);
 
 }
 void Stage::		rapidUpdate(float delta){
-	pop.aiUpdate(delta, H->pos());
+	//pop.aiUpdate(delta, H->pos());
 }
 
 void Stage::		draw(float delta){	
 	//terr.draw();	
-	pop.draw(delta); 
+	actors.draw(delta); 
 
 }
 void Stage::		drawTerrain(){	

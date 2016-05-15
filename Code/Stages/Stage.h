@@ -45,7 +45,7 @@ virtual void Stage::		rapidUpdate(float delta);
 		//Terrain terr;
 
 
-		Population pop;
+		Actors actors;
 		//Vegetation * veg;
 		//Structures * structs;
 		string name;

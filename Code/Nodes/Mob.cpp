@@ -22,7 +22,7 @@ void Mob::draw(float frameDelta){
 	
 	translate();
 
-	walkAnim.draw(speed, camTheta, frameDelta);
+	walkAnim.draw(camTheta, frameDelta);
 
 	glPopMatrix(); //}	
 }

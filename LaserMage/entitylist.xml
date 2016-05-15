@@ -1,0 +1,4 @@
+<StageList>
+  <EnemyFile filename="teststage.xml" >  </EnemyFile>
+  <PropFile filename="teststage.xml" >  </PropFile>
+</StageList>

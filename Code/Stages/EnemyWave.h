@@ -3,7 +3,7 @@
 
 
 #include "../Nodes/Enemy.h"
-
+#include "../BaseEngine/Entities/Actors.h"
 //********************************* CONSTANTS *********************************
 
 
@@ -19,7 +19,7 @@ class EnemyWave {
 	void EnemyWave::	initMirrored(bool back, int reg);
 
 	
-	void EnemyWave ::		generate(vector<Enemy>& enemies);
+	void EnemyWave ::		generate(Actors& enemies);
 
 //********************************* MEMEBERS *********************************	
 	EnemyType enemy;

@@ -38,16 +38,24 @@ void EnemyWave::	initRegion(bool left, int reg){
 	if (!left) centerTheta *= -1;
 }
 
-void EnemyWave ::		generate(vector<Enemy>& enemies){
-	Enemy e; e.init(enemy);
-	float theta = centerTheta;
-	float tempTheta = tempTheta = theta + (quantity-1)* clustering/2;   
+void EnemyWave ::		generate(Actors& enemies){
+	//Enemy e; e.init(enemy); 
+	Rendering r; //set stats and anims
+	Translation t; 
+	glm::vec3 v;
+	float tempTheta = tempTheta = centerTheta + (quantity-1)* clustering/2;   
 	for (int i = 0; i < quantity; i++){
+		float theta = tempTheta-i*clustering;
+		v = calcThetaV(theta);
+		v *= dist; 		v += origin;
+		t.place(v.x, v.z); 
+		enemies.add(r, t);
+
 		if (mirrored && theta >= 0){
-			e.radialOffset(tempTheta-i*clustering, dist, origin); 	enemies.push_back(e);
-			e.radialOffset(-tempTheta-i*clustering, dist, origin); 	enemies.push_back(e);
-		} else {
-			e.radialOffset(tempTheta-i*clustering, dist, origin); 	enemies.push_back(e);
+			theta = -tempTheta-i*clustering;
+			v = calcThetaV(theta);
+			v *= dist; v += origin;
+			t.place(v.x, v.z); enemies.add(r, t);
 		}
 	}
 }
