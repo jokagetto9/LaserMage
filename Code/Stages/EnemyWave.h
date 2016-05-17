@@ -5,7 +5,7 @@
 #include "../BaseEngine/Entities/Actors.h"
 //********************************* CONSTANTS *********************************
 
-enum EnemyType {CHUCKY, MOSQUITO, TRUNKLING, LABOMBA, MIMIC };
+enum EnemyType {CHUCKY, MOSQUITO, TRUNKLING, LABOMBA, MIMIC }; 
 
 //********************************* INITIALIZATION *********************************
 class EnemyWave {
@@ -16,7 +16,7 @@ class EnemyWave {
 	void EnemyWave::	configure(float c, float t);
 	void EnemyWave::	initRegion(float theta){centerTheta = theta;}
 	void EnemyWave::	initRegion(bool left, int reg);
-	void EnemyWave::	initMirrored(bool back, int reg);
+	void EnemyWave::	initMirrored(bool back, int reg);  
 
 	
 	void EnemyWave ::		generate(Actors& enemies);

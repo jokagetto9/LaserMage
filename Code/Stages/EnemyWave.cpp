@@ -44,17 +44,15 @@ void EnemyWave ::		generate(Actors& enemies){
 	Translation t; 
 	glm::vec3 v;
 	float tempTheta = tempTheta = centerTheta + (quantity-1)* clustering/2;   
-	for (int i = 0; i < quantity; i++){
+	for (int i = 0; i < quantity; i++){		
 		float theta = tempTheta-i*clustering;
-		v = calcThetaV(theta);
-		v *= dist; 		v += origin;
+		v = radialOffset(origin, theta, dist);
 		t.place(v.x, v.z); 
 		enemies.add(r, t);
 
 		if (mirrored && theta >= 0){
 			theta = -tempTheta-i*clustering;
-			v = calcThetaV(theta);
-			v *= dist; v += origin;
+			v = radialOffset(origin, theta, dist);
 			t.place(v.x, v.z); enemies.add(r, t);
 		}
 	}

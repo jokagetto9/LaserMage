@@ -19,6 +19,7 @@ class SpawnPoint : public Translation {
 //********************************* MEMBERS *********************************
 	vector <EnemyWave> waves;
 
+
 	int currWave;
 	bool empty; //starting point? ending point?
 	//timer

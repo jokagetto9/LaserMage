@@ -47,7 +47,7 @@ void update(){
 
 	//input.checkToggles();
 	if (!G->paused) {	
-		input.directionInput()->exec(P);
+		//input.directionInput()->exec(P);
 		input.mouseInput()->exec(P);
 	}
 
@@ -90,7 +90,6 @@ void clockCycle(){
 void physicsUpdate(){	
 	input.cameraInput();
 	currStage->physUpdate(eng.physDelta);
-	P.P1Update(eng.physDelta);
 }
 
 void rapidUpdate(){

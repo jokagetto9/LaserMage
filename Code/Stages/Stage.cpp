@@ -4,14 +4,20 @@
 Stage::Stage(){
 	name = "";
 	baseTile = 0;
+	curSpawn = 0;
 	actors.reserve(100);
+	atSpawn = false;
 }
 
-void Stage:: init(Players& P){
-	//H = h;
-	P.place(32, 12);
+void Stage:: init(Players& p){
+	P = &p;
+	p.place(32, 0);
+	curSpawn = 0;
+	atSpawn = false;
 	//terr.init();	
 	//pop.enemies.clear();
+	p.reset();
+	p.place(32, 0);
 	actors.clear();
 	for (int i = 0; i < spawns.size(); i++){ 
 		int waves = spawns[i].waves.size();
@@ -52,11 +58,21 @@ void Stage::update(){
 
 
 void Stage::		physUpdate(float delta){
-	//pop.physUpdate(delta);
-
+	P->P1Update(delta);
+	actors.update(delta);	
 }
 void Stage::		rapidUpdate(float delta){
-	//pop.aiUpdate(delta, H->pos());
+	glm::vec3 v = spawns[curSpawn].pos();
+	if (P->pos().z < v.z-0.25){
+		P->ai[P1].setTarget(v);
+	} else if (!atSpawn){		
+		P->ai[P1].noTarget();
+		//getSpawncount;
+		actors.activate(4, P->pos());
+		atSpawn = true;
+	}
+	P->P1aiUpdate(delta);
+	actors.aiUpdate(delta);
 }
 
 void Stage::		draw(float delta){	

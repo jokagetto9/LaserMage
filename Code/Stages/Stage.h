@@ -18,7 +18,7 @@ class Stage {
 	// constructors
 	Stage::	Stage ();
 	
-	virtual void Stage:: init(Players & P);
+	virtual void Stage:: init(Players & p);
 
 	void Stage::	addSpawnPoint(SpawnPoint & sp);
 	bool Stage::	validate();
@@ -42,15 +42,17 @@ virtual void Stage::		rapidUpdate(float delta);
 		void Stage::		drawTerrain();
 		
 //************************************************** MEMBERS ***************************************************
+		bool atSpawn;
 		vector<SpawnPoint> spawns;
+		ID curSpawn;
 		//Terrain terr;
-
+		Players * P;
 
 		Actors actors;
 		//Vegetation * veg;
 		//Structures * structs;
 		string name;
-		int baseTile;
+		ID baseTile;
 
 //********************************* MEMBER FUNCTIONS *********************************
 		
