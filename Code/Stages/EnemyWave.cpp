@@ -1,15 +1,17 @@
 //********************************* INITIALIZATION *********************************
 #include "EnemyWave.h"
+#include "../Entities/EntityLoader.h"
 EnemyWave::			EnemyWave(){
 	glm::vec3 z(32, 0, 0);
 	origin = z;
-	enemy = CHUCKY;
+	type = 0;
 	mirrored = false;
 	quantity = 1;
 	centerTheta = 0;
 	clustering = 10;
 	dist = 50;
 }
+
 
 void EnemyWave::	init(int q, float d){	
 	dist = d; 
@@ -30,17 +32,19 @@ void EnemyWave::	initRegion(bool left, int reg){
 		centerTheta = (rand() % 13) * 5;
 	}else if (reg == 1){
 		centerTheta = 25;
-	}else if (reg == 2){
+	}else if (reg == 2){ 
 		centerTheta = 65;
 	}else if (reg == 3){
 		centerTheta = 120;
 	}
-	if (!left) centerTheta *= -1;
+	if (!left) centerTheta *= -1; 
 }
 
 void EnemyWave ::		generate(Actors& enemies){
 	//Enemy e; e.init(enemy); 
-	Rendering r; //set stats and anims
+	ID tex = EntityDictionary::aRenders[type].tex;
+	Rendering r(tex, type); //set stats and anims
+	//Animation a = EntityLoader::enemies[type].walkAnim;
 	Translation t; 
 	glm::vec3 v;
 	float tempTheta = tempTheta = centerTheta + (quantity-1)* clustering/2;   

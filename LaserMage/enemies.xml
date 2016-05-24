@@ -1,4 +1,6 @@
 <EnemyFile>
-  <Enemy name="Chucky" health="20" speed="1">  </Enemy>
-	<Anim name="walk" filename="chucky.png" grid="4x4" cycle="walk12" scale="4" frames=""></Anim>
+  <Enemy name="Chucky" health="20" speed="1" texture="MOBS/chucky.png" animtype="walk12">  
+  </Enemy>
+  <Enemy name="Dim" health="100" speed="2" texture="MOBS/dim.png" animtype="walk12">
+  </Enemy>
 </EnemyFile>

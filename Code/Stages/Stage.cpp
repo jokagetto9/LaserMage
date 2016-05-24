@@ -7,6 +7,7 @@ Stage::Stage(){
 	curSpawn = 0;
 	actors.reserve(100);
 	atSpawn = false;
+
 }
 
 void Stage:: init(Players& p){
@@ -77,8 +78,12 @@ void Stage::		rapidUpdate(float delta){
 
 void Stage::		draw(float delta){	
 	//terr.draw();	
-	actors.refresh(delta); 
-	actors.draw(); 
+	drawPool.batch(actors, delta);
+	drawPool.draw(actors);
+	
+
+	//actors.refresh(delta); 
+	//actors.draw(); 
 
 }
 void Stage::		drawTerrain(){	

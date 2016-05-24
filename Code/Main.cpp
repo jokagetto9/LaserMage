@@ -1,13 +1,15 @@
 #include "BaseEngine/BaseEngine.h"
 #include "BaseEngine/Stack/BaseStackManager.h"
-#include "BaseEngine/Stack/Environment.h"
-#include "Stages/StageLoader.h"
+#include "Display/Environment.h"
+#include "Stages/StageLoader.h" 
+#include "Entities/EntityLoader.h"
 #include "InputManager.h"
 //********************************* MODULES *********************************
 
 	BaseEngine eng;						// handle for managing the passage of time
 
 	InputManager input ;			// handle for managing input
+	EntityLoader entities ;
 	BaseStackManager stack;
 	MenuLoader menuLoader;
 	Environment env;
@@ -47,8 +49,8 @@ void update(){
 
 	//input.checkToggles();
 	if (!G->paused) {	
-		//input.directionInput()->exec(P);
-		input.mouseInput()->exec(P);
+		//input.directionInput()->exec(P.getActor(P1));
+		input.mouseInput()->exec(P.getActor(P1));
 	}
 
 	if (!G->loaded){
@@ -131,9 +133,11 @@ void init(){
 	else {
 		eng.displayVersion();
 		initGlobals();
+		entities.load();
 		stageLoader.load();
 		currStage = stageLoader.getStage(0);
-		if (currStage == NULL) currStage = &testStage;
+		if (currStage == NULL) currStage = &testStage;		
+		currStage->drawPool.activateTextures();
 		//menus
 		stack.init(menuLoader);	
 		input.init(menuLoader);

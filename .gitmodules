@@ -4,3 +4,6 @@
 [submodule "Code/Display"]
 	path = Code/Display
 	url = https://github.com/jokagetto9/ShaderHub.git
+[submodule "Code/Stack"]
+	path = Code/Stack
+	url = https://github.com/jokagetto9/StackModule.git

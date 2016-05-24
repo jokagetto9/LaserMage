@@ -1,7 +1,7 @@
 #ifndef LASERCOMMAND_H
 #define LASERCOMMAND_H
-#include "../BaseEngine/Utility/Command.h"
-#include "../BaseEngine/Entities/Players.h"
+#include "../BaseEngine/Command.h"
+#include "../BaseEngine/Entities/Actors.h"
 
 //********************************* CONSTANTS *********************************
 
@@ -10,7 +10,7 @@
 class LaserCommand : public Command {
 public: 
 	void LaserCommand::	set(bool b){on = b;}
-	void LaserCommand::	exec(Players& P){
+	void LaserCommand::	exec(Actor& a){
 		if (on){
 			//h.laserOn();
 		}else{

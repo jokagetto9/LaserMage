@@ -2,7 +2,7 @@
 #define SPAWNPOINT_H
 
 
-#include "../BaseEngine/Entities/Components/Translation.h"
+#include "../BaseEngine/Components/Translation.h"
 #include "EnemyWave.h"
 
 //********************************* CONSTANTS *********************************

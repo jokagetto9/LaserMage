@@ -2,7 +2,8 @@
 #define STAGE_H
 
 
-#include "../BaseEngine/Entities/Players.h"
+#include "../BaseEngine/Entities/DrawPool.h"
+#include "../Entities/Players.h"
 #include "SpawnPoint.h"
 
 
@@ -49,6 +50,7 @@ virtual void Stage::		rapidUpdate(float delta);
 		Players * P;
 
 		Actors actors;
+		DrawPool drawPool;
 		//Vegetation * veg;
 		//Structures * structs;
 		string name;

@@ -14,25 +14,27 @@
     <ClInclude Include="..\Code\BaseEngine\BaseEngine.h" />
     <ClInclude Include="..\Code\BaseEngine\BaseGameState.h" />
     <ClInclude Include="..\Code\BaseEngine\BaseInputManager.h" />
+    <ClInclude Include="..\Code\BaseEngine\Command.h" />
+    <ClInclude Include="..\Code\BaseEngine\Components\AI.h" />
+    <ClInclude Include="..\Code\BaseEngine\Components\Animation.h" />
+    <ClInclude Include="..\Code\BaseEngine\Components\Component.h" />
+    <ClInclude Include="..\Code\BaseEngine\Components\Motion.h" />
+    <ClInclude Include="..\Code\BaseEngine\Components\Rendering.h" />
+    <ClInclude Include="..\Code\BaseEngine\Components\State.h" />
+    <ClInclude Include="..\Code\BaseEngine\Components\Translation.h" />
+    <ClInclude Include="..\Code\BaseEngine\Display\Camera.h" />
     <ClInclude Include="..\Code\BaseEngine\Entities\Actors.h" />
-    <ClInclude Include="..\Code\BaseEngine\Entities\Components\AI.h" />
-    <ClInclude Include="..\Code\BaseEngine\Entities\Components\Animation.h" />
-    <ClInclude Include="..\Code\BaseEngine\Entities\Components\Component.h" />
-    <ClInclude Include="..\Code\BaseEngine\Entities\Components\Motion.h" />
-    <ClInclude Include="..\Code\BaseEngine\Entities\Components\Rendering.h" />
-    <ClInclude Include="..\Code\BaseEngine\Entities\Components\State.h" />
-    <ClInclude Include="..\Code\BaseEngine\Entities\Components\Translation.h" />
-    <ClInclude Include="..\Code\BaseEngine\Entities\Players.h" />
+    <ClInclude Include="..\Code\BaseEngine\Entities\DrawPool.h" />
+    <ClInclude Include="..\Code\BaseEngine\Entities\EntityDictionary.h" />
+    <ClInclude Include="..\Code\BaseEngine\Entities\Particles.h" />
     <ClInclude Include="..\Code\BaseEngine\Entities\Props.h" />
     <ClInclude Include="..\Code\BaseEngine\lib.h" />
     <ClInclude Include="..\Code\BaseEngine\Stack\BaseStackManager.h" />
-    <ClInclude Include="..\Code\BaseEngine\Stack\Camera.h" />
-    <ClInclude Include="..\Code\BaseEngine\Stack\Environment.h" />
+    <ClInclude Include="..\Code\BaseEngine\Stack\MCommand.h" />
+    <ClInclude Include="..\Code\BaseEngine\Stack\Menu.h" />
     <ClInclude Include="..\Code\BaseEngine\Stack\MenuLoader.h" />
-    <ClInclude Include="..\Code\BaseEngine\Stack\Menus\Menu.h" />
-    <ClInclude Include="..\Code\BaseEngine\Utility\Command.h" />
-    <ClInclude Include="..\Code\BaseEngine\Utility\MCommand.h" />
-    <ClInclude Include="..\Code\BaseEngine\Utility\XMLParser.h" />
+    <ClInclude Include="..\Code\BaseEngine\XMLParser.h" />
+    <ClInclude Include="..\Code\Display\Environment.h" />
     <ClInclude Include="..\Code\Display\ModelData.h" />
     <ClInclude Include="..\Code\Display\ModelManager.h" />
     <ClInclude Include="..\Code\Display\Shaders\CursorShader.h" />
@@ -40,6 +42,8 @@
     <ClInclude Include="..\Code\Display\Shaders\MenuShader.h" />
     <ClInclude Include="..\Code\Display\Shaders\Shader.h" />
     <ClInclude Include="..\Code\Display\Shaders\TileShader.h" />
+    <ClInclude Include="..\Code\Entities\EntityLoader.h" />
+    <ClInclude Include="..\Code\Entities\Players.h" />
     <ClInclude Include="..\Code\InputManager.h" />
     <ClInclude Include="..\Code\Laser\Laser.h" />
     <ClInclude Include="..\Code\Laser\LaserCommand.h" />
@@ -52,27 +56,30 @@
     <ClCompile Include="..\Code\BaseEngine\BaseEngine.cpp" />
     <ClCompile Include="..\Code\BaseEngine\BaseGameState.cpp" />
     <ClCompile Include="..\Code\BaseEngine\BaseInputManager.cpp" />
+    <ClCompile Include="..\Code\BaseEngine\Components\AI.cpp" />
+    <ClCompile Include="..\Code\BaseEngine\Components\Animation.cpp" />
+    <ClCompile Include="..\Code\BaseEngine\Components\Motion.cpp" />
+    <ClCompile Include="..\Code\BaseEngine\Components\State.cpp" />
+    <ClCompile Include="..\Code\BaseEngine\Components\Translation.cpp" />
+    <ClCompile Include="..\Code\BaseEngine\Display\Camera.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Entities\Actors.cpp" />
-    <ClCompile Include="..\Code\BaseEngine\Entities\Components\AI.cpp" />
-    <ClCompile Include="..\Code\BaseEngine\Entities\Components\Animation.cpp" />
-    <ClCompile Include="..\Code\BaseEngine\Entities\Components\Motion.cpp" />
-    <ClCompile Include="..\Code\BaseEngine\Entities\Components\Rendering.cpp" />
-    <ClCompile Include="..\Code\BaseEngine\Entities\Components\State.cpp" />
-    <ClCompile Include="..\Code\BaseEngine\Entities\Components\Translation.cpp" />
-    <ClCompile Include="..\Code\BaseEngine\Entities\Players.cpp" />
+    <ClCompile Include="..\Code\BaseEngine\Entities\DrawPool.cpp" />
+    <ClCompile Include="..\Code\BaseEngine\Entities\EntityDictionary.cpp" />
+    <ClCompile Include="..\Code\BaseEngine\Entities\Particles.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Entities\Props.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Stack\BaseStackManager.cpp" />
-    <ClCompile Include="..\Code\BaseEngine\Stack\Camera.cpp" />
-    <ClCompile Include="..\Code\BaseEngine\Stack\Environment.cpp" />
+    <ClCompile Include="..\Code\BaseEngine\Stack\Menu.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Stack\MenuLoader.cpp" />
-    <ClCompile Include="..\Code\BaseEngine\Stack\Menus\Menu.cpp" />
-    <ClCompile Include="..\Code\BaseEngine\Utility\XMLParser.cpp" />
+    <ClCompile Include="..\Code\BaseEngine\XMLParser.cpp" />
+    <ClCompile Include="..\Code\Display\Environment.cpp" />
     <ClCompile Include="..\Code\Display\ModelManager.cpp" />
     <ClCompile Include="..\Code\Display\Shaders\CursorShader.cpp" />
     <ClCompile Include="..\Code\Display\Shaders\GridShader.cpp" />
     <ClCompile Include="..\Code\Display\Shaders\MenuShader.cpp" />
     <ClCompile Include="..\Code\Display\Shaders\Shader.cpp" />
     <ClCompile Include="..\Code\Display\Shaders\TileShader.cpp" />
+    <ClCompile Include="..\Code\Entities\EntityLoader.cpp" />
+    <ClCompile Include="..\Code\Entities\Players.cpp" />
     <ClCompile Include="..\Code\InputManager.cpp" />
     <ClCompile Include="..\Code\Laser\Laser.cpp" />
     <ClCompile Include="..\Code\Main.cpp" />
@@ -85,6 +92,8 @@
     <None Include="cursors.xml">
       <SubType>Designer</SubType>
     </None>
+    <None Include="enemies.xml" />
+    <None Include="entitylist.xml" />
     <None Include="intro.xml">
       <SubType>Designer</SubType>
     </None>
@@ -94,6 +103,7 @@
     <None Include="pause.xml">
       <SubType>Designer</SubType>
     </None>
+    <None Include="props.xml" />
     <None Include="stagelist.xml" />
     <None Include="teststage.xml">
       <SubType>Designer</SubType>

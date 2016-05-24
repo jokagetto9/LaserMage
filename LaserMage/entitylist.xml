@@ -1,4 +1,4 @@
-<StageList>
-  <EnemyFile filename="teststage.xml" >  </EnemyFile>
-  <PropFile filename="teststage.xml" >  </PropFile>
-</StageList>
+<EntityList>
+  <PropFile filename="props.xml" >  </PropFile>
+  <ActorFile filename="enemies.xml" >  </ActorFile>
+</EntityList>
