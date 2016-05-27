@@ -24,7 +24,6 @@ public:
 	void EntityLoader::loadAuxillary(rapidxml::xml_node<> * node);
 
 	
-	static ID EntityLoader::getEnemyIndex(string s);
 
 
 private: 

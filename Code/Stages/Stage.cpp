@@ -78,8 +78,8 @@ void Stage::		rapidUpdate(float delta){
 
 void Stage::		draw(float delta){	
 	//terr.draw();	
-	drawPool.batch(actors, delta);
-	drawPool.draw(actors);
+	drawPool.batch(&actors, delta);
+	drawPool.draw(&actors);
 	
 
 	//actors.refresh(delta); 

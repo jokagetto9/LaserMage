@@ -10,9 +10,6 @@
     <Filter Include="Stages">
       <UniqueIdentifier>{e2cb5ad9-f23b-494f-a85a-ff78a5da3737}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resources">
-      <UniqueIdentifier>{f9b9b8eb-8fde-4b0d-8c83-2250493c6ee0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="BaseEngine">
       <UniqueIdentifier>{d0163b9d-191a-4a12-9aaa-27d3c846301e}</UniqueIdentifier>
     </Filter>
@@ -36,6 +33,9 @@
     </Filter>
     <Filter Include="+\Entities">
       <UniqueIdentifier>{47c37886-4372-4320-bcd2-aa3e36f3ca5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="~Content">
+      <UniqueIdentifier>{f9b9b8eb-8fde-4b0d-8c83-2250493c6ee0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -150,13 +150,13 @@
     <ClInclude Include="..\Code\Display\Environment.h">
       <Filter>Display</Filter>
     </ClInclude>
-    <ClInclude Include="..\Code\BaseEngine\Entities\EntityDictionary.h">
-      <Filter>BaseEngine\Entities</Filter>
-    </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Entities\Particles.h">
       <Filter>BaseEngine\Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Entities\DrawPool.h">
+      <Filter>BaseEngine\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Entities\Dictionaries.h">
       <Filter>BaseEngine\Entities</Filter>
     </ClInclude>
   </ItemGroup>
@@ -260,37 +260,37 @@
     <ClCompile Include="..\Code\BaseEngine\Entities\DrawPool.cpp">
       <Filter>BaseEngine\Entities</Filter>
     </ClCompile>
-    <ClCompile Include="..\Code\BaseEngine\Entities\EntityDictionary.cpp">
+    <ClCompile Include="..\Code\BaseEngine\Entities\Dictionaries.cpp">
       <Filter>BaseEngine\Entities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="menulist.xml">
-      <Filter>Resources</Filter>
+      <Filter>~Content</Filter>
     </None>
     <None Include="intro.xml">
-      <Filter>Resources</Filter>
+      <Filter>~Content</Filter>
     </None>
     <None Include="pause.xml">
-      <Filter>Resources</Filter>
+      <Filter>~Content</Filter>
     </None>
     <None Include="cursors.xml">
-      <Filter>Resources</Filter>
+      <Filter>~Content</Filter>
     </None>
     <None Include="stagelist.xml">
-      <Filter>Resources</Filter>
+      <Filter>~Content</Filter>
     </None>
     <None Include="teststage.xml">
-      <Filter>Resources</Filter>
+      <Filter>~Content</Filter>
     </None>
     <None Include="entitylist.xml">
-      <Filter>Resources</Filter>
+      <Filter>~Content</Filter>
     </None>
     <None Include="props.xml">
-      <Filter>Resources</Filter>
+      <Filter>~Content</Filter>
     </None>
     <None Include="enemies.xml">
-      <Filter>Resources</Filter>
+      <Filter>~Content</Filter>
     </None>
   </ItemGroup>
 </Project>

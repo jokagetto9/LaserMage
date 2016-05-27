@@ -1,7 +1,7 @@
 //********************************* INITIALIZATION *********************************
 #include "StageLoader.h"
 
-#include "../Entities/EntityLoader.h"
+#include "../BaseEngine/Entities/Dictionaries.h"
 
 void StageLoader::load(){
 	try {		
@@ -85,7 +85,7 @@ EnemyWave StageLoader::buildWave(rapidxml::xml_node<> * node){
 		string s = getText(a->name());
 		if (s == "type"){
 			string type = getText(a->value());
-			wave.type = EntityLoader::getEnemyIndex(type);
+			wave.type = Dictionary::getIndex(type, ParticleList::getID());
 		}else if (s == "dist"){
 			wave.dist = getInt(a->value());
 		}else if (s == "mirror"){ 

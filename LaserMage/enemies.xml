@@ -1,6 +1,6 @@
 <EnemyFile>
-  <Enemy name="Chucky" health="20" speed="1" texture="MOBS/chucky.png" animtype="walk12">  
+  <Enemy name="Chucky" health="20" speed="2" texture="MOBS/chucky.png" animtype="walk12">  
   </Enemy>
-  <Enemy name="Dim" health="100" speed="2" texture="MOBS/dim.png" animtype="walk12">
+  <Enemy name="Dim" health="100" speed="3" texture="MOBS/dim.png" animtype="walk12">
   </Enemy>
 </EnemyFile>

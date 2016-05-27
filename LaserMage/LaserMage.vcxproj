@@ -24,8 +24,8 @@
     <ClInclude Include="..\Code\BaseEngine\Components\Translation.h" />
     <ClInclude Include="..\Code\BaseEngine\Display\Camera.h" />
     <ClInclude Include="..\Code\BaseEngine\Entities\Actors.h" />
+    <ClInclude Include="..\Code\BaseEngine\Entities\Dictionaries.h" />
     <ClInclude Include="..\Code\BaseEngine\Entities\DrawPool.h" />
-    <ClInclude Include="..\Code\BaseEngine\Entities\EntityDictionary.h" />
     <ClInclude Include="..\Code\BaseEngine\Entities\Particles.h" />
     <ClInclude Include="..\Code\BaseEngine\Entities\Props.h" />
     <ClInclude Include="..\Code\BaseEngine\lib.h" />
@@ -63,8 +63,8 @@
     <ClCompile Include="..\Code\BaseEngine\Components\Translation.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Display\Camera.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Entities\Actors.cpp" />
+    <ClCompile Include="..\Code\BaseEngine\Entities\Dictionaries.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Entities\DrawPool.cpp" />
-    <ClCompile Include="..\Code\BaseEngine\Entities\EntityDictionary.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Entities\Particles.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Entities\Props.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Stack\BaseStackManager.cpp" />

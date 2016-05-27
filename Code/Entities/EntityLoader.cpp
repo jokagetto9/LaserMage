@@ -1,7 +1,7 @@
 //********************************* INITIALIZATION *********************************
 #include "EntityLoader.h"
 
-#include "../BaseEngine/Entities/EntityDictionary.h"
+#include "../BaseEngine/Entities/Dictionaries.h"
 
 void EntityLoader::load(){
 	count = 0;
@@ -50,19 +50,25 @@ void EntityLoader::loadActor(ID id){
 void EntityLoader::buildEntity(rapidxml::xml_node<> * node){
 	rapidxml::xml_attribute<> *a;
 	Identity identity = {"", 0};
-	Rendering render;
+	ID tex = 0;
+	MotionMax mm = {1, 1};
 	for (a = node->first_attribute(); a; a = a->next_attribute()){
 		string s = getText(a->name());
 		if (s == "name"){
 			identity.name = getText(a->value());
 			identity.id = count; count++;
 		}else if (s == "texture"){
-			render.tex = loadTexture(a->value(), false);
+			tex = loadTexture(a->value(), false);
+		}else if (s == "speed"){
+			mm.speed = getInt(a->value());
+		}else if (s == "accel"){
+			mm.accel = getInt(a->value());
 		}
 	}
 	if (true) {
-		EntityDictionary::actors.push_back(identity);
-		EntityDictionary::aRenders.push_back(render); //TODO replace with Rendering
+		ParticleList::profiles.push_back(identity);
+		ParticleList::textures.push_back(tex); //TODO replace with Rendering
+		ParticleList::max.push_back(mm); 
 	}
 }
 
@@ -90,13 +96,4 @@ void EntityLoader::addAnimation(rapidxml::xml_node<> * node){
 void EntityLoader::loadAuxillary(rapidxml::xml_node<> * node){
 
 
-}
-
-
-ID EntityLoader::getEnemyIndex(string s){
-//	for (ID i = 0; i < enemies.size(); i++){
-	//	if (s == enemies[i].name)
-	//		return i;
-	//}
-	return 0;
 }

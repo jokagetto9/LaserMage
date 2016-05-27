@@ -42,9 +42,10 @@ void EnemyWave::	initRegion(bool left, int reg){
 
 void EnemyWave ::		generate(Actors& enemies){
 	//Enemy e; e.init(enemy); 
-	ID tex = EntityDictionary::aRenders[type].tex;
+	ID tex = ParticleList ::textures[type];
 	Rendering r(tex, type); //set stats and anims
 	//Animation a = EntityLoader::enemies[type].walkAnim;
+	Motion m = Motion(ParticleList::max[type]);
 	Translation t; 
 	glm::vec3 v;
 	float tempTheta = tempTheta = centerTheta + (quantity-1)* clustering/2;   
@@ -52,12 +53,12 @@ void EnemyWave ::		generate(Actors& enemies){
 		float theta = tempTheta-i*clustering;
 		v = radialOffset(origin, theta, dist);
 		t.place(v.x, v.z); 
-		enemies.add(r, t);
+		enemies.add(r, t, m);
 
 		if (mirrored && theta >= 0){
 			theta = -tempTheta-i*clustering;
 			v = radialOffset(origin, theta, dist);
-			t.place(v.x, v.z); enemies.add(r, t);
+			t.place(v.x, v.z); enemies.add(r, t, m);
 		}
 	}
 }
