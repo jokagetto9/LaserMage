@@ -5,7 +5,6 @@
 #include "../BaseEngine/XMLParser.h"
 #include "../Display/ModelManager.h"
 
-enum GRIDTYPE {G1x1, G2x2, G4x4, GMISC};
 //********************************* CONSTANTS *********************************
 
 //********************************* INITIALIZATION *********************************

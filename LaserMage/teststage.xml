@@ -1,9 +1,11 @@
 <Stage tile="0" >
 	<Map></Map>
   <SpawnPoint x="32" y="20">
-    <Wave dist="40" type="Chucky">3</Wave>
-    <Wave dist="46" type="Dim">1</Wave>
-    <Wave dist="52" type="Chucky">5</Wave>
+    <Wave dist="60" ctheta="320" type="Mimic">1</Wave>
+    <Wave dist="60" ctheta="10" type="LaBomba">1</Wave>
+    <Wave dist="40" ctheta="270" type="Mosquito">2</Wave>
+    <Wave dist="50" type="Chucky">3</Wave>
+    <Wave dist="56" type="Chucky">5</Wave>
   </SpawnPoint>
 </Stage>
 

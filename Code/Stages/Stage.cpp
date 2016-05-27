@@ -78,6 +78,8 @@ void Stage::		rapidUpdate(float delta){
 
 void Stage::		draw(float delta){	
 	//terr.draw();	
+	//M->gridBO.use();
+	P->drawP1(delta);
 	drawPool.batch(&actors, delta);
 	drawPool.draw(&actors);
 	

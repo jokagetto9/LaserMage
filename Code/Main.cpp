@@ -108,10 +108,8 @@ void display(){
 	eng.clearDisplay();
 	//
 	if(!G->paused || !stack.backdrop()){
-		
 		C->update(P.pos());		
 		currStage->drawTerrain();  
-		P.drawP1(eng.avgFrameDelta);
 		currStage->draw(eng.avgFrameDelta); 
 
 	}//*/

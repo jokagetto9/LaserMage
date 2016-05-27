@@ -1,6 +1,20 @@
 <EnemyFile>
-  <Enemy name="Chucky" health="20" speed="2" texture="MOBS/chucky.png" animtype="walk12">  
+  <Enemy name="Chucky" health="20" speed="2" >
+    <Animation texture="MOBS/chucky.png"></Animation>
+	 </Enemy>
+  <Enemy name="Dim" health="100" speed="2" >
+    <Animation texture="MOBS/dim.png"></Animation>
+	</Enemy>
+  <Enemy name="Mimic" health="100" speed="2" >
+    <Animation texture="MOBS/mimic.png" end="13" scale="1.5" frames="12"></Animation>
+	 </Enemy>
+  <Enemy name="LaBomba" health="10" speed="2" >
+    <Animation texture="MOBS/labomba.png" end="7" scale="1.5" frames="12"></Animation>
   </Enemy>
-  <Enemy name="Dim" health="100" speed="3" texture="MOBS/dim.png" animtype="walk12">
+  <Enemy name="Mosquito" health="1" speed="2" >
+    <Animation texture="MOBS/mosquito.png" end="5" scale="0.625" frames="12"></Animation>
+  </Enemy>
+  <Enemy name="Trunkling" health="100" speed="1" >
+    <Animation texture="MOBS/trunkling.png" end="2" scale="2" grid="2x2" frames="60"></Animation>
   </Enemy>
 </EnemyFile>

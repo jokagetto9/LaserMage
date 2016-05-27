@@ -92,7 +92,9 @@
     <None Include="cursors.xml">
       <SubType>Designer</SubType>
     </None>
-    <None Include="enemies.xml" />
+    <None Include="enemies.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="entitylist.xml" />
     <None Include="intro.xml">
       <SubType>Designer</SubType>

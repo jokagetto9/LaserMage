@@ -35,8 +35,8 @@ void EntityLoader::loadActor(ID id){
 			if (s == "Enemy"){ 
 				buildEntity(node);
 				for (n = node->first_node(); n; n = n->next_sibling()){
-					if (getText(n->name()) == "Anim"){
-						//addAnimation(n);
+					if (getText(n->name()) == "Animation"){
+						addAnimation(n);
 					}
 				}
 			} //else if (s == "NPC"){
@@ -50,15 +50,12 @@ void EntityLoader::loadActor(ID id){
 void EntityLoader::buildEntity(rapidxml::xml_node<> * node){
 	rapidxml::xml_attribute<> *a;
 	Identity identity = {"", 0};
-	ID tex = 0;
 	MotionMax mm = {1, 1};
 	for (a = node->first_attribute(); a; a = a->next_attribute()){
 		string s = getText(a->name());
 		if (s == "name"){
 			identity.name = getText(a->value());
 			identity.id = count; count++;
-		}else if (s == "texture"){
-			tex = loadTexture(a->value(), false);
 		}else if (s == "speed"){
 			mm.speed = getInt(a->value());
 		}else if (s == "accel"){
@@ -66,8 +63,8 @@ void EntityLoader::buildEntity(rapidxml::xml_node<> * node){
 		}
 	}
 	if (true) {
-		ParticleList::profiles.push_back(identity);
-		ParticleList::textures.push_back(tex); //TODO replace with Rendering
+		ParticleList::names.push_back(identity);
+//TODO replace with Rendering
 		ParticleList::max.push_back(mm); 
 	}
 }
@@ -75,22 +72,43 @@ void EntityLoader::buildEntity(rapidxml::xml_node<> * node){
 
 void EntityLoader::addAnimation(rapidxml::xml_node<> * node){
 	rapidxml::xml_attribute<> *a;
+	ID tex = 0;
+	ID min = 0; ID max = 3;
+	ID frames = 20;
+	ShaderProfile sp = {0, 1, G4x4};
+	bool cyclic = false;
 	for (a = node->first_attribute(); a; a = a->next_attribute()){
 		string s = getText(a->name());
 		string type = "walk";
 		if (s == "name")
 			type = getText(a->value());
-		else if (type == "walk"){								
-			//if (s == "filename"){
-				//profile.walkTex = loadTexture(a->value(), false);
-				//textures->push_back(profile.walkTex);
-			//} else if (s == "type")
-				//profile.walkAnim.type = 0;
-		}else if (type == "die"){
-
-
+		else if (s == "texture")
+			sp.tex = loadTexture(a->value(), false);
+		else if (s == "start")
+			min = getInt(a->value());
+		else if (s == "end"){
+			cyclic = true;
+			max = getInt(a->value());
+		} else if (s == "frames")
+			frames = getInt(a->value());		
+		else if (s == "scale")
+			sp.scale = getFloat(a->value());
+		else if (s == "grid"){
+			string grid = getText(a->value());
+			if (grid == "2x2")
+				sp.g = G2x2;
+			else
+				sp.g = G1x1;		
 		}
 	}
+
+	ParticleList::profiles.push_back(sp); 
+
+	Animation anim;
+	if (cyclic)
+		anim.setCyclic(min, max, frames);
+
+	ParticleList::anim.push_back(anim);
 }
 
 void EntityLoader::loadAuxillary(rapidxml::xml_node<> * node){
