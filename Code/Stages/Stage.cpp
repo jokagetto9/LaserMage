@@ -69,7 +69,7 @@ void Stage::		rapidUpdate(float delta){
 	} else if (!atSpawn){		
 		P->ai[P1].noTarget();
 		//getSpawncount;
-		actors.activate(4, P->pos());
+		actors.activate(10, P->pos());
 		atSpawn = true;
 	}
 	P->P1aiUpdate(delta);

@@ -4,6 +4,7 @@
 #include "Stages/StageLoader.h" 
 #include "Entities/EntityLoader.h"
 #include "InputManager.h"
+#include "DebugTool.h"
 //********************************* MODULES *********************************
 
 	BaseEngine eng;						// handle for managing the passage of time
@@ -17,7 +18,7 @@
 	Stage testStage;
 	Stage * currStage;
 	Players P;
-	
+	DebugTool debug;
 
 
 //********************************* DECLARATIONS *********************************
@@ -114,7 +115,8 @@ void display(){
 
 	}//*/
 
-	stack.setUp2DView(RES.x, RES.z);
+	stack.setUp2DView(RES.x, RES.z);	
+	//debug.drawDebugConsole(eng.avgFPS);
 	if(G->paused) 
 		stack.draw();
 	else
