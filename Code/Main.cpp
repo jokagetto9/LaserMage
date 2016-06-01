@@ -1,5 +1,5 @@
 #include "BaseEngine/BaseEngine.h"
-#include "BaseEngine/Stack/BaseStackManager.h"
+#include "Stack/StackManager.h"
 #include "Display/Environment.h"
 #include "Stages/StageLoader.h" 
 #include "Entities/EntityLoader.h"
@@ -11,8 +11,8 @@
 
 	InputManager input ;			// handle for managing input
 	EntityLoader entities ;
-	BaseStackManager stack;
-	MenuLoader menuLoader;
+	StackManager stack;
+	BaseMenuLoader menuLoader;
 	Environment env;
 	StageLoader stageLoader;
 	Stage testStage;
@@ -54,20 +54,21 @@ void update(){
 		input.mouseInput()->exec(P.getActor(P1));
 	}
 
-	if (!G->loaded){
-		//currStage->init(H);
-		currStage->init(P);
-		G->loaded = true;
-	}
-
-	//DBT->update();
-	//if (G->save) save();
 	clockCycle();
-	
-	
+
 	stack.menuInput(input.menuInput());
 
 	if (G->paused) stack.update();
+
+	if(G->state == TITLE)
+		currStage = NULL;
+	else if (!G->loaded && G->state == PLAY){
+		if (!currStage){
+			currStage = stageLoader.getStage(stack.index);
+		}
+		currStage->init(P);		
+		G->loaded = true;
+	}
 	//input.clearKeys();	
 }
 
@@ -135,13 +136,11 @@ void init(){
 		initGlobals();
 		entities.load();
 		stageLoader.load();
-		currStage = stageLoader.getStage(0);
-		if (currStage == NULL) currStage = &testStage;		
-		currStage->drawPool.activateTextures();
 		//menus
 		stack.init(menuLoader);	
 		input.init(menuLoader);
 		menuLoader.load();
+		stack.loadStages(&stageLoader);
 
 
 	}  

@@ -7,7 +7,7 @@
     <Cursor id="1" x="97" y="126" ></Cursor> 
     <Flow >2</Flow>
   </Menu>
-  <Menu name="StageSelect" type="STGSLCT">
+  <Menu name="StageSelect" lineh="16" >
     <Cursor id="1" x="10" y="10" ></Cursor>
     <Flow func="1">3</Flow>
   </Menu>

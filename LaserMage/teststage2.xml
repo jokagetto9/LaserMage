@@ -1,0 +1,8 @@
+<Stage name="TestStage2" tile="0" >
+	<Map></Map>
+  <SpawnPoint x="32" y="20">
+    <Wave dist="30" type="Chucky">5</Wave>
+  </SpawnPoint>
+</Stage>
+
+

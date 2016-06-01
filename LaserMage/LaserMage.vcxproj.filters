@@ -111,9 +111,6 @@
     <ClInclude Include="..\Code\BaseEngine\Stack\Menu.h">
       <Filter>Stack</Filter>
     </ClInclude>
-    <ClInclude Include="..\Code\BaseEngine\Stack\MenuLoader.h">
-      <Filter>Stack</Filter>
-    </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Stack\BaseStackManager.h">
       <Filter>Stack</Filter>
     </ClInclude>
@@ -155,6 +152,15 @@
     </ClInclude>
     <ClInclude Include="..\Code\DebugTool.h">
       <Filter>BaseEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Stack\BaseMenuLoader.h">
+      <Filter>Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Stack\MenuLoader.h">
+      <Filter>Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Stack\StackManager.h">
+      <Filter>Stack</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -221,9 +227,6 @@
     <ClCompile Include="..\Code\BaseEngine\Components\Motion.cpp">
       <Filter>Components</Filter>
     </ClCompile>
-    <ClCompile Include="..\Code\BaseEngine\Stack\MenuLoader.cpp">
-      <Filter>Stack</Filter>
-    </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Stack\BaseStackManager.cpp">
       <Filter>Stack</Filter>
     </ClCompile>
@@ -266,6 +269,15 @@
     <ClCompile Include="..\Code\DebugTool.cpp">
       <Filter>BaseEngine</Filter>
     </ClCompile>
+    <ClCompile Include="..\Code\BaseEngine\Stack\BaseMenuLoader.cpp">
+      <Filter>Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Stack\MenuLoader.cpp">
+      <Filter>Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Stack\StackManager.cpp">
+      <Filter>Stack</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="menulist.xml">
@@ -293,6 +305,9 @@
       <Filter>~Content</Filter>
     </None>
     <None Include="enemies.xml">
+      <Filter>~Content</Filter>
+    </None>
+    <None Include="teststage2.xml">
       <Filter>~Content</Filter>
     </None>
   </ItemGroup>

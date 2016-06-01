@@ -16,12 +16,11 @@ public:
 	
 	SpawnPoint StageLoader::buildSpawnpoint(rapidxml::xml_node<> * node);
 	EnemyWave StageLoader::buildWave(rapidxml::xml_node<> * node);
-
+	ID StageLoader::size(){return stages.size();}
 
 private:
 	vector <string> stageFiles;
 	vector <Stage> stages;
-	int stageCount;
 	
 
 };

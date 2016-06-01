@@ -2,7 +2,7 @@
 #include "Stage.h"
 
 Stage::Stage(){
-	name = "";
+	name = "___";
 	baseTile = 0;
 	curSpawn = 0;
 	actors.reserve(100);
@@ -27,7 +27,7 @@ void Stage:: init(Players& p){
 			spawns[i].waves[j].generate(actors);
 		}
 	}
-	
+	drawPool.activateTextures();
 	//veg->init();
 }
 

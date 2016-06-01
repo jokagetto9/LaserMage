@@ -9,10 +9,8 @@ void StageLoader::load(){
 	}catch(...){
 		cout << "Stage did not load properly." << endl;
 	}
-	stageCount = stageFiles.size();
-	loadStage(0);
 	for (int i = 0; i < stageFiles.size(); i++){
-		//loadStage(i);
+		loadStage(i);
 	}
 }
 
@@ -101,7 +99,7 @@ EnemyWave StageLoader::buildWave(rapidxml::xml_node<> * node){
 
 
 Stage * StageLoader::getStage(ID id){
-	if (id < stageCount){
+	if (id < stages.size()){
 		return &stages[id];
 	}
 	return NULL;
