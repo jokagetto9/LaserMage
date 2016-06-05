@@ -11,22 +11,22 @@
 class InputManager : public BaseInputManager{
 public:
 	
-	InputManager::InputManager(){} 
+	InputManager::InputManager(){zoomOut = false;} 
 	
 //********************************* KEY CYCLE *********************************
 
 //********************************* INPUT RESPONSES *********************************
 	
-	void InputManager::		checkToggles();
 	Command * InputManager::		mouseInput();
 	void InputManager::		cameraInput();
+	void InputManager::		debugToggles();
 
 //************************************************** MEMBERS ***************************************************
 	
 //********************************* MEMBER FUNCTIONS *********************************
 private:
 	LaserCommand lasercmd;
-
+	bool zoomOut;
 };
 
 #endif

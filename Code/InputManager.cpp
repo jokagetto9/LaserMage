@@ -25,3 +25,18 @@ void InputManager::		cameraInput(){
 	}
 //*/
 }
+
+
+
+void InputManager::		debugToggles(){	
+	if (keyPressed[SDLK_c]) {
+		off(SDLK_c);
+		if (zoomOut){
+			C->yPos /= 2;
+			zoomOut = false;
+		}else{
+			C->yPos *= 2;
+			zoomOut = true;
+		}
+	}
+}

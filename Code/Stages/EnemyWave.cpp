@@ -46,11 +46,11 @@ void EnemyWave ::		generate(Actors& enemies){
 	Rendering r(tex, type); //set stats and anims
 	Animation a = ParticleList::anim[type];
 	Motion m = Motion(ParticleList::max[type]);
-	Translation t; 
+	Location t; 
 	glm::vec3 v;
-	float tempTheta = tempTheta = centerTheta + (quantity-1)* clustering/2;   
+	float tempTheta = tempTheta = centerTheta - (quantity-1)* clustering/2;   
 	for (int i = 0; i < quantity; i++){		
-		float theta = tempTheta-i*clustering;
+		float theta = tempTheta+i*clustering;
 		v = radialOffset(origin, theta, dist);
 		t.place(v.x, v.z); 
 		enemies.add(r, t, m, a);

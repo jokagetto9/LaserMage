@@ -57,7 +57,7 @@ void EntityLoader::buildEntity(rapidxml::xml_node<> * node){
 			identity.name = getText(a->value());
 			identity.id = count; count++;
 		}else if (s == "speed"){
-			mm.speed = getInt(a->value());
+			mm.speed = getFloat(a->value());
 		}else if (s == "accel"){
 			mm.accel = getInt(a->value());
 		}

@@ -2,14 +2,14 @@
 #define SPAWNPOINT_H
 
 
-#include "../BaseEngine/Components/Translation.h"
+#include "../BaseEngine/Components/Location.h"
 #include "EnemyWave.h"
 
 //********************************* CONSTANTS *********************************
 
 
 //********************************* INITIALIZATION *********************************
-class SpawnPoint : public Translation {
+class SpawnPoint : public Location {
 	public: 
 	SpawnPoint::			SpawnPoint();
 	void SpawnPoint::		addWave(EnemyWave & w);

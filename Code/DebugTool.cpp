@@ -12,8 +12,6 @@ void DebugTool::init(){
 }
 
 
-
-
 void DebugTool::	fontTest(){
 	M->fontBO.setBuffer(3);
 	M->fontBO.changeFont();
@@ -32,7 +30,7 @@ void DebugTool::	fontTest(){
 
 void DebugTool::	drawDebugConsole(float fps){ //recreate as class
 	M->fontBO.use();
-	M->fontBO.setBuffer(2);	
+	M->fontBO.setBuffer(1);	
 	stringstream ss("");
 	ss << fps;
 	M->fontBO.convertString(ss.str(), 0, 0, 0); ss.str("");

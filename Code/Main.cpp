@@ -48,7 +48,7 @@ void update(){
 	PlayCommand * cmd = input.checkPause();
 	stack.loadCommand(cmd);
 
-	//input.checkToggles();
+	input.debugToggles();
 	if (!G->paused) {	
 		//input.directionInput()->exec(P.getActor(P1));
 		input.mouseInput()->exec(P.getActor(P1));

@@ -16,17 +16,14 @@
     <Filter Include="Components">
       <UniqueIdentifier>{48d38527-c674-407f-b58b-977e6d81e235}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Stages">
+      <UniqueIdentifier>{e2cb5ad9-f23b-494f-a85a-ff78a5da3737}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Display">
       <UniqueIdentifier>{9f933468-1102-4ad2-8a1a-63eefa0c1cae}</UniqueIdentifier>
     </Filter>
     <Filter Include="Display\Shaders">
       <UniqueIdentifier>{8f9fb3c9-8c26-4644-a01a-4e0629761c9b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Stages">
-      <UniqueIdentifier>{e2cb5ad9-f23b-494f-a85a-ff78a5da3737}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Components\Laser">
-      <UniqueIdentifier>{db331c6a-70d7-4e0f-91a6-c5c484a946f1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -81,22 +78,10 @@
     <ClInclude Include="..\Code\BaseEngine\lib.h">
       <Filter>BaseEngine</Filter>
     </ClInclude>
-    <ClInclude Include="..\Code\Laser\Laser.h">
-      <Filter>Components\Laser</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\Laser\LaserCommand.h">
-      <Filter>Components\Laser</Filter>
-    </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Rendering.h">
       <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\State.h">
-      <Filter>Components</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\BaseEngine\Components\Translation.h">
-      <Filter>Components</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\BaseEngine\Components\AI.h">
       <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Animation.h">
@@ -162,6 +147,21 @@
     <ClInclude Include="..\Code\Stack\StackManager.h">
       <Filter>Stack</Filter>
     </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Components\Target.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Components\Size.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Components\Obstacles.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Components\Location.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Entities\CollisionGrid.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Code\BaseEngine\BaseEngine.cpp">
@@ -208,18 +208,6 @@
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Entities\Props.cpp">
       <Filter>Entities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\Laser\Laser.cpp">
-      <Filter>Components\Laser</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\BaseEngine\Components\State.cpp">
-      <Filter>Components</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\BaseEngine\Components\Translation.cpp">
-      <Filter>Components</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\BaseEngine\Components\AI.cpp">
-      <Filter>Components</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Components\Animation.cpp">
       <Filter>Components</Filter>
@@ -278,6 +266,18 @@
     <ClCompile Include="..\Code\Stack\StackManager.cpp">
       <Filter>Stack</Filter>
     </ClCompile>
+    <ClCompile Include="..\Code\BaseEngine\Components\Target.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\BaseEngine\Components\Location.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\BaseEngine\Entities\CollisionGrid.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\BaseEngine\Components\Obstacles.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="menulist.xml">
@@ -295,9 +295,6 @@
     <None Include="stagelist.xml">
       <Filter>~Content</Filter>
     </None>
-    <None Include="teststage.xml">
-      <Filter>~Content</Filter>
-    </None>
     <None Include="entitylist.xml">
       <Filter>~Content</Filter>
     </None>
@@ -307,7 +304,13 @@
     <None Include="enemies.xml">
       <Filter>~Content</Filter>
     </None>
-    <None Include="teststage2.xml">
+    <None Include="forest.xml">
+      <Filter>~Content</Filter>
+    </None>
+    <None Include="forest2.xml">
+      <Filter>~Content</Filter>
+    </None>
+    <None Include="teststage.xml">
       <Filter>~Content</Filter>
     </None>
   </ItemGroup>

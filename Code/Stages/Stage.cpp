@@ -12,13 +12,12 @@ Stage::Stage(){
 
 void Stage:: init(Players& p){
 	P = &p;
-	p.place(32, 0);
 	curSpawn = 0;
 	atSpawn = false;
 	//terr.init();	
 	//pop.enemies.clear();
 	p.reset();
-	p.place(32, 0);
+	p.placeP1(32, 0);
 	actors.clear();
 	for (int i = 0; i < spawns.size(); i++){ 
 		int waves = spawns[i].waves.size();
@@ -61,15 +60,18 @@ void Stage::update(){
 void Stage::		physUpdate(float delta){
 	P->P1Update(delta);
 	actors.update(delta);	
+	collisions.updateGrid(&actors);
+	collisions.updateObstacles();
+	collisions.applyAdjustments();
 }
 void Stage::		rapidUpdate(float delta){
 	glm::vec3 v = spawns[curSpawn].pos();
 	if (P->pos().z < v.z-0.25){
-		P->ai[P1].setTarget(v);
+		P->target[P1].setTarget(v);
 	} else if (!atSpawn){		
-		P->ai[P1].noTarget();
+		P->target[P1].noTarget();
 		//getSpawncount;
-		actors.activate(10, P->pos());
+		actors.activate(14, P->pos());
 		atSpawn = true;
 	}
 	P->P1aiUpdate(delta);
@@ -83,10 +85,6 @@ void Stage::		draw(float delta){
 	drawPool.batch(&actors, delta);
 	drawPool.draw(&actors);
 	
-
-	//actors.refresh(delta); 
-	//actors.draw(); 
-
 }
 void Stage::		drawTerrain(){	
 	glDisable(GL_DEPTH_TEST);

@@ -1,4 +1,5 @@
 <StageList>
   <StageFile filename="teststage.xml" >  </StageFile>
-  <StageFile filename="teststage2.xml" >  </StageFile>
+  <StageFile filename="forest.xml" >  </StageFile>
+  <StageFile filename="forest2.xml" >  </StageFile>
 </StageList>

@@ -1,0 +1,13 @@
+<Stage name="Forest" tile="0" >
+	<Map></Map>
+  <SpawnPoint x="32" y="20">
+    <Wave dist="50" ctheta="270" type="Mosquito">5</Wave>
+    <Wave dist="50" ctheta="90" type="Mosquito">1</Wave>
+    <Wave dist="50" ctheta="315" type="Mimic">1</Wave>
+    <Wave dist="50" ctheta="45" type="Mimic">2</Wave>
+    <Wave dist="50" type="LaBomba">1</Wave>
+    <Wave dist="60" type="Chucky">5</Wave>
+  </SpawnPoint>
+</Stage>
+
+

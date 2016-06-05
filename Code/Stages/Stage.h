@@ -3,6 +3,7 @@
 
 
 #include "../BaseEngine/Entities/DrawPool.h"
+#include "../BaseEngine/Entities/CollisionGrid.h"
 #include "../Entities/Players.h"
 #include "SpawnPoint.h"
 
@@ -51,6 +52,7 @@ virtual void Stage::		rapidUpdate(float delta);
 
 		Actors actors;
 		DrawPool drawPool;
+		CollisionGrid collisions;
 		//Vegetation * veg;
 		//Structures * structs;
 		string name;

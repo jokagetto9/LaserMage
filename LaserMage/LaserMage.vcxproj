@@ -15,15 +15,18 @@
     <ClInclude Include="..\Code\BaseEngine\BaseGameState.h" />
     <ClInclude Include="..\Code\BaseEngine\BaseInputManager.h" />
     <ClInclude Include="..\Code\BaseEngine\Command.h" />
-    <ClInclude Include="..\Code\BaseEngine\Components\AI.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\Animation.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\Component.h" />
+    <ClInclude Include="..\Code\BaseEngine\Components\Location.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\Motion.h" />
+    <ClInclude Include="..\Code\BaseEngine\Components\Obstacles.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\Rendering.h" />
+    <ClInclude Include="..\Code\BaseEngine\Components\Size.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\State.h" />
-    <ClInclude Include="..\Code\BaseEngine\Components\Translation.h" />
+    <ClInclude Include="..\Code\BaseEngine\Components\Target.h" />
     <ClInclude Include="..\Code\BaseEngine\Display\Camera.h" />
     <ClInclude Include="..\Code\BaseEngine\Entities\Actors.h" />
+    <ClInclude Include="..\Code\BaseEngine\Entities\CollisionGrid.h" />
     <ClInclude Include="..\Code\BaseEngine\Entities\Dictionaries.h" />
     <ClInclude Include="..\Code\BaseEngine\Entities\DrawPool.h" />
     <ClInclude Include="..\Code\BaseEngine\Entities\Particles.h" />
@@ -47,8 +50,6 @@
     <ClInclude Include="..\Code\Entities\EntityLoader.h" />
     <ClInclude Include="..\Code\Entities\Players.h" />
     <ClInclude Include="..\Code\InputManager.h" />
-    <ClInclude Include="..\Code\Laser\Laser.h" />
-    <ClInclude Include="..\Code\Laser\LaserCommand.h" />
     <ClInclude Include="..\Code\Stack\MenuLoader.h" />
     <ClInclude Include="..\Code\Stack\StackManager.h" />
     <ClInclude Include="..\Code\Stages\EnemyWave.h" />
@@ -60,13 +61,14 @@
     <ClCompile Include="..\Code\BaseEngine\BaseEngine.cpp" />
     <ClCompile Include="..\Code\BaseEngine\BaseGameState.cpp" />
     <ClCompile Include="..\Code\BaseEngine\BaseInputManager.cpp" />
-    <ClCompile Include="..\Code\BaseEngine\Components\AI.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Components\Animation.cpp" />
+    <ClCompile Include="..\Code\BaseEngine\Components\Location.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Components\Motion.cpp" />
-    <ClCompile Include="..\Code\BaseEngine\Components\State.cpp" />
-    <ClCompile Include="..\Code\BaseEngine\Components\Translation.cpp" />
+    <ClCompile Include="..\Code\BaseEngine\Components\Obstacles.cpp" />
+    <ClCompile Include="..\Code\BaseEngine\Components\Target.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Display\Camera.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Entities\Actors.cpp" />
+    <ClCompile Include="..\Code\BaseEngine\Entities\CollisionGrid.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Entities\Dictionaries.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Entities\DrawPool.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Entities\Particles.cpp" />
@@ -87,7 +89,6 @@
     <ClCompile Include="..\Code\Entities\EntityLoader.cpp" />
     <ClCompile Include="..\Code\Entities\Players.cpp" />
     <ClCompile Include="..\Code\InputManager.cpp" />
-    <ClCompile Include="..\Code\Laser\Laser.cpp" />
     <ClCompile Include="..\Code\Main.cpp" />
     <ClCompile Include="..\Code\Stack\MenuLoader.cpp" />
     <ClCompile Include="..\Code\Stack\StackManager.cpp" />
@@ -104,6 +105,8 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="entitylist.xml" />
+    <None Include="forest.xml" />
+    <None Include="forest2.xml" />
     <None Include="intro.xml">
       <SubType>Designer</SubType>
     </None>
@@ -115,10 +118,7 @@
     </None>
     <None Include="props.xml" />
     <None Include="stagelist.xml" />
-    <None Include="teststage.xml">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="teststage2.xml" />
+    <None Include="teststage.xml" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{CE139FEA-E349-4E5E-B1D1-BAB7DF69BF24}</ProjectGuid>
