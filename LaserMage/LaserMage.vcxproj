@@ -106,7 +106,9 @@
     </None>
     <None Include="entitylist.xml" />
     <None Include="forest.xml" />
-    <None Include="forest2.xml" />
+    <None Include="forest2.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="intro.xml">
       <SubType>Designer</SubType>
     </None>
@@ -117,8 +119,12 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="props.xml" />
-    <None Include="stagelist.xml" />
-    <None Include="teststage.xml" />
+    <None Include="stagelist.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="teststage.xml">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{CE139FEA-E349-4E5E-B1D1-BAB7DF69BF24}</ProjectGuid>

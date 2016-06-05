@@ -5,7 +5,7 @@ Stage::Stage(){
 	name = "___";
 	baseTile = 0;
 	curSpawn = 0;
-	actors.reserve(100);
+	actors.reserve(1000);
 	atSpawn = false;
 
 }
@@ -71,7 +71,8 @@ void Stage::		rapidUpdate(float delta){
 	} else if (!atSpawn){		
 		P->target[P1].noTarget();
 		//getSpawncount;
-		actors.activate(14, P->pos());
+		//actors.activate(14, P->pos());
+		actors.activateAll(P->pos());
 		atSpawn = true;
 	}
 	P->P1aiUpdate(delta);

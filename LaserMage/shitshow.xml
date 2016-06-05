@@ -1,0 +1,13 @@
+<Stage name="ShitShow!" tile="0" >
+	<Map></Map>
+  <SpawnPoint x="32" y="12">
+    <Wave dist="40"  type="Chucky">36</Wave>
+    <Wave dist="48"  type="Chucky">35</Wave>
+    <Wave dist="56"  type="Chucky">36</Wave>
+    <Wave dist="64"  type="Chucky">35</Wave>
+    <Wave dist="72"  type="Chucky">36</Wave>
+    <Wave dist="80"  type="Chucky">35</Wave>
+  </SpawnPoint>
+</Stage>
+
+
