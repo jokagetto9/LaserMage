@@ -47,16 +47,16 @@
     <ClInclude Include="..\Code\Display\Shaders\MenuShader.h" />
     <ClInclude Include="..\Code\Display\Shaders\Shader.h" />
     <ClInclude Include="..\Code\Display\Shaders\TileShader.h" />
+    <ClInclude Include="..\Code\Entities\EnemyWave.h" />
     <ClInclude Include="..\Code\Entities\EntityLoader.h" />
     <ClInclude Include="..\Code\Entities\MonsterBook.h" />
     <ClInclude Include="..\Code\Entities\Players.h" />
+    <ClInclude Include="..\Code\Entities\SpawnPoint.h" />
+    <ClInclude Include="..\Code\Entities\Stage.h" />
+    <ClInclude Include="..\Code\Entities\StageLoader.h" />
     <ClInclude Include="..\Code\InputManager.h" />
     <ClInclude Include="..\Code\Stack\MenuLoader.h" />
     <ClInclude Include="..\Code\Stack\StackManager.h" />
-    <ClInclude Include="..\Code\Stages\EnemyWave.h" />
-    <ClInclude Include="..\Code\Stages\SpawnPoint.h" />
-    <ClInclude Include="..\Code\Stages\Stage.h" />
-    <ClInclude Include="..\Code\Stages\StageLoader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Code\BaseEngine\BaseEngine.cpp" />
@@ -87,17 +87,17 @@
     <ClCompile Include="..\Code\Display\Shaders\MenuShader.cpp" />
     <ClCompile Include="..\Code\Display\Shaders\Shader.cpp" />
     <ClCompile Include="..\Code\Display\Shaders\TileShader.cpp" />
+    <ClCompile Include="..\Code\Entities\EnemyWave.cpp" />
     <ClCompile Include="..\Code\Entities\EntityLoader.cpp" />
     <ClCompile Include="..\Code\Entities\MonsterBook.cpp" />
     <ClCompile Include="..\Code\Entities\Players.cpp" />
+    <ClCompile Include="..\Code\Entities\SpawnPoint.cpp" />
+    <ClCompile Include="..\Code\Entities\Stage.cpp" />
+    <ClCompile Include="..\Code\Entities\StageLoader.cpp" />
     <ClCompile Include="..\Code\InputManager.cpp" />
     <ClCompile Include="..\Code\Main.cpp" />
     <ClCompile Include="..\Code\Stack\MenuLoader.cpp" />
     <ClCompile Include="..\Code\Stack\StackManager.cpp" />
-    <ClCompile Include="..\Code\Stages\EnemyWave.cpp" />
-    <ClCompile Include="..\Code\Stages\SpawnPoint.cpp" />
-    <ClCompile Include="..\Code\Stages\Stage.cpp" />
-    <ClCompile Include="..\Code\Stages\StageLoader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cursors.xml">

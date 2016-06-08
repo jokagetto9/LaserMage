@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="BaseEngine">
-      <UniqueIdentifier>{d0163b9d-191a-4a12-9aaa-27d3c846301e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="~Content">
       <UniqueIdentifier>{f9b9b8eb-8fde-4b0d-8c83-2250493c6ee0}</UniqueIdentifier>
     </Filter>
@@ -13,29 +10,29 @@
     <Filter Include="Entities">
       <UniqueIdentifier>{b7365142-920f-4f29-a601-fc7cc3f13c70}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Stages">
-      <UniqueIdentifier>{e2cb5ad9-f23b-494f-a85a-ff78a5da3737}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Display">
       <UniqueIdentifier>{9f933468-1102-4ad2-8a1a-63eefa0c1cae}</UniqueIdentifier>
     </Filter>
     <Filter Include="Display\Shaders">
       <UniqueIdentifier>{8f9fb3c9-8c26-4644-a01a-4e0629761c9b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Entities\Components">
+    <Filter Include="Components">
       <UniqueIdentifier>{48d38527-c674-407f-b58b-977e6d81e235}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entities\Base">
+      <UniqueIdentifier>{c5695a96-11c0-45ef-bbb9-f200d027e7bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{d0163b9d-191a-4a12-9aaa-27d3c846301e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Base">
+      <UniqueIdentifier>{66250fd4-2f30-45c7-bd4e-a99c60ae99db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stack\Base">
+      <UniqueIdentifier>{81cd9d71-08fe-4a89-8fc8-eb5aa105ae8a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Code\BaseEngine\BaseEngine.h">
-      <Filter>BaseEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\BaseEngine\BaseGameState.h">
-      <Filter>BaseEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\BaseEngine\BaseInputManager.h">
-      <Filter>BaseEngine</Filter>
-    </ClInclude>
     <ClInclude Include="..\Code\Display\Shaders\MenuShader.h">
       <Filter>Display\Shaders</Filter>
     </ClInclude>
@@ -48,15 +45,6 @@
     <ClInclude Include="..\Code\Display\Shaders\CursorShader.h">
       <Filter>Display\Shaders</Filter>
     </ClInclude>
-    <ClInclude Include="..\Code\Stages\SpawnPoint.h">
-      <Filter>Stages</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\Stages\Stage.h">
-      <Filter>Stages</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\Stages\EnemyWave.h">
-      <Filter>Stages</Filter>
-    </ClInclude>
     <ClInclude Include="..\Code\Display\ModelData.h">
       <Filter>Display</Filter>
     </ClInclude>
@@ -66,59 +54,23 @@
     <ClInclude Include="..\Code\Display\Shaders\GridShader.h">
       <Filter>Display\Shaders</Filter>
     </ClInclude>
-    <ClInclude Include="..\Code\Stages\StageLoader.h">
-      <Filter>Stages</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\BaseEngine\Entities\Actors.h">
-      <Filter>Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\BaseEngine\Entities\Props.h">
-      <Filter>Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\BaseEngine\lib.h">
-      <Filter>BaseEngine</Filter>
-    </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Rendering.h">
-      <Filter>Entities\Components</Filter>
+      <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\State.h">
-      <Filter>Entities\Components</Filter>
+      <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Animation.h">
-      <Filter>Entities\Components</Filter>
+      <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Component.h">
-      <Filter>Entities\Components</Filter>
+      <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Motion.h">
-      <Filter>Entities\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\BaseEngine\Stack\Menu.h">
-      <Filter>Stack</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\BaseEngine\Stack\BaseStackManager.h">
-      <Filter>Stack</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\BaseEngine\Stack\MCommand.h">
-      <Filter>Stack</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\BaseEngine\Command.h">
-      <Filter>BaseEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\BaseEngine\XMLParser.h">
-      <Filter>BaseEngine</Filter>
+      <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\Display\Environment.h">
       <Filter>Display</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\BaseEngine\Entities\Particles.h">
-      <Filter>Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\BaseEngine\Entities\DrawPool.h">
-      <Filter>Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\BaseEngine\Entities\Dictionaries.h">
-      <Filter>Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\Entities\Players.h">
       <Filter>Entities</Filter>
@@ -130,52 +82,97 @@
       <Filter>Display</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\InputManager.h">
-      <Filter>BaseEngine</Filter>
+      <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\Display\Shaders\FontShader.h">
       <Filter>Display\Shaders</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\DebugTool.h">
-      <Filter>BaseEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\BaseEngine\Stack\BaseMenuLoader.h">
-      <Filter>Stack</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\Stack\MenuLoader.h">
-      <Filter>Stack</Filter>
+      <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\Stack\StackManager.h">
       <Filter>Stack</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Target.h">
-      <Filter>Entities\Components</Filter>
+      <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Size.h">
-      <Filter>Entities\Components</Filter>
+      <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Obstacles.h">
-      <Filter>Entities\Components</Filter>
+      <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Location.h">
-      <Filter>Entities\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\BaseEngine\Entities\CollisionGrid.h">
-      <Filter>Entities</Filter>
+      <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\Entities\MonsterBook.h">
       <Filter>Entities</Filter>
     </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Entities\Props.h">
+      <Filter>Entities\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Entities\Actors.h">
+      <Filter>Entities\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Entities\CollisionGrid.h">
+      <Filter>Entities\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Entities\Dictionaries.h">
+      <Filter>Entities\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Entities\DrawPool.h">
+      <Filter>Entities\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Entities\Particles.h">
+      <Filter>Entities\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\BaseInputManager.h">
+      <Filter>Engine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\BaseEngine.h">
+      <Filter>Engine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\BaseGameState.h">
+      <Filter>Engine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Command.h">
+      <Filter>Engine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\lib.h">
+      <Filter>Engine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\XMLParser.h">
+      <Filter>Engine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Entities\EnemyWave.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Entities\SpawnPoint.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Entities\Stage.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Entities\StageLoader.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Stack\BaseStackManager.h">
+      <Filter>Stack\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Stack\BaseMenuLoader.h">
+      <Filter>Stack\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Stack\MCommand.h">
+      <Filter>Stack\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Stack\Menu.h">
+      <Filter>Stack\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Stack\MenuLoader.h">
+      <Filter>Stack\Base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Code\BaseEngine\BaseEngine.cpp">
-      <Filter>BaseEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\BaseEngine\BaseGameState.cpp">
-      <Filter>BaseEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\BaseEngine\BaseInputManager.cpp">
-      <Filter>BaseEngine</Filter>
-    </ClCompile>
     <ClCompile Include="..\Code\Display\Shaders\MenuShader.cpp">
       <Filter>Display\Shaders</Filter>
     </ClCompile>
@@ -188,56 +185,20 @@
     <ClCompile Include="..\Code\Display\Shaders\CursorShader.cpp">
       <Filter>Display\Shaders</Filter>
     </ClCompile>
-    <ClCompile Include="..\Code\Stages\SpawnPoint.cpp">
-      <Filter>Stages</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\Stages\Stage.cpp">
-      <Filter>Stages</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\Stages\EnemyWave.cpp">
-      <Filter>Stages</Filter>
-    </ClCompile>
     <ClCompile Include="..\Code\Display\ModelManager.cpp">
       <Filter>Display</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\Display\Shaders\GridShader.cpp">
       <Filter>Display\Shaders</Filter>
     </ClCompile>
-    <ClCompile Include="..\Code\Stages\StageLoader.cpp">
-      <Filter>Stages</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\BaseEngine\Entities\Actors.cpp">
-      <Filter>Entities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\BaseEngine\Entities\Props.cpp">
-      <Filter>Entities</Filter>
-    </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Components\Animation.cpp">
-      <Filter>Entities\Components</Filter>
+      <Filter>Components</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Components\Motion.cpp">
-      <Filter>Entities\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\BaseEngine\Stack\BaseStackManager.cpp">
-      <Filter>Stack</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\BaseEngine\Stack\Menu.cpp">
-      <Filter>Stack</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\BaseEngine\XMLParser.cpp">
-      <Filter>BaseEngine</Filter>
+      <Filter>Components</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\Display\Environment.cpp">
       <Filter>Display</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\BaseEngine\Entities\Particles.cpp">
-      <Filter>Entities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\BaseEngine\Entities\DrawPool.cpp">
-      <Filter>Entities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\BaseEngine\Entities\Dictionaries.cpp">
-      <Filter>Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\Entities\EntityLoader.cpp">
       <Filter>Entities</Filter>
@@ -249,40 +210,85 @@
       <Filter>Display</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\Main.cpp">
-      <Filter>BaseEngine</Filter>
+      <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\InputManager.cpp">
-      <Filter>BaseEngine</Filter>
+      <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\Display\Shaders\FontShader.cpp">
       <Filter>Display\Shaders</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\DebugTool.cpp">
-      <Filter>BaseEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\BaseEngine\Stack\BaseMenuLoader.cpp">
-      <Filter>Stack</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\Stack\MenuLoader.cpp">
-      <Filter>Stack</Filter>
+      <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\Stack\StackManager.cpp">
       <Filter>Stack</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Components\Target.cpp">
-      <Filter>Entities\Components</Filter>
+      <Filter>Components</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Components\Location.cpp">
-      <Filter>Entities\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\BaseEngine\Entities\CollisionGrid.cpp">
-      <Filter>Entities</Filter>
+      <Filter>Components</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Components\Obstacles.cpp">
-      <Filter>Entities\Components</Filter>
+      <Filter>Components</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\Entities\MonsterBook.cpp">
       <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\BaseEngine\Entities\Actors.cpp">
+      <Filter>Entities\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\BaseEngine\Entities\CollisionGrid.cpp">
+      <Filter>Entities\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\BaseEngine\Entities\Dictionaries.cpp">
+      <Filter>Entities\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\BaseEngine\Entities\DrawPool.cpp">
+      <Filter>Entities\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\BaseEngine\Entities\Particles.cpp">
+      <Filter>Entities\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\BaseEngine\Entities\Props.cpp">
+      <Filter>Entities\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\BaseEngine\BaseEngine.cpp">
+      <Filter>Engine\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\BaseEngine\BaseGameState.cpp">
+      <Filter>Engine\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\BaseEngine\BaseInputManager.cpp">
+      <Filter>Engine\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\BaseEngine\XMLParser.cpp">
+      <Filter>Engine\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Entities\EnemyWave.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Entities\SpawnPoint.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Entities\Stage.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Entities\StageLoader.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\BaseEngine\Stack\BaseMenuLoader.cpp">
+      <Filter>Stack\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\BaseEngine\Stack\BaseStackManager.cpp">
+      <Filter>Stack\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\BaseEngine\Stack\Menu.cpp">
+      <Filter>Stack\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Stack\MenuLoader.cpp">
+      <Filter>Stack\Base</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

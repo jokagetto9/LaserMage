@@ -1,7 +1,6 @@
 #include "BaseEngine/BaseEngine.h"
 #include "Stack/StackManager.h"
 #include "Display/Environment.h"
-#include "Stages/StageLoader.h" 
 #include "Entities/EntityLoader.h"
 #include "InputManager.h"
 #include "DebugTool.h"

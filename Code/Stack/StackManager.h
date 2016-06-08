@@ -3,7 +3,7 @@
 
 //#include "MenuLoader.h"
 #include "../BaseEngine/Stack/BaseStackManager.h"
-#include "../Stages/StageLoader.h"
+#include "../Entities/StageLoader.h"
 
 
 //********************************* CONSTANTS *********************************
