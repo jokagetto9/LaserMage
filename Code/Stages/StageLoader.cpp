@@ -1,7 +1,6 @@
 //********************************* INITIALIZATION *********************************
 #include "StageLoader.h"
-
-#include "../BaseEngine/Entities/Dictionaries.h"
+#include "../Entities/MonsterBook.h"
 
 void StageLoader::load(){
 	try {		
@@ -83,7 +82,7 @@ EnemyWave StageLoader::buildWave(rapidxml::xml_node<> * node){
 		string s = getText(a->name());
 		if (s == "type"){
 			string type = getText(a->value());
-			wave.type = Dictionary::getIndex(type, ParticleList::getID());
+			wave.type = Dictionary::getIndex(type, MonsterBook::getID());
 		}else if (s == "dist"){
 			wave.dist = getInt(a->value());
 		}else if (s == "mirror"){ 

@@ -1,3 +1,9 @@
-<StageList>
-  <StageFile filename="teststage.xml" >  </StageFile>
-</StageList>
+<PropFile>
+  <Prop name="DarkBush" texture="darkbush.png" size="0" scale="1.5"></Prop>
+  <Prop name="DeadTree" texture="deadtree.png" size="6" scale="4"></Prop>
+	<Props texture="forestdebris.png" scale="1.5" grid="2x2">
+		<Prop index="0" name="Stump" size="6"></Prop>
+		<Prop index="1" name="DampSpot" size="0"></Prop>
+		<Prop index="2" name="LeafPile" size="0"></Prop>
+	</Props>
+</PropFile>

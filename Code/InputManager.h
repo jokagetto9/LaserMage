@@ -11,7 +11,7 @@
 class InputManager : public BaseInputManager{
 public:
 	
-	InputManager::InputManager(){zoomOut = false;} 
+	InputManager::InputManager();
 	
 //********************************* KEY CYCLE *********************************
 
@@ -23,6 +23,7 @@ public:
 
 //************************************************** MEMBERS ***************************************************
 	
+	bool controls;
 //********************************* MEMBER FUNCTIONS *********************************
 private:
 	LaserCommand lasercmd;

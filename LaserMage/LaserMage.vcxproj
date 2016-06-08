@@ -48,6 +48,7 @@
     <ClInclude Include="..\Code\Display\Shaders\Shader.h" />
     <ClInclude Include="..\Code\Display\Shaders\TileShader.h" />
     <ClInclude Include="..\Code\Entities\EntityLoader.h" />
+    <ClInclude Include="..\Code\Entities\MonsterBook.h" />
     <ClInclude Include="..\Code\Entities\Players.h" />
     <ClInclude Include="..\Code\InputManager.h" />
     <ClInclude Include="..\Code\Stack\MenuLoader.h" />
@@ -87,6 +88,7 @@
     <ClCompile Include="..\Code\Display\Shaders\Shader.cpp" />
     <ClCompile Include="..\Code\Display\Shaders\TileShader.cpp" />
     <ClCompile Include="..\Code\Entities\EntityLoader.cpp" />
+    <ClCompile Include="..\Code\Entities\MonsterBook.cpp" />
     <ClCompile Include="..\Code\Entities\Players.cpp" />
     <ClCompile Include="..\Code\InputManager.cpp" />
     <ClCompile Include="..\Code\Main.cpp" />
@@ -119,6 +121,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="props.xml" />
+    <None Include="shitshow.xml" />
     <None Include="stagelist.xml">
       <SubType>Designer</SubType>
     </None>

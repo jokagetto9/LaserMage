@@ -50,7 +50,8 @@ void update(){
 
 	input.debugToggles();
 	if (!G->paused) {	
-		//input.directionInput()->exec(P.getActor(P1));
+		if (input.controls)
+			input.directionInput()->exec(P.getActor(P1));
 		input.mouseInput()->exec(P.getActor(P1));
 	}
 
@@ -127,15 +128,16 @@ void display(){
 
 
 //********************************* INIT *********************************
-void init(){	
-	RES.x = dfWIDTH; RES.z = dfHEIGHT; 
+void init(){
+
+	RES.x = PIXELSCALE*pWIDTH; RES.z = PIXELSCALE*pHEIGHT; 
 	if (!eng.initSDL()) 
 		BaseGameState::I()->gameActive = false; 
 	else {
 		eng.displayVersion();
 		initGlobals();
 		entities.load();
-		stageLoader.load();
+		stageLoader.load();  
 		//menus
 		stack.init(menuLoader);	
 		input.init(menuLoader);

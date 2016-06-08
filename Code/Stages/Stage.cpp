@@ -1,11 +1,12 @@
 //********************************* INITIALIZATION *********************************
 #include "Stage.h"
+#include "../Entities/MonsterBook.h"
 
 Stage::Stage(){
 	name = "___";
 	baseTile = 0;
 	curSpawn = 0;
-	actors.reserve(1000);
+	actors.reserve(200);
 	atSpawn = false;
 
 }
@@ -26,7 +27,7 @@ void Stage:: init(Players& p){
 			spawns[i].waves[j].generate(actors);
 		}
 	}
-	drawPool.activateTextures();
+	drawPool.init(&monBook);
 	//veg->init();
 }
 

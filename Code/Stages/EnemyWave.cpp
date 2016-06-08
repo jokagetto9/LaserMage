@@ -1,6 +1,7 @@
 //********************************* INITIALIZATION *********************************
 #include "EnemyWave.h"
-#include "../Entities/EntityLoader.h"
+#include "../Entities/MonsterBook.h"
+
 EnemyWave::			EnemyWave(){
 	glm::vec3 z(32, 0, 0);
 	origin = z;
@@ -42,10 +43,10 @@ void EnemyWave::	initRegion(bool left, int reg){
 
 void EnemyWave ::		generate(Actors& enemies){
 	//Enemy e; e.init(enemy); 
-	ID tex = ParticleList::profiles[type].tex;
+	ID tex = monBook.getProfile(type).tex;
 	Rendering r(tex, type); //set stats and anims
-	Animation a = ParticleList::anim[type];
-	Motion m = Motion(ParticleList::max[type]);
+	Animation a = monBook.anim[type];
+	Motion m = Motion(monBook.max[type]);
 	Location t; 
 	glm::vec3 v;
 	float tempTheta = tempTheta = centerTheta - (quantity-1)* clustering/2;   

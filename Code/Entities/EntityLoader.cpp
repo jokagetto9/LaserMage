@@ -1,29 +1,28 @@
 //********************************* INITIALIZATION *********************************
 #include "EntityLoader.h"
 
-#include "../BaseEngine/Entities/Dictionaries.h"
+#include "MonsterBook.h"
 
 void EntityLoader::load(){
 	count = 0;
 	try {		
 		loadList("entitylist.xml", "EntityList", "ActorFile", actorFiles);
-		//loadList("entitylist.xml", "EntityList", "PropFile", actorFiles);
+		loadList("entitylist.xml", "EntityList", "PropFile", propFiles);
 	}catch(...){
 		cout << "Entities did not load properly." << endl;
 	}
 	loadActor(0);
+	loadProp(0);
 	for (int i = 0; i < actorFiles.size(); i++){
 		//loadStage(i);
+		//loadProp(i);
 	}
 }
 
 
-void EntityLoader::loadProp(ID id){}
-
-
-void EntityLoader::loadActor(ID id){ 
+void EntityLoader::loadProp(ID id){
 	try {
-		rapidxml::file<> xmlFile(actorFiles[id].c_str()); // Default template is char
+		rapidxml::file<> xmlFile(propFiles[id].c_str()); // Default template is char
 		rapidxml::xml_document<> doc;
 		doc.parse<0>(xmlFile.data());
 		rapidxml::xml_node<> *node = doc.first_node(); 
@@ -32,22 +31,15 @@ void EntityLoader::loadActor(ID id){
 			rapidxml::xml_attribute<> *a;
 			string s = getText(node->name());
 			bool success = true;
-			if (s == "Enemy"){ 
-				buildEntity(node);
-				for (n = node->first_node(); n; n = n->next_sibling()){
-					if (getText(n->name()) == "Animation"){
-						addAnimation(n);
-					}
-				}
+			if (s == "Prop"){ 
+				buildProp(node);
 			} //else if (s == "NPC"){
 		}
 	}catch(...){
 		cout << "Enemy [" << id << "] did not load properly."<< endl;
 	}
 }
-
-
-void EntityLoader::buildEntity(rapidxml::xml_node<> * node){
+void EntityLoader::buildProp(rapidxml::xml_node<> * node){
 	rapidxml::xml_attribute<> *a;
 	Identity identity = {"", 0};
 	MotionMax mm = {1, 1};
@@ -63,9 +55,57 @@ void EntityLoader::buildEntity(rapidxml::xml_node<> * node){
 		}
 	}
 	if (true) {
-		ParticleList::names.push_back(identity);
+		MonsterBook::names.push_back(identity);
 //TODO replace with Rendering
-		ParticleList::max.push_back(mm); 
+		MonsterBook::max.push_back(mm); 
+	}
+}
+
+
+void EntityLoader::loadActor(ID id){ 
+	try {
+		rapidxml::file<> xmlFile(actorFiles[id].c_str()); // Default template is char
+		rapidxml::xml_document<> doc;
+		doc.parse<0>(xmlFile.data());
+		rapidxml::xml_node<> *node = doc.first_node(); 
+		for (node = node->first_node(); node; node = node->next_sibling()){
+			rapidxml::xml_node<> *n;
+			rapidxml::xml_attribute<> *a;
+			string s = getText(node->name());
+			bool success = true;
+			if (s == "Enemy"){ 
+				buildActor(node);
+				for (n = node->first_node(); n; n = n->next_sibling()){
+					if (getText(n->name()) == "Animation"){
+						addAnimation(n);
+					}
+				}
+			} //else if (s == "NPC"){
+		}
+	}catch(...){
+		cout << "Enemy [" << id << "] did not load properly."<< endl;
+	}
+}
+
+void EntityLoader::buildActor(rapidxml::xml_node<> * node){
+	rapidxml::xml_attribute<> *a;
+	Identity identity = {"", 0};
+	MotionMax mm = {1, 1};
+	for (a = node->first_attribute(); a; a = a->next_attribute()){
+		string s = getText(a->name());
+		if (s == "name"){
+			identity.name = getText(a->value());
+			identity.id = count; count++;
+		}else if (s == "speed"){
+			mm.speed = getFloat(a->value());
+		}else if (s == "accel"){
+			mm.accel = getInt(a->value());
+		}
+	}
+	if (true) {
+		MonsterBook::names.push_back(identity);
+//TODO replace with Rendering
+		MonsterBook::max.push_back(mm); 
 	}
 }
 
@@ -102,13 +142,13 @@ void EntityLoader::addAnimation(rapidxml::xml_node<> * node){
 		}
 	}
 
-	ParticleList::profiles.push_back(sp); 
+	monBook.addProfile(sp); 
 
 	Animation anim;
 	if (cyclic)
 		anim.setCyclic(min, max, frames);
 
-	ParticleList::anim.push_back(anim);
+	MonsterBook::anim.push_back(anim);
 }
 
 void EntityLoader::loadAuxillary(rapidxml::xml_node<> * node){

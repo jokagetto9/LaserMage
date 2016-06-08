@@ -1,7 +1,10 @@
 //********************************* INITIALIZATION *********************************
 #include "InputManager.h"
 //********************************* KEY CYCLE *********************************
-
+InputManager::InputManager(){
+	zoomOut = false; 
+	controls= false;
+} 
 
 //********************************* INPUT RESPONSES *********************************
 
@@ -38,5 +41,13 @@ void InputManager::		debugToggles(){
 			C->yPos *= 2;
 			zoomOut = true;
 		}
+	}	
+	if (keyPressed[SDLK_0]) {
+		off(SDLK_0);
+		if (controls)
+			controls = false;
+		else
+			controls = true;
+		
 	}
 }

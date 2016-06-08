@@ -1,5 +1,7 @@
 <Stage name="Forest" tile="0" >
-	<Map></Map>
+	<Map>
+    <a name="DarkBush" x="4" z ="4"></a>
+  </Map>
   <SpawnPoint x="32" y="20">
     <Wave dist="50" ctheta="270" type="Mosquito">5</Wave>
     <Wave dist="50" ctheta="90" type="Mosquito">1</Wave>

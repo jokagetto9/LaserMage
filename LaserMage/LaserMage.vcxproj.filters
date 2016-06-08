@@ -13,9 +13,6 @@
     <Filter Include="Entities">
       <UniqueIdentifier>{b7365142-920f-4f29-a601-fc7cc3f13c70}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Components">
-      <UniqueIdentifier>{48d38527-c674-407f-b58b-977e6d81e235}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Stages">
       <UniqueIdentifier>{e2cb5ad9-f23b-494f-a85a-ff78a5da3737}</UniqueIdentifier>
     </Filter>
@@ -24,6 +21,9 @@
     </Filter>
     <Filter Include="Display\Shaders">
       <UniqueIdentifier>{8f9fb3c9-8c26-4644-a01a-4e0629761c9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entities\Components">
+      <UniqueIdentifier>{48d38527-c674-407f-b58b-977e6d81e235}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -79,19 +79,19 @@
       <Filter>BaseEngine</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Rendering.h">
-      <Filter>Components</Filter>
+      <Filter>Entities\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\State.h">
-      <Filter>Components</Filter>
+      <Filter>Entities\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Animation.h">
-      <Filter>Components</Filter>
+      <Filter>Entities\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Component.h">
-      <Filter>Components</Filter>
+      <Filter>Entities\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Motion.h">
-      <Filter>Components</Filter>
+      <Filter>Entities\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Stack\Menu.h">
       <Filter>Stack</Filter>
@@ -148,18 +148,21 @@
       <Filter>Stack</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Target.h">
-      <Filter>Components</Filter>
+      <Filter>Entities\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Size.h">
-      <Filter>Components</Filter>
+      <Filter>Entities\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Obstacles.h">
-      <Filter>Components</Filter>
+      <Filter>Entities\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Location.h">
-      <Filter>Components</Filter>
+      <Filter>Entities\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Entities\CollisionGrid.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Entities\MonsterBook.h">
       <Filter>Entities</Filter>
     </ClInclude>
   </ItemGroup>
@@ -210,10 +213,10 @@
       <Filter>Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Components\Animation.cpp">
-      <Filter>Components</Filter>
+      <Filter>Entities\Components</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Components\Motion.cpp">
-      <Filter>Components</Filter>
+      <Filter>Entities\Components</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Stack\BaseStackManager.cpp">
       <Filter>Stack</Filter>
@@ -267,16 +270,19 @@
       <Filter>Stack</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Components\Target.cpp">
-      <Filter>Components</Filter>
+      <Filter>Entities\Components</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Components\Location.cpp">
-      <Filter>Components</Filter>
+      <Filter>Entities\Components</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Entities\CollisionGrid.cpp">
       <Filter>Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Components\Obstacles.cpp">
-      <Filter>Components</Filter>
+      <Filter>Entities\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Entities\MonsterBook.cpp">
+      <Filter>Entities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -311,6 +317,9 @@
       <Filter>~Content</Filter>
     </None>
     <None Include="teststage.xml">
+      <Filter>~Content</Filter>
+    </None>
+    <None Include="shitshow.xml">
       <Filter>~Content</Filter>
     </None>
   </ItemGroup>
