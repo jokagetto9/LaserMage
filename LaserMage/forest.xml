@@ -1,6 +1,19 @@
 <Stage name="Forest" tile="0" >
 	<Map>
-    <a name="DarkBush" x="4" z ="4"></a>
+    <a type="DarkBush" x="0" z ="20"></a>
+    <a type="DarkBush" x="14" z ="12"></a>
+    <a type="DarkBush" x="24" z ="8"></a>
+    <a type="DarkBush" x="40" z ="8"></a>
+    <a type="DarkBush" x="50" z ="12"></a>
+    <a type="DarkBush" x="64" z ="20"></a>
+    <a type="DeadTree" x="16" z ="30"></a>
+    <a type="DeadTree" x="52" z ="34"></a>
+    <a type="Stump" x="28" z ="38"></a>
+    <a type="Rock" x="38" z ="42"></a>
+    <a type="LeafPile" x="10" z ="35"></a>
+    <a type="DampSpot" x="32" z ="46"></a>
+    <a type="Well" x="48" z ="46"></a>
+    <a type="Boxes" x="4" z ="4"></a>    
   </Map>
   <SpawnPoint x="32" y="20">
     <Wave dist="50" ctheta="270" type="Mosquito">5</Wave>

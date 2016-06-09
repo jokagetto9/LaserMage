@@ -38,8 +38,7 @@ void StageLoader::loadStage(ID id){
 				for (n = node->first_node(); n; n = n->next_sibling()){
 					s = getText(n->name());
 					if (s == "Map"){
-						//s = getText(n->value());
-						//loadMap(s, stage);
+						loadMap(n, stage);
 					} else if (s == "SpawnPoint"){
 						stage.addSpawnPoint(buildSpawnpoint(n));
 					}
@@ -49,6 +48,29 @@ void StageLoader::loadStage(ID id){
 		}
 	}catch(...){
 		cout << "Stage [" << id << "] did not load properly."<< endl;
+	}
+}
+
+
+void StageLoader::loadMap(rapidxml::xml_node<> * node, Stage &stage){
+	rapidxml::xml_attribute<> *a;
+	rapidxml::xml_node<> *n;
+	EntityXZ e = {0, 0, 0};
+	for (n = node->first_node(); n; n = n->next_sibling()){
+		bool success = false;
+		for (a = n->first_attribute(); a; a = a->next_attribute()){			
+			string s = getText(a->name());
+			if (s== "type"){		
+				string type = getText(a->value());
+				e.id = propList.getIndex(type);
+				success = true;
+			}else if (s == "x"){
+				e.x = getInt(a->value());
+			}else if (s == "y" || s == "z"){
+				e.z = getInt(a->value());
+			}
+		}
+		if (success) stage.add(e);
 	}
 }
 
@@ -82,7 +104,7 @@ EnemyWave StageLoader::buildWave(rapidxml::xml_node<> * node){
 		string s = getText(a->name());
 		if (s == "type"){
 			string type = getText(a->value());
-			wave.type = Dictionary::getIndex(type, MonsterBook::getID());
+			wave.type = monBook.getIndex(type);
 		}else if (s == "dist"){
 			wave.dist = getInt(a->value());
 		}else if (s == "mirror"){ 

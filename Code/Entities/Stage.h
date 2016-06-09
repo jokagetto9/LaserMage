@@ -10,7 +10,11 @@
 
 //********************************* CONSTANTS *********************************
 
-
+struct EntityXZ{
+	ID id;
+	int x;
+	int z;
+};
 //********************************* EXTERNALS  *********************************
 
 
@@ -22,15 +26,18 @@ class Stage {
 	
 	virtual void Stage:: init(Players & p);
 
-	void Stage::	addSpawnPoint(SpawnPoint & sp);
 	bool Stage::	validate();
 
 
-	virtual void Stage::		save(ofstream &saveFile){	}
-	virtual void Stage::		saveMap(ofstream &saveFile){	}
-	virtual void Stage::		load(ifstream &saveFile){}	
-	virtual void Stage::		loadMap(ifstream &saveFile){ }
+	//virtual void Stage::		save(ofstream &saveFile){	}
+	//virtual void Stage::		saveMap(ofstream &saveFile){	}
+	//virtual void Stage::		load(ifstream &saveFile){}	
+	//virtual void Stage::		loadMap(ifstream &saveFile){ }
 
+	void Stage::		loadMap();
+
+	void Stage::add(EntityXZ e){map.push_back(e);}
+	void Stage::addSpawnPoint(SpawnPoint & sp){spawns.push_back(sp);}
 		
 //************************************************** UPDATE ***************************************************
 		
@@ -45,13 +52,16 @@ virtual void Stage::		rapidUpdate(float delta);
 		
 //************************************************** MEMBERS ***************************************************
 		bool atSpawn;
+		vector<EntityXZ> map;
 		vector<SpawnPoint> spawns;
 		ID curSpawn;
 		//Terrain terr;
 		Players * P;
 
 		Actors actors;
-		DrawPool drawPool;
+		Props props;
+		DrawPool enemyPool;
+		DrawPool propPool;
 		CollisionGrid collisions;
 		//Vegetation * veg;
 		//Structures * structs;

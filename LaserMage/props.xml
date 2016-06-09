@@ -1,9 +1,14 @@
 <PropFile>
-  <Prop name="DarkBush" texture="darkbush.png" size="0" scale="1.5"></Prop>
-  <Prop name="DeadTree" texture="deadtree.png" size="6" scale="4"></Prop>
-	<Props texture="forestdebris.png" scale="1.5" grid="2x2">
+  <Prop name="DarkBush" texture="TERRAIN/darkbush.png" size="0" scale="5"></Prop>
+  <Prop name="DeadTree" texture="TERRAIN/deadtree.png" size="6" scale="4"></Prop>
+	<Props texture="TERRAIN/forestdebris.png" scale="1.5" grid="2x2">
 		<Prop index="0" name="Stump" size="6"></Prop>
-		<Prop index="1" name="DampSpot" size="0"></Prop>
+		<Prop index="1" name="Rock" size="6"></Prop>
 		<Prop index="2" name="LeafPile" size="0"></Prop>
-	</Props>
+    <Prop index="3" name="DampSpot" size="0"></Prop>
+  </Props>
+  <Props texture="TERRAIN/townobjects.png" scale="1.875" grid="2x2">
+    <Prop index="0" name="Well" size="6"></Prop>
+    <Prop index="1" name="Boxes" size="0"></Prop>
+  </Props> 
 </PropFile>

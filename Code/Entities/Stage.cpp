@@ -7,6 +7,7 @@ Stage::Stage(){
 	baseTile = 0;
 	curSpawn = 0;
 	actors.reserve(200);
+	props.reserve(30);
 	atSpawn = false;
 
 }
@@ -27,12 +28,11 @@ void Stage:: init(Players& p){
 			spawns[i].waves[j].generate(actors);
 		}
 	}
-	drawPool.init(&monBook);
+	props.clear();
+	loadMap();
+	enemyPool.init(&monBook);
+	propPool.init(&propList);
 	//veg->init();
-}
-
-void Stage::	addSpawnPoint(SpawnPoint & sp){
-	spawns.push_back(sp);
 }
 
 bool Stage::	validate(){
@@ -40,6 +40,18 @@ bool Stage::	validate(){
 	return true;
 
 }
+
+void Stage::		loadMap(){
+	Location l; 	Rendering r; EntityXZ e;
+	for (ID i = 0; i < map.size(); i++){
+		e = map[i];
+		r = propList.rendering[e.id];
+		l.place(e.x, e.z);
+		props.add(r, l); 
+	}
+}
+
+
 //********************************* UPDATES *********************************
 
 void Stage::update(){
@@ -84,8 +96,10 @@ void Stage::		draw(float delta){
 	//terr.draw();	
 	//M->gridBO.use();
 	P->drawP1(delta);
-	drawPool.batch(&actors, delta);
-	drawPool.draw(&actors);
+	enemyPool.batch(&actors, delta);
+	enemyPool.draw(&actors);
+	propPool.batch(&props);
+	propPool.draw(&props);
 	
 }
 void Stage::		drawTerrain(){	

@@ -1,5 +1,6 @@
 <Stage name="Forest2" tile="0" >
-	<Map></Map>
+	<Map>
+  </Map>
   <SpawnPoint x="32" y="20">
     <Wave dist="40" type="Dim">5</Wave>
     <Wave dist="40" cluster="100" type="TonTon">2</Wave>

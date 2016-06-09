@@ -107,7 +107,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="entitylist.xml" />
-    <None Include="forest.xml" />
+    <None Include="forest.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="forest2.xml">
       <SubType>Designer</SubType>
     </None>
@@ -120,7 +122,9 @@
     <None Include="pause.xml">
       <SubType>Designer</SubType>
     </None>
-    <None Include="props.xml" />
+    <None Include="props.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="shitshow.xml" />
     <None Include="stagelist.xml">
       <SubType>Designer</SubType>
