@@ -13,6 +13,8 @@ void EntityLoader::load(){
 	}
 	loadActor(0);
 	loadProp(0);
+	SizeProfile sp = {0.5, 2, 1, 10, 0.0001};
+	Obstacles::sizeProfiles.push_back(sp);
 	for (int i = 0; i < actorFiles.size(); i++){
 		//loadStage(i);
 		//loadProp(i);
@@ -47,7 +49,7 @@ void EntityLoader::buildProp(rapidxml::xml_node<> * node){
 	rapidxml::xml_attribute<> *a;
 	Identity identity = {"", 0};
 	ID tex = 0;
-	SizeProfile size = {3, 10, 1, 0};
+	Size size;
 	Rendering r;
 	ShaderProfile sp = {0, 1, G1x1};
 	for (a = node->first_attribute(); a; a = a->next_attribute()){
@@ -56,13 +58,14 @@ void EntityLoader::buildProp(rapidxml::xml_node<> * node){
 			identity.name = getText(a->value());
 			identity.id = propCount; propCount++;
 		}else if (s == "size")
-			size.rad = getFloat(a->value());		
+			size.scale = getFloat(a->value());		
 		else
 			loadShaderProfile(a, sp);
 	}
 	propList.addIdentity(identity);
-	//propList.addProfileIndex(propList.size()); 
+	//propList.addProfileIndex(propList.profileCount()); 
 	propList.addProfile(sp); 
+	//propList.addSize(size); 
 
 	r.tex = sp.tex;
 	propList.addRendering(r); 
@@ -74,7 +77,7 @@ void EntityLoader::buildProps(rapidxml::xml_node<> * node){
 	Identity identity = {"", 0};
 	ID tex = 0;
 	float size;
-	ShaderProfile sp = {0, 1, G1x1};
+	ShaderProfile sp = {0, 1, G2x2};
 	Rendering r;
 	for (a = node->first_attribute(); a; a = a->next_attribute())
 		loadShaderProfile(a, sp);

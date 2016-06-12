@@ -9,7 +9,7 @@ Stage::Stage(){
 	actors.reserve(200);
 	props.reserve(30);
 	atSpawn = false;
-
+ 	collisions.init(6, 5, 2);
 }
 
 void Stage:: init(Players& p){
@@ -73,9 +73,14 @@ void Stage::update(){
 void Stage::		physUpdate(float delta){
 	P->P1Update(delta);
 	actors.update(delta);	
-	collisions.updateGrid(&actors);
-	collisions.updateObstacles();
-	collisions.applyAdjustments();
+	//collisions.updateGrid(&props);
+	collisions.setActiveEnt(&actors);
+	collisions.updateGrid((ID)0);
+	//collisions.setActiveEnt(&particles);
+	//collisions.updateGrid((ID)0);
+
+	collisions.updateObstacles(0);
+	collisions.applyAdjustments(0);
 }
 void Stage::		rapidUpdate(float delta){
 	glm::vec3 v = spawns[curSpawn].pos();
