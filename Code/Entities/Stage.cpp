@@ -73,9 +73,10 @@ void Stage::update(){
 void Stage::		physUpdate(float delta){
 	P->P1Update(delta);
 	actors.update(delta);	
-	//collisions.updateGrid(&props);
+	collisions.clear();
+	collisions.addProps(&props);
 	collisions.setActiveEnt(&actors);
-	collisions.updateGrid((ID)0);
+	collisions.addEntities(0);
 	//collisions.setActiveEnt(&particles);
 	//collisions.updateGrid((ID)0);
 

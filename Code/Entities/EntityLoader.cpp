@@ -57,7 +57,7 @@ void EntityLoader::buildProp(rapidxml::xml_node<> * node){
 		if (s == "name"){
 			identity.name = getText(a->value());
 			identity.id = propCount; propCount++;
-		}else if (s == "size")
+		}else if (s == "scale")
 			size.scale = getFloat(a->value());		
 		else
 			loadShaderProfile(a, sp);
@@ -65,7 +65,7 @@ void EntityLoader::buildProp(rapidxml::xml_node<> * node){
 	propList.addIdentity(identity);
 	//propList.addProfileIndex(propList.profileCount()); 
 	propList.addProfile(sp); 
-	//propList.addSize(size); 
+	propList.addSize(size); 
 
 	r.tex = sp.tex;
 	propList.addRendering(r); 
