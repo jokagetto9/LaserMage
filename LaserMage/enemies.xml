@@ -2,6 +2,9 @@
   <Enemy name="Chucky" health="20" speed="2.5" >
     <Animation texture="MOBS/chucky.png"></Animation>
 	 </Enemy>
+  <Enemy name="Gnome" health="20" speed="2.5"  >
+    <Animation texture="MOBS/gnome.png" grid="5x5" type="Walk20"></Animation>
+  </Enemy>
   <Enemy name="Dim" health="100" speed="2" >
     <Animation texture="MOBS/dim.png"></Animation>
 	</Enemy>

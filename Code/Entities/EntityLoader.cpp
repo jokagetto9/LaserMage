@@ -231,7 +231,9 @@ bool EntityLoader::loadShaderProfile(rapidxml::xml_attribute<> *a, ShaderProfile
 		if (grid == "2x2")
 			sp.g = G2x2;
 		else if (grid == "4x4")
-			sp.g = G4x4;
+			sp.g = G4x4;		
+		else if (grid == "5x5")
+			sp.g = G5x5;
 		else
 			sp.g = G1x1;
 	}
@@ -244,6 +246,7 @@ void EntityLoader::addAnimation(rapidxml::xml_node<> * node, ParticleList * dict
 	ID tex = 0;
 	ID min = 0; ID max = 3;
 	ID frames = 20;
+	Animation anim;
 	ShaderProfile sp = {0, 1, G4x4};
 	bool cyclic = false;
 	for (a = node->first_attribute(); a; a = a->next_attribute()){	
@@ -255,12 +258,17 @@ void EntityLoader::addAnimation(rapidxml::xml_node<> * node, ParticleList * dict
 			max = getInt(a->value());
 		} else if (s == "frames")
 			frames = getInt(a->value());
-		else
+		else if (s == "type"){
+			s = getText(a->value());
+			if (s == "Walk20"){
+				anim.type = WALK20;
+				anim.setFrameRate(frames);
+			}
+		}else
 			loadShaderProfile(a, sp);
 	}
 	monBook.addProfile(sp); 
 
-	Animation anim;
 	if (cyclic)
 		anim.setCyclic(min, max, frames);
 

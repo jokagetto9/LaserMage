@@ -10,5 +10,8 @@
   <Props texture="TERRAIN/townobjects.png" scale="1.875" grid="2x2">
     <Prop index="0" name="Well" sizeIndex="2"></Prop>
     <Prop index="1" name="Boxes" sizeIndex="2"></Prop>
-  </Props> 
+  </Props>
+  <Props texture="TERRAIN/test25.png" grid="5x5">
+    <Prop index="9" name="Test" ></Prop>
+  </Props>
 </PropFile>

@@ -9,7 +9,7 @@ EnemyWave::			EnemyWave(){
 	mirrored = false;
 	quantity = 1;
 	centerTheta = 0;
-	clustering = 10;
+	spacing = 10;
 	dist = 50;
 }
 
@@ -21,7 +21,7 @@ void EnemyWave::	init(int q, float d){
 }
 
 void EnemyWave::	configure(float c, float t){
-	clustering = c;
+	spacing = c;
 	centerTheta = t;
 }
 
@@ -49,15 +49,16 @@ void EnemyWave ::		generate(Actors& enemies){
 	Motion m = Motion(monBook.max[type]);
 	Location l; 
 	glm::vec3 v;
-	float tempTheta = tempTheta = centerTheta - (quantity-1)* clustering/2;   
-	for (int i = 0; i < quantity; i++){		
-		float theta = tempTheta+i*clustering;
+	float tempTheta = tempTheta = centerTheta - (quantity-1)* spacing/2;   
+	for (int i = 0; i < quantity; i++){
+		a.randomTick();
+		float theta = tempTheta+i*spacing;
 		v = radialOffset(origin, theta, dist);
 		l.place(v.x, v.z); 
 		enemies.add(type, r, l, m, a);
 
 		if (mirrored && theta >= 0){
-			theta = -tempTheta-i*clustering;
+			theta = -tempTheta-i*spacing;
 			v = radialOffset(origin, theta, dist);
 			l.place(v.x, v.z); enemies.add(type, r, l, m, a);
 		}

@@ -111,8 +111,8 @@ EnemyWave StageLoader::buildWave(rapidxml::xml_node<> * node){
 			wave.mirrored = getInt(a->value());
 		}else if (s == "ctheta"){
 			wave.centerTheta = getInt(a->value());
-		}else if (s == "cluster"){
-			wave.clustering = getInt(a->value());
+		}else if (s == "spacing"){
+			wave.spacing = getInt(a->value());
 		}
 	}
 	return wave;

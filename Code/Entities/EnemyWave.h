@@ -24,7 +24,7 @@ class EnemyWave {
 	ID type;
 	bool mirrored;
 	float centerTheta;
-	float clustering;
+	float spacing;
 	float dist;
 	int quantity;
 	glm::vec3 origin;
