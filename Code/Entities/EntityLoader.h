@@ -4,6 +4,7 @@
 
 #include "../BaseEngine/XMLParser.h"
 #include "../Display/ModelManager.h"
+#include "MonsterBook.h"
 
 //********************************* CONSTANTS *********************************
 
@@ -19,10 +20,12 @@ public:
 
 	void EntityLoader::loadActor(ID id);	
 	void EntityLoader::buildActor(rapidxml::xml_node<> * node);
-
+	void EntityLoader::loadParticle(ID id);	
+	void EntityLoader::buildParticle(rapidxml::xml_node<> * node);
+	
+	void EntityLoader::addAnimation(rapidxml::xml_node<> * node, ParticleList * dict);
 	bool EntityLoader::loadShaderProfile(rapidxml::xml_attribute<> *a, ShaderProfile &sp);
 
-	void EntityLoader::addAnimation(rapidxml::xml_node<> * node);
 
 	
 	void EntityLoader::loadAuxillary(rapidxml::xml_node<> * node);

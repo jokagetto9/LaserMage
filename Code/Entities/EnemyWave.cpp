@@ -54,12 +54,12 @@ void EnemyWave ::		generate(Actors& enemies){
 		float theta = tempTheta+i*clustering;
 		v = radialOffset(origin, theta, dist);
 		l.place(v.x, v.z); 
-		enemies.add(r, l, m, a);
+		enemies.add(type, r, l, m, a);
 
 		if (mirrored && theta >= 0){
 			theta = -tempTheta-i*clustering;
 			v = radialOffset(origin, theta, dist);
-			l.place(v.x, v.z); enemies.add(r, l, m, a);
+			l.place(v.x, v.z); enemies.add(type, r, l, m, a);
 		}
 	}
 }

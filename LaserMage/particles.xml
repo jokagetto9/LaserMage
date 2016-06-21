@@ -1,0 +1,5 @@
+<ParticleFile>
+  <Particle name="Wrench" speed="1.5" sizeIndex="2">
+    <Animation texture="EFFECT/wrench.png" end="2" scale="1" grid="2x2" frames="30"></Animation>
+  </Particle>
+</ParticleFile>

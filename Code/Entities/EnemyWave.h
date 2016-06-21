@@ -1,7 +1,7 @@
 #ifndef ENEMYWAVE_H
 #define ENEMYWAVE_H
 
-#include "../BaseEngine/Entities/Dictionaries.h"
+#include "../BaseEngine/Entities/Actors.h"
 //********************************* CONSTANTS *********************************
 
 //enum EnemyType {CHUCKY, MOSQUITO, TRUNKLING, LABOMBA, MIMIC }; 

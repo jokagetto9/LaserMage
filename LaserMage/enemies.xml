@@ -14,10 +14,10 @@
   <Enemy name="Mosquito" health="1" speed="2" >
     <Animation texture="MOBS/mosquito.png" end="5" scale="0.625" frames="12"></Animation>
   </Enemy>
-  <Enemy name="Trunkling" health="100" speed="0.6" >
+  <Enemy name="Trunkling" health="100" speed="0.6" sizeIndex="2">
     <Animation texture="MOBS/trunkling.png" end="2" scale="2" grid="2x2" frames="60"></Animation>
   </Enemy>
-  <Enemy name="TonTon" health="100" speed="1.5" >
+  <Enemy name="TonTon" health="100" speed="1.5" sizeIndex="2">
     <Animation texture="MOBS/tonton.png" end="2" scale="2" grid="2x2" frames="30"></Animation>
   </Enemy>
 </EnemyFile>

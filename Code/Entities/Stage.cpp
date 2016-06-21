@@ -10,6 +10,7 @@ Stage::Stage(){
 	props.reserve(30);
 	atSpawn = false;
  	collisions.init(6, 5, 2);
+	actors.applyDict(&monBook);
 }
 
 void Stage:: init(Players& p){
@@ -28,11 +29,12 @@ void Stage:: init(Players& p){
 			spawns[i].waves[j].generate(actors);
 		}
 	}
-	props.clear();
 	loadMap();
 	enemyPool.init(&monBook);
 	propPool.init(&propList);
-	//veg->init();
+
+	//enemyPool.init(actors.getDict());
+	//propPool.init(props.getDict());
 }
 
 bool Stage::	validate(){
@@ -42,12 +44,13 @@ bool Stage::	validate(){
 }
 
 void Stage::		loadMap(){
+	props.clear();
 	Location l; 	Rendering r; EntityXZ e;
 	for (ID i = 0; i < map.size(); i++){
 		e = map[i];
 		r = propList.rendering[e.id];
 		l.place(e.x, e.z);
-		props.add(r, l); 
+		props.add(e.id, r, l); 
 	}
 }
 

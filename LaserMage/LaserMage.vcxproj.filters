@@ -328,5 +328,8 @@
     <None Include="shitshow.xml">
       <Filter>~Content</Filter>
     </None>
+    <None Include="particles.xml">
+      <Filter>~Content</Filter>
+    </None>
   </ItemGroup>
 </Project>

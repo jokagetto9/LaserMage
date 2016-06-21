@@ -1,4 +1,5 @@
 <EntityList>
   <PropFile filename="props.xml" >  </PropFile>
   <ActorFile filename="enemies.xml" >  </ActorFile>
+  <ParticleFile filename="particles.xml" >  </ActorFile>
 </EntityList>
