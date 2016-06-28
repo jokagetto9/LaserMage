@@ -119,7 +119,9 @@
     <None Include="menulist.xml">
       <SubType>Designer</SubType>
     </None>
-    <None Include="particles.xml" />
+    <None Include="particles.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="pause.xml">
       <SubType>Designer</SubType>
     </None>

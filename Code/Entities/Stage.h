@@ -60,8 +60,10 @@ virtual void Stage::		rapidUpdate(float delta);
 
 		Actors actors;
 		Props props;
+		Particles particles;
 		DrawPool enemyPool;
 		DrawPool propPool;
+		DrawPool particlePool;
 		CollisionGrid collisions;
 		//Vegetation * veg;
 		//Structures * structs;

@@ -37,6 +37,7 @@ private:
 	ID propCount;
 	vector <string> propFiles;
 	vector <string> actorFiles;
+	vector <string> particleFiles;
 	vector <ID> * textures;
 	//static vector <TypeObj*> types;
 };

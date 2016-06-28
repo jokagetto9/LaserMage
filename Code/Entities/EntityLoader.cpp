@@ -7,13 +7,13 @@ void EntityLoader::load(){
 	try {		
 		loadList("entitylist.xml", "EntityList", "ActorFile", actorFiles);
 		loadList("entitylist.xml", "EntityList", "PropFile", propFiles);
-		loadList("entitylist.xml", "ParticleList", "ParticleFile", propFiles);
+		loadList("entitylist.xml", "EntityList", "ParticleFile", particleFiles);
 	}catch(...){
 		cout << "Entities did not load properly." << endl;
 	}
 	loadActor(0);
 	loadProp(0);
-	//loadParticle(0);
+	loadParticle(0);
 	Obstacles::sizeProfiles.push_back(Obstacles::ignore);
 	SizeProfile sp = {0.5, 2, 9, 10, 0.001};
 	Obstacles::sizeProfiles.push_back(sp);
@@ -166,7 +166,7 @@ void EntityLoader::buildActor(rapidxml::xml_node<> * node){
 
 void EntityLoader::loadParticle(ID id){ 
 	try {
-		rapidxml::file<> xmlFile(actorFiles[id].c_str()); // Default template is char
+		rapidxml::file<> xmlFile(particleFiles[id].c_str()); // Default template is char
 		rapidxml::xml_document<> doc;
 		doc.parse<0>(xmlFile.data());
 		rapidxml::xml_node<> *node = doc.first_node(); 
@@ -175,8 +175,8 @@ void EntityLoader::loadParticle(ID id){
 			rapidxml::xml_attribute<> *a;
 			string s = getText(node->name());
 			bool success = true;
-			if (s == "Enemy"){ 
-				buildActor(node);
+			if (s == "Particle"){ 
+				buildParticle(node);
 				for (n = node->first_node(); n; n = n->next_sibling()){
 					if (getText(n->name()) == "Animation"){
 						addAnimation(n, &particleList);
@@ -185,7 +185,7 @@ void EntityLoader::loadParticle(ID id){
 			} //else if (s == "NPC"){
 		}
 	}catch(...){
-		cout << "Enemy [" << id << "] did not load properly."<< endl;
+		cout << "Particle [" << id << "] did not load properly."<< endl;
 	}
 }
 
@@ -209,9 +209,9 @@ void EntityLoader::buildParticle(rapidxml::xml_node<> * node){
 		}
 	}
 	if (true) {			
-		monBook.addSize(size); 
-		monBook.addIdentity(identity);
-		monBook.addMotion(mm); 
+		particleList.addSize(size); 
+		particleList.addIdentity(identity);
+		particleList.addMotion(mm); 
 	}
 }
 
@@ -267,12 +267,12 @@ void EntityLoader::addAnimation(rapidxml::xml_node<> * node, ParticleList * dict
 		}else
 			loadShaderProfile(a, sp);
 	}
-	monBook.addProfile(sp); 
+	dict->addProfile(sp); 
 
 	if (cyclic)
 		anim.setCyclic(min, max, frames);
 
-	monBook.anim.push_back(anim);
+	dict->anim.push_back(anim);
 }
 
 void EntityLoader::loadAuxillary(rapidxml::xml_node<> * node){

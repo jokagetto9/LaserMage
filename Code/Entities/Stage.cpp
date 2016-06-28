@@ -8,6 +8,7 @@ Stage::Stage(){
 	curSpawn = 0;
 	actors.reserve(200);
 	props.reserve(30);
+	particles.reserve(30);
 	atSpawn = false;
  	collisions.init(6, 5, 2);
 	actors.applyDict(&monBook);
@@ -32,6 +33,7 @@ void Stage:: init(Players& p){
 	loadMap();
 	enemyPool.init(&monBook);
 	propPool.init(&propList);
+	particlePool.init(&particleList);
 
 	//enemyPool.init(actors.getDict());
 	//propPool.init(props.getDict());
@@ -52,6 +54,13 @@ void Stage::		loadMap(){
 		l.place(e.x, e.z);
 		props.add(e.id, r, l); 
 	}
+	//test
+	ID type = 0;
+	r.tex = particleList.getProfile(type).tex;
+	Animation a = particleList.anim[type];
+	Motion m = Motion(particleList.max[type]);
+	l.place(12, 12);
+	particles.add(type, r, l, m, a); 
 }
 
 
@@ -109,6 +118,8 @@ void Stage::		draw(float delta){
 	enemyPool.draw(&actors);
 	propPool.batch(&props);
 	propPool.draw(&props);
+	particlePool.batch(&particles, delta);
+	particlePool.draw(&particles);
 	
 }
 void Stage::		drawTerrain(){	

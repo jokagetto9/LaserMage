@@ -1,6 +1,6 @@
 <Stage name="TestStage" tile="0" >
 	<Map>
-    <a type="Test" x="12" z ="12"></a>
+    <a type="Test" x="48" z ="12"></a>
   </Map>
   <SpawnPoint x="32" y="20">
     <Wave dist="50"  ctheta="90" spacing="20" type="Gnome">1</Wave>

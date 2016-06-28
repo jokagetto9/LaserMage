@@ -44,7 +44,7 @@ void EnemyWave::	initRegion(bool left, int reg){
 void EnemyWave ::		generate(Actors& enemies){
 	//Enemy e; e.init(enemy); 
 	ID tex = monBook.getProfile(type).tex;
-	Rendering r(tex, type); //set stats and anims
+	Rendering r(tex, 0); //set stats and anims
 	Animation a = monBook.anim[type];
 	Motion m = Motion(monBook.max[type]);
 	Location l; 
