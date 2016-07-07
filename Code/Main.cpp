@@ -4,6 +4,8 @@
 #include "Entities/EntityLoader.h"
 #include "InputManager.h"
 #include "DebugTool.h"
+#include "Laser/Laser.h"
+
 //********************************* MODULES *********************************
 
 	BaseEngine eng;						// handle for managing the passage of time
@@ -18,7 +20,7 @@
 	Stage * currStage;
 	Players P;
 	DebugTool debug;
-
+	
 
 //********************************* DECLARATIONS *********************************
 void init();
@@ -42,8 +44,9 @@ void close();
 //********************************* UPDATES *********************************
 
 void update(){
-
 	input.pollKeyEvents();
+	
+	C->setCursorPos(input.mX, input.mY);
 	PlayCommand * cmd = input.checkPause();
 	stack.loadCommand(cmd);
 
@@ -51,7 +54,8 @@ void update(){
 	if (!G->paused) {	
 		if (input.controls)
 			input.directionInput()->exec(P.getActor(P1));
-		input.mouseInput()->exec(P.getActor(P1));
+		//if (input.mouseL)
+			//stage.input.mouseInput()->exec(P.getActor(P1));
 	}
 
 	clockCycle();
@@ -115,8 +119,9 @@ void display(){
 		currStage->draw(eng.avgFrameDelta); 
 
 	}//*/
-
-	stack.setUp2DView(RES.x, RES.z);	
+		
+	C->drawCursor();
+	stack.setUp2DView(RES.x, RES.z);
 	//debug.drawDebugConsole(eng.avgFPS);
 	if(G->paused) 
 		stack.draw();

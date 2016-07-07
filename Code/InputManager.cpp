@@ -10,8 +10,9 @@ InputManager::InputManager(){
 
 
 
-Command * InputManager::		mouseInput(){
+LaserCommand * InputManager::		laserInput(){
 	lasercmd.set(mouseL);
+	lasercmd.updateCursor(mX, mY);
 	return &lasercmd;
 }
 //

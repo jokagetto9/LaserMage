@@ -31,6 +31,9 @@
     <Filter Include="Stack\Base">
       <UniqueIdentifier>{81cd9d71-08fe-4a89-8fc8-eb5aa105ae8a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Laser">
+      <UniqueIdentifier>{374bb167-d038-4b1b-a029-7ed48295b820}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Code\Display\Shaders\MenuShader.h">
@@ -171,6 +174,15 @@
     <ClInclude Include="..\Code\Stack\MenuLoader.h">
       <Filter>Stack\Base</Filter>
     </ClInclude>
+    <ClInclude Include="..\Code\Laser\Laser.h">
+      <Filter>Laser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Laser\LaserCommand.h">
+      <Filter>Laser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Components\Health.h">
+      <Filter>Components</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Code\Display\Shaders\MenuShader.cpp">
@@ -289,6 +301,9 @@
     </ClCompile>
     <ClCompile Include="..\Code\Stack\MenuLoader.cpp">
       <Filter>Stack\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Laser\Laser.cpp">
+      <Filter>Laser</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

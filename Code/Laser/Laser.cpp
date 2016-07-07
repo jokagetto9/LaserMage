@@ -17,15 +17,15 @@ void Laser::	loadLaser(){
 }
 //********************************* DRAW *********************************
 
-void Laser::draw(){
-	/*/
-	glDisable(GL_TEXTURE_2D); glUseProgram(NULL);
+
+void Laser::draw(float delta){
+	//
+	//glDisable(GL_TEXTURE_2D); glUseProgram(NULL);
 	float tX; float tY;
-	//tX = (G->mX+1)*0.3125-40;
-	//tY = (G->mY+1)*0.3125-20;
+
 	int max = 100;
 	if (active){
-		flicker += 0.4 * G->avgFrameDelta;
+		flicker += 0.4 * delta;
 		if (flicker >= max) flicker -= max;
 		float r = flicker/max;
 		glColor4f(.3+r*.7, .8+r*.2, .5+r*.5, 1.0-r/4);
@@ -39,22 +39,11 @@ void Laser::draw(){
 		glEnable(GL_TEXTURE_2D);
 	}
 
-	drawCursor(tX, tY);
 	//*/
 
 }
 
-void Laser::		drawCursor(float x, float y){
-	/*/cursor
-	//M->qBO.use();
-	glBindTexture(GL_TEXTURE_2D, M->cursorBO.cursorT[0]);	
-	glUniform1f(M->qBO.texsUni, 0.25);	
-	glPushMatrix();
-		glTranslatef(x, 0, y);
-		//M->qBO.draw();
-	glPopMatrix();
-	//*/
-}
+
 
 //********************************* UPDATES *********************************
 

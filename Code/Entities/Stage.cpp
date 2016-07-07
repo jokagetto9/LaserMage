@@ -48,19 +48,13 @@ bool Stage::	validate(){
 void Stage::		loadMap(){
 	props.clear();
 	Location l; 	Rendering r; EntityXZ e;
-	for (ID i = 0; i < map.size(); i++){
-		e = map[i];
-		r = propList.rendering[e.id];
-		l.place(e.x, e.z);
-		props.add(e.id, r, l); 
-	}
+	for (ID i = 0; i < map.size(); i++)
+		props.createProp(propList, map[i]);
 	//test
-	ID type = 0;
-	r.tex = particleList.getProfile(type).tex;
-	Animation a = particleList.anim[type];
-	Motion m = Motion(particleList.max[type]);
-	l.place(12, 12);
-	particles.add(type, r, l, m, a); 
+	EntityXZ ent = {0, 12, 12};
+	ID p = particles.createParticle(particleList, ent);
+	glm::vec3 targ(80, 0, 80);
+	particles.chargeParticle(p, targ);
 }
 
 
@@ -85,6 +79,7 @@ void Stage::update(){
 void Stage::		physUpdate(float delta){
 	P->P1Update(delta);
 	actors.update(delta);	
+	particles.update(delta);
 	collisions.clear();
 	collisions.addProps(&props);
 	collisions.setActiveEnt(&actors);

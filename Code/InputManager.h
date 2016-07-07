@@ -17,7 +17,7 @@ public:
 
 //********************************* INPUT RESPONSES *********************************
 	
-	Command * InputManager::		mouseInput();
+	LaserCommand * InputManager::		laserInput();
 	void InputManager::		cameraInput();
 	void InputManager::		debugToggles();
 

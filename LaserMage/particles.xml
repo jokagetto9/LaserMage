@@ -1,5 +1,5 @@
 <ParticleList>
-  <Particle name="Wrench" speed="1.5" sizeIndex="1">
-    <Animation texture="EFFECT/wrench.png" end="2" scale="0.5" grid="2x2" frames="16"></Animation>
+  <Particle name="Wrench" speed="6" accel="4" sizeIndex="1">
+    <Animation texture="EFFECT/wrench.png" end="2" scale="1" grid="2x2" frames="16"></Animation>
   </Particle>
 </ParticleList>

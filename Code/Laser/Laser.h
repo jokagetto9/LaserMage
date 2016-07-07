@@ -1,7 +1,7 @@
 #ifndef LASER_H
 #define LASER_H
 
-#include "../BaseEngine/lib.h"
+#include "../BaseEngine/Stack/Menu.h"
 
 
 //********************************* CONSTANTS *********************************
@@ -23,10 +23,8 @@ public:
 
 //********************************* DRAW *********************************
 
-	void Laser::		draw();	
+	void Laser::		draw(float delta);	
 
-
-	void Laser::		drawCursor(float x, float y);	
 
 //********************************* UPDATES *********************************
 
@@ -40,13 +38,30 @@ void Laser::		slowaiUpdate();
 
 
 //********************************* ACTIONS *********************************
-
+	
 
 //************************************************** MEMBERS ***************************************************
 		bool active;
 		float flicker;
 		int flickSign;
 
+		//float coolDown;
+		//float chargeUp;
+		//complexity - beam, sparks, 
+		//pattern
+		//float damage
+	
+
+/*/
+Laser Types
+	Blaster - Rapid fire, rank 2 dmg - advance fire rate/mana usage
+	Phaser - steady beam, rank 1 dmg - advance movement speed/beam duration
+
+	flame thrower - fixed length wave - advance length/mana usage
+
+1 - enemy force/laserforce = laser ratio
+
+//*/
 //********************************* MEMBER FUNCTIONS *********************************
 
 

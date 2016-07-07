@@ -7,10 +7,11 @@
 
 //********************************* INITIALIZATION *********************************
 
-class LaserCommand : public Command {
+class LaserCommand {
 public: 
 	void LaserCommand::	set(bool b){on = b;}
-	void LaserCommand::	exec(Actor& a){
+	void LaserCommand:: updateCursor(int x, int y){mX=x; mY=y;}
+	void LaserCommand::	exec(Particles * p){
 		if (on){
 			//h.laserOn();
 		}else{
@@ -19,5 +20,9 @@ public:
 	}
 private:
 	bool on;
+	int mX, mY;
 };
+
+
+
 #endif

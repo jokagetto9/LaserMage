@@ -1,6 +1,11 @@
 //********************************* INITIALIZATION *********************************
 #include "EntityLoader.h"
 
+SizeProfile buildSizeProfile(float base, float crash, float sep, float sepR, float coh, float cohR){
+	SizeProfile sp = {base, crash, sep, sepR, coh, cohR};
+	return sp;
+}
+
 void EntityLoader::load(){
 	enemyCount = 0;
 	propCount = 0;
@@ -15,17 +20,22 @@ void EntityLoader::load(){
 	loadProp(0);
 	loadParticle(0);
 	Obstacles::sizeProfiles.push_back(Obstacles::ignore);
-	SizeProfile sp = {0.5, 2, 9, 10, 0.001};
+	SizeProfile sp;
+	//sp = buildSizeProfile(0, 0.5, 2, 9, 10, 0.001);
+	//sp = {0, 0.2, 2, 9, 8, 0.0005};
+	sp = buildSizeProfile(0, 0.2, 3, 9, 10, 0.001);
 	Obstacles::sizeProfiles.push_back(sp);
-	SizeProfile sp1 = {0.5, 3, 16, 12, 0.001};
-	Obstacles::sizeProfiles.push_back(sp1);
-	SizeProfile sp2 = {1, 4, 10, 0, 0};
-	Obstacles::sizeProfiles.push_back(sp2);
+	sp = buildSizeProfile(0.5, 0, 3, 16, 12, 0.0001);
+	Obstacles::sizeProfiles.push_back(sp);
+	sp = buildSizeProfile(0, 1, 4, 10, 0, 0);
+	Obstacles::sizeProfiles.push_back(sp);
 	for (int i = 0; i < actorFiles.size(); i++){
 		//loadStage(i);
 		//loadProp(i);
 	}
 }
+
+
 
 
 void EntityLoader::loadProp(ID id){
