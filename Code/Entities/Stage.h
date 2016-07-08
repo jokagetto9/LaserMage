@@ -31,6 +31,9 @@ class Stage {
 
 	void Stage::		loadMap();
 
+	
+	void Stage::addParticle(ID type, XZI targ);
+
 	void Stage::add(EntityXZ e){map.push_back(e);}
 	void Stage::addSpawnPoint(SpawnPoint & sp){spawns.push_back(sp);}
 		

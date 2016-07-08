@@ -34,7 +34,8 @@ void Stage:: init(Players& p){
 	enemyPool.init(&monBook);
 	propPool.init(&propList);
 	particlePool.init(&particleList);
-
+	
+	particles.clear();
 	//enemyPool.init(actors.getDict());
 	//propPool.init(props.getDict());
 }
@@ -51,12 +52,18 @@ void Stage::		loadMap(){
 	for (ID i = 0; i < map.size(); i++)
 		props.createProp(propList, map[i]);
 	//test
-	EntityXZ ent = {0, 12, 12};
-	ID p = particles.createParticle(particleList, ent);
-	glm::vec3 targ(80, 0, 80);
-	particles.chargeParticle(p, targ);
+
 }
 
+void Stage::addParticle(ID type, XZI targ){
+	glm::vec3 pos = P->pos();
+	EntityXZ ent = {0, pos.x, pos.z};
+	ID p = particles.createParticle(particleList, ent);
+	glm::vec3 targV(targ.x, 0, targ.z);
+	particles.chargeParticle(p, targV);
+}
+
+//void Stage::add(EntityXZ e){map.push_back(e);}
 
 //********************************* UPDATES *********************************
 
@@ -103,6 +110,8 @@ void Stage::		rapidUpdate(float delta){
 	}
 	P->P1aiUpdate(delta);
 	actors.aiUpdate(delta);
+	particles.updateHP();
+
 }
 
 void Stage::		draw(float delta){	
@@ -115,6 +124,9 @@ void Stage::		draw(float delta){
 	propPool.draw(&props);
 	particlePool.batch(&particles, delta);
 	particlePool.draw(&particles);
+
+
+
 	
 }
 void Stage::		drawTerrain(){	

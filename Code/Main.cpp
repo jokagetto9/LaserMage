@@ -54,8 +54,12 @@ void update(){
 	if (!G->paused) {	
 		if (input.controls)
 			input.directionInput()->exec(P.getActor(P1));
-		//if (input.mouseL)
-			//stage.input.mouseInput()->exec(P.getActor(P1));
+		if (input.mouseL){
+			glm::vec3 c = C->corner();
+			XZI m = {(input.mX+0.5)*0.25+c.x, (input.mY+1)*0.25+c.z };	
+			currStage->addParticle(0, m);
+			input.mouseL = false;
+		}
 	}
 
 	clockCycle();

@@ -7,31 +7,31 @@
     <Filter Include="Stack">
       <UniqueIdentifier>{92eed406-6ca0-4643-aa8d-38738cfcb516}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Entities">
-      <UniqueIdentifier>{b7365142-920f-4f29-a601-fc7cc3f13c70}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Display">
       <UniqueIdentifier>{9f933468-1102-4ad2-8a1a-63eefa0c1cae}</UniqueIdentifier>
     </Filter>
     <Filter Include="Display\Shaders">
       <UniqueIdentifier>{8f9fb3c9-8c26-4644-a01a-4e0629761c9b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Components">
-      <UniqueIdentifier>{48d38527-c674-407f-b58b-977e6d81e235}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Entities\Base">
-      <UniqueIdentifier>{c5695a96-11c0-45ef-bbb9-f200d027e7bb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine">
-      <UniqueIdentifier>{d0163b9d-191a-4a12-9aaa-27d3c846301e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\Base">
-      <UniqueIdentifier>{66250fd4-2f30-45c7-bd4e-a99c60ae99db}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Stack\Base">
       <UniqueIdentifier>{81cd9d71-08fe-4a89-8fc8-eb5aa105ae8a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Laser">
+    <Filter Include="Laser Entities">
+      <UniqueIdentifier>{b7365142-920f-4f29-a601-fc7cc3f13c70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base Entities">
+      <UniqueIdentifier>{c5695a96-11c0-45ef-bbb9-f200d027e7bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base Engine">
+      <UniqueIdentifier>{66250fd4-2f30-45c7-bd4e-a99c60ae99db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Display\Components">
+      <UniqueIdentifier>{48d38527-c674-407f-b58b-977e6d81e235}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Laser Engine">
+      <UniqueIdentifier>{d0163b9d-191a-4a12-9aaa-27d3c846301e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Laser Entities\Laser">
       <UniqueIdentifier>{374bb167-d038-4b1b-a029-7ed48295b820}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -58,106 +58,103 @@
       <Filter>Display\Shaders</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Rendering.h">
-      <Filter>Components</Filter>
+      <Filter>Display\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\State.h">
-      <Filter>Components</Filter>
+      <Filter>Display\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Animation.h">
-      <Filter>Components</Filter>
+      <Filter>Display\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Component.h">
-      <Filter>Components</Filter>
+      <Filter>Display\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Motion.h">
-      <Filter>Components</Filter>
+      <Filter>Display\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\Display\Environment.h">
       <Filter>Display</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\Entities\Players.h">
-      <Filter>Entities</Filter>
+      <Filter>Laser Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\Entities\EntityLoader.h">
-      <Filter>Entities</Filter>
+      <Filter>Laser Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Display\Camera.h">
       <Filter>Display</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\InputManager.h">
-      <Filter>Engine</Filter>
+      <Filter>Laser Engine</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\Display\Shaders\FontShader.h">
       <Filter>Display\Shaders</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\DebugTool.h">
-      <Filter>Engine</Filter>
+      <Filter>Laser Engine</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\Stack\StackManager.h">
       <Filter>Stack</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Target.h">
-      <Filter>Components</Filter>
+      <Filter>Display\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Size.h">
-      <Filter>Components</Filter>
+      <Filter>Display\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Obstacles.h">
-      <Filter>Components</Filter>
+      <Filter>Display\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Location.h">
-      <Filter>Components</Filter>
+      <Filter>Display\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\Entities\MonsterBook.h">
-      <Filter>Entities</Filter>
+      <Filter>Laser Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Entities\Props.h">
-      <Filter>Entities\Base</Filter>
+      <Filter>Base Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Entities\Actors.h">
-      <Filter>Entities\Base</Filter>
+      <Filter>Base Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Entities\CollisionGrid.h">
-      <Filter>Entities\Base</Filter>
+      <Filter>Base Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Entities\Dictionaries.h">
-      <Filter>Entities\Base</Filter>
+      <Filter>Base Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Entities\DrawPool.h">
-      <Filter>Entities\Base</Filter>
+      <Filter>Base Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Entities\Particles.h">
-      <Filter>Entities\Base</Filter>
+      <Filter>Base Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\BaseInputManager.h">
-      <Filter>Engine\Base</Filter>
+      <Filter>Base Engine</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\BaseEngine.h">
-      <Filter>Engine\Base</Filter>
+      <Filter>Base Engine</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\BaseGameState.h">
-      <Filter>Engine\Base</Filter>
+      <Filter>Base Engine</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Command.h">
-      <Filter>Engine\Base</Filter>
+      <Filter>Base Engine</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\lib.h">
-      <Filter>Engine\Base</Filter>
+      <Filter>Base Engine</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\XMLParser.h">
-      <Filter>Engine\Base</Filter>
+      <Filter>Base Engine</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\Entities\EnemyWave.h">
-      <Filter>Entities</Filter>
+      <Filter>Laser Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\Entities\SpawnPoint.h">
-      <Filter>Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\Entities\Stage.h">
-      <Filter>Entities</Filter>
+      <Filter>Laser Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\Entities\StageLoader.h">
-      <Filter>Entities</Filter>
+      <Filter>Laser Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Stack\BaseStackManager.h">
       <Filter>Stack\Base</Filter>
@@ -175,13 +172,16 @@
       <Filter>Stack\Base</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\Laser\Laser.h">
-      <Filter>Laser</Filter>
+      <Filter>Laser Entities\Laser</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\Laser\LaserCommand.h">
-      <Filter>Laser</Filter>
+      <Filter>Laser Entities\Laser</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Health.h">
-      <Filter>Components</Filter>
+      <Filter>Display\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Entities\Stage.h">
+      <Filter>Laser Entities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -204,91 +204,85 @@
       <Filter>Display\Shaders</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Components\Animation.cpp">
-      <Filter>Components</Filter>
+      <Filter>Display\Components</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Components\Motion.cpp">
-      <Filter>Components</Filter>
+      <Filter>Display\Components</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\Display\Environment.cpp">
       <Filter>Display</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\Entities\EntityLoader.cpp">
-      <Filter>Entities</Filter>
+      <Filter>Laser Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\Entities\Players.cpp">
-      <Filter>Entities</Filter>
+      <Filter>Laser Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Display\Camera.cpp">
       <Filter>Display</Filter>
     </ClCompile>
-    <ClCompile Include="..\Code\Main.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
     <ClCompile Include="..\Code\InputManager.cpp">
-      <Filter>Engine</Filter>
+      <Filter>Laser Engine</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\Display\Shaders\FontShader.cpp">
       <Filter>Display\Shaders</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\DebugTool.cpp">
-      <Filter>Engine</Filter>
+      <Filter>Laser Engine</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\Stack\StackManager.cpp">
       <Filter>Stack</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Components\Target.cpp">
-      <Filter>Components</Filter>
+      <Filter>Display\Components</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Components\Location.cpp">
-      <Filter>Components</Filter>
+      <Filter>Display\Components</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Components\Obstacles.cpp">
-      <Filter>Components</Filter>
+      <Filter>Display\Components</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\Entities\MonsterBook.cpp">
-      <Filter>Entities</Filter>
+      <Filter>Laser Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Entities\Actors.cpp">
-      <Filter>Entities\Base</Filter>
+      <Filter>Base Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Entities\CollisionGrid.cpp">
-      <Filter>Entities\Base</Filter>
+      <Filter>Base Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Entities\Dictionaries.cpp">
-      <Filter>Entities\Base</Filter>
+      <Filter>Base Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Entities\DrawPool.cpp">
-      <Filter>Entities\Base</Filter>
+      <Filter>Base Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Entities\Particles.cpp">
-      <Filter>Entities\Base</Filter>
+      <Filter>Base Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Entities\Props.cpp">
-      <Filter>Entities\Base</Filter>
+      <Filter>Base Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\BaseEngine.cpp">
-      <Filter>Engine\Base</Filter>
+      <Filter>Base Engine</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\BaseGameState.cpp">
-      <Filter>Engine\Base</Filter>
+      <Filter>Base Engine</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\BaseInputManager.cpp">
-      <Filter>Engine\Base</Filter>
+      <Filter>Base Engine</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\XMLParser.cpp">
-      <Filter>Engine\Base</Filter>
+      <Filter>Base Engine</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\Entities\EnemyWave.cpp">
-      <Filter>Entities</Filter>
+      <Filter>Laser Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\Entities\SpawnPoint.cpp">
-      <Filter>Entities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\Entities\Stage.cpp">
-      <Filter>Entities</Filter>
+      <Filter>Laser Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\Entities\StageLoader.cpp">
-      <Filter>Entities</Filter>
+      <Filter>Laser Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Stack\BaseMenuLoader.cpp">
       <Filter>Stack\Base</Filter>
@@ -303,7 +297,13 @@
       <Filter>Stack\Base</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\Laser\Laser.cpp">
-      <Filter>Laser</Filter>
+      <Filter>Laser Entities\Laser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Main.cpp">
+      <Filter>Laser Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Entities\Stage.cpp">
+      <Filter>Laser Entities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
