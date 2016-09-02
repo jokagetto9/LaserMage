@@ -25,14 +25,14 @@
     <Filter Include="Base Engine">
       <UniqueIdentifier>{66250fd4-2f30-45c7-bd4e-a99c60ae99db}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Display\Components">
-      <UniqueIdentifier>{48d38527-c674-407f-b58b-977e6d81e235}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Laser Engine">
       <UniqueIdentifier>{d0163b9d-191a-4a12-9aaa-27d3c846301e}</UniqueIdentifier>
     </Filter>
     <Filter Include="Laser Entities\Laser">
       <UniqueIdentifier>{374bb167-d038-4b1b-a029-7ed48295b820}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components">
+      <UniqueIdentifier>{48d38527-c674-407f-b58b-977e6d81e235}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -58,19 +58,19 @@
       <Filter>Display\Shaders</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Rendering.h">
-      <Filter>Display\Components</Filter>
+      <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\State.h">
-      <Filter>Display\Components</Filter>
+      <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Animation.h">
-      <Filter>Display\Components</Filter>
+      <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Component.h">
-      <Filter>Display\Components</Filter>
+      <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Motion.h">
-      <Filter>Display\Components</Filter>
+      <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\Display\Environment.h">
       <Filter>Display</Filter>
@@ -97,16 +97,16 @@
       <Filter>Stack</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Target.h">
-      <Filter>Display\Components</Filter>
+      <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Size.h">
-      <Filter>Display\Components</Filter>
+      <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Obstacles.h">
-      <Filter>Display\Components</Filter>
+      <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Location.h">
-      <Filter>Display\Components</Filter>
+      <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\Entities\MonsterBook.h">
       <Filter>Laser Entities</Filter>
@@ -178,7 +178,7 @@
       <Filter>Laser Entities\Laser</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Health.h">
-      <Filter>Display\Components</Filter>
+      <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\Entities\Stage.h">
       <Filter>Laser Entities</Filter>
@@ -204,10 +204,10 @@
       <Filter>Display\Shaders</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Components\Animation.cpp">
-      <Filter>Display\Components</Filter>
+      <Filter>Components</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Components\Motion.cpp">
-      <Filter>Display\Components</Filter>
+      <Filter>Components</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\Display\Environment.cpp">
       <Filter>Display</Filter>
@@ -234,13 +234,13 @@
       <Filter>Stack</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Components\Target.cpp">
-      <Filter>Display\Components</Filter>
+      <Filter>Components</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Components\Location.cpp">
-      <Filter>Display\Components</Filter>
+      <Filter>Components</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Components\Obstacles.cpp">
-      <Filter>Display\Components</Filter>
+      <Filter>Components</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\Entities\MonsterBook.cpp">
       <Filter>Laser Entities</Filter>
