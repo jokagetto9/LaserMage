@@ -43,7 +43,6 @@ void Stage:: init(Players& p){
 bool Stage::	validate(){
 
 	return true;
-
 }
 
 void Stage::		loadMap(){
@@ -89,13 +88,14 @@ void Stage::		physUpdate(float delta){
 	particles.update(delta);
 	collisions.clear();
 	collisions.addProps(&props);
+	collisions.addParticles(&particles);
 	collisions.setActiveEnt(&actors);
 	collisions.addEntities(0);
 	//collisions.setActiveEnt(&particles);
 	//collisions.updateGrid((ID)0);
 
 	collisions.updateObstacles(0);
-	collisions.applyAdjustments(0);
+	collisions.applyAdjustments(0); //!!!! should be in AI
 }
 void Stage::		rapidUpdate(float delta){
 	glm::vec3 v = spawns[curSpawn].pos();
@@ -110,6 +110,7 @@ void Stage::		rapidUpdate(float delta){
 	}
 	P->P1aiUpdate(delta);
 	actors.aiUpdate(delta);
+	//collisions.applyAdjustments(0); // need to disable above
 	particles.updateHP();
 
 }
@@ -125,10 +126,9 @@ void Stage::		draw(float delta){
 	particlePool.batch(&particles, delta);
 	particlePool.draw(&particles);
 
-
-
-	
 }
+
+
 void Stage::		drawTerrain(){	
 	glDisable(GL_DEPTH_TEST);
 	M->tileBO.use();	

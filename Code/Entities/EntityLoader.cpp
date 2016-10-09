@@ -23,11 +23,13 @@ void EntityLoader::load(){
 	SizeProfile sp;
 	//sp = buildSizeProfile(0, 0.5, 2, 9, 10, 0.001);
 	//sp = {0, 0.2, 2, 9, 8, 0.0005};
-	sp = buildSizeProfile(0, 0.2, 3, 9, 10, 0.001);
+	sp = buildSizeProfile(0, 0.2, 2, 9, 10, 0.001); //gnome
 	Obstacles::sizeProfiles.push_back(sp);
-	sp = buildSizeProfile(0.5, 0, 3, 16, 12, 0.0001);
+	sp = buildSizeProfile(0.5, 0, 3.5, 16, 12, 0.0001);
 	Obstacles::sizeProfiles.push_back(sp);
 	sp = buildSizeProfile(0, 1, 4, 10, 0, 0);
+	Obstacles::sizeProfiles.push_back(sp);
+	sp = buildSizeProfile(1, 1, 5, 16, 0, 0);
 	Obstacles::sizeProfiles.push_back(sp);
 	for (int i = 0; i < actorFiles.size(); i++){
 		//loadStage(i);
