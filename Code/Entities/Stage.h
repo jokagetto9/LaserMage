@@ -2,9 +2,9 @@
 #define STAGE_H
 
 
-#include "../BaseEngine/Entities/DrawPool.h"
 #include "../BaseEngine/Entities/CollisionGrid.h"
-#include "../Entities/Players.h"
+#include "../BaseEngine/Entities/DrawPool.h"
+#include "Players.h"
 #include "SpawnPoint.h"
 
 
@@ -62,7 +62,7 @@ virtual void Stage::		rapidUpdate(float delta);
 		DrawPool enemyPool;
 		DrawPool propPool;
 		DrawPool particlePool;
-		CollisionGrid collisions;
+		CollisionGrid collisions; 
 		//Vegetation * veg;
 		//Structures * structs;
 		string name;
@@ -71,4 +71,5 @@ virtual void Stage::		rapidUpdate(float delta);
 //********************************* MEMBER FUNCTIONS *********************************
 		
 };
+
 #endif

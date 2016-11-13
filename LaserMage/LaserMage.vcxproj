@@ -17,6 +17,7 @@
     <ClInclude Include="..\Code\BaseEngine\Command.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\Animation.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\Component.h" />
+    <ClInclude Include="..\Code\BaseEngine\Components\GridData.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\Health.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\Location.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\Motion.h" />
@@ -28,6 +29,7 @@
     <ClInclude Include="..\Code\BaseEngine\Display\Camera.h" />
     <ClInclude Include="..\Code\BaseEngine\Entities\Actors.h" />
     <ClInclude Include="..\Code\BaseEngine\Entities\CollisionGrid.h" />
+    <ClInclude Include="..\Code\BaseEngine\Entities\CollisionSet.h" />
     <ClInclude Include="..\Code\BaseEngine\Entities\Dictionaries.h" />
     <ClInclude Include="..\Code\BaseEngine\Entities\DrawPool.h" />
     <ClInclude Include="..\Code\BaseEngine\Entities\Particles.h" />
@@ -66,6 +68,7 @@
     <ClCompile Include="..\Code\BaseEngine\BaseGameState.cpp" />
     <ClCompile Include="..\Code\BaseEngine\BaseInputManager.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Components\Animation.cpp" />
+    <ClCompile Include="..\Code\BaseEngine\Components\GridData.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Components\Location.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Components\Motion.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Components\Obstacles.cpp" />
@@ -73,6 +76,7 @@
     <ClCompile Include="..\Code\BaseEngine\Display\Camera.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Entities\Actors.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Entities\CollisionGrid.cpp" />
+    <ClCompile Include="..\Code\BaseEngine\Entities\CollisionSet.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Entities\Dictionaries.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Entities\DrawPool.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Entities\Particles.cpp" />

@@ -1,4 +1,5 @@
 <StageList>
+  <StageFile filename="test.xml" >  </StageFile>
   <StageFile filename="shitshow.xml" >  </StageFile>
   <StageFile filename="forest.xml" >  </StageFile>
   <StageFile filename="forest2.xml" >  </StageFile>

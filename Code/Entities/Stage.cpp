@@ -6,11 +6,12 @@ Stage::Stage(){
 	name = "___";
 	baseTile = 0;
 	curSpawn = 0;
+
 	actors.reserve(200);
 	props.reserve(30);
 	particles.reserve(30);
-	atSpawn = false;
- 	collisions.init(6, 5, 2);
+	collisions.init(6, 5, props, particles, actors);
+	atSpawn = false; 
 	actors.applyDict(&monBook);
 }
 
@@ -84,18 +85,21 @@ void Stage::update(){
 
 void Stage::		physUpdate(float delta){
 	P->P1Update(delta);
+	props.update();	
 	actors.update(delta);	
-	particles.update(delta);
-	collisions.clear();
-	collisions.addProps(&props);
-	collisions.addParticles(&particles);
-	collisions.setActiveEnt(&actors);
-	collisions.addEntities(0);
+	//particles.update(delta); 
+	//collisions.clear(); 
+	//collisions.loadGridData(collisions.actorGrid, &actors);
+	//collisions.addProps(&props);
+	//collisions.addParticles(&particles);
+	//collisions.setActiveEnt(&actors);
+	//collisions.addEntities(0);
 	//collisions.setActiveEnt(&particles);
 	//collisions.updateGrid((ID)0);
-
-	collisions.updateObstacles(0);
-	collisions.applyAdjustments(0); //!!!! should be in AI
+	
+	actors.printGrid ();
+	//collisions.updateObstacles(0);
+	//collisions.applyAdjustments(0); //!!!! should be in AI
 }
 void Stage::		rapidUpdate(float delta){
 	glm::vec3 v = spawns[curSpawn].pos();

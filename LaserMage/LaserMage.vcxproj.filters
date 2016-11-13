@@ -117,9 +117,6 @@
     <ClInclude Include="..\Code\BaseEngine\Entities\Actors.h">
       <Filter>Base Entities</Filter>
     </ClInclude>
-    <ClInclude Include="..\Code\BaseEngine\Entities\CollisionGrid.h">
-      <Filter>Base Entities</Filter>
-    </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Entities\Dictionaries.h">
       <Filter>Base Entities</Filter>
     </ClInclude>
@@ -182,6 +179,15 @@
     </ClInclude>
     <ClInclude Include="..\Code\Entities\Stage.h">
       <Filter>Laser Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Components\GridData.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Entities\CollisionGrid.h">
+      <Filter>Base Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Entities\CollisionSet.h">
+      <Filter>Base Entities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -248,9 +254,6 @@
     <ClCompile Include="..\Code\BaseEngine\Entities\Actors.cpp">
       <Filter>Base Entities</Filter>
     </ClCompile>
-    <ClCompile Include="..\Code\BaseEngine\Entities\CollisionGrid.cpp">
-      <Filter>Base Entities</Filter>
-    </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Entities\Dictionaries.cpp">
       <Filter>Base Entities</Filter>
     </ClCompile>
@@ -304,6 +307,15 @@
     </ClCompile>
     <ClCompile Include="..\Code\Entities\Stage.cpp">
       <Filter>Laser Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\BaseEngine\Components\GridData.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\BaseEngine\Entities\CollisionGrid.cpp">
+      <Filter>Base Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\BaseEngine\Entities\CollisionSet.cpp">
+      <Filter>Base Entities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
