@@ -4,6 +4,7 @@
 
 #include "../BaseEngine/Entities/CollisionGrid.h"
 #include "../BaseEngine/Entities/DrawPool.h"
+#include "../BaseEngine/Entities/EntityList.h"
 #include "Players.h"
 #include "SpawnPoint.h"
 
@@ -59,6 +60,8 @@ virtual void Stage::		rapidUpdate(float delta);
 		Actors actors;
 		Props props;
 		Particles particles;
+		EntityList entities;
+
 		DrawPool enemyPool;
 		DrawPool propPool;
 		DrawPool particlePool;

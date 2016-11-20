@@ -10,7 +10,8 @@ Stage::Stage(){
 	actors.reserve(200);
 	props.reserve(30);
 	particles.reserve(30);
-	collisions.init(6, 5, props, particles, actors);
+	entities.reserve(200);
+	entities.setGridSize(6, 5);
 	atSpawn = false; 
 	actors.applyDict(&monBook);
 }
@@ -22,13 +23,18 @@ void Stage:: init(Players& p){
 	//terr.init();	
 	//pop.enemies.clear();
 	p.reset();
-	p.placeP1(32, 0);
+	p.placeP1(32, 10);
+	entities.clear();
+	
+	entities.clearGrid();
 	actors.clear();
+	particles.clear();
 	for (int i = 0; i < spawns.size(); i++){ 
 		int waves = spawns[i].waves.size();
 		for(int j = 0; j < waves; j++){
 			spawns[i].waves[j].origin = spawns[i].pos(); //NEWBRANCH SPAWNTRIGGERS
-			spawns[i].waves[j].generate(actors);
+			spawns[i].waves[j].generate(entities);
+			//spawns[i].waves[j].generate(actors);
 		}
 	}
 	loadMap();
@@ -36,7 +42,6 @@ void Stage:: init(Players& p){
 	propPool.init(&propList);
 	particlePool.init(&particleList);
 	
-	particles.clear();
 	//enemyPool.init(actors.getDict());
 	//propPool.init(props.getDict());
 }
@@ -49,8 +54,10 @@ bool Stage::	validate(){
 void Stage::		loadMap(){
 	props.clear();
 	Location l; 	Rendering r; EntityXZ e;
-	for (ID i = 0; i < map.size(); i++)
+	for (ID i = 0; i < map.size(); i++){
 		props.createProp(propList, map[i]);
+		entities.createProp(propList, map[i]);
+	}
 	//test
 
 }
@@ -58,9 +65,9 @@ void Stage::		loadMap(){
 void Stage::addParticle(ID type, XZI targ){
 	glm::vec3 pos = P->pos();
 	EntityXZ ent = {0, pos.x, pos.z};
-	ID p = particles.createParticle(particleList, ent);
+	//ID p = particles.createParticle(particleList, ent);
 	glm::vec3 targV(targ.x, 0, targ.z);
-	particles.chargeParticle(p, targV);
+	//particles.chargeParticle(p, targV);
 }
 
 //void Stage::add(EntityXZ e){map.push_back(e);}
@@ -85,9 +92,11 @@ void Stage::update(){
 
 void Stage::		physUpdate(float delta){
 	P->P1Update(delta);
-	props.update();	
-	actors.update(delta);	
-	//particles.update(delta); 
+	//props.update();	
+	entities.update(delta);
+	entities.printGrid ();
+	//actors.update(delta);	
+	particles.update(delta); 
 	//collisions.clear(); 
 	//collisions.loadGridData(collisions.actorGrid, &actors);
 	//collisions.addProps(&props);
@@ -95,9 +104,9 @@ void Stage::		physUpdate(float delta){
 	//collisions.setActiveEnt(&actors);
 	//collisions.addEntities(0);
 	//collisions.setActiveEnt(&particles);
-	//collisions.updateGrid((ID)0);
+	entities.checkCollisions();
+	entities.applyCollisions();
 	
-	actors.printGrid ();
 	//collisions.updateObstacles(0);
 	//collisions.applyAdjustments(0); //!!!! should be in AI
 }
@@ -109,24 +118,31 @@ void Stage::		rapidUpdate(float delta){
 		P->target[P1].noTarget();
 		//getSpawncount;
 		//actors.activate(14, P->pos());
-		actors.activateAll(P->pos());
+		//actors.activateAll(P->pos());
+		entities.activateAll(P->pos());
 		atSpawn = true;
 	}
 	P->P1aiUpdate(delta);
-	actors.aiUpdate(delta);
+	entities.aiUpdate(delta);
+	//actors.aiUpdate(delta);
 	//collisions.applyAdjustments(0); // need to disable above
 	particles.updateHP();
 
 }
 
+//********************************* DRAW *********************************
 void Stage::		draw(float delta){	
 	//terr.draw();	
 	//M->gridBO.use();
 	P->drawP1(delta);
-	enemyPool.batch(&actors, delta);
-	enemyPool.draw(&actors);
-	propPool.batch(&props);
-	propPool.draw(&props);
+ 	enemyPool.batch(&entities, delta);
+	enemyPool.draw(&entities);
+	//enemyPool.batch(&actors, delta);
+	//enemyPool.draw(&actors);
+	propPool.batch(&entities);
+	propPool.draw(&entities);
+	//propPool.batch(&props);
+	//propPool.draw(&props);
 	particlePool.batch(&particles, delta);
 	particlePool.draw(&particles);
 

@@ -1,6 +1,5 @@
 <Stage name="ShitShow!" tile="0" >
   <Map>
-
   </Map>
   <SpawnPoint x="32" y="12">
     <Wave dist="48"  type="Gnome">35</Wave>

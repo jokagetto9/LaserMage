@@ -41,6 +41,30 @@ void EnemyWave::	initRegion(bool left, int reg){
 	if (!left) centerTheta *= -1; 
 }
 
+void EnemyWave ::		generate(EntityList& enemies){
+	//Enemy e; e.init(enemy); 
+	ID tex = monBook.getProfile(type).tex;
+	Rendering r(tex, 0); //set stats and anims
+	Animation a = monBook.anim[type];
+	Motion m = Motion(monBook.max[type]);
+	Location l; 
+	glm::vec3 v;
+	float tempTheta = tempTheta = centerTheta - (quantity-1)* spacing/2;   
+	for (int i = 0; i < quantity; i++){
+		a.randomTick();
+		float theta = tempTheta+i*spacing;
+		v = radialOffset(origin, theta, dist);
+		l.place(v.x, v.z); 
+		enemies.createActor(type, r, l, m, a);
+
+		if (mirrored && theta >= 0){
+			theta = -tempTheta-i*spacing;
+			v = radialOffset(origin, theta, dist);
+			l.place(v.x, v.z); enemies.createActor(type, r, l, m, a);
+		}
+	}
+}
+
 void EnemyWave ::		generate(Actors& enemies){
 	//Enemy e; e.init(enemy); 
 	ID tex = monBook.getProfile(type).tex;
@@ -55,12 +79,12 @@ void EnemyWave ::		generate(Actors& enemies){
 		float theta = tempTheta+i*spacing;
 		v = radialOffset(origin, theta, dist);
 		l.place(v.x, v.z); 
-		enemies.add(type, r, l, m, a);
+		enemies.createActor(type, r, l, m, a);
 
 		if (mirrored && theta >= 0){
 			theta = -tempTheta-i*spacing;
 			v = radialOffset(origin, theta, dist);
-			l.place(v.x, v.z); enemies.add(type, r, l, m, a);
+			l.place(v.x, v.z); enemies.createActor(type, r, l, m, a);
 		}
 	}
 }

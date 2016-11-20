@@ -3,8 +3,6 @@
   </Map>
   <SpawnPoint x="32" y="20">
     <Wave dist="40" type="Gnome">5</Wave>
-    <Wave dist="40" spacing="100" type="TonTon">2</Wave>
-    <Wave dist="50" spacing="100" type="Trunkling">2</Wave>
   </SpawnPoint>
 </Stage>
 

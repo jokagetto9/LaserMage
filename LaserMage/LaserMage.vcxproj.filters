@@ -183,11 +183,14 @@
     <ClInclude Include="..\Code\BaseEngine\Components\GridData.h">
       <Filter>Components</Filter>
     </ClInclude>
-    <ClInclude Include="..\Code\BaseEngine\Entities\CollisionGrid.h">
+    <ClInclude Include="..\Code\BaseEngine\Entities\EntityList.h">
       <Filter>Base Entities</Filter>
     </ClInclude>
-    <ClInclude Include="..\Code\BaseEngine\Entities\CollisionSet.h">
-      <Filter>Base Entities</Filter>
+    <ClInclude Include="..\Code\BaseEngine\Components\CollisionSet.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Components\Swarming.h">
+      <Filter>Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -311,11 +314,14 @@
     <ClCompile Include="..\Code\BaseEngine\Components\GridData.cpp">
       <Filter>Components</Filter>
     </ClCompile>
-    <ClCompile Include="..\Code\BaseEngine\Entities\CollisionGrid.cpp">
+    <ClCompile Include="..\Code\BaseEngine\Entities\EntityList.cpp">
       <Filter>Base Entities</Filter>
     </ClCompile>
-    <ClCompile Include="..\Code\BaseEngine\Entities\CollisionSet.cpp">
-      <Filter>Base Entities</Filter>
+    <ClCompile Include="..\Code\BaseEngine\Components\CollisionSet.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\BaseEngine\Components\Swarming.cpp">
+      <Filter>Components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -356,6 +362,9 @@
       <Filter>~Content</Filter>
     </None>
     <None Include="particles.xml">
+      <Filter>~Content</Filter>
+    </None>
+    <None Include="gridtest.xml">
       <Filter>~Content</Filter>
     </None>
   </ItemGroup>
