@@ -18,7 +18,6 @@
 	StageLoader stageLoader;
 	Stage testStage;
 	Stage * currStage;
-	Players P;
 	DebugTool debug;
 	
 
@@ -53,7 +52,7 @@ void update(){
 	input.debugToggles();
 	if (!G->paused) {	
 		if (input.controls)
-			input.directionInput()->exec(P.getActor(P1));
+			//input.directionInput()->exec(P.getActor(P1));
 		if (input.mouseL){
 			glm::vec3 c = C->corner();
 			XZI m = {(input.mX+0.5)*0.25+c.x, (input.mY+1)*0.25+c.z };	
@@ -74,7 +73,7 @@ void update(){
 		if (!currStage){
 			currStage = stageLoader.getStage(stack.index);
 		}
-		currStage->init(P);		
+		currStage->init();		
 		G->loaded = true;
 	}
 	//input.clearKeys();	
@@ -118,13 +117,9 @@ void display(){
 	eng.clearDisplay();
 	//
 	if(!G->paused || !stack.backdrop()){
-		C->update(P.pos());		
-		currStage->drawTerrain();  
 		currStage->draw(eng.avgFrameDelta); 
-
 	}//*/
 		
-	C->drawCursor();
 	stack.setUp2DView(RES.x, RES.z);
 	//debug.drawDebugConsole(eng.avgFPS);
 	if(G->paused) 

@@ -1,7 +1,6 @@
 #ifndef LASERCOMMAND_H
 #define LASERCOMMAND_H
 #include "../BaseEngine/Command.h"
-#include "../BaseEngine/Entities/Actors.h"
 
 //********************************* CONSTANTS *********************************
 
@@ -11,7 +10,7 @@ class LaserCommand {
 public: 
 	void LaserCommand::	set(bool b){on = b;}
 	void LaserCommand:: updateCursor(int x, int y){mX=x; mY=y;}
-	void LaserCommand::	exec(Particles * p){
+	void LaserCommand::	exec(){
 		if (on){
 			//h.laserOn();
 		}else{

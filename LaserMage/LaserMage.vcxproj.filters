@@ -75,9 +75,6 @@
     <ClInclude Include="..\Code\Display\Environment.h">
       <Filter>Display</Filter>
     </ClInclude>
-    <ClInclude Include="..\Code\Entities\Players.h">
-      <Filter>Laser Entities</Filter>
-    </ClInclude>
     <ClInclude Include="..\Code\Entities\EntityLoader.h">
       <Filter>Laser Entities</Filter>
     </ClInclude>
@@ -112,9 +109,6 @@
       <Filter>Laser Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Entities\Props.h">
-      <Filter>Base Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\BaseEngine\Entities\Actors.h">
       <Filter>Base Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Entities\Dictionaries.h">
@@ -224,9 +218,6 @@
     <ClCompile Include="..\Code\Entities\EntityLoader.cpp">
       <Filter>Laser Entities</Filter>
     </ClCompile>
-    <ClCompile Include="..\Code\Entities\Players.cpp">
-      <Filter>Laser Entities</Filter>
-    </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Display\Camera.cpp">
       <Filter>Display</Filter>
     </ClCompile>
@@ -253,9 +244,6 @@
     </ClCompile>
     <ClCompile Include="..\Code\Entities\MonsterBook.cpp">
       <Filter>Laser Entities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\BaseEngine\Entities\Actors.cpp">
-      <Filter>Base Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Entities\Dictionaries.cpp">
       <Filter>Base Entities</Filter>

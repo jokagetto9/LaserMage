@@ -29,7 +29,6 @@
     <ClInclude Include="..\Code\BaseEngine\Components\Swarming.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\Target.h" />
     <ClInclude Include="..\Code\BaseEngine\Display\Camera.h" />
-    <ClInclude Include="..\Code\BaseEngine\Entities\Actors.h" />
     <ClInclude Include="..\Code\BaseEngine\Entities\Dictionaries.h" />
     <ClInclude Include="..\Code\BaseEngine\Entities\DrawPool.h" />
     <ClInclude Include="..\Code\BaseEngine\Entities\EntityList.h" />
@@ -54,7 +53,6 @@
     <ClInclude Include="..\Code\Entities\EnemyWave.h" />
     <ClInclude Include="..\Code\Entities\EntityLoader.h" />
     <ClInclude Include="..\Code\Entities\MonsterBook.h" />
-    <ClInclude Include="..\Code\Entities\Players.h" />
     <ClInclude Include="..\Code\Entities\SpawnPoint.h" />
     <ClInclude Include="..\Code\Entities\Stage.h" />
     <ClInclude Include="..\Code\Entities\StageLoader.h" />
@@ -77,7 +75,6 @@
     <ClCompile Include="..\Code\BaseEngine\Components\Swarming.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Components\Target.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Display\Camera.cpp" />
-    <ClCompile Include="..\Code\BaseEngine\Entities\Actors.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Entities\Dictionaries.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Entities\DrawPool.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Entities\EntityList.cpp" />
@@ -99,7 +96,6 @@
     <ClCompile Include="..\Code\Entities\EnemyWave.cpp" />
     <ClCompile Include="..\Code\Entities\EntityLoader.cpp" />
     <ClCompile Include="..\Code\Entities\MonsterBook.cpp" />
-    <ClCompile Include="..\Code\Entities\Players.cpp" />
     <ClCompile Include="..\Code\Entities\SpawnPoint.cpp" />
     <ClCompile Include="..\Code\Entities\Stage.cpp" />
     <ClCompile Include="..\Code\Entities\StageLoader.cpp" />

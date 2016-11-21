@@ -2,10 +2,8 @@
 #define STAGE_H
 
 
-#include "../BaseEngine/Entities/CollisionGrid.h"
 #include "../BaseEngine/Entities/DrawPool.h"
 #include "../BaseEngine/Entities/EntityList.h"
-#include "Players.h"
 #include "SpawnPoint.h"
 
 
@@ -20,7 +18,7 @@ class Stage {
 	// constructors
 	Stage::	Stage ();
 	
-	virtual void Stage:: init(Players & p);
+	virtual void Stage:: init();
 
 	bool Stage::	validate();
 
@@ -33,6 +31,7 @@ class Stage {
 	void Stage::		loadMap();
 
 	
+	void Stage::createPlayer(int x, int z);
 	void Stage::addParticle(ID type, XZI targ);
 
 	void Stage::add(EntityXZ e){map.push_back(e);}
@@ -46,7 +45,8 @@ virtual void Stage::		rapidUpdate(float delta);
 
 
 //************************************************** DRAW ***************************************************
-		void Stage::		draw(float delta);
+		void Stage::		draw(float delta);	
+		void Stage::		drawPlayer();
 		void Stage::		drawTerrain();
 		
 //************************************************** MEMBERS ***************************************************
@@ -55,17 +55,14 @@ virtual void Stage::		rapidUpdate(float delta);
 		vector<SpawnPoint> spawns;
 		ID curSpawn;
 		//Terrain terr;
-		Players * P;
+		ID p1;
 
-		Actors actors;
-		Props props;
 		Particles particles;
 		EntityList entities;
 
 		DrawPool enemyPool;
 		DrawPool propPool;
 		DrawPool particlePool;
-		CollisionGrid collisions; 
 		//Vegetation * veg;
 		//Structures * structs;
 		string name;

@@ -1,7 +1,6 @@
 #ifndef ENEMYWAVE_H
 #define ENEMYWAVE_H
 
-#include "../BaseEngine/Entities/Actors.h"
 #include "../BaseEngine/Entities/EntityList.h"
 //********************************* CONSTANTS *********************************
 
@@ -20,7 +19,6 @@ class EnemyWave {
 	 
 	
 	void EnemyWave ::		generate(EntityList& enemies);
-	void EnemyWave ::		generate(Actors& enemies);
 
 //********************************* MEMEBERS *********************************	
 	ID type;

@@ -7,28 +7,19 @@ Stage::Stage(){
 	baseTile = 0;
 	curSpawn = 0;
 
-	actors.reserve(200);
-	props.reserve(30);
 	particles.reserve(30);
-	entities.reserve(200);
+	entities.reserve(300);
 	entities.setGridSize(6, 5);
 	atSpawn = false; 
-	actors.applyDict(&monBook);
 }
 
-void Stage:: init(Players& p){
-	P = &p;
+void Stage:: init(){
 	curSpawn = 0;
 	atSpawn = false;
-	//terr.init();	
-	//pop.enemies.clear();
-	p.reset();
-	p.placeP1(32, 10);
-	entities.clear();
-	
+	entities.clear();	
 	entities.clearGrid();
-	actors.clear();
-	particles.clear();
+	particles.clear();	
+	createPlayer(32, 10);
 	for (int i = 0; i < spawns.size(); i++){ 
 		int waves = spawns[i].waves.size();
 		for(int j = 0; j < waves; j++){
@@ -52,18 +43,28 @@ bool Stage::	validate(){
 }
 
 void Stage::		loadMap(){
-	props.clear();
 	Location l; 	Rendering r; EntityXZ e;
 	for (ID i = 0; i < map.size(); i++){
-		props.createProp(propList, map[i]);
 		entities.createProp(propList, map[i]);
 	}
 	//test
 
 }
 
+
+void Stage::createPlayer(int x, int z){
+	Rendering r; //set stats and anims
+	Animation a;
+	Motion m;
+	Location l; 
+	l.place(x, z);
+	p1 = entities.nextFree();
+	entities.createActor(0, r, l, m, a);
+}
+
+
 void Stage::addParticle(ID type, XZI targ){
-	glm::vec3 pos = P->pos();
+	glm::vec3 pos = entities.getPos(p1);
 	EntityXZ ent = {0, pos.x, pos.z};
 	//ID p = particles.createParticle(particleList, ent);
 	glm::vec3 targV(targ.x, 0, targ.z);
@@ -91,38 +92,25 @@ void Stage::update(){
 
 
 void Stage::		physUpdate(float delta){
-	P->P1Update(delta);
-	//props.update();	
 	entities.update(delta);
 	entities.printGrid ();
-	//actors.update(delta);	
 	particles.update(delta); 
-	//collisions.clear(); 
-	//collisions.loadGridData(collisions.actorGrid, &actors);
-	//collisions.addProps(&props);
-	//collisions.addParticles(&particles);
-	//collisions.setActiveEnt(&actors);
-	//collisions.addEntities(0);
-	//collisions.setActiveEnt(&particles);
 	entities.checkCollisions();
 	entities.applyCollisions();
-	
-	//collisions.updateObstacles(0);
-	//collisions.applyAdjustments(0); //!!!! should be in AI
 }
 void Stage::		rapidUpdate(float delta){
+	glm::vec3 pos = entities.getPos(p1);
 	glm::vec3 v = spawns[curSpawn].pos();
-	if (P->pos().z < v.z-0.25){
-		P->target[P1].setTarget(v);
+	if (pos.z < v.z-0.25){
+		entities.target[p1].setTarget(v);
 	} else if (!atSpawn){		
-		P->target[P1].noTarget();
+		entities.target[p1].noTarget();
 		//getSpawncount;
 		//actors.activate(14, P->pos());
 		//actors.activateAll(P->pos());
-		entities.activateAll(P->pos());
+		entities.activateAll(p1);
 		atSpawn = true;
 	}
-	P->P1aiUpdate(delta);
 	entities.aiUpdate(delta);
 	//actors.aiUpdate(delta);
 	//collisions.applyAdjustments(0); // need to disable above
@@ -134,18 +122,19 @@ void Stage::		rapidUpdate(float delta){
 void Stage::		draw(float delta){	
 	//terr.draw();	
 	//M->gridBO.use();
-	P->drawP1(delta);
- 	enemyPool.batch(&entities, delta);
-	enemyPool.draw(&entities);
-	//enemyPool.batch(&actors, delta);
-	//enemyPool.draw(&actors);
+	entities.delta = delta;	
+	glm::vec3 pos = entities.getPos(p1);
+	C->update(pos);		
+	drawTerrain();  
+	drawPlayer();
 	propPool.batch(&entities);
 	propPool.draw(&entities);
-	//propPool.batch(&props);
-	//propPool.draw(&props);
 	particlePool.batch(&particles, delta);
 	particlePool.draw(&particles);
-
+ 	enemyPool.batch(&entities, delta);
+	enemyPool.draw(&entities);
+	
+	C->drawCursor();
 }
 
 
@@ -157,4 +146,9 @@ void Stage::		drawTerrain(){
 	int z = 72;
 	M->tileBO.draw(x, z, x*4, z*4);
 	glEnable(GL_DEPTH_TEST);
+}
+void Stage::		drawPlayer(){	
+	M->gridBO.prepHero();
+	//refresh(P1);  
+	entities.draw(p1);	
 }
