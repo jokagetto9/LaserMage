@@ -6,35 +6,32 @@ Stage::Stage(){
 	name = "___";
 	baseTile = 0;
 	curSpawn = 0;
-
-	particles.reserve(30);
-	entities.reserve(300);
 	entities.setGridSize(6, 5);
 	atSpawn = false; 
 }
 
 void Stage:: init(){
+	if (entities.state.size() != 300){
+		entities.reserve(300);
+	}
 	curSpawn = 0;
+	 
 	atSpawn = false;
 	entities.clear();	
 	entities.clearGrid();
-	particles.clear();	
 	createPlayer(32, 10);
+
+	enemyPool.init(&monBook);
+	propPool.init(&propList);
+	particlePool.init(&particleList);
+	loadMap();
 	for (int i = 0; i < spawns.size(); i++){ 
 		int waves = spawns[i].waves.size();
 		for(int j = 0; j < waves; j++){
 			spawns[i].waves[j].origin = spawns[i].pos(); //NEWBRANCH SPAWNTRIGGERS
 			spawns[i].waves[j].generate(entities);
-			//spawns[i].waves[j].generate(actors);
 		}
-	}
-	loadMap();
-	enemyPool.init(&monBook);
-	propPool.init(&propList);
-	particlePool.init(&particleList);
-	
-	//enemyPool.init(actors.getDict());
-	//propPool.init(props.getDict());
+	}	
 }
 
 bool Stage::	validate(){
@@ -48,7 +45,6 @@ void Stage::		loadMap(){
 		entities.createProp(propList, map[i]);
 	}
 	//test
-
 }
 
 
@@ -59,16 +55,17 @@ void Stage::createPlayer(int x, int z){
 	Location l; 
 	l.place(x, z);
 	p1 = entities.nextFree();
-	entities.createActor(0, r, l, m, a);
+	Identity i = {"LaserMage", p1, 0, 4};
+	entities.createActor(i, r, l, m, a);
 }
 
 
 void Stage::addParticle(ID type, XZI targ){
 	glm::vec3 pos = entities.getPos(p1);
-	EntityXZ ent = {0, pos.x, pos.z};
-	//ID p = particles.createParticle(particleList, ent);
+	EntityXZ ent = {type, pos.x, pos.z};
+	ID p = entities.createParticle(particleList, ent);
 	glm::vec3 targV(targ.x, 0, targ.z);
-	//particles.chargeParticle(p, targV);
+	entities.chargeParticle(p, targV);
 }
 
 //void Stage::add(EntityXZ e){map.push_back(e);}
@@ -76,6 +73,12 @@ void Stage::addParticle(ID type, XZI targ){
 //********************************* UPDATES *********************************
 
 void Stage::update(){
+
+
+
+
+
+
 	if (true){//pop.empty() && !noSpawn){
 	//	currSpawn++;
 		//if (spawnPoints[currSpawn].transition == true)  {
@@ -93,8 +96,8 @@ void Stage::update(){
 
 void Stage::		physUpdate(float delta){
 	entities.update(delta);
-	entities.printGrid ();
-	particles.update(delta); 
+	//entities.printGrid ();
+	//particles.update(delta); 
 	entities.checkCollisions();
 	entities.applyCollisions();
 }
@@ -114,7 +117,7 @@ void Stage::		rapidUpdate(float delta){
 	entities.aiUpdate(delta);
 	//actors.aiUpdate(delta);
 	//collisions.applyAdjustments(0); // need to disable above
-	particles.updateHP();
+
 
 }
 
@@ -129,8 +132,8 @@ void Stage::		draw(float delta){
 	drawPlayer();
 	propPool.batch(&entities);
 	propPool.draw(&entities);
-	particlePool.batch(&particles, delta);
-	particlePool.draw(&particles);
+	particlePool.batch(&entities, delta);
+	particlePool.draw(&entities);
  	enemyPool.batch(&entities, delta);
 	enemyPool.draw(&entities);
 	

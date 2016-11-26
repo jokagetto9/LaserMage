@@ -1,26 +1,26 @@
 <EnemyFile>
-  <Enemy name="Chucky" health="20" speed="2.5" >
+  <Enemy name="Chucky" health="20" speed="2.5" col="1.4" sep="3" avo="6" >
     <Animation texture="MOBS/chucky.png"></Animation>
 	 </Enemy>
-  <Enemy name="Gnome" health="20" speed="2.5"  >
+  <Enemy name="Gnome" health="20" speed="2.5" col="1.2" sep="2" avo="5" >
     <Animation texture="MOBS/gnome.png" grid="5x5" type="Walk20"></Animation>
   </Enemy>
-  <Enemy name="Dim" health="100" speed="2" >
+  <Enemy name="Dim" health="100" speed="2" col="1.4" sep="3" avo="6" >
     <Animation texture="MOBS/dim.png"></Animation>
 	</Enemy>
-  <Enemy name="Mimic" health="100" speed="2" >
+  <Enemy name="Mimic" health="100" speed="2" col="1.8" sep="3" avo="6" >
     <Animation texture="MOBS/mimic.png" end="13" scale="1.5" frames="12"></Animation>
 	 </Enemy>
-  <Enemy name="LaBomba" health="10" speed="2.5" >
+  <Enemy name="LaBomba" health="10" speed="2.5" col="1.8" sep="3" avo="6">
     <Animation texture="MOBS/labomba.png" end="7" scale="1.5" frames="12"></Animation>
   </Enemy>
-  <Enemy name="Mosquito" health="1" speed="2" >
+  <Enemy name="Mosquito" health="1" speed="2" col="0.5" sep="1.5" avo="5" >
     <Animation texture="MOBS/mosquito.png" end="5" scale="0.625" frames="12"></Animation>
   </Enemy>
-  <Enemy name="Trunkling" health="100" speed="0.6" sizeIndex="2">
+  <Enemy name="Trunkling" health="100" speed="0.6" col="2.2" sep="5" avo="8">
     <Animation texture="MOBS/trunkling.png" end="2" scale="2" grid="2x2" frames="60"></Animation>
   </Enemy>
-  <Enemy name="TonTon" health="100" speed="1.5" sizeIndex="2">
+  <Enemy name="TonTon" health="100" speed="1.5" col="2.2" sep="5" avo="8">
     <Animation texture="MOBS/tonton.png" end="2" scale="2" grid="2x2" frames="30"></Animation>
   </Enemy>
 </EnemyFile>

@@ -21,5 +21,6 @@ public:
 
 
 extern MonsterBook monBook;
+extern ActorList heroBook;
 
 #endif

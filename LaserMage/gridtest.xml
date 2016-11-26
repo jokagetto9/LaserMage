@@ -1,38 +1,42 @@
 <Stage name="GridTest" tile="0" >
 	<Map>
-    <a type="Stump" x=" -8" z ="-8"></a>
-    <a type="Stump" x=" -8" z ="8"></a>
-    <a type="Stump" x=" -8" z ="24"></a>
-    <a type="Stump" x=" -8" z ="40"></a>
-    <a type="Stump" x=" -8" z ="56"></a>
-    <a type="Stump" x=" 8" z ="-8"></a>
-    <a type="Stump" x=" 8" z ="8"></a>
-    <a type="Stump" x=" 8" z ="24"></a>
-    <a type="Stump" x=" 8" z ="40"></a>
-    <a type="Stump" x=" 8" z ="56"></a>
-    <a type="Stump" x=" 24" z ="-8"></a>
-    <a type="Stump" x=" 24" z ="8"></a>
-    <a type="Stump" x=" 24" z ="24"></a>
-    <a type="Stump" x=" 24" z ="40"></a>
-    <a type="Stump" x=" 24" z ="56"></a>
-    <a type="Stump" x=" 40" z ="-8"></a>
-    <a type="Stump" x=" 40" z ="8"></a>
-    <a type="Stump" x=" 40" z ="24"></a>
-    <a type="Stump" x=" 40" z ="40"></a>
-    <a type="Stump" x=" 40" z ="56"></a>
-    <a type="Stump" x=" 56" z ="-8"></a>
-    <a type="Stump" x=" 56" z ="8"></a>
-    <a type="Stump" x=" 56" z ="24"></a>
-    <a type="Stump" x=" 56" z ="40"></a>
-    <a type="Stump" x=" 56" z ="56"></a>
-    <a type="Stump" x=" 72" z ="-8"></a>
-    <a type="Stump" x=" 72" z ="8"></a>
-    <a type="Stump" x=" 72" z ="24"></a>
-    <a type="Stump" x=" 72" z ="40"></a>
-    <a type="Stump" x=" 72" z ="56"></a>
+    <a type="DeadTree" x=" -8" z ="-8"></a>
+    <a type="DeadTree" x=" -8" z ="8"></a>
+    <a type="DeadTree" x=" -8" z ="24"></a>
+    <a type="DeadTree" x=" -8" z ="40"></a>
+    <a type="DeadTree" x=" -8" z ="56"></a>
+    <a type="DeadTree" x=" 8" z ="-8"></a>
+    <a type="DeadTree" x=" 8" z ="8"></a>
+    <a type="DeadTree" x=" 8" z ="24"></a>
+    <a type="DeadTree" x=" 8" z ="40"></a>
+    <a type="DeadTree" x=" 8" z ="56"></a>
+    <a type="DeadTree" x=" 24" z ="-8"></a>
+    <a type="DeadTree" x=" 24" z ="8"></a>
+    <a type="DeadTree" x=" 24" z ="24"></a>
+    <a type="DeadTree" x=" 24" z ="40"></a>
+    <a type="DeadTree" x=" 24" z ="56"></a>
+    <a type="DeadTree" x=" 40" z ="-8"></a>
+    <a type="DeadTree" x=" 40" z ="8"></a>
+    <a type="DeadTree" x=" 40" z ="24"></a>
+    <a type="DeadTree" x=" 40" z ="40"></a>
+    <a type="DeadTree" x=" 40" z ="56"></a>
+    <a type="DeadTree" x=" 56" z ="-8"></a>
+    <a type="DeadTree" x=" 56" z ="8"></a>
+    <a type="DeadTree" x=" 56" z ="24"></a>
+    <a type="DeadTree" x=" 56" z ="40"></a>
+    <a type="DeadTree" x=" 56" z ="56"></a>
+    <a type="DeadTree" x=" 72" z ="-8"></a>
+    <a type="DeadTree" x=" 72" z ="8"></a>
+    <a type="DeadTree" x=" 72" z ="24"></a>
+    <a type="DeadTree" x=" 72" z ="40"></a>
+    <a type="DeadTree" x=" 72" z ="56"></a>
   </Map>
-  <SpawnPoint x="32" y="8">
-    <Wave dist="40" type="Gnome">1</Wave>
+  <SpawnPoint x="32" y="12">
+    <Wave dist="48"  type="Gnome">21</Wave>
+    <Wave dist="56"  type="Gnome">20</Wave>
+    <Wave dist="64"  type="Gnome">21</Wave>
+    <Wave dist="72"  type="Gnome">20</Wave>
+    <Wave dist="80"  type="Gnome">21</Wave>
   </SpawnPoint>
 </Stage>
 

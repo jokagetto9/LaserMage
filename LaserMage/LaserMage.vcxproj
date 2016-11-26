@@ -32,8 +32,6 @@
     <ClInclude Include="..\Code\BaseEngine\Entities\Dictionaries.h" />
     <ClInclude Include="..\Code\BaseEngine\Entities\DrawPool.h" />
     <ClInclude Include="..\Code\BaseEngine\Entities\EntityList.h" />
-    <ClInclude Include="..\Code\BaseEngine\Entities\Particles.h" />
-    <ClInclude Include="..\Code\BaseEngine\Entities\Props.h" />
     <ClInclude Include="..\Code\BaseEngine\lib.h" />
     <ClInclude Include="..\Code\BaseEngine\Stack\BaseMenuLoader.h" />
     <ClInclude Include="..\Code\BaseEngine\Stack\BaseStackManager.h" />
@@ -78,8 +76,6 @@
     <ClCompile Include="..\Code\BaseEngine\Entities\Dictionaries.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Entities\DrawPool.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Entities\EntityList.cpp" />
-    <ClCompile Include="..\Code\BaseEngine\Entities\Particles.cpp" />
-    <ClCompile Include="..\Code\BaseEngine\Entities\Props.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Stack\BaseMenuLoader.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Stack\BaseStackManager.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Stack\Menu.cpp" />
@@ -135,7 +131,9 @@
     <None Include="props.xml">
       <SubType>Designer</SubType>
     </None>
-    <None Include="shitshow.xml" />
+    <None Include="shitshow.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="stagelist.xml">
       <SubType>Designer</SubType>
     </None>

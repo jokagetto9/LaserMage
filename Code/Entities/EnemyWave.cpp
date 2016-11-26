@@ -43,6 +43,7 @@ void EnemyWave::	initRegion(bool left, int reg){
 
 void EnemyWave ::		generate(EntityList& enemies){
 	//Enemy e; e.init(enemy); 
+	Identity id = monBook.getID(type);
 	ID tex = monBook.getProfile(type).tex;
 	Rendering r(tex, 0); //set stats and anims
 	Animation a = monBook.anim[type];
@@ -55,12 +56,12 @@ void EnemyWave ::		generate(EntityList& enemies){
 		float theta = tempTheta+i*spacing;
 		v = radialOffset(origin, theta, dist);
 		l.place(v.x, v.z); 
-		enemies.createActor(type, r, l, m, a);
+		enemies.createActor(id, r, l, m, a);
 
 		if (mirrored && theta >= 0){
 			theta = -tempTheta-i*spacing;
 			v = radialOffset(origin, theta, dist);
-			l.place(v.x, v.z); enemies.createActor(type, r, l, m, a);
+			l.place(v.x, v.z); enemies.createActor(id, r, l, m, a);
 		}
 	}
 }

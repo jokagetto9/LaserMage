@@ -108,16 +108,10 @@
     <ClInclude Include="..\Code\Entities\MonsterBook.h">
       <Filter>Laser Entities</Filter>
     </ClInclude>
-    <ClInclude Include="..\Code\BaseEngine\Entities\Props.h">
-      <Filter>Base Entities</Filter>
-    </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Entities\Dictionaries.h">
       <Filter>Base Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Entities\DrawPool.h">
-      <Filter>Base Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\BaseEngine\Entities\Particles.h">
       <Filter>Base Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\BaseInputManager.h">
@@ -249,12 +243,6 @@
       <Filter>Base Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Entities\DrawPool.cpp">
-      <Filter>Base Entities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\BaseEngine\Entities\Particles.cpp">
-      <Filter>Base Entities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\BaseEngine\Entities\Props.cpp">
       <Filter>Base Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\BaseEngine.cpp">

@@ -25,16 +25,15 @@ public:
 	
 	void EntityLoader::addAnimation(rapidxml::xml_node<> * node, ParticleList * dict);
 	bool EntityLoader::loadShaderProfile(rapidxml::xml_attribute<> *a, ShaderProfile &sp);
-
-
-	
+		
 	void EntityLoader::loadAuxillary(rapidxml::xml_node<> * node);
 
 
 private: 
 	
-	ID enemyCount;
 	ID propCount;
+	ID enemyCount;
+	ID particleCount;
 	vector <string> propFiles;
 	vector <string> actorFiles;
 	vector <string> particleFiles;

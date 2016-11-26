@@ -27,7 +27,7 @@ class Stage {
 	//virtual void Stage::		saveMap(ofstream &saveFile){	}
 	//virtual void Stage::		load(ifstream &saveFile){}	
 	//virtual void Stage::		loadMap(ifstream &saveFile){ }
-
+	
 	void Stage::		loadMap();
 
 	
@@ -57,7 +57,6 @@ virtual void Stage::		rapidUpdate(float delta);
 		//Terrain terr;
 		ID p1;
 
-		Particles particles;
 		EntityList entities;
 
 		DrawPool enemyPool;
@@ -67,7 +66,7 @@ virtual void Stage::		rapidUpdate(float delta);
 		//Structures * structs;
 		string name;
 		ID baseTile;
-
+		
 //********************************* MEMBER FUNCTIONS *********************************
 		
 };

@@ -1,15 +1,15 @@
 <PropFile>
-  <Prop name="DarkBush" texture="TERRAIN/darkbush.png" sizeIndex="0" scale="5"></Prop>
-  <Prop name="DeadTree" texture="TERRAIN/deadtree.png" sizeIndex="3" scale="4"></Prop>
+  <Prop name="DarkBush" texture="TERRAIN/darkbush.png" col="3" sep="6" scale="5"></Prop>
+  <Prop name="DeadTree" texture="TERRAIN/deadtree.png" col="3" sep="6" scale="4"></Prop>
 	<Props texture="TERRAIN/forestdebris.png" scale="1.5" grid="2x2">
-		<Prop index="0" name="Stump" sizeIndex="2"></Prop>
-		<Prop index="1" name="Rock" sizeIndex="2"></Prop>
-		<Prop index="2" name="LeafPile" sizeIndex="0"></Prop>
-    <Prop index="3" name="DampSpot" sizeIndex="0"></Prop>
+		<Prop index="0" name="Stump" col="4" sep="7"></Prop>
+		<Prop index="1" name="Rock" col="3" sep="6"></Prop>
+		<Prop index="2" name="LeafPile" col="0" sep="2"></Prop>
+    <Prop index="3" name="DampSpot" col="0" sep="2"></Prop>
   </Props>
   <Props texture="TERRAIN/townobjects.png" scale="1.875" grid="2x2">
-    <Prop index="0" name="Well" sizeIndex="2"></Prop>
-    <Prop index="1" name="Boxes" sizeIndex="2"></Prop>
+    <Prop index="0" name="Well" col="3" sep="6"></Prop>
+    <Prop index="1" name="Boxes" col="3" sep="8"></Prop>
   </Props>
   <Props texture="TERRAIN/test25.png" grid="5x5">
     <Prop index="9" name="Test" ></Prop>

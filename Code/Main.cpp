@@ -51,12 +51,13 @@ void update(){
 
 	input.debugToggles();
 	if (!G->paused) {	
-		if (input.controls)
+		if (input.controls){
 			//input.directionInput()->exec(P.getActor(P1));
+		}
 		if (input.mouseL){
 			glm::vec3 c = C->corner();
 			XZI m = {(input.mX+0.5)*0.25+c.x, (input.mY+1)*0.25+c.z };	
-			currStage->addParticle(0, m);
+			currStage->addParticle(1, m);
 			input.mouseL = false;
 		}
 	}
@@ -146,8 +147,14 @@ void init(){
 		input.init(menuLoader);
 		menuLoader.load();
 		stack.loadStages(&stageLoader);
-
-
+		
+		Size size(3.2, 7, 8);
+		heroBook.addSize(size);
+		EntityList::addDict(&propList);
+		EntityList::addDict(&propList);
+		EntityList::addDict(&particleList);
+		EntityList::addDict(&monBook);
+		EntityList::addDict(&heroBook);
 	}  
 }
 
@@ -163,7 +170,7 @@ void initGlobals(){
 
 	G = BaseGameState::I();		
 	G->init();
-	G = G;	
+	G = G;	//??????
 	
 	env.init();
 	//init quest markers

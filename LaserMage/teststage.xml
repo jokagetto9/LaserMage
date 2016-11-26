@@ -1,9 +1,17 @@
-<Stage name="TestStage" tile="0" >
+<Stage name="EmptyStage" tile="0" >
 	<Map>
-    <a type="Test" x="48" z ="12"></a>
+    <a type="DarkBush" x="0" z ="20"></a>
+    <a type="DarkBush" x="14" z ="12"></a>
+    <a type="DarkBush" x="24" z ="8"></a>
+    <a type="DarkBush" x="40" z ="8"></a>
+    <a type="DarkBush" x="50" z ="12"></a>
+    <a type="DarkBush" x="64" z ="20"></a>
+    <a type="DeadTree" x="16" z ="30"></a>
+    <a type="DeadTree" x="52" z ="34"></a>
   </Map>
   <SpawnPoint x="32" y="20">
-    <Wave dist="50"  ctheta="90" spacing="20" type="Gnome">1</Wave>
+    <Wave dist="50" ctheta="270" type="Mosquito">5</Wave>
+    <Wave dist="50" ctheta="90" type="Mosquito">1</Wave>
   </SpawnPoint>
 </Stage>
 
