@@ -11,6 +11,13 @@ EnemyWave::			EnemyWave(){
 	centerTheta = 0;
 	spacing = 10;
 	dist = 50;
+	trigInd = -1;
+	trigTime = 0;
+	trigRat = 100;
+
+	activated = false;
+	count = 0;
+	members.reserve(10);
 }
 
 
@@ -23,6 +30,14 @@ void EnemyWave::	init(int q, float d){
 void EnemyWave::	configure(float c, float t){
 	spacing = c;
 	centerTheta = t;
+}
+
+
+
+void EnemyWave::	reset(){
+	activated = false;
+	count = 0;
+	members.clear();
 }
 
 
@@ -42,6 +57,7 @@ void EnemyWave::	initRegion(bool left, int reg){
 }
 
 void EnemyWave ::		generate(EntityList& enemies){
+	reset();
 	//Enemy e; e.init(enemy); 
 	Identity id = monBook.getID(type);
 	ID tex = monBook.getProfile(type).tex;
@@ -56,12 +72,42 @@ void EnemyWave ::		generate(EntityList& enemies){
 		float theta = tempTheta+i*spacing;
 		v = radialOffset(origin, theta, dist);
 		l.place(v.x, v.z); 
-		enemies.createActor(id, r, l, m, a);
+		trackMembers(enemies.createActor(id, r, l, m, a));
 
 		if (mirrored && theta >= 0){
 			theta = -tempTheta-i*spacing;
 			v = radialOffset(origin, theta, dist);
-			l.place(v.x, v.z); enemies.createActor(id, r, l, m, a);
+			l.place(v.x, v.z); 
+			trackMembers(enemies.createActor(id, r, l, m, a));
 		}
 	}
+}
+
+
+bool EnemyWave:: waveCriteria(vector<EnemyWave>& enemies){
+	if ( trigInd < 0){
+		return trigTime <= 0;
+	}else {
+		try{
+			return enemies.at(trigInd).isComplete(trigRat);
+		}catch(...){
+			cout << "Broken Wave  ";
+		}
+	}
+}
+
+void EnemyWave::	trackMembers(ID ind){
+	members.push_back(ind);
+	count ++;
+}
+
+
+bool EnemyWave:: isComplete(float rat){	
+	float s = size();
+	float perc = (float)(s/count);
+	float goal = (float)(1 - rat/100);
+	if ( perc <= goal){
+		return true;
+	}else
+		return false;
 }

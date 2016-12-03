@@ -1,15 +1,15 @@
 <EnemyFile>
   <Enemy name="Chucky" health="20" speed="2.5" col="1.4" sep="3" avo="6" >
-    <Animation texture="MOBS/chucky.png"></Animation>
+    <Animation texture="MOBS/chucky.png" frames="20"></Animation>
 	 </Enemy>
   <Enemy name="Gnome" health="20" speed="2.5" col="1.2" sep="2" avo="5" >
-    <Animation texture="MOBS/gnome.png" grid="5x5" type="Walk20"></Animation>
+    <Animation texture="MOBS/gnome.png" grid="5x5" type="Walk20" ></Animation>
   </Enemy>
   <Enemy name="Dim" health="100" speed="2" col="1.4" sep="3" avo="6" >
     <Animation texture="MOBS/dim.png"></Animation>
 	</Enemy>
   <Enemy name="Mimic" health="100" speed="2" col="1.8" sep="3" avo="6" >
-    <Animation texture="MOBS/mimic.png" end="13" scale="1.5" frames="12"></Animation>
+    <Animation texture="MOBS/mimic.png" end="13" scale="1.5" frames="20"></Animation>
 	 </Enemy>
   <Enemy name="LaBomba" health="10" speed="2.5" col="1.8" sep="3" avo="6">
     <Animation texture="MOBS/labomba.png" end="7" scale="1.5" frames="12"></Animation>

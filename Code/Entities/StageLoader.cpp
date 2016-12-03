@@ -40,7 +40,7 @@ void StageLoader::loadStage(ID id){
 					if (s == "Map"){
 						loadMap(n, stage);
 					} else if (s == "SpawnPoint"){
-						stage.addSpawnPoint(buildSpawnpoint(n));
+						buildSpawnpoint(n, stage);
 					}
 				}
 				if (success) stages.push_back(stage);
@@ -75,7 +75,7 @@ void StageLoader::loadMap(rapidxml::xml_node<> * node, Stage &stage){
 }
 
 
-SpawnPoint StageLoader::buildSpawnpoint(rapidxml::xml_node<> * node){
+void StageLoader::buildSpawnpoint(rapidxml::xml_node<> * node, Stage &stage){
 	rapidxml::xml_attribute<> *a;
 	rapidxml::xml_node<> *n;
 	SpawnPoint spawn;
@@ -90,13 +90,13 @@ SpawnPoint StageLoader::buildSpawnpoint(rapidxml::xml_node<> * node){
 	}
 	for (n = node->first_node(); n; n = n->next_sibling()){
 		if (getText(n->name()) == "Wave"){
-			spawn.addWave(buildWave(n));
+			spawn.addWave(buildWave(n, stage));
 		}
 	}	
-	return spawn;
+	stage.addSpawnPoint(spawn);
 }
 
-EnemyWave StageLoader::buildWave(rapidxml::xml_node<> * node){
+ID StageLoader::buildWave(rapidxml::xml_node<> * node, Stage &stage){
 	rapidxml::xml_attribute<> *a;
 	EnemyWave wave;
 	wave.quantity = getInt(node->value());
@@ -113,9 +113,15 @@ EnemyWave StageLoader::buildWave(rapidxml::xml_node<> * node){
 			wave.centerTheta = getInt(a->value());
 		}else if (s == "spacing"){
 			wave.spacing = getInt(a->value());
+		}else if (s == "index"){
+			wave.trigInd = getInt(a->value());
+		}else if (s == "timer"){
+			wave.trigTime = getFloat(a->value());
+		}else if (s == "ratio"){
+			wave.trigRat = getFloat(a->value());
 		}
 	}
-	return wave;
+	return stage.addWave(wave);
 }
 
 

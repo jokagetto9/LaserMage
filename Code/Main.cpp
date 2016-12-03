@@ -147,8 +147,8 @@ void init(){
 		input.init(menuLoader);
 		menuLoader.load();
 		stack.loadStages(&stageLoader);
-		
-		Size size(3.2, 7, 8);
+		//HEROSTATS
+		Size size(4, 7, 8);
 		heroBook.addSize(size);
 		EntityList::addDict(&propList);
 		EntityList::addDict(&propList);

@@ -14,7 +14,6 @@
     <ClInclude Include="..\Code\BaseEngine\BaseEngine.h" />
     <ClInclude Include="..\Code\BaseEngine\BaseGameState.h" />
     <ClInclude Include="..\Code\BaseEngine\BaseInputManager.h" />
-    <ClInclude Include="..\Code\BaseEngine\Command.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\Animation.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\CollisionSet.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\Component.h" />
@@ -37,6 +36,8 @@
     <ClInclude Include="..\Code\BaseEngine\Stack\BaseStackManager.h" />
     <ClInclude Include="..\Code\BaseEngine\Stack\MCommand.h" />
     <ClInclude Include="..\Code\BaseEngine\Stack\Menu.h" />
+    <ClInclude Include="..\Code\BaseEngine\Template\Command.h" />
+    <ClInclude Include="..\Code\BaseEngine\Template\SubObj.h" />
     <ClInclude Include="..\Code\BaseEngine\XMLParser.h" />
     <ClInclude Include="..\Code\DebugTool.h" />
     <ClInclude Include="..\Code\Display\Environment.h" />
@@ -54,10 +55,10 @@
     <ClInclude Include="..\Code\Entities\SpawnPoint.h" />
     <ClInclude Include="..\Code\Entities\Stage.h" />
     <ClInclude Include="..\Code\Entities\StageLoader.h" />
+    <ClInclude Include="..\Code\Event\WaveTracker.h" />
     <ClInclude Include="..\Code\InputManager.h" />
     <ClInclude Include="..\Code\Laser\Laser.h" />
     <ClInclude Include="..\Code\Laser\LaserCommand.h" />
-    <ClInclude Include="..\Code\Stack\MenuLoader.h" />
     <ClInclude Include="..\Code\Stack\StackManager.h" />
   </ItemGroup>
   <ItemGroup>
@@ -98,10 +99,10 @@
     <ClCompile Include="..\Code\InputManager.cpp" />
     <ClCompile Include="..\Code\Laser\Laser.cpp" />
     <ClCompile Include="..\Code\Main.cpp" />
-    <ClCompile Include="..\Code\Stack\MenuLoader.cpp" />
     <ClCompile Include="..\Code\Stack\StackManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="circleswarm.xml" />
     <None Include="cursors.xml">
       <SubType>Designer</SubType>
     </None>
@@ -109,19 +110,15 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="entitylist.xml" />
-    <None Include="forest.xml">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="forest2.xml">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="gridtest.xml" />
+    <None Include="forest1.xml" />
+    <None Include="intense.xml" />
     <None Include="intro.xml">
       <SubType>Designer</SubType>
     </None>
     <None Include="menulist.xml">
       <SubType>Designer</SubType>
     </None>
+    <None Include="obstacles.xml" />
     <None Include="particles.xml">
       <SubType>Designer</SubType>
     </None>
@@ -131,13 +128,7 @@
     <None Include="props.xml">
       <SubType>Designer</SubType>
     </None>
-    <None Include="shitshow.xml">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="stagelist.xml">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="teststage.xml">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

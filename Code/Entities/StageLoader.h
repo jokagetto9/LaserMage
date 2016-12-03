@@ -14,8 +14,8 @@ public:
 	Stage * StageLoader::getStage(ID id);
 
 	void StageLoader::loadMap(rapidxml::xml_node<> * node, Stage &stage);
-	SpawnPoint StageLoader::buildSpawnpoint(rapidxml::xml_node<> * node);
-	EnemyWave StageLoader::buildWave(rapidxml::xml_node<> * node);
+	void StageLoader::buildSpawnpoint(rapidxml::xml_node<> * node, Stage &stage);
+	ID StageLoader::buildWave(rapidxml::xml_node<> * node, Stage &stage);
 
 
 

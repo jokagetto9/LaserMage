@@ -6,32 +6,31 @@ Stage::Stage(){
 	name = "___";
 	baseTile = 0;
 	curSpawn = 0;
+	curWave = 0;
 	entities.setGridSize(6, 5);
 	atSpawn = false; 
+	spawnLoaded = false;
+
 }
 
 void Stage:: init(){
-	if (entities.state.size() != 300){
+	if (entities.death.observers.size() < 1){
+		entities.death.addObserver(&wTracker);
 		entities.reserve(300);
 	}
 	curSpawn = 0;
 	 
 	atSpawn = false;
+	spawnLoaded = false;
 	entities.clear();	
 	entities.clearGrid();
-	createPlayer(32, 10);
+	createPlayer();
 
 	enemyPool.init(&monBook);
 	propPool.init(&propList);
 	particlePool.init(&particleList);
 	loadMap();
-	for (int i = 0; i < spawns.size(); i++){ 
-		int waves = spawns[i].waves.size();
-		for(int j = 0; j < waves; j++){
-			spawns[i].waves[j].origin = spawns[i].pos(); //NEWBRANCH SPAWNTRIGGERS
-			spawns[i].waves[j].generate(entities);
-		}
-	}	
+	update();
 }
 
 bool Stage::	validate(){
@@ -48,15 +47,15 @@ void Stage::		loadMap(){
 }
 
 
-void Stage::createPlayer(int x, int z){
+void Stage::createPlayer(){
 	Rendering r; //set stats and anims
-	Animation a;
+	Animation a; 
 	Motion m;
 	Location l; 
-	l.place(x, z);
 	p1 = entities.nextFree();
 	Identity i = {"LaserMage", p1, 0, 4};
 	entities.createActor(i, r, l, m, a);
+	entities.health[p1].health = 100;
 }
 
 
@@ -73,28 +72,82 @@ void Stage::addParticle(ID type, XZI targ){
 //********************************* UPDATES *********************************
 
 void Stage::update(){
+	if ( curSpawn >= 0 && curSpawn < spawns.size()){
+		SpawnPoint & sp = spawns[curSpawn];
+		glm::vec3 pos = entities.getPos(p1);
 
+		if (!spawnLoaded){
+			if (curSpawn == 0)
+				entities.location[p1].place(sp.pos());
 
+			int w = sp.waves.size();
+			for(int j = 0; j < w; j++){
+				ID cw = sp.waves[j];
+				wTracker.waves[cw].origin = sp.pos(); 
+				wTracker.waves[cw].generate(entities);
+			}
+			spawnLoaded = true;
+		}
+		if (!atSpawn){
+			glm::vec3 v = sp.pos();
+			if (pos.z < v.z-0.25){
+				entities.target[p1].setTarget(v);
+			} else {	
+				atSpawn = true;	
+				entities.target[p1].noTarget();	
+			}
+		}
+		
+		if (atSpawn ){
+			updateWave();
+		}
 
-
-
-
-	if (true){//pop.empty() && !noSpawn){
-	//	currSpawn++;
-		//if (spawnPoints[currSpawn].transition == true)  {
-			//H->updateTarget(spawnPoints[currSpawn+1]);
-
-		//}
-//	}
-	//if (at target){
-		//pop.loadSpawnPoint(spawnPoints[currSpawn]);
-		//if (spawnPoints[currSpawn].transition == true)
 	}
-	//pop.update();
+}
+//sp0 feeds into hero origin
+//check sp for waves -> spawn all
+//if hero at target // trigger waves
+//check wave triggers
+//if trigger waves = -1 
+	//count down - activate wave
+//else return trigger wave->check killed -> activate
+
+//when death remove from wave
+
+
+void Stage::updateWave(){
+	bool wavesComplete = true;
+	SpawnPoint & sp = spawns[curSpawn];
+	glm::vec3 pos = entities.getPos(p1);
+	for( ID i = 0; i < sp.waves.size(); i++){
+		ID waveInd = sp.waves[i];
+		EnemyWave &ew = getWave(waveInd);
+		if (!ew.activated){
+			if (ew.waveCriteria(wTracker.waves)){
+				int s = ew.size();
+				for (ID j = 0; j < s; j++){
+					curWave++;
+					ID entInd = ew.members[j]; 
+					entities.setTarget(entInd, pos);
+					entities.gData[entInd].setGroup(waveInd);
+				}
+				ew.activated = true;
+			}
+		}
+		if (ew.activated && ew.size()){			
+			wavesComplete = false;
+		}
+		
+	}
+	if (wavesComplete) {
+		atSpawn = false;
+		spawnLoaded = false;
+		curSpawn++;
+	}
 }
 
-
 void Stage::		physUpdate(float delta){
+	update();
 	entities.update(delta);
 	//entities.printGrid ();
 	//particles.update(delta); 
@@ -102,18 +155,6 @@ void Stage::		physUpdate(float delta){
 	entities.applyCollisions();
 }
 void Stage::		rapidUpdate(float delta){
-	glm::vec3 pos = entities.getPos(p1);
-	glm::vec3 v = spawns[curSpawn].pos();
-	if (pos.z < v.z-0.25){
-		entities.target[p1].setTarget(v);
-	} else if (!atSpawn){		
-		entities.target[p1].noTarget();
-		//getSpawncount;
-		//actors.activate(14, P->pos());
-		//actors.activateAll(P->pos());
-		entities.activateAll(p1);
-		atSpawn = true;
-	}
 	entities.aiUpdate(delta);
 	//actors.aiUpdate(delta);
 	//collisions.applyAdjustments(0); // need to disable above
@@ -154,4 +195,21 @@ void Stage::		drawPlayer(){
 	M->gridBO.prepHero();
 	//refresh(P1);  
 	entities.draw(p1);	
+}
+
+
+
+		
+//********************************* MEMBER FUNCTIONS *********************************
+
+
+
+
+
+EnemyWave& Stage::		getWave(ID id){
+	try{
+		return wTracker.waves.at(id);
+	}catch(...){
+		cout << "Broken Wave  ";
+	}
 }

@@ -1,9 +1,0 @@
-<Stage name="Forest2" tile="0" >
-	<Map>
-  </Map>
-  <SpawnPoint x="32" y="20">
-    <Wave dist="40" type="Gnome">5</Wave>
-  </SpawnPoint>
-</Stage>
-
-

@@ -34,6 +34,12 @@
     <Filter Include="Components">
       <UniqueIdentifier>{48d38527-c674-407f-b58b-977e6d81e235}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Base Engine\Template">
+      <UniqueIdentifier>{802682fd-272f-4f76-9932-128f5fe6ef80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Laser Engine\Events">
+      <UniqueIdentifier>{a87035bd-528a-41dc-af34-9ad979f4a9b9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Code\Display\Shaders\MenuShader.h">
@@ -123,9 +129,6 @@
     <ClInclude Include="..\Code\BaseEngine\BaseGameState.h">
       <Filter>Base Engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\Code\BaseEngine\Command.h">
-      <Filter>Base Engine</Filter>
-    </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\lib.h">
       <Filter>Base Engine</Filter>
     </ClInclude>
@@ -153,9 +156,6 @@
     <ClInclude Include="..\Code\BaseEngine\Stack\Menu.h">
       <Filter>Stack\Base</Filter>
     </ClInclude>
-    <ClInclude Include="..\Code\Stack\MenuLoader.h">
-      <Filter>Stack\Base</Filter>
-    </ClInclude>
     <ClInclude Include="..\Code\Laser\Laser.h">
       <Filter>Laser Entities\Laser</Filter>
     </ClInclude>
@@ -179,6 +179,15 @@
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Swarming.h">
       <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Template\Command.h">
+      <Filter>Base Engine\Template</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Template\SubObj.h">
+      <Filter>Base Engine\Template</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Event\WaveTracker.h">
+      <Filter>Laser Engine\Events</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -275,9 +284,6 @@
     <ClCompile Include="..\Code\BaseEngine\Stack\Menu.cpp">
       <Filter>Stack\Base</Filter>
     </ClCompile>
-    <ClCompile Include="..\Code\Stack\MenuLoader.cpp">
-      <Filter>Stack\Base</Filter>
-    </ClCompile>
     <ClCompile Include="..\Code\Laser\Laser.cpp">
       <Filter>Laser Entities\Laser</Filter>
     </ClCompile>
@@ -325,22 +331,19 @@
     <None Include="enemies.xml">
       <Filter>~Content</Filter>
     </None>
-    <None Include="forest.xml">
-      <Filter>~Content</Filter>
-    </None>
-    <None Include="forest2.xml">
-      <Filter>~Content</Filter>
-    </None>
-    <None Include="teststage.xml">
-      <Filter>~Content</Filter>
-    </None>
-    <None Include="shitshow.xml">
-      <Filter>~Content</Filter>
-    </None>
     <None Include="particles.xml">
       <Filter>~Content</Filter>
     </None>
-    <None Include="gridtest.xml">
+    <None Include="circleswarm.xml">
+      <Filter>~Content</Filter>
+    </None>
+    <None Include="forest1.xml">
+      <Filter>~Content</Filter>
+    </None>
+    <None Include="intense.xml">
+      <Filter>~Content</Filter>
+    </None>
+    <None Include="obstacles.xml">
       <Filter>~Content</Filter>
     </None>
   </ItemGroup>

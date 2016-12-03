@@ -1,0 +1,44 @@
+<Stage name="StartingForest" tile="0" >
+  <Map>
+    <a type="DeadTree" x=" 8" z ="8"></a>
+    <a type="DeadTree" x=" 24" z ="8"></a>
+    <a type="DeadTree" x=" 40" z ="8"></a>
+    <a type="DeadTree" x=" 56" z ="8"></a>
+    <a type="DeadTree" x=" 8" z ="24"></a>
+    <a type="DeadTree" x=" 24" z ="24"></a>
+    <a type="DeadTree" x=" 40" z ="24"></a>
+    <a type="DeadTree" x=" 56" z ="24"></a>
+    <a type="DeadTree" x=" 8" z ="40"></a>
+    <a type="DeadTree" x=" 24" z ="40"></a>
+    <a type="DeadTree" x=" 40" z ="40"></a>
+    <a type="DeadTree" x=" 56" z ="40"></a>
+    <a type="DeadTree" x=" 8" z ="56"></a>
+    <a type="DeadTree" x=" 24" z ="56"></a>
+    <a type="DeadTree" x=" 40" z ="56"></a>
+    <a type="DeadTree" x=" 56" z ="56"></a>
+    <a type="DeadTree" x=" 8" z ="72"></a>
+    <a type="DeadTree" x=" 24" z ="72"></a>
+    <a type="DeadTree" x=" 40" z ="72"></a>
+    <a type="DeadTree" x=" 56" z ="72"></a>
+    <a type="DeadTree" x=" 8" z ="88"></a>
+    <a type="DeadTree" x=" 24" z ="88"></a>
+    <a type="DeadTree" x=" 40" z ="88"></a>
+    <a type="DeadTree" x=" 56" z ="88"></a>
+  </Map>
+<SpawnPoint x="32" y="12">
+    <Wave dist="28" type="Gnome">3</Wave>
+    <Wave dist="36" type="Gnome">6</Wave>
+    <Wave dist="44" index="0" type="Gnome">6</Wave>
+    <Wave dist="48" index="1" type="Gnome">6</Wave>
+    <Wave dist="52" index="1" type="Gnome">6</Wave>
+  </SpawnPoint>
+  <SpawnPoint x="32" y="56">
+    <Wave dist="28" type="Gnome">3</Wave>
+    <Wave dist="36" type="Gnome">6</Wave>
+    <Wave dist="44" type="Gnome">6</Wave>
+    <Wave dist="48" type="Gnome">6</Wave>
+    <Wave dist="52" type="Gnome">6</Wave>
+  </SpawnPoint>
+</Stage>
+
+

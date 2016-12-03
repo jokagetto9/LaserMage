@@ -12,18 +12,14 @@
 class SpawnPoint : public Location {
 	public: 
 	SpawnPoint::			SpawnPoint();
-	void SpawnPoint::		addWave(EnemyWave & w);
+	void SpawnPoint::		addWave(ID w);
 	bool SpawnPoint::	validate();
 
 	
 //********************************* MEMBERS *********************************
-	vector <EnemyWave> waves;
+	vector <ID> waves;
 
 
-	int currWave;
-	bool empty; //starting point? ending point?
-	//timer
-	//enemies remaining
 
 //********************************* MEMBER FUNCTIONS *********************************
 

@@ -1,4 +1,4 @@
-<Stage name="GridTest" tile="0" >
+<Stage name="IntenseForest" tile="0" >
 	<Map>
     <a type="DeadTree" x=" -8" z ="-8"></a>
     <a type="DeadTree" x=" -8" z ="8"></a>
@@ -32,12 +32,24 @@
     <a type="DeadTree" x=" 72" z ="56"></a>
   </Map>
   <SpawnPoint x="32" y="12">
-    <Wave dist="48"  type="Gnome">21</Wave>
-    <Wave dist="56"  type="Gnome">20</Wave>
-    <Wave dist="64"  type="Gnome">21</Wave>
-    <Wave dist="72"  type="Gnome">20</Wave>
-    <Wave dist="80"  type="Gnome">21</Wave>
+    <Wave dist="50"  type="Chucky">8</Wave>
+    <Wave dist="72"  type="Gnome">12</Wave>
+    <Wave dist="120"  type="Chucky">10</Wave>
+    <Wave dist="180"  type="Gnome">14</Wave>
+    <Wave dist="250"  type="Chucky">20</Wave>
+    <Wave dist="300"  type="Gnome">20</Wave>
+    <Wave dist="380"  type="Chucky">2</Wave>
+    <Wave dist="390"  type="Gnome">5</Wave>
+    <Wave dist="400"  type="Chucky">7</Wave>
+    <Wave dist="410"  type="Gnome">9</Wave>
+    <Wave dist="430"  type="Chucky">12</Wave>
+    <Wave dist="450"  type="Gnome">15</Wave>
+    <Wave dist="470"  type="Chucky">15</Wave>
+    <Wave dist="490"  type="Gnome">15</Wave>
+    <Wave dist="520"  type="Chucky">6</Wave>
+    <Wave dist="530"  type="LaBomba">30</Wave>
   </SpawnPoint>
+
 </Stage>
 
 
