@@ -3,6 +3,6 @@
     <Animation texture="EFFECT/wrench.png" end="2" scale="1" grid="2x2" frames="16"></Animation>
   </Particle>
   <Particle name="Flame" speed="10" accel="4" col="2.5" sep="6">
-    <Animation texture="EFFECT/flame.png" end="2" scale="1" grid="2x2" frames="20"></Animation>
+    <Animation texture="EFFECT/flame.png" end="3" scale="1" grid="2x2" frames="20"></Animation>
   </Particle>
 </ParticleList>
