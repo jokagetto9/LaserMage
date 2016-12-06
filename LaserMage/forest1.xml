@@ -29,8 +29,9 @@
     <Wave dist="28" type="Gnome">3</Wave>
     <Wave dist="36" type="Gnome">6</Wave>
     <Wave dist="44" index="0" type="Gnome">6</Wave>
-    <Wave dist="48" index="1" type="Gnome">6</Wave>
+    <Wave dist="48" index="1" spacing="90" type="TonTon">2</Wave>
     <Wave dist="52" index="1" type="Gnome">6</Wave>
+    <Wave dist="52" index="2" spacing="90" type="TonTon">2</Wave>
   </SpawnPoint>
   <SpawnPoint x="32" y="56">
     <Wave dist="28" type="Gnome">3</Wave>

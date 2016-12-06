@@ -106,6 +106,7 @@ void EntityLoader::buildProps(rapidxml::xml_node<> * node){
 	ID tex = 0;
 	Rendering r;
 	Size size;
+	Health health;
 	ShaderProfile sp = {0, 1, G2x2};
 	for (a = node->first_attribute(); a; a = a->next_attribute())
 		loadShaderProfile(a, sp);
@@ -125,13 +126,16 @@ void EntityLoader::buildProps(rapidxml::xml_node<> * node){
 					else if (s == "avo")
 						size.avoR = getFloat(a->value());							
 					else if (s == "index")
-						r.texIndex = getInt(a->value());
+						r.texIndex = getInt(a->value());	
+					else if (s == "maxhp")		
+						health.set(getInt(a->value()));
 				}
 				r.tex = sp.tex;
 				propList.addIdentity(identity);
 				propList.addProfileIndex(propList.profileCount()-1); 
 				propList.addSize(size); 
 				propList.addRendering(r);
+				propList.addHealth(health); 
 			} 
 		}
 }
@@ -166,6 +170,7 @@ void EntityLoader::buildActor(rapidxml::xml_node<> * node){
 	Identity identity = {"", 255, -1, 3};
 	MotionMax mm = {1, 1};	
 	Size size;
+	Health health;
 	for (a = node->first_attribute(); a; a = a->next_attribute()){
 		string s = getText(a->name());
 		if (s == "name"){
@@ -180,12 +185,15 @@ void EntityLoader::buildActor(rapidxml::xml_node<> * node){
 		else if (s == "sep")
 			size.sepR = getFloat(a->value());	
 		else if (s == "avo")
-			size.avoR = getFloat(a->value());				
+			size.avoR = getFloat(a->value());		
+		else if (s == "maxhp")		
+			health.set(getInt(a->value()));
 	}
 	if (true) {			
 		monBook.addSize(size); 
 		monBook.addIdentity(identity);
 		monBook.addMotion(mm); 
+		monBook.addHealth(health); 
 	}
 }
 
@@ -220,6 +228,7 @@ void EntityLoader::buildParticle(rapidxml::xml_node<> * node){
 	Identity identity = {"", 255, -1, 2};
 	MotionMax mm = {1, 1};	
 	Size size;
+	Health health;
 	for (a = node->first_attribute(); a; a = a->next_attribute()){
 		string s = getText(a->name());
 		if (s == "name"){
@@ -235,11 +244,14 @@ void EntityLoader::buildParticle(rapidxml::xml_node<> * node){
 			size.sepR = getFloat(a->value());	
 		else if (s == "avo")
 			size.avoR = getFloat(a->value());
+		else if (s == "maxhp")
+			health.set(getInt(a->value()));
 	}
 	if (true) {			
 		particleList.addSize(size); 
 		particleList.addIdentity(identity);
 		particleList.addMotion(mm); 
+		particleList.addHealth(health); 
 	}
 }
 
@@ -275,6 +287,7 @@ void EntityLoader::addAnimation(rapidxml::xml_node<> * node, ParticleList * dict
 	ID min = 0; ID max = 3;
 	ID frames = 20;
 	Animation anim;
+
 	ShaderProfile sp = {0, 1, G4x4};
 	bool cyclic = false;
 	for (a = node->first_attribute(); a; a = a->next_attribute()){	

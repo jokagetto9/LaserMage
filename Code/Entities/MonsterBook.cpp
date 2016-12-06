@@ -1,3 +1,3 @@
 #include "MonsterBook.h"
-ActorList heroBook;
-MonsterBook monBook;
+ParticleList monBook;
+ParticleList heroBook;

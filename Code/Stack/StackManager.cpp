@@ -53,3 +53,13 @@ void StackManager::setMenu(int flow){
 	} else 
 		 BaseStackManager::setMenu(flow);
 }
+
+
+
+void StackManager::	drawHUD(){
+
+	hud.draw();
+
+
+
+}

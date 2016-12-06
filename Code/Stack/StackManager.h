@@ -4,6 +4,7 @@
 //#include "MenuLoader.h"
 #include "../BaseEngine/Stack/BaseStackManager.h"
 #include "../Entities/StageLoader.h"
+#include "../Stack/HUDMenu.h"
 
 
 //********************************* CONSTANTS *********************************
@@ -15,5 +16,9 @@ public:
 	StackManager::StackManager();
 	void StackManager::loadStages(StageLoader* stages);
 	void StackManager::setMenu(int flow);
+	void StackManager::	drawHUD();
+
+	HUDMenu hud;
+
 };
 #endif

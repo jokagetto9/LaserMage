@@ -102,6 +102,7 @@ void clockCycle(){
 void physicsUpdate(){	
 	input.cameraInput();
 	currStage->physUpdate(eng.physDelta);
+	stack.hud.update(currStage->p1, currStage->entities);
 }
 
 void rapidUpdate(){
@@ -116,17 +117,20 @@ void display(){
 	float c = 0/255;
 	glClearColor(c, c, c, 1);	
 	eng.clearDisplay();
-	//
+	
 	if(!G->paused || !stack.backdrop()){
 		currStage->draw(eng.avgFrameDelta); 
-	}//*/
+	}
 		
 	stack.setUp2DView(RES.x, RES.z);
 	//debug.drawDebugConsole(eng.avgFPS);
-	if(G->paused) 
-		stack.draw();
-	else
+
+	if(!G->paused || !stack.backdrop()){
 		stack.drawHUD();
+	}
+	if (G->paused) 
+		stack.draw();
+
 	stack.disable2DView();
 } 
 
@@ -147,6 +151,7 @@ void init(){
 		input.init(menuLoader);
 		menuLoader.load();
 		stack.loadStages(&stageLoader);
+		stack.hud.init();
 		//HEROSTATS
 		Size size(4, 7, 8);
 		heroBook.addSize(size);

@@ -55,7 +55,11 @@ void Stage::createPlayer(){
 	p1 = entities.nextFree();
 	Identity i = {"LaserMage", p1, 0, 4};
 	entities.createActor(i, r, l, m, a);
-	entities.health[p1].health = 100;
+
+	//EntityXZ e = {1, 0, 0};
+	//p1 = entities.nextFree();
+	//entities.createActor(monBook, e);
+	//entities.gData[p1].ent = 4;
 }
 
 
@@ -177,11 +181,30 @@ void Stage::		draw(float delta){
 	particlePool.draw(&entities);
  	enemyPool.batch(&entities, delta);
 	enemyPool.draw(&entities);
+	drawHealthBars();
 	
 	C->drawCursor();
 }
 
+//healthbars
+void Stage::		drawHealthBars(){
+	ID s = entities.state.size();
+	for (ID i = 0; i < s; i++){
+		if (entities.state[i]->on() && entities.gData[i].ent == 3){
+			int hi = ceil(entities.health[i].percent()*10); 
+			if (hi > 0 && hi < 10){					
+				entities.location[i].translate();
+					float scale = monBook.getProfile(entities.gData[i].type).scale * 2;
+					M->gridBO.prep(monBook.getProfile(0)); 
+					M->gridBO.offsetTexture(0, scale+2);	
+					M->gridBO.drawGrid(hi);		
+				glPopMatrix(); //}	
+			}
+		}
+	}	
 
+
+}
 void Stage::		drawTerrain(){	
 	glDisable(GL_DEPTH_TEST);
 	M->tileBO.use();	

@@ -20,7 +20,7 @@ public:
 };
 
 
-extern MonsterBook monBook;
-extern ActorList heroBook;
+extern ParticleList monBook;
+extern ParticleList heroBook;
 
 #endif

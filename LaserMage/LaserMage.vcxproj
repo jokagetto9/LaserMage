@@ -59,6 +59,7 @@
     <ClInclude Include="..\Code\InputManager.h" />
     <ClInclude Include="..\Code\Laser\Laser.h" />
     <ClInclude Include="..\Code\Laser\LaserCommand.h" />
+    <ClInclude Include="..\Code\Stack\HUDMenu.h" />
     <ClInclude Include="..\Code\Stack\StackManager.h" />
   </ItemGroup>
   <ItemGroup>
@@ -99,6 +100,7 @@
     <ClCompile Include="..\Code\InputManager.cpp" />
     <ClCompile Include="..\Code\Laser\Laser.cpp" />
     <ClCompile Include="..\Code\Main.cpp" />
+    <ClCompile Include="..\Code\Stack\HUDMenu.cpp" />
     <ClCompile Include="..\Code\Stack\StackManager.cpp" />
   </ItemGroup>
   <ItemGroup>

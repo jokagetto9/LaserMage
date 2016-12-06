@@ -189,6 +189,9 @@
     <ClInclude Include="..\Code\Event\WaveTracker.h">
       <Filter>Laser Engine\Events</Filter>
     </ClInclude>
+    <ClInclude Include="..\Code\Stack\HUDMenu.h">
+      <Filter>Stack</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Code\Display\Shaders\MenuShader.cpp">
@@ -304,6 +307,9 @@
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Components\Swarming.cpp">
       <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Stack\HUDMenu.cpp">
+      <Filter>Stack</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -59,26 +59,26 @@ void EnemyWave::	initRegion(bool left, int reg){
 void EnemyWave ::		generate(EntityList& enemies){
 	reset();
 	//Enemy e; e.init(enemy); 
-	Identity id = monBook.getID(type);
-	ID tex = monBook.getProfile(type).tex;
-	Rendering r(tex, 0); //set stats and anims
-	Animation a = monBook.anim[type];
-	Motion m = Motion(monBook.max[type]);
-	Location l; 
+	EntityXZ e = {type, 0, 0};
+	//Identity id = monBook.getID(type);
+	//ID tex = monBook.getProfile(type).tex;
+	//Rendering r(tex, 0); //set stats and anims
+	//Animation a = monBook.anim[type];
+	//Motion m = Motion(monBook.max[type]);
+	//Location l; 
 	glm::vec3 v;
 	float tempTheta = tempTheta = centerTheta - (quantity-1)* spacing/2;   
 	for (int i = 0; i < quantity; i++){
-		a.randomTick();
 		float theta = tempTheta+i*spacing;
 		v = radialOffset(origin, theta, dist);
-		l.place(v.x, v.z); 
-		trackMembers(enemies.createActor(id, r, l, m, a));
+		e.x = v.x, e.z = v.z; 
+		trackMembers(enemies.createActor(monBook, e));
 
 		if (mirrored && theta >= 0){
 			theta = -tempTheta-i*spacing;
 			v = radialOffset(origin, theta, dist);
-			l.place(v.x, v.z); 
-			trackMembers(enemies.createActor(id, r, l, m, a));
+			e.x = v.x, e.z = v.z; 
+			trackMembers(enemies.createActor(monBook, e));
 		}
 	}
 }

@@ -51,6 +51,7 @@ virtual void Stage::		rapidUpdate(float delta);
 		void Stage::		draw(float delta);	
 		void Stage::		drawPlayer();
 		void Stage::		drawTerrain();
+		void Stage::		drawHealthBars();
 		
 //************************************************** MEMBERS ***************************************************
 		bool atSpawn;
