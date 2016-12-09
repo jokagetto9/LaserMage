@@ -73,6 +73,7 @@ void EntityLoader::buildProp(rapidxml::xml_node<> * node){
 	ID tex = 0;
 	Rendering r;
 	Size size;
+	Health health;
 	ShaderProfile sp = {0, 1, G1x1};
 	for (a = node->first_attribute(); a; a = a->next_attribute()){
 		string s = getText(a->name());
@@ -87,14 +88,16 @@ void EntityLoader::buildProp(rapidxml::xml_node<> * node){
 			size.sepR = getFloat(a->value());	
 		else if (s == "avo")
 			size.avoR = getFloat(a->value());	
+		else if (s == "maxhp")		
+			health.set(getInt(a->value()));
 		else
 			loadShaderProfile(a, sp);
 	}
 	propList.addIdentity(identity);
 	//propList.addProfileIndex(propList.profileCount()); 
 	propList.addProfile(sp); 
-	propList.addSize(size); 
-
+	propList.addSize(size); 	
+	propList.addHealth(health); 
 	r.tex = sp.tex;
 	propList.addRendering(r); 
 }
