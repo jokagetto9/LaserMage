@@ -7,28 +7,30 @@ Stage::Stage(){
 	baseTile = 0;
 	curSpawn = 0;
 	curWave = 0;
-	entities.setGridSize(6, 5);
+	Book::entities.setGridSize(6, 5);
 	atSpawn = false; 
 	spawnLoaded = false;
 
 }
 
 void Stage:: init(){
-	if (entities.death.observers.size() < 1){
-		entities.death.addObserver(&wTracker);
-		entities.reserve(300);
+	if (Book::entities.death.observers.size() < 1){
+		Book::entities.death.addObserver(&wTracker);
+		Book::entities.reserve(300);
 	}
 	curSpawn = 0;
 	 
 	atSpawn = false;
 	spawnLoaded = false;
-	entities.clear();	
-	entities.clearGrid();
-	createPlayer();
+	Book::entities.clear();	
+	Book::entities.clearGrid();
+	p1 = Book::entities.nextFree();
+	EntityBuilder::createHero();
+	//createPlayer();
 
-	enemyPool.init(&monBook);
-	propPool.init(&propList);
-	particlePool.init(&particleList);
+	enemyPool.init(&Book::enemies);
+	propPool.init(&Book::props);
+	particlePool.init(&Book::particles);
 	loadMap();
 	update();
 }
@@ -41,7 +43,7 @@ bool Stage::	validate(){
 void Stage::		loadMap(){
 	Location l; 	Rendering r; EntityXZ e;
 	for (ID i = 0; i < map.size(); i++){
-		entities.createProp(propList, map[i]);
+		EntityBuilder::createProp(map[i]);
 	}
 	//test
 }
@@ -52,23 +54,24 @@ void Stage::createPlayer(){
 	Animation a; 
 	Motion m;
 	Location l; 
-	p1 = entities.nextFree();
+	p1 = Book::entities.nextFree();
 	Identity i = {"LaserMage", p1, 0, 4};
-	entities.createActor(i, r, l, m, a);
+	//EntityBuilder::createActor(i, r, l, m, a);
 
 	//EntityXZ e = {1, 0, 0};
-	//p1 = entities.nextFree();
-	//entities.createActor(monBook, e);
-	//entities.gData[p1].ent = 4;
+	//p1 = Book::entities.nextFree();
+	//Book::entities.createActor(Book::enemies, e);
+	//Book::entities.gData[p1].ent = 4;
 }
 
 
 void Stage::addParticle(ID type, XZI targ){
-	glm::vec3 pos = entities.getPos(p1);
-	EntityXZ ent = {type, pos.x, pos.z};
-	ID p = entities.createParticle(particleList, ent);
+	glm::vec3 pos = Book::entities.getPos(p1);
+	EntityXZ ent = {type, pos.x, pos.z+0.5};		//create at hero position
+	ID pa = EntityBuilder::createParticle(ent);
+
 	glm::vec3 targV(targ.x, 0, targ.z);
-	entities.chargeParticle(p, targV);
+	Book::entities.scaleMotion(pa, targV);		//target targ
 }
 
 //void Stage::add(EntityXZ e){map.push_back(e);}
@@ -76,36 +79,36 @@ void Stage::addParticle(ID type, XZI targ){
 //********************************* UPDATES *********************************
 
 void Stage::update(){
+	EntityList& e = Book::entities;
 	if ( curSpawn >= 0 && curSpawn < spawns.size()){
 		SpawnPoint & sp = spawns[curSpawn];
-		glm::vec3 pos = entities.getPos(p1);
+		glm::vec3 pos = e.getPos(p1);
 
 		if (!spawnLoaded){
 			if (curSpawn == 0)
-				entities.location[p1].place(sp.pos());
+				e.location[p1].place(sp.pos());
 
 			int w = sp.waves.size();
 			for(int j = 0; j < w; j++){
 				ID cw = sp.waves[j];
 				wTracker.waves[cw].origin = sp.pos(); 
-				wTracker.waves[cw].generate(entities);
+				wTracker.waves[cw].generate();
 			}
 			spawnLoaded = true;
 		}
 		if (!atSpawn){
 			glm::vec3 v = sp.pos();
 			if (pos.z < v.z-0.25){
-				entities.target[p1].setTarget(v);
+				e.target[p1].setTarget(v);
 			} else {	
 				atSpawn = true;	
-				entities.target[p1].noTarget();	
+				e.target[p1].noTarget();	
 			}
 		}
 		
 		if (atSpawn ){
 			updateWave();
 		}
-
 	}
 }
 //sp0 feeds into hero origin
@@ -120,9 +123,10 @@ void Stage::update(){
 
 
 void Stage::updateWave(){
+	EntityList& e = Book::entities;
 	bool wavesComplete = true;
 	SpawnPoint & sp = spawns[curSpawn];
-	glm::vec3 pos = entities.getPos(p1);
+	glm::vec3 pos = e.getPos(p1);
 	for( ID i = 0; i < sp.waves.size(); i++){
 		ID waveInd = sp.waves[i];
 		EnemyWave &ew = getWave(waveInd);
@@ -132,8 +136,9 @@ void Stage::updateWave(){
 				for (ID j = 0; j < s; j++){
 					curWave++;
 					ID entInd = ew.members[j]; 
-					entities.setTarget(entInd, pos);
-					entities.gData[entInd].setGroup(waveInd);
+
+					e.setTarget(entInd, pos);
+					e.gData[entInd].setGroup(waveInd);
 				}
 				ew.activated = true;
 			}
@@ -152,35 +157,30 @@ void Stage::updateWave(){
 
 void Stage::		physUpdate(float delta){
 	update();
-	entities.update(delta);
+	Book::entities.update(delta);
 	//entities.printGrid ();
-	//particles.update(delta); 
-	entities.checkCollisions();
-	entities.applyCollisions();
+	Book::entities.checkCollisions();
+	Book::entities.applyCollisions();
 }
 void Stage::		rapidUpdate(float delta){
-	entities.aiUpdate(delta);
-	//actors.aiUpdate(delta);
-	//collisions.applyAdjustments(0); // need to disable above
-
-
+	Book::entities.aiUpdate(delta);
 }
 
 //********************************* DRAW *********************************
 void Stage::		draw(float delta){	
 	//terr.draw();	
 	//M->gridBO.use();
-	entities.delta = delta;	
-	glm::vec3 pos = entities.getPos(p1);
+	Book::entities.delta = delta;	
+	glm::vec3 pos = Book::entities.getPos(p1);
 	C->update(pos);		
 	drawTerrain();  
 	drawPlayer();
-	propPool.batch(&entities);
-	propPool.draw(&entities);
-	particlePool.batch(&entities, delta);
-	particlePool.draw(&entities);
- 	enemyPool.batch(&entities, delta);
-	enemyPool.draw(&entities);
+	propPool.batch(&Book::entities);
+	propPool.draw(&Book::entities);
+	particlePool.batch(&Book::entities, delta);
+	particlePool.draw(&Book::entities);
+ 	enemyPool.batch(&Book::entities, delta);
+	enemyPool.draw(&Book::entities);
 	drawHealthBars();
 	
 	C->drawCursor();
@@ -188,20 +188,20 @@ void Stage::		draw(float delta){
 
 //healthbars
 void Stage::		drawHealthBars(){
-	ID s = entities.state.size();
+	ID s = Book::entities.state.size();
 	for (ID i = 0; i < s; i++){
-		if (entities.state[i]->on() && entities.gData[i].ent == 3){
-			int hi = ceil(entities.health[i].percent()*10); 
+		if (Book::entities.state[i]->on() && Book::entities.gData[i].ent == 3){
+			int hi = ceil(Book::entities.health[i].percent()*10); 
 			if (hi > 0 && hi < 10){					
-				entities.location[i].translate();
-					float scale = monBook.getProfile(entities.gData[i].type).scale * 2;
-					M->gridBO.prep(monBook.getProfile(0)); 
+				Book::entities.location[i].translate();
+					float scale = Book::enemies.getProfile(Book::entities.gData[i].type).scale * 2;
+					M->gridBO.prep(Book::enemies.getProfile(0)); 
 					M->gridBO.offsetTexture(0, scale+2);	
 					M->gridBO.drawGrid(hi);		
 				glPopMatrix(); //}	
 			}
 		}
-	}	
+	}	 
 
 
 }
@@ -217,14 +217,14 @@ void Stage::		drawTerrain(){
 void Stage::		drawPlayer(){	
 	M->gridBO.prepHero();
 	//refresh(P1);  
-	entities.draw(p1);	
+	Book::entities.draw(p1);	
 }
 
 
 
 		
 //********************************* MEMBER FUNCTIONS *********************************
-
+ 
 
 
 

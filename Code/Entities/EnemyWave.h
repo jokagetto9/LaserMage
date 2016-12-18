@@ -1,7 +1,7 @@
 #ifndef ENEMYWAVE_H
 #define ENEMYWAVE_H
 
-#include "../BaseEngine/Entities/EntityList.h"
+#include "EntityBuilder.h"
 //********************************* CONSTANTS *********************************
 
 //enum EnemyType {CHUCKY, MOSQUITO, TRUNKLING, LABOMBA, MIMIC }; 
@@ -18,7 +18,7 @@ class EnemyWave {
 	void EnemyWave::	initRegion(bool left, int reg);
 	void EnemyWave::	initMirrored(bool back, int reg);  
 	
-	void EnemyWave::	generate(EntityList& enemies);
+	void EnemyWave::	generate();
 	
 	bool EnemyWave:: waveCriteria(vector<EnemyWave>& enemies);
 	void EnemyWave:: trackMembers(ID ind);  

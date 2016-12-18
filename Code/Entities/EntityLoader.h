@@ -4,7 +4,7 @@
 
 #include "../BaseEngine/XMLParser.h"
 #include "../Display/ModelManager.h"
-#include "MonsterBook.h"
+#include "Book.h"
 
 //********************************* CONSTANTS *********************************
 
@@ -39,5 +39,7 @@ private:
 	vector <string> particleFiles;
 	vector <ID> * textures;
 	//static vector <TypeObj*> types;
+
+
 };
 #endif

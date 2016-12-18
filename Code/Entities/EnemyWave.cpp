@@ -1,6 +1,5 @@
 //********************************* INITIALIZATION *********************************
 #include "EnemyWave.h"
-#include "../Entities/MonsterBook.h"
 
 EnemyWave::			EnemyWave(){
 	glm::vec3 z(32, 0, 0);
@@ -56,29 +55,22 @@ void EnemyWave::	initRegion(bool left, int reg){
 	if (!left) centerTheta *= -1; 
 }
 
-void EnemyWave ::		generate(EntityList& enemies){
+void EnemyWave ::		generate(){
 	reset();
-	//Enemy e; e.init(enemy); 
 	EntityXZ e = {type, 0, 0};
-	//Identity id = monBook.getID(type);
-	//ID tex = monBook.getProfile(type).tex;
-	//Rendering r(tex, 0); //set stats and anims
-	//Animation a = monBook.anim[type];
-	//Motion m = Motion(monBook.max[type]);
-	//Location l; 
 	glm::vec3 v;
 	float tempTheta = tempTheta = centerTheta - (quantity-1)* spacing/2;   
 	for (int i = 0; i < quantity; i++){
 		float theta = tempTheta+i*spacing;
 		v = radialOffset(origin, theta, dist);
 		e.x = v.x, e.z = v.z; 
-		trackMembers(enemies.createActor(monBook, e));
+		trackMembers(EntityBuilder::createActor(e));
 
 		if (mirrored && theta >= 0){
 			theta = -tempTheta-i*spacing;
 			v = radialOffset(origin, theta, dist);
 			e.x = v.x, e.z = v.z; 
-			trackMembers(enemies.createActor(monBook, e));
+			trackMembers(EntityBuilder::createActor(e));
 		}
 	}
 }

@@ -102,7 +102,7 @@ void clockCycle(){
 void physicsUpdate(){	
 	input.cameraInput();
 	currStage->physUpdate(eng.physDelta);
-	stack.hud.update(currStage->p1, currStage->entities);
+	stack.hud.update(currStage->p1, Book::entities);
 }
 
 void rapidUpdate(){
@@ -154,12 +154,12 @@ void init(){
 		stack.hud.init();
 		//HEROSTATS
 		Size size(4, 7, 8);
-		heroBook.addSize(size);
-		EntityList::addDict(&propList);
-		EntityList::addDict(&propList);
-		EntityList::addDict(&particleList);
-		EntityList::addDict(&monBook);
-		EntityList::addDict(&heroBook);
+		Book::player.addSize(size);
+		EntityList::addDict(&Book::props);
+		EntityList::addDict(&Book::props);
+		EntityList::addDict(&Book::particles);
+		EntityList::addDict(&Book::enemies);
+		EntityList::addDict(&Book::player);
 	}  
 }
 

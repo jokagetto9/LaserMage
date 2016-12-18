@@ -22,6 +22,7 @@
     <ClInclude Include="..\Code\BaseEngine\Components\Location.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\Motion.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\Obstacles.h" />
+    <ClInclude Include="..\Code\BaseEngine\Components\Properties.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\Rendering.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\Size.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\State.h" />
@@ -49,7 +50,9 @@
     <ClInclude Include="..\Code\Display\Shaders\MenuShader.h" />
     <ClInclude Include="..\Code\Display\Shaders\Shader.h" />
     <ClInclude Include="..\Code\Display\Shaders\TileShader.h" />
+    <ClInclude Include="..\Code\Entities\Book.h" />
     <ClInclude Include="..\Code\Entities\EnemyWave.h" />
+    <ClInclude Include="..\Code\Entities\EntityBuilder.h" />
     <ClInclude Include="..\Code\Entities\EntityLoader.h" />
     <ClInclude Include="..\Code\Entities\MonsterBook.h" />
     <ClInclude Include="..\Code\Entities\SpawnPoint.h" />
@@ -91,7 +94,9 @@
     <ClCompile Include="..\Code\Display\Shaders\MenuShader.cpp" />
     <ClCompile Include="..\Code\Display\Shaders\Shader.cpp" />
     <ClCompile Include="..\Code\Display\Shaders\TileShader.cpp" />
+    <ClCompile Include="..\Code\Entities\Book.cpp" />
     <ClCompile Include="..\Code\Entities\EnemyWave.cpp" />
+    <ClCompile Include="..\Code\Entities\EntityBuilder.cpp" />
     <ClCompile Include="..\Code\Entities\EntityLoader.cpp" />
     <ClCompile Include="..\Code\Entities\MonsterBook.cpp" />
     <ClCompile Include="..\Code\Entities\SpawnPoint.cpp" />
@@ -112,7 +117,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="entitylist.xml" />
-    <None Include="forest1.xml" />
+    <None Include="forest1.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="intense.xml" />
     <None Include="intro.xml">
       <SubType>Designer</SubType>

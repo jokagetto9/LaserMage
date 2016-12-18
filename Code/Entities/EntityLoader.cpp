@@ -1,11 +1,18 @@
 //********************************* INITIALIZATION *********************************
 #include "EntityLoader.h"
+	//Obstacles::sizeProfiles.push_back(Obstacles::ignore);
+	//SizeProfile sp;
+	//sp = buildSizeProfile(0, 0.5, 2, 9, 10, 0.001);
+	//sp = {0, 0.2, 2, 9, 8, 0.0005};
+	//sp = buildSizeProfile(0, 0.2, 2, 9, 10, 0.001); //gnome
+	//Obstacles::sizeProfiles.push_back(sp);
+	//sp = buildSizeProfile(0.5, 0, 3.5, 16, 12, 0.0001);
+	//Obstacles::sizeProfiles.push_back(sp);
+	//sp = buildSizeProfile(0, 1, 4, 10, 0, 0);
+	//Obstacles::sizeProfiles.push_back(sp);
+	//sp = buildSizeProfile(1, 1, 5, 16, 0, 0);
+	//Obstacles::sizeProfiles.push_back(sp);
 
-
-SizeProfile buildSizeProfile(float base, float crash, float sep, float sepR, float coh, float cohR){
-	SizeProfile sp;// = {col, sep, avo, ali, coh};
-	return sp;
-}
 
 void EntityLoader::load(){
 	enemyCount = 0;
@@ -23,18 +30,7 @@ void EntityLoader::load(){
 	loadActor(0);
 	loadProp(0);
 	loadParticle(0);
-	//Obstacles::sizeProfiles.push_back(Obstacles::ignore);
-	//SizeProfile sp;
-	//sp = buildSizeProfile(0, 0.5, 2, 9, 10, 0.001);
-	//sp = {0, 0.2, 2, 9, 8, 0.0005};
-	//sp = buildSizeProfile(0, 0.2, 2, 9, 10, 0.001); //gnome
-	//Obstacles::sizeProfiles.push_back(sp);
-	//sp = buildSizeProfile(0.5, 0, 3.5, 16, 12, 0.0001);
-	//Obstacles::sizeProfiles.push_back(sp);
-	//sp = buildSizeProfile(0, 1, 4, 10, 0, 0);
-	//Obstacles::sizeProfiles.push_back(sp);
-	//sp = buildSizeProfile(1, 1, 5, 16, 0, 0);
-	//Obstacles::sizeProfiles.push_back(sp);
+
 	for (int i = 0; i < actorFiles.size(); i++){
 		//loadStage(i);
 		//loadProp(i);
@@ -93,13 +89,13 @@ void EntityLoader::buildProp(rapidxml::xml_node<> * node){
 		else
 			loadShaderProfile(a, sp);
 	}
-	propList.addIdentity(identity);
-	//propList.addProfileIndex(propList.profileCount()); 
-	propList.addProfile(sp); 
-	propList.addSize(size); 	
-	propList.addHealth(health); 
+	Book::props.addIdentity(identity);
+	//Book::props.addProfileIndex(Book::props.profileCount()); 
+	Book::props.addProfile(sp); 
+	Book::props.addSize(size); 	
+	Book::props.addHealth(health); 
 	r.tex = sp.tex;
-	propList.addRendering(r); 
+	Book::props.addRendering(r); 
 }
 
 void EntityLoader::buildProps(rapidxml::xml_node<> * node){
@@ -113,7 +109,7 @@ void EntityLoader::buildProps(rapidxml::xml_node<> * node){
 	ShaderProfile sp = {0, 1, G2x2};
 	for (a = node->first_attribute(); a; a = a->next_attribute())
 		loadShaderProfile(a, sp);
-		propList.addProfile(sp); 
+		Book::props.addProfile(sp); 
 		for (n = node->first_node(); n; n = n->next_sibling()){		
 			string s = getText(n->name());
 			if (s == "Prop"){
@@ -134,11 +130,10 @@ void EntityLoader::buildProps(rapidxml::xml_node<> * node){
 						health.set(getInt(a->value()));
 				}
 				r.tex = sp.tex;
-				propList.addIdentity(identity);
-				propList.addProfileIndex(propList.profileCount()-1); 
-				propList.addSize(size); 
-				propList.addRendering(r);
-				propList.addHealth(health); 
+				Book::props.addIdentity(identity);
+				Book::props.addSize(size); 
+				Book::props.addRendering(r);
+				Book::props.addHealth(health); 
 			} 
 		}
 }
@@ -158,7 +153,7 @@ void EntityLoader::loadActor(ID id){
 				buildActor(node);
 				for (n = node->first_node(); n; n = n->next_sibling()){
 					if (getText(n->name()) == "Animation"){
-						addAnimation(n, &monBook);
+						addAnimation(n, &Book::enemies);
 					}
 				}
 			} //else if (s == "NPC"){
@@ -193,10 +188,10 @@ void EntityLoader::buildActor(rapidxml::xml_node<> * node){
 			health.set(getInt(a->value()));
 	}
 	if (true) {			
-		monBook.addSize(size); 
-		monBook.addIdentity(identity);
-		monBook.addMotion(mm); 
-		monBook.addHealth(health); 
+		Book::enemies.addSize(size); 
+		Book::enemies.addIdentity(identity);
+		Book::enemies.addMotion(mm); 
+		Book::enemies.addHealth(health); 
 	}
 }
 
@@ -216,7 +211,7 @@ void EntityLoader::loadParticle(ID id){
 				buildParticle(node);
 				for (n = node->first_node(); n; n = n->next_sibling()){
 					if (getText(n->name()) == "Animation"){
-						addAnimation(n, &particleList);
+						addAnimation(n, &Book::particles);
 					}
 				}
 			} //else if (s == "NPC"){
@@ -251,10 +246,10 @@ void EntityLoader::buildParticle(rapidxml::xml_node<> * node){
 			health.set(getInt(a->value()));
 	}
 	if (true) {			
-		particleList.addSize(size); 
-		particleList.addIdentity(identity);
-		particleList.addMotion(mm); 
-		particleList.addHealth(health); 
+		Book::particles.addSize(size); 
+		Book::particles.addIdentity(identity);
+		Book::particles.addMotion(mm); 
+		Book::particles.addHealth(health); 
 	}
 }
 
@@ -288,7 +283,7 @@ void EntityLoader::addAnimation(rapidxml::xml_node<> * node, ParticleList * dict
 	rapidxml::xml_attribute<> *a;
 	ID tex = 0;
 	ID min = 0; ID max = 3;
-	ID frames = 20;
+	ID frames = 120;
 	Animation anim;
 
 	ShaderProfile sp = {0, 1, G4x4};
@@ -300,13 +295,13 @@ void EntityLoader::addAnimation(rapidxml::xml_node<> * node, ParticleList * dict
 		else if (s == "end"){
 			cyclic = true;
 			max = getInt(a->value());
-		} else if (s == "frames")
+		} else if (s == "frames"){
 			frames = getInt(a->value());
-		else if (s == "type"){
+
+		}else if (s == "type"){
 			s = getText(a->value());
 			if (s == "Walk20"){
 				anim.type = WALK20;
-				anim.setFrameRate(frames);
 			}
 		}else
 			loadShaderProfile(a, sp);
@@ -315,6 +310,9 @@ void EntityLoader::addAnimation(rapidxml::xml_node<> * node, ParticleList * dict
 
 	if (cyclic)
 		anim.setCyclic(min, max, frames);
+	else
+		anim.setFrameRate(frames);
+
 
 	dict->anim.push_back(anim);
 }

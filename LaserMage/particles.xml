@@ -1,11 +1,11 @@
 <ParticleList>
   <Particle name="Wrench" speed="7" accel="4" col="3" sep="6">
-    <Animation texture="EFFECT/wrench.png" end="2" scale="1" grid="2x2" frames="16"></Animation>
+    <Animation texture="EFFECT/wrench.png" end="2" scale="1" grid="2x2" frames="2"></Animation>
   </Particle>
   <Particle name="Orb" speed="12"  accel="12" maxhp="20" col="1" sep="3.5">
-    <Animation texture="EFFECT/energyorb.png" end="6" scale="0.5" grid="4x4" frames="12"></Animation>
+    <Animation texture="EFFECT/energyorb.png" end="6" scale="0.5" grid="4x4" frames="4"></Animation>
   </Particle>
   <Particle name="Flame" speed="10"  accel="4" maxhp="12" col="2.5" sep="6">
-    <Animation texture="EFFECT/flame.png" end="3" scale="1" grid="2x2" frames="20"></Animation>
+    <Animation texture="EFFECT/flame.png" end="3" scale="1" grid="2x2" frames="4"></Animation>
   </Particle>  
 </ParticleList>

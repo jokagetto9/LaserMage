@@ -3,7 +3,6 @@
 
 
 #include "../BaseEngine/Components/Location.h"
-#include "EnemyWave.h"
 
 //********************************* CONSTANTS *********************************
 

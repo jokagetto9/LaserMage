@@ -3,10 +3,11 @@
 
 
 #include "../BaseEngine/Entities/DrawPool.h"
-#include "../BaseEngine/Entities/EntityList.h"
-#include "SpawnPoint.h"
 #include "../Event/WaveTracker.h"
 
+#include "EntityBuilder.h"
+#include "SpawnPoint.h"
+#include "EnemyWave.h"
 
 //********************************* CONSTANTS *********************************
 
@@ -63,8 +64,6 @@ virtual void Stage::		rapidUpdate(float delta);
 		int curWave;
 		//Terrain terr;
 		ID p1;
-
-		EntityList entities;
 
 		DrawPool enemyPool;
 		DrawPool propPool;

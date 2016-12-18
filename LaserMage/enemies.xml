@@ -1,33 +1,36 @@
 <EnemyFile>
   <Enemy name="HealthBar" maxhp="100" >
-    <Animation texture="MENU/enemyhealth.png" end="10" scale="1" grid="4x4" frames="30"></Animation>
+    <Animation texture="MENU/enemyhealth.png" end="10" scale="1" grid="4x4" ></Animation>
   </Enemy>
   <Enemy name="LaserMage" maxhp="48"   >
-    <Animation texture="MAGE/hood.png" frames="20"></Animation>
+    <Animation texture="MAGE/hood.png" frames="12"></Animation>
   </Enemy>
   <Enemy name="Chucky" maxhp="8" speed="2.5" col="1.4" sep="3" avo="6" >
-    <Animation texture="MOBS/chucky.png" frames="10"></Animation>
+    <Animation texture="MOBS/chucky.png" frames="8"></Animation>
 	 </Enemy>
   <Enemy name="Gnome" maxhp="5" speed="2.5" col="1.2" sep="2" avo="5" >
-    <Animation texture="MOBS/gnome.png" grid="5x5" type="Walk20" ></Animation>
+    <Animation texture="MOBS/gnome.png" grid="5x5" frames="4" type="Walk20" ></Animation>
   </Enemy>
   <Enemy name="Dim" maxhp="50" speed="2" col="1.4" sep="3" avo="6" >
     <Animation texture="MOBS/dim.png"></Animation>
 	</Enemy>
   <Enemy name="Mimic" maxhp="40" speed="2" col="1.8" sep="3" avo="6" >
-    <Animation texture="MOBS/mimic.png" end="13" scale="1.5" frames="20"></Animation>
+    <Animation texture="MOBS/mimic.png" end="13" scale="1.5" frames="4"></Animation>
 	 </Enemy>
   <Enemy name="LaBomba" maxhp="1" speed="2.5" col="1.8" sep="3" avo="6">
-    <Animation texture="MOBS/labomba.png" end="7" scale="1.5" frames="12"></Animation>
+    <Animation texture="MOBS/labomba.png" end="10" scale="1.5" frames="4"></Animation>
   </Enemy>
   <Enemy name="Mosquito" maxhp="1" speed="2" col="0.5" sep="1.5" avo="5" >
-    <Animation texture="MOBS/mosquito.png" end="5" scale="0.625" frames="12"></Animation>
+    <Animation texture="MOBS/mosquito.png" end="5" scale="0.625" frames="4"></Animation>
   </Enemy>
   <Enemy name="Trunkling" maxhp="80" speed="0.6" col="2.2" sep="5" avo="8">
-    <Animation texture="MOBS/trunkling.png" end="2" scale="2" grid="2x2" frames="60"></Animation>
+    <Animation texture="MOBS/trunkling.png" end="2" scale="2" grid="2x2" frames="4"></Animation>
   </Enemy>
   <Enemy name="TonTon" maxhp="80" speed="1.5" col="3.8" sep="8" avo="8">
-    <Animation texture="MOBS/tonton.png" end="2" scale="2" grid="2x2" frames="30"></Animation>
+    <Animation texture="MOBS/tonton.png" end="2" scale="2" grid="2x2" frames="8"></Animation>
   </Enemy>
 
 </EnemyFile>
+
+
+

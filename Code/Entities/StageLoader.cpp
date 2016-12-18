@@ -62,7 +62,7 @@ void StageLoader::loadMap(rapidxml::xml_node<> * node, Stage &stage){
 			string s = getText(a->name());
 			if (s== "type"){		
 				string type = getText(a->value());
-				e.id = propList.getIndex(type);
+				e.id = Book::props.getIndex(type);
 				success = true;
 			}else if (s == "x"){
 				e.x = getInt(a->value());
@@ -104,7 +104,7 @@ ID StageLoader::buildWave(rapidxml::xml_node<> * node, Stage &stage){
 		string s = getText(a->name());
 		if (s == "type"){
 			string type = getText(a->value());
-			wave.type = monBook.getIndex(type);
+			wave.type = Book::enemies.getIndex(type);
 		}else if (s == "dist"){
 			wave.dist = getInt(a->value());
 		}else if (s == "mirror"){ 

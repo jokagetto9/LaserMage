@@ -20,7 +20,7 @@ public:
 };
 
 
-extern ParticleList monBook;
+//extern ParticleList Book::enemies;
 extern ParticleList heroBook;
 
 #endif

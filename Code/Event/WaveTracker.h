@@ -2,6 +2,7 @@
 #define WAVETRACKER_H
 
 #include "../BaseEngine/Template/SubObj.h"
+#include "../Entities/EnemyWave.h"
 
 
 class WaveTracker: public Observer{
