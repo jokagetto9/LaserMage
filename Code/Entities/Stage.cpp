@@ -10,7 +10,6 @@ Stage::Stage(){
 	Book::entities.setGridSize(6, 5);
 	atSpawn = false; 
 	spawnLoaded = false;
-
 }
 
 void Stage:: init(){
@@ -19,7 +18,7 @@ void Stage:: init(){
 		Book::entities.reserve(300);
 	}
 	curSpawn = 0;
-	 
+	
 	atSpawn = false;
 	spawnLoaded = false;
 	Book::entities.clear();	
@@ -163,7 +162,14 @@ void Stage::		physUpdate(float delta){
 	Book::entities.applyCollisions();
 }
 void Stage::		rapidUpdate(float delta){
-	Book::entities.aiUpdate(delta);
+	Book::entities.delta = delta;
+	ID s = Book::entities.state.size();
+	for (ID i = 0; i < s; i++){
+		if (Book::entities.state[i]->on()){
+			Book::entities.aiUpdate(i);
+			Book::entities.healthUpdate(i);
+		}
+	}
 }
 
 //********************************* DRAW *********************************

@@ -14,9 +14,12 @@
     <ClInclude Include="..\Code\BaseEngine\BaseEngine.h" />
     <ClInclude Include="..\Code\BaseEngine\BaseGameState.h" />
     <ClInclude Include="..\Code\BaseEngine\BaseInputManager.h" />
+    <ClInclude Include="..\Code\BaseEngine\Components\AIBrain.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\Animation.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\CollisionSet.h" />
+    <ClInclude Include="..\Code\BaseEngine\Components\Commands.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\Component.h" />
+    <ClInclude Include="..\Code\BaseEngine\Components\Damage.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\GridData.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\Health.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\Location.h" />
@@ -24,7 +27,6 @@
     <ClInclude Include="..\Code\BaseEngine\Components\Obstacles.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\Properties.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\Rendering.h" />
-    <ClInclude Include="..\Code\BaseEngine\Components\Size.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\State.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\Swarming.h" />
     <ClInclude Include="..\Code\BaseEngine\Components\Target.h" />
@@ -50,6 +52,7 @@
     <ClInclude Include="..\Code\Display\Shaders\MenuShader.h" />
     <ClInclude Include="..\Code\Display\Shaders\Shader.h" />
     <ClInclude Include="..\Code\Display\Shaders\TileShader.h" />
+    <ClInclude Include="..\Code\Entities\AISystem.h" />
     <ClInclude Include="..\Code\Entities\Book.h" />
     <ClInclude Include="..\Code\Entities\EnemyWave.h" />
     <ClInclude Include="..\Code\Entities\EntityBuilder.h" />
@@ -69,8 +72,10 @@
     <ClCompile Include="..\Code\BaseEngine\BaseEngine.cpp" />
     <ClCompile Include="..\Code\BaseEngine\BaseGameState.cpp" />
     <ClCompile Include="..\Code\BaseEngine\BaseInputManager.cpp" />
+    <ClCompile Include="..\Code\BaseEngine\Components\AIBrain.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Components\Animation.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Components\CollisionSet.cpp" />
+    <ClCompile Include="..\Code\BaseEngine\Components\Commands.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Components\GridData.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Components\Location.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Components\Motion.cpp" />
@@ -78,7 +83,6 @@
     <ClCompile Include="..\Code\BaseEngine\Components\Swarming.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Components\Target.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Display\Camera.cpp" />
-    <ClCompile Include="..\Code\BaseEngine\Entities\Dictionaries.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Entities\DrawPool.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Entities\EntityList.cpp" />
     <ClCompile Include="..\Code\BaseEngine\Stack\BaseMenuLoader.cpp" />
@@ -94,6 +98,7 @@
     <ClCompile Include="..\Code\Display\Shaders\MenuShader.cpp" />
     <ClCompile Include="..\Code\Display\Shaders\Shader.cpp" />
     <ClCompile Include="..\Code\Display\Shaders\TileShader.cpp" />
+    <ClCompile Include="..\Code\Entities\AISystem.cpp" />
     <ClCompile Include="..\Code\Entities\Book.cpp" />
     <ClCompile Include="..\Code\Entities\EnemyWave.cpp" />
     <ClCompile Include="..\Code\Entities\EntityBuilder.cpp" />

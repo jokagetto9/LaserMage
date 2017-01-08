@@ -68,7 +68,7 @@ void EntityLoader::buildProp(rapidxml::xml_node<> * node){
 	Identity identity = {"", 255, -1, 1};
 	ID tex = 0;
 	Rendering r;
-	Size size;
+	Size size = {0, 0, 0};
 	Health health;
 	ShaderProfile sp = {0, 1, G1x1};
 	for (a = node->first_attribute(); a; a = a->next_attribute()){
@@ -79,11 +79,11 @@ void EntityLoader::buildProp(rapidxml::xml_node<> * node){
 		}else if (s == "scale")
 			sp.scale = getFloat(a->value());		
 		else if (s == "col")
-			size.colR = getFloat(a->value());
+			size.outerRad = getFloat(a->value());
 		else if (s == "sep")
-			size.sepR = getFloat(a->value());	
+			size.innerRad = getFloat(a->value());	
 		else if (s == "avo")
-			size.avoR = getFloat(a->value());	
+			size.sight = getFloat(a->value());	
 		else if (s == "maxhp")		
 			health.set(getInt(a->value()));
 		else
@@ -104,7 +104,7 @@ void EntityLoader::buildProps(rapidxml::xml_node<> * node){
 	Identity identity = {"", 255, -1, 1};
 	ID tex = 0;
 	Rendering r;
-	Size size;
+	Size size = {0, 0, 0};
 	Health health;
 	ShaderProfile sp = {0, 1, G2x2};
 	for (a = node->first_attribute(); a; a = a->next_attribute())
@@ -119,11 +119,11 @@ void EntityLoader::buildProps(rapidxml::xml_node<> * node){
 						identity.name = getText(a->value());
 						identity.type = propCount; propCount++;
 					}else if (s == "col")
-						size.colR = getFloat(a->value());
+						size.outerRad = getFloat(a->value());
 					else if (s == "sep")
-						size.sepR = getFloat(a->value());	
+						size.innerRad = getFloat(a->value());	
 					else if (s == "avo")
-						size.avoR = getFloat(a->value());							
+						size.sight = getFloat(a->value());						
 					else if (s == "index")
 						r.texIndex = getInt(a->value());	
 					else if (s == "maxhp")		
@@ -167,7 +167,7 @@ void EntityLoader::buildActor(rapidxml::xml_node<> * node){
 	rapidxml::xml_attribute<> *a;
 	Identity identity = {"", 255, -1, 3};
 	MotionMax mm = {1, 1};	
-	Size size;
+	Size size = {0, 0, 0};
 	Health health;
 	for (a = node->first_attribute(); a; a = a->next_attribute()){
 		string s = getText(a->name());
@@ -179,11 +179,11 @@ void EntityLoader::buildActor(rapidxml::xml_node<> * node){
 		}else if (s == "accel"){
 			mm.accel = getInt(a->value());
 		}else if (s == "col")
-			size.colR = getFloat(a->value());
+			size.outerRad = getFloat(a->value());
 		else if (s == "sep")
-			size.sepR = getFloat(a->value());	
+			size.innerRad = getFloat(a->value());	
 		else if (s == "avo")
-			size.avoR = getFloat(a->value());		
+			size.sight = getFloat(a->value());	
 		else if (s == "maxhp")		
 			health.set(getInt(a->value()));
 	}
@@ -225,7 +225,7 @@ void EntityLoader::buildParticle(rapidxml::xml_node<> * node){
 	rapidxml::xml_attribute<> *a;;
 	Identity identity = {"", 255, -1, 2};
 	MotionMax mm = {1, 1};	
-	Size size;
+	Size size = {0, 0, 0};
 	Health health;
 	for (a = node->first_attribute(); a; a = a->next_attribute()){
 		string s = getText(a->name());
@@ -237,11 +237,11 @@ void EntityLoader::buildParticle(rapidxml::xml_node<> * node){
 		}else if (s == "accel"){
 			mm.accel = getInt(a->value());
 		}else if (s == "col")
-			size.colR = getFloat(a->value());
+			size.outerRad = getFloat(a->value());
 		else if (s == "sep")
-			size.sepR = getFloat(a->value());	
+			size.innerRad = getFloat(a->value());	
 		else if (s == "avo")
-			size.avoR = getFloat(a->value());
+			size.sight = getFloat(a->value());	
 		else if (s == "maxhp")
 			health.set(getInt(a->value()));
 	}

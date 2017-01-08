@@ -14,7 +14,7 @@ ID EntityBuilder ::	createProp (EntityXZ ent){
 		Animation a;
 		e.setDrawFeatures(newIndex, pr.rendering[ent.id], a);
 
-		
+		e.setSize(newIndex, pr.getSize(ent.id));
 		e.place(newIndex, ent.x, ent.z);
 		//entities.setMotion(newIndex, Motion(Book::particles.max[ent.id]));
 		
@@ -43,7 +43,8 @@ ID EntityBuilder ::	createParticle (EntityXZ ent){
 
 		Rendering r; r.tex = pa.getProfile(ent.id).tex;
 		e.setDrawFeatures(newIndex, r, pa.anim[ent.id]);
-				
+		
+		e.setSize(newIndex, pa.getSize(ent.id));		
 		e.place(newIndex, ent.x, ent.z);
 		e.setMotion(newIndex, Motion(pa.max[ent.id]));
 		
@@ -74,7 +75,8 @@ ID EntityBuilder:: createActor(EntityXZ ent){
 		Animation a = en.anim[ent.id]; 
 		a.randomTick();
 		e.setDrawFeatures(newIndex, r, a);
-	
+		
+		e.setSize(newIndex, en.getSize(ent.id));
 		e.place(newIndex, ent.x, ent.z);
 		e.setMotion(newIndex, Motion(en.max[ent.id]));
 		

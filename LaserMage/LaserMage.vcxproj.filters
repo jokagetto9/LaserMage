@@ -105,9 +105,6 @@
     <ClInclude Include="..\Code\BaseEngine\Components\Target.h">
       <Filter>Components</Filter>
     </ClInclude>
-    <ClInclude Include="..\Code\BaseEngine\Components\Size.h">
-      <Filter>Components</Filter>
-    </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Obstacles.h">
       <Filter>Components</Filter>
     </ClInclude>
@@ -206,6 +203,18 @@
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Components\Properties.h">
       <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Components\Commands.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Components\AIBrain.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Components\Damage.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Entities\AISystem.h">
+      <Filter>Laser Entities\Systems</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -314,9 +323,6 @@
     <ClCompile Include="..\Code\Stack\HUDMenu.cpp">
       <Filter>Stack</Filter>
     </ClCompile>
-    <ClCompile Include="..\Code\BaseEngine\Entities\Dictionaries.cpp">
-      <Filter>Base Entities</Filter>
-    </ClCompile>
     <ClCompile Include="..\Code\Entities\Book.cpp">
       <Filter>Laser Entities</Filter>
     </ClCompile>
@@ -331,6 +337,15 @@
     </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Entities\DrawPool.cpp">
       <Filter>Base Entities\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\BaseEngine\Components\Commands.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\BaseEngine\Components\AIBrain.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Entities\AISystem.cpp">
+      <Filter>Laser Entities\Systems</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
