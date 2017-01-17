@@ -21,7 +21,6 @@ ID EntityBuilder ::	createProp (EntityXZ ent){
 		Identity iden = pr.getID(ent.id);
 		iden.index = newIndex;
 		e.setGridData(iden);
-
 		
 		e.setState(newIndex, &EntityList::still);
 		e.target[newIndex] = Target();
@@ -84,6 +83,7 @@ ID EntityBuilder:: createActor(EntityXZ ent){
 		iden.index = newIndex;
 		e.setGridData(iden);
 		
+		AISystem::applyDefault(e.ai[newIndex]);
 		e.setState(newIndex, &EntityList::still);
 		e.target[newIndex] = Target();
 
@@ -109,6 +109,7 @@ ID EntityBuilder:: createHero(){
 		Identity iden = {"LaserMage", newIndex, 0, 4};
 		e.setGridData(iden);
 		
+		AISystem::applyDefault(e.ai[newIndex]);
 		e.setState(newIndex, &EntityList::still);
 		e.target[newIndex] = Target();
 

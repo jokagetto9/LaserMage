@@ -216,6 +216,21 @@
     <ClInclude Include="..\Code\Entities\AISystem.h">
       <Filter>Laser Entities\Systems</Filter>
     </ClInclude>
+    <ClInclude Include="..\Code\Entities\CollisionSystem.h">
+      <Filter>Laser Entities\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Entities\PhysicsSystem.h">
+      <Filter>Laser Entities\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Entities\StateChanger.h">
+      <Filter>Laser Entities\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Entities\AIBehaviours.h">
+      <Filter>Laser Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\BaseEngine\Template\Functions.h">
+      <Filter>Base Engine\Template</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Code\Display\Shaders\MenuShader.cpp">
@@ -346,6 +361,18 @@
     </ClCompile>
     <ClCompile Include="..\Code\Entities\AISystem.cpp">
       <Filter>Laser Entities\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Entities\CollisionSystem.cpp">
+      <Filter>Laser Entities\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Entities\PhysicsSystem.cpp">
+      <Filter>Laser Entities\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Entities\StateChanger.cpp">
+      <Filter>Laser Entities\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Entities\AIBehaviours.cpp">
+      <Filter>Laser Entities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -6,6 +6,10 @@
 #include "../Event/WaveTracker.h"
 
 #include "EntityBuilder.h"
+#include "AISystem.h"
+#include "PhysicsSystem.h"
+#include "CollisionSystem.h"
+#include "StateChanger.h"
 #include "SpawnPoint.h"
 #include "EnemyWave.h"
 

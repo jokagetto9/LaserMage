@@ -156,18 +156,18 @@ void Stage::updateWave(){
 
 void Stage::		physUpdate(float delta){
 	update();
-	Book::entities.update(delta);
+	PhysicsSystem::update(delta);
 	//entities.printGrid ();
-	Book::entities.checkCollisions();
-	Book::entities.applyCollisions();
+	CollisionSystem::checkCollisions();
+	CollisionSystem::applyCollisions();
 }
 void Stage::		rapidUpdate(float delta){
 	Book::entities.delta = delta;
 	ID s = Book::entities.state.size();
 	for (ID i = 0; i < s; i++){
 		if (Book::entities.state[i]->on()){
-			Book::entities.aiUpdate(i);
-			Book::entities.healthUpdate(i);
+			AISystem::aiUpdate(i);
+			AISystem::healthUpdate(i);
 		}
 	}
 }
