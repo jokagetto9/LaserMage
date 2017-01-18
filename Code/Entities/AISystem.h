@@ -23,6 +23,7 @@ public:
 	static void AISystem:: applyAIInteractions(ID id);
 
 	static SepFunction sep;
+	static TargFunction targ;
 		
 };
 #endif

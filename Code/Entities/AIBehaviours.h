@@ -15,6 +15,15 @@ public:
 };
 
 
+class TargFunction: public AIVBehaviour {
+public:
+
+	glm::vec3 calc(ID eIndex, glm::vec3 v) ;
+	//void apply(ID eIndex,  AIV &aiv) ;
+
+
+};
+
 class SepFunction: public AIVBehaviour {
 public:
 

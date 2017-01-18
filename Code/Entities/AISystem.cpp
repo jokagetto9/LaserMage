@@ -1,9 +1,13 @@
 #include "AISystem.h"
 
 SepFunction AISystem ::sep;
+TargFunction AISystem ::targ;
 
 
 void AISystem ::	applyDefault (AIBrain& ai){	
+	AIV targAIV = {1};
+	ai.vectors.push_back(targAIV);
+	ai.movement.push_back(&targ);
 	AIV sepAIV = {0.04};
 	ai.vectors.push_back(sepAIV);
 	ai.movement.push_back(&sep);
@@ -28,12 +32,21 @@ void AISystem ::	aiUpdate (ID id){
 	EntityList& e = Book::entities;
 
 	if (notZero(e.target[id].targetP)){
-		if  (e.gData[id].ent != 2){	//update target if not !!!targetlocked!!!
-			glm::vec3 tempV = scaleVector(e.location[id].pos(), e.target[id].targetP, 0.1);
-			e.motion[id].setTarget(tempV);
+		//if  (e.gData[id].ent != 2){	//update target if not !!!targetlocked!!!
+		//	glm::vec3 tempV = scaleVector(e.location[id].pos(), e.target[id].targetP, 0.1);
+		//	e.motion[id].setTarget(tempV);
+		//}
+		//check set still 
+
+		AIBrain& ai = e.ai[id];
+		ID s = ai.movement.size();
+		for (ID i = 0; i < s; i++){
+			glm::vec3 iv(0);
+			ai.vectors[i].v = ai.movement[i]->calc(id, iv);
+			ai.movement[i]->apply(id, ai.vectors[i]);
 		}
-		e.state[id] = &e.charge; //check set still 
-		applyAIInteractions(id); //apply without target? !!!wary!!!
+
+		//applyAIInteractions(id); //apply without target? !!!wary!!!
 	}else if (e.gData[id].ent != 2){
 		e.state[id] = &e.still;
 	}
@@ -52,21 +65,8 @@ void AISystem ::	healthUpdate (ID id){
 }
 
 void AISystem:: applyAIInteractions(ID id){
-	EntityList& e = Book::entities;	
-	AIBrain& ai = e.ai[id];
-	ID s = ai.movement.size();
-	for (ID i = 0; i < s; i++){
-		ai.vectors[i].v = ai.movement[i]->calc(id, glm::vec3(0));
-		ai.movement[i]->apply(id, ai.vectors[i]);
-	}
-
-
-
-
-
-
-
-	/*/
+	//
+	EntityList& e = Book::entities;
 	if( e.getEnt(id) == 3){ 
 		float sepRad = 2;
 		e.swarm[id].reset();

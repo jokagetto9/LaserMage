@@ -1,7 +1,23 @@
-//********************************* INITIALIZATION *********************************
+
 #include "AIBehaviours.h"
+//********************************* Targ *********************************
+glm::vec3 TargFunction::calc(ID eIndex, glm::vec3 v){
+	EntityList * e = &Book::entities;
+	glm::vec3 t = e->target[eIndex].targetP;
+	glm::vec3 p = e->location[eIndex].pos();
+	glm::vec3 targV(0);
+	if (notZero(t)){//v
+	//update target if not !!!targetlocked!!!
+		glm::vec3 targV = scaleVector(e->location[eIndex].pos(), t, 0.1);
+		e->motion[eIndex].setTarget(targV);	
+
+		e->state[eIndex] = &e->charge; 
+	}
+	return targV;
+}
 
 
+//********************************* Sep *********************************
 glm::vec3 SepFunction::calc(ID eIndex, glm::vec3 v){
 	EntityList * e = &Book::entities;
 	glm::vec3 sepV = glm::vec3(0);
@@ -43,3 +59,8 @@ void SepFunction::apply(ID eIndex, AIV &aiv) {
 		e->motion[eIndex].targetV += tempV;
 	}
 };
+
+//********************************* Avo *********************************
+
+//********************************* Col *********************************
+
