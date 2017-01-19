@@ -2,7 +2,7 @@
 #define ENTITYBUILDER_H
 
 
-#include "Book.h"
+#include "../Entities/Book.h"
 #include "AISystem.h"
 
 //********************************* CONSTANTS *********************************

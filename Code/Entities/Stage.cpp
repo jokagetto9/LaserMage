@@ -13,8 +13,8 @@ Stage::Stage(){
 }
 
 void Stage:: init(){
-	if (Book::entities.death.observers.size() < 1){
-		Book::entities.death.addObserver(&wTracker);
+	if (AISystem::death.observers.size() < 1){
+		AISystem::death.addObserver(&wTracker);
 		Book::entities.reserve(300);
 	}
 	curSpawn = 0;

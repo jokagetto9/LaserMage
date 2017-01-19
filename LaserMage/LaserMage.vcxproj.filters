@@ -37,14 +37,14 @@
     <Filter Include="Base Engine\Template">
       <UniqueIdentifier>{802682fd-272f-4f76-9932-128f5fe6ef80}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Laser Engine\Events">
-      <UniqueIdentifier>{a87035bd-528a-41dc-af34-9ad979f4a9b9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Laser Entities\Systems">
-      <UniqueIdentifier>{84cf6877-6c5d-4a47-a49b-c25d535f0511}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Base Entities\Systems">
       <UniqueIdentifier>{2da6ad3c-e29a-4014-ac4b-abf937f9c1b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Laser Entities\Deprecate">
+      <UniqueIdentifier>{c1059728-fb95-43c2-8f61-2f135f8efc3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Laser Systems">
+      <UniqueIdentifier>{84cf6877-6c5d-4a47-a49b-c25d535f0511}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -177,9 +177,6 @@
     <ClInclude Include="..\Code\BaseEngine\Template\SubObj.h">
       <Filter>Base Engine\Template</Filter>
     </ClInclude>
-    <ClInclude Include="..\Code\Event\WaveTracker.h">
-      <Filter>Laser Engine\Events</Filter>
-    </ClInclude>
     <ClInclude Include="..\Code\Stack\HUDMenu.h">
       <Filter>Stack</Filter>
     </ClInclude>
@@ -188,15 +185,6 @@
     </ClInclude>
     <ClInclude Include="..\Code\Entities\Book.h">
       <Filter>Laser Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\Entities\EntityLoader.h">
-      <Filter>Laser Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\Entities\StageLoader.h">
-      <Filter>Laser Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\Entities\EntityBuilder.h">
-      <Filter>Laser Entities\Systems</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Entities\DrawPool.h">
       <Filter>Base Entities\Systems</Filter>
@@ -213,23 +201,35 @@
     <ClInclude Include="..\Code\BaseEngine\Components\Damage.h">
       <Filter>Components</Filter>
     </ClInclude>
-    <ClInclude Include="..\Code\Entities\AISystem.h">
-      <Filter>Laser Entities\Systems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\Entities\CollisionSystem.h">
-      <Filter>Laser Entities\Systems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\Entities\PhysicsSystem.h">
-      <Filter>Laser Entities\Systems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\Entities\StateChanger.h">
-      <Filter>Laser Entities\Systems</Filter>
-    </ClInclude>
     <ClInclude Include="..\Code\Entities\AIBehaviours.h">
       <Filter>Laser Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\BaseEngine\Template\Functions.h">
       <Filter>Base Engine\Template</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Systems\EntityBuilder.h">
+      <Filter>Laser Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Systems\EntityLoader.h">
+      <Filter>Laser Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Systems\PhysicsSystem.h">
+      <Filter>Laser Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Systems\StageLoader.h">
+      <Filter>Laser Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Systems\StateChanger.h">
+      <Filter>Laser Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Systems\WaveTracker.h">
+      <Filter>Laser Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Systems\AISystem.h">
+      <Filter>Laser Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Systems\CollisionSystem.h">
+      <Filter>Laser Systems</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -341,15 +341,6 @@
     <ClCompile Include="..\Code\Entities\Book.cpp">
       <Filter>Laser Entities</Filter>
     </ClCompile>
-    <ClCompile Include="..\Code\Entities\EntityLoader.cpp">
-      <Filter>Laser Entities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\Entities\StageLoader.cpp">
-      <Filter>Laser Entities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\Entities\EntityBuilder.cpp">
-      <Filter>Laser Entities\Systems</Filter>
-    </ClCompile>
     <ClCompile Include="..\Code\BaseEngine\Entities\DrawPool.cpp">
       <Filter>Base Entities\Systems</Filter>
     </ClCompile>
@@ -359,20 +350,29 @@
     <ClCompile Include="..\Code\BaseEngine\Components\AIBrain.cpp">
       <Filter>Components</Filter>
     </ClCompile>
-    <ClCompile Include="..\Code\Entities\AISystem.cpp">
-      <Filter>Laser Entities\Systems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\Entities\CollisionSystem.cpp">
-      <Filter>Laser Entities\Systems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\Entities\PhysicsSystem.cpp">
-      <Filter>Laser Entities\Systems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\Entities\StateChanger.cpp">
-      <Filter>Laser Entities\Systems</Filter>
-    </ClCompile>
     <ClCompile Include="..\Code\Entities\AIBehaviours.cpp">
       <Filter>Laser Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Systems\EntityBuilder.cpp">
+      <Filter>Laser Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Systems\EntityLoader.cpp">
+      <Filter>Laser Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Systems\PhysicsSystem.cpp">
+      <Filter>Laser Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Systems\StageLoader.cpp">
+      <Filter>Laser Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Systems\StateChanger.cpp">
+      <Filter>Laser Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Systems\AISystem.cpp">
+      <Filter>Laser Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Systems\CollisionSystem.cpp">
+      <Filter>Laser Systems</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

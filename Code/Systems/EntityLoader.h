@@ -4,7 +4,7 @@
 
 #include "../BaseEngine/XMLParser.h"
 #include "../Display/ModelManager.h"
-#include "Book.h"
+#include "../Entities/Book.h"
 
 //********************************* CONSTANTS *********************************
 

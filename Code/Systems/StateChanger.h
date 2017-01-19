@@ -1,7 +1,7 @@
 #ifndef STATECHANGER_H
 #define STATECHANGER_H
 
-#include "Book.h"
+#include "../Entities/Book.h"
 
 //********************************* CONSTANTS *********************************
 

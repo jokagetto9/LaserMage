@@ -1,5 +1,11 @@
 #include "AISystem.h"
 
+Subject  AISystem ::death;
+Subject  AISystem ::hurt;
+Subject  AISystem ::stop;
+Subject  AISystem ::walk;
+Subject  AISystem ::run;
+
 SepFunction AISystem ::sep;
 TargFunction AISystem ::targ;
 
@@ -58,7 +64,7 @@ void AISystem ::	healthUpdate (ID id){
 	//!!!DEATH!!!
 	e.health[id].update(1);
 	if (e.health[id].isDead()){
-		e.death.notify(e.gData[id]);
+		AISystem::death.notify(e.gData[id]);
 		e.state[id] = &e.off;
 		e.gData[id].disableData(e.grid);
 	}

@@ -1,6 +1,6 @@
 #ifndef STAGELOADER_H
 #define STAGELOADER_H
-#include "Stage.h"
+#include "../Entities/Stage.h"
 #include "../BaseEngine/XMLParser.h"
 
 //********************************* CONSTANTS *********************************

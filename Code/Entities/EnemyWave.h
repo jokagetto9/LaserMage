@@ -1,7 +1,7 @@
 #ifndef ENEMYWAVE_H
 #define ENEMYWAVE_H
 
-#include "EntityBuilder.h"
+#include "../Systems/EntityBuilder.h"
 //********************************* CONSTANTS *********************************
 
 //enum EnemyType {CHUCKY, MOSQUITO, TRUNKLING, LABOMBA, MIMIC }; 

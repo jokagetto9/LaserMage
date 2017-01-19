@@ -1,7 +1,7 @@
 #ifndef COLLISIONSYSTEM_H
 #define COLLISIONSYSTEM_H
 
-#include "Book.h"
+#include "../Entities/Book.h"
 
 //********************************* CONSTANTS *********************************
 

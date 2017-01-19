@@ -3,13 +3,13 @@
 
 
 #include "../BaseEngine/Entities/DrawPool.h"
-#include "../Event/WaveTracker.h"
+#include "../Systems/WaveTracker.h"
 
-#include "EntityBuilder.h"
-#include "AISystem.h"
-#include "PhysicsSystem.h"
-#include "CollisionSystem.h"
-#include "StateChanger.h"
+#include "../Systems/EntityBuilder.h"
+#include "../Systems/AISystem.h"
+#include "../Systems/PhysicsSystem.h"
+#include "../Systems/CollisionSystem.h"
+#include "../Systems/StateChanger.h"
 #include "SpawnPoint.h"
 #include "EnemyWave.h"
 
