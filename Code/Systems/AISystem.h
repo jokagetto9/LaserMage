@@ -12,6 +12,7 @@
 class AISystem  { 
 public:
 	
+	AISystem ::	AISystem ();
 	static void AISystem ::	applyDefault (AIBrain& ai);
 
 	static void AISystem ::	aiUpdate (float aiDelta);

@@ -8,7 +8,7 @@
 class WaveTracker: public Observer{
 public:
 	WaveTracker::WaveTracker(){}
-	void WaveTracker::onNotify(GridData& data){ 
+	void WaveTracker::onNotify(GridData& data, string msg){ 
 		ID g = data.group;
 		if( g <  waves.size()){
 			ID s = waves[g].size();

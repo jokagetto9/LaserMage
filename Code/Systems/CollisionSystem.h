@@ -2,6 +2,7 @@
 #define COLLISIONSYSTEM_H
 
 #include "../Entities/Book.h"
+#include "AISystem.h"
 
 //********************************* CONSTANTS *********************************
 

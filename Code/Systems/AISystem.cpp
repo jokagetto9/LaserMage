@@ -9,6 +9,13 @@ Subject  AISystem ::run;
 SepFunction AISystem ::sep;
 TargFunction AISystem ::targ;
 
+AISystem ::	AISystem (){	
+	death.message = "death";
+	hurt.message = "hurt";
+	stop.message = "stop";
+	walk.message = "walk";
+	run.message = "run";
+}
 
 void AISystem ::	applyDefault (AIBrain& ai){	
 	AIV targAIV = {1};

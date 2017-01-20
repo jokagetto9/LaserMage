@@ -102,12 +102,27 @@ void CollisionSystem:: applyCollisions(ID id){
 		colRad /= 2;
 				
 		if(cd.dist < colRad){
-			if (e.getEnt(id) == 1 && e.gData[cd.obj2].ent == 2){
+			/*/
+			//if(e.health[id].damageable && e.damage[cd.obj2].damage
 				e.health[id].health -= 3;
-		//1 and 3 /if damaging
+				AISystem::hurt.notify(e.gData[id]);
+			//if(e.health[id].consuming && e.damage[cd.obj2].consumable) //crash?
+				e.health[id].kill();
+			//if(e.health[id].moveing && e.damage[cd.obj2].moveable)
+				AISystem::stop.notify(e.gData[id]);
+				AISystem::stop.notify(e.gData[id]);
+			//crash type? 
+
+			//*/
+			if (e.getEnt(id) == 1 && e.gData[cd.obj2].ent == 2){
+			//if(e.health[id].damageable && e.damage[cd.obj2].damaging)
+				e.health[id].health -= 3;
+				AISystem::hurt.notify(e.gData[id]);
+				//1 and 3 /if damaging
 			}else if (e.gData[id].ent == 2 && e.gData[cd.obj2].ent == 1){
 				//if consuming and consumable
 				e.health[id].kill();
+				//AISystem::hurt.notify(e.gData[id]);
 			}else if (e.gData[id].ent == 2 && e.gData[cd.obj2].ent == 2){ 
 				// lasers cant hit lasers //bullets can though				
 			}else if (e.gData[id].ent == 2 && e.gData[cd.obj2].ent == 3 ){
