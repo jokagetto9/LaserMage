@@ -285,7 +285,7 @@ void EntityLoader::addAnimation(rapidxml::xml_node<> * node, ParticleList * dict
 	ID min = 0; ID max = 3;
 	ID frames = 120;
 	Animation anim;
-
+	string state;
 	ShaderProfile sp = {0, 1, G4x4};
 	bool cyclic = false;
 	for (a = node->first_attribute(); a; a = a->next_attribute()){	
@@ -297,7 +297,9 @@ void EntityLoader::addAnimation(rapidxml::xml_node<> * node, ParticleList * dict
 			max = getInt(a->value());
 		} else if (s == "frames"){
 			frames = getInt(a->value());
-
+		} else if (s == "state"){
+			state = getText(a->value());
+			anim.state = AISystem::getStateID(state);
 		}else if (s == "type"){
 			s = getText(a->value());
 			if (s == "Walk20"){

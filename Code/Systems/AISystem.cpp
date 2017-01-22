@@ -1,20 +1,27 @@
 #include "AISystem.h"
 
-Subject  AISystem ::death;
-Subject  AISystem ::hurt;
+vector<Subject *> AISystem ::states;
+Subject  AISystem ::off;
 Subject  AISystem ::stop;
 Subject  AISystem ::walk;
 Subject  AISystem ::run;
+Subject  AISystem ::hurt;
+Subject  AISystem ::death;
 
 SepFunction AISystem ::sep;
 TargFunction AISystem ::targ;
 
-AISystem ::	AISystem (){	
-	death.message = "death";
-	hurt.message = "hurt";
-	stop.message = "stop";
+void AISystem ::	initStates (){	
+	stop.message = "still";
+	registerSub(stop);
 	walk.message = "walk";
+	registerSub(walk);
 	run.message = "run";
+	registerSub(run);	
+	hurt.message = "hurt";
+	registerSub(hurt);
+	death.message = "death";
+	registerSub(death);
 }
 
 void AISystem ::	applyDefault (AIBrain& ai){	
@@ -28,6 +35,13 @@ void AISystem ::	applyDefault (AIBrain& ai){
 
 
 }
+
+
+void AISystem:: registerSub(Subject& sub){
+	sub.state = states.size();
+	states.push_back(&sub);
+}
+
 
 void AISystem ::	aiUpdate (float aiDelta){
 	EntityList& e = Book::entities;
@@ -112,3 +126,11 @@ void AISystem:: applyAIInteractions(ID id){
 }
 
 
+
+int AISystem ::	getStateID(string s){
+	for (ID i = 0; i < states.size(); i++){
+		if (states[i]->message == s)
+			return i;
+	}
+	return -1;
+}

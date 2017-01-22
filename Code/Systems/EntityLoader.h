@@ -5,6 +5,7 @@
 #include "../BaseEngine/XMLParser.h"
 #include "../Display/ModelManager.h"
 #include "../Entities/Book.h"
+#include "AISystem.h"
 
 //********************************* CONSTANTS *********************************
 
