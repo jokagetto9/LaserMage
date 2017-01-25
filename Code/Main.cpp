@@ -144,19 +144,22 @@ void init(){
 	else {
 		eng.displayVersion();
 		initGlobals();
+		entities.load();
+		stageLoader.load();  
 		//menus
-		stack.hud.init();
 		stack.init(menuLoader);	
 		input.init(menuLoader);
 		menuLoader.load();
-
-
-		stageLoader.load();  
 		stack.loadStages(&stageLoader);
-		entities.load();
+		stack.hud.init();
 		//HEROSTATS
 		Size size = {4, 7, 8};
 		Book::player.addSize(size);
+		//EntityList::addDict(&Book::props);
+		//EntityList::addDict(&Book::props);
+		//EntityList::addDict(&Book::particles);
+		//EntityList::addDict(&Book::enemies);
+		//EntityList::addDict(&Book::player);
 	}  
 }
 

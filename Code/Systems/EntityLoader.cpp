@@ -64,7 +64,7 @@ void EntityLoader::loadProp(ID id){
 
 
 void EntityLoader::buildProp(rapidxml::xml_node<> * node){
-	rapidxml::xml_attribute<> *a;;
+	rapidxml::xml_attribute<> *a;
 	Identity identity = {"", 255, -1, 1};
 	ID tex = 0;
 	Rendering r;
@@ -222,7 +222,7 @@ void EntityLoader::loadParticle(ID id){
 }
 
 void EntityLoader::buildParticle(rapidxml::xml_node<> * node){
-	rapidxml::xml_attribute<> *a;;
+	rapidxml::xml_attribute<> *a;
 	Identity identity = {"", 255, -1, 2};
 	MotionMax mm = {1, 1};	
 	Size size = {0, 0, 0};
@@ -308,6 +308,7 @@ void EntityLoader::addAnimation(rapidxml::xml_node<> * node, ParticleList * dict
 		}else
 			loadShaderProfile(a, sp);
 	}
+	
 	dict->addProfile(sp); 
 
 	if (cyclic)
@@ -315,8 +316,9 @@ void EntityLoader::addAnimation(rapidxml::xml_node<> * node, ParticleList * dict
 	else
 		anim.setFrameRate(frames);
 
-
-	dict->anim.push_back(anim);
+	vector <Animation> animations;
+	animations.push_back(anim);
+	dict->animations.push_back(animations);
 }
 
 void EntityLoader::loadAuxillary(rapidxml::xml_node<> * node){

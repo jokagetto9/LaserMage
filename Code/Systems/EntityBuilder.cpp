@@ -41,7 +41,7 @@ ID EntityBuilder ::	createParticle (EntityXZ ent){
 	if (newIndex < MAX_COMPONENTS){
 
 		Rendering r; r.tex = pa.getProfile(ent.id).tex;
-		e.setDrawFeatures(newIndex, r, pa.anim[ent.id]);
+		e.setDrawFeatures(newIndex, r, pa.animations[ent.id][0]);
 		
 		e.setSize(newIndex, pa.getSize(ent.id));		
 		e.place(newIndex, ent.x, ent.z);
@@ -71,7 +71,7 @@ ID EntityBuilder:: createActor(EntityXZ ent){
 	ID newIndex = e.nextFree();
 	if (newIndex < MAX_COMPONENTS){
 		Rendering r; r.tex = en.getProfile(ent.id).tex;
-		Animation a = en.anim[ent.id]; 
+		Animation a = en.animations[ent.id][0]; 
 		a.randomTick();
 		e.setDrawFeatures(newIndex, r, a);
 		
