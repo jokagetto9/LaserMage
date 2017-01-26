@@ -1,5 +1,26 @@
 
 #include "AIBehaviours.h"
+
+//********************************* AI *********************************
+
+void DeathAction::apply(ID eIndex){
+	EntityList * e = &Book::entities;
+	if ( e->getEnt(eIndex) == 3){
+		vector <Animation> & animations = Book::enemies.auxAnim[e->gData[eIndex].type];
+		for (int i = 0; i < animations.size(); i++){
+	
+			if (animations[i].state == 4 ){		//death state		
+				e->animation[eIndex] = animations[i];
+				i = animations.size();
+				//set timer with off as next state
+			}
+		}
+
+	}
+
+
+}
+
 //********************************* Targ *********************************
 glm::vec3 TargFunction::calc(ID eIndex, glm::vec3 v){
 	EntityList * e = &Book::entities;

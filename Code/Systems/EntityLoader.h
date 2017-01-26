@@ -31,7 +31,10 @@ public:
 
 
 private: 
-	
+	rapidxml::xml_attribute<> *att;
+	rapidxml::xml_node<> * nod;
+
+
 	ID propCount;
 	ID enemyCount;
 	ID particleCount;

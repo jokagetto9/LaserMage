@@ -31,10 +31,6 @@ void EntityLoader::load(){
 	loadProp(0);
 	loadParticle(0);
 
-	for (int i = 0; i < actorFiles.size(); i++){
-		//loadStage(i);
-		//loadProp(i);
-	}
 }
 
 
@@ -201,7 +197,8 @@ void EntityLoader::loadParticle(ID id){
 		rapidxml::file<> xmlFile(particleFiles[id].c_str()); // Default template is char
 		rapidxml::xml_document<> doc;
 		doc.parse<0>(xmlFile.data());
-		rapidxml::xml_node<> *node = doc.first_node(); 
+		rapidxml::xml_node<> *node = doc.first_node(); 	
+
 		for (node = node->first_node(); node; node = node->next_sibling()){
 			rapidxml::xml_node<> *n;
 			rapidxml::xml_attribute<> *a;
@@ -216,6 +213,7 @@ void EntityLoader::loadParticle(ID id){
 				}
 			} //else if (s == "NPC"){
 		}
+		
 	}catch(...){
 		cout << "Particle [" << id << "] did not load properly."<< endl;
 	}
@@ -285,8 +283,10 @@ void EntityLoader::addAnimation(rapidxml::xml_node<> * node, ParticleList * dict
 	ID min = 0; ID max = 3;
 	ID frames = 120;
 	Animation anim;
+	vector <Animation> animations;
 	string state;
 	ShaderProfile sp = {0, 1, G4x4};
+	int spIndex = -1;
 	bool cyclic = false;
 	for (a = node->first_attribute(); a; a = a->next_attribute()){	
 		string s = getText(a->name());
@@ -297,6 +297,8 @@ void EntityLoader::addAnimation(rapidxml::xml_node<> * node, ParticleList * dict
 			max = getInt(a->value());
 		} else if (s == "frames"){
 			frames = getInt(a->value());
+		} else if (s == "index"){
+			spIndex = getInt(a->value());
 		} else if (s == "state"){
 			state = getText(a->value());
 			anim.state = AISystem::getStateID(state);
@@ -308,17 +310,32 @@ void EntityLoader::addAnimation(rapidxml::xml_node<> * node, ParticleList * dict
 		}else
 			loadShaderProfile(a, sp);
 	}
-	
-	dict->addProfile(sp); 
+
 
 	if (cyclic)
 		anim.setCyclic(min, max, frames);
 	else
 		anim.setFrameRate(frames);
-
-	vector <Animation> animations;
-	animations.push_back(anim);
-	dict->animations.push_back(animations);
+	
+	ID id = dict->identity.size();
+	//
+	if ( spIndex < 0){		
+		dict->addProfile(sp); 
+		anim.tex = sp.tex;
+	} else {
+		anim.tex = dict->getProfile(spIndex).tex;
+	}
+	//*/
+	if (anim.state == 0){
+		
+		//dict->addProfile(sp); 
+		if ( dict->anim.size() == id-1){
+			dict->anim.push_back(anim);
+			dict->auxAnim.push_back(vector <Animation>());
+		}
+	}else {
+		 dict->auxAnim[id-1].push_back(anim);
+	}
 }
 
 void EntityLoader::loadAuxillary(rapidxml::xml_node<> * node){

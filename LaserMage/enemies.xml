@@ -10,6 +10,7 @@
 	 </Enemy>
   <Enemy name="Gnome" maxhp="5" speed="2.5" col="1.2" sep="2" avo="5" >
     <Animation texture="MOBS/gnome.png" grid="5x5" frames="4" type="Walk20" ></Animation>
+    <Animation state="death" index="3" frames="4" start="20" end="4" ></Animation>
   </Enemy>
   <Enemy name="Dim" maxhp="50" speed="2" col="1.4" sep="3" avo="6" >
     <Animation texture="MOBS/dim.png"></Animation>

@@ -12,6 +12,8 @@ SepFunction AISystem ::sep;
 TargFunction AISystem ::targ;
 
 void AISystem ::	initStates (){	
+	stop.message = "off";
+	registerSub(off);
 	stop.message = "still";
 	registerSub(stop);
 	walk.message = "walk";

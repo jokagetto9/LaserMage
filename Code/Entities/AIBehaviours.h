@@ -10,7 +10,7 @@
 
 class DeathAction: public AIBehaviour {
 public:
-
+	virtual void apply(ID eIndex) ;
 
 };
 
